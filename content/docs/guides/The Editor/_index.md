@@ -1,5 +1,5 @@
 ---
-title: "The Editor"
+title: "The Edir"
 description: ""
 summary: ""
 draft: false
