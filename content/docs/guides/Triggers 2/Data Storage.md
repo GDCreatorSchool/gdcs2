@@ -42,8 +42,6 @@ This can be very useful if you need to detect when the player is in Low Detail M
 
 This also has a very straightforward setup. All you need is a toggle trigger with the “High Detail” setting enabled.
 
-None
-
 Then, all you need is the toggle trigger to toggle off a group and you should be all set! Here is an example of it working in action: https://youtu.be/MH3jwlpy80o
 
 There are many ways you can use LDM Detection. You can make setups that only show a ULDM option if the LDM has been selected. You can even make sections of your level only accessible through the in-game LDM.
@@ -58,11 +56,7 @@ This is also a simple setup, although it’s more involved than LDM detection:
 
 1. Place down 2 Toggle Triggers, each with the same group (Group A). Make the second trigger Spawn & Multi Triggered with “Activate Group” enabled, and give it a Group B.
 
-None
-
 2. Place an Event Link trigger. Set its Target Group to Group B, and select the “Checkpoint Respawn” option.
-
-None
 
 You can then add any objects to Group A and it should work if you set it up correctly. This doesn’t work in Platformer Mode if you use checkpoint objects, but you can circumvent this by using “Spawn Group” in your checkpoint objects to activate another toggle trigger, disabling Group A when respawning from them.
 
@@ -80,17 +74,9 @@ Before making an editor detection system, you must understand two things:
 
 1. Place any gameplay portal and give it group A. I used a cube portal for this example.
 2. Place two collision blocks; one two blocks to the *left* and the other two blocks *down* from the portal. The collision block on the left needs a Block ID (such as 2), while the one below the portal needs another Block ID (such as 1), a Group ID (i.e. B), and the “Dynamic Block” option activated.
-
-None
-
 3. Place a rotate trigger :Rotate: with these settings. You can replace the groups with the specific ones in your setup, as long as they match the portal and collision blocks’ groups.
-
-None
-
 4. Place two toggle triggers, and give the first a new group C. Make the second toggle trigger Spawn & Multi Triggered with “Activate Group” enabled, as with the last setup. Give this second toggle trigger group D.
 5. Place a collision trigger with these settings. BlockA should be your stationary collision block, while BlockB should be your rotating one. Make the collision trigger target Group D.
-
-None
 
 If everything was followed correctly, then it should work.
 
@@ -126,13 +112,9 @@ This section is the most difficult part of this guide. If you get confused at an
 
 First, we need a way to input the save code. There are many methods for doing this, but I’ll personally use this one here.
 
-None
-
 This system assigns a Spawn & Multi-Triggered Pickup trigger to increment each Item ID when the player touches their respective State Blocks. However, this has some drawbacks as you can see here: https://youtu.be/HpgjGLXqoms. ||Iif you guessed that the Item ID’s are going above 9, then you would be correct!||
 
 To fix this, I’ll use Item Compare triggers to check when each Item ID is at our maximum amount, such as 9. If the Item IDs surpass this maximum value, their value will be reset to 0. Each Item Compare trigger will be activated by the same State Block as their corresponding Pickup trigger.
-
-None
 
 If you have been following so far, this is how it should act: https://youtu.be/rQUbTTmS3aI
 
@@ -141,8 +123,6 @@ If you have been following so far, this is how it should act: https://youtu.be/r
 While we have the start of a save and load system right now, it’s really just a glorified item counter. We need a way to submit a code and load it into the system.
 
 Before that, we need to figure out what exactly we want to save and load. This is subject to what your level needs, but here I’ll use these values.
-
-None
 
 We also need to figure out what constitutes a valid save code. For this example, these are the conditions I will be using.
 - 0 < Lives < 4
@@ -157,14 +137,10 @@ To check if the save code entered is valid, you must  check each Item ID for the
 
 For example: If I was to check for Lives, I would first check to see if Lives is greater than 0, then if it is less than 4. If it meets those conditions, then I would increment Item ID 8 by 1.
 
-None
-
 If I were to do the same for the Level ID’s, it wouldn't work because there are two Item IDs instead of one. But in the same way, we can use another Item ID and use Item Edit triggers to do math. We can create a sequence of Item Edit triggers like this:
 I9 = I1 * 10.000 >> I9 = I9 + I2
 
 This sequence allows us to compress both Item ID’s into one Item ID, which can then have the same comparison process as before.
-
-None
 
 If you combine both of those methods, then you can end up with something like this: https://youtu.be/G_WGBtXpDCQ
 
