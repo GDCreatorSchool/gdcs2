@@ -185,11 +185,7 @@ The Swing is the least responsive of all the gamemodes; it will take a while for
 * Requires understanding of the physics and control over your gravity
 * Creates very curvy smooth gameplay
 
-
-
-
-
-3: Techniques & Interactions
+# 3: Techniques & Interactions
 
 Last section covered where you should use these gamemodes and why; this section will cover how. However, first I need to talk about something much more important to using your gamemode right: actually utilizing them.
 
@@ -199,7 +195,7 @@ For example, in a very fast part that swaps gamemodes twice a second after each 
 
 Ultimately, the how is a lot more nuanced as there are a nearly limitless amount of ways to use gamemodes. A lot of these uses will come down to experience and the inspiration sources you use. The rest of this section will go over common techniques, unique interactions, some tips, and some examples for how to use each gamemode.
 
-Cube
+## Cube
 
 As mentioned earlier, Cube is reliant on orbs due to its simplicity. We don’t want to spam orbs though, because orb chains are inconsistent and it’ll diminish the value of the gamemode. Thus, try not to use orbs unless you need to; they can emphasize or mix things up, but try to make use of pads, falling, gravity changes, and even things like head hitters to make things interesting.
 
@@ -209,7 +205,7 @@ Here’s an example Cube part I made that uses orbs and the Cube’s natural pro
 
 {{< youtube 1W4B5ZuAVSI >}}
 
-Ship
+## Ship
 
 Ship parts can have a free-flowing nature, but you can still make this really interesting. Don’t always have the player idly float, and give them something to do. For example, have the player go up when the song’s melody or volume rises, or vice versa. As a gamemode with air control, structuring is really important for players to understand your gameplay, so try to keep things at least somewhat understandable.
 
@@ -223,8 +219,6 @@ Green, yellow, pink, and red orbs send the player straight up
 
 Yellow, pink, and red orbs into gravity portals will act like a bounce, creating an arc
 
-
-
 You can use these held orbs to emphasize some long clicks; they make snappy bursts of momentum which not only use the gamemodes properties, but also feel really clean. Another way people commonly use orbs in Ship is to mark where the player shouldn’t click (hitting the orbs would throw them into spikes, for example), and this way they can construct a click pattern within the Ship part.
 
 {{< img src="https://lh3.googleusercontent.com/d/1T6vOTg9Q65OYfWEXdzPGLD-8wKeD2q9-" >}}
@@ -233,7 +227,7 @@ This is a small Ship part from the level earlier. I chose the gamemode here beca
 
 {{< youtube oQbt0qP52MU >}}
 
-Ball
+## Ball
 
 Ball, as mentioned before, is good as an in-between of snappiness and smoothness, and it can function in both environments. Because you swap gravity on clicks, you can make a lot of interesting interactions with a lot of control over what you want the player to do.
 
@@ -243,7 +237,7 @@ This is a Ball part in the same level; the slower repetitive melody that slowly 
 
 {{< youtube 15-g2Wgv2xs >}}
 
-UFO
+## UFO
 
 UFO has most of the pros and cons of the Cube with some noticeable differences. First off, because it’s an air gamemode, you have much more freedom with what you do. Focus on having a set path that’s fun to pull off and constantly interesting, only using orbs to emphasize important clicks as always.
 
@@ -257,7 +251,7 @@ This part is repetitive, slow, and floaty, hence why I chose the UFO. I made use
 
 {{< youtube yKnEqV1Qu3o >}}
 
-Wave
+## Wave
 
 Wave is incredibly unique because it has no physics whatsoever and has little to no interactions with anything gameplay-related. Having no diversity in your gameplay can get incredibly boring, which is why you should take advantage of everything you have. As another reminder: Wave is incredibly fast, precise, and the lack of physics makes it extremely jarring to use on a whim. Make sure you’re conscious of this whenever swapping to the Wave gamemode, as lots of perfectly good levels have developed chokepoints from this. If you’re not careful when transitioning to or from the gamemode, you’ll get inconsistency in your level.
 
@@ -267,7 +261,7 @@ This is still a relatively fast part yet different enough from the previous part
 
 {{< youtube ZtGk2iNmtzA >}}
 
-Robot
+## Robot
 
 The Robot is simple and precise. Its greatest weapon is in holds and micro clicks, and it uses orbs as seasoning rather than the sauce. One of the strengths of the Robot compared to other grounded gamemodes is that it can bring diversity to a part with just its default jump, something you should definitely take advantage of.
 
@@ -277,7 +271,7 @@ This Robot part is the very first part in my level. The song is slow and low ene
 
 {{< youtube _M2c0bPS7KE >}}
 
-Spider
+## Spider
 
 The Spider is the most powerful gamemode for emphasizing notes, and is successful at repetition too. Though it may look stale and uninteresting, only going up and down, the instantaneous teleportation combined with some interactions with orbs makes it an extremely bouncy and fun gamemode.
 
@@ -285,21 +279,11 @@ Like the Cube, holding after of a black orb will perform a click as soon as you 
 
 {{< youtube VSw1c3L8szo >}}
 
-
-
-
-
-
-
-
-
-
-
 This is the Spider part in my level, rounding out this part of the drop. This specific part of the song is higher energy compared to the Cube, hence why I’m choosing a snappier gamemode. However, it’s still very similar, so I avoided using a gamemode like Wave. You can see that I’m using a lot of pads to emphasize the clicks as well as orbs to make the gameplay way more interesting.
 
 {{< youtube WgDc_lDeRvc >}}
 
-Swing
+## Swing
 
 Swing is widely considered as the worst gamemode due to how badly creators use it. They tend to slap it on top of Ship gameplay without considering what the Swing does best: big arcs and curves. Swing uses big curves best, so make sure you take advantage of that. Another important part of Swing is how long it takes for you to actually see your input. You can either you can use the gamemode’s unresponsiveness to your advantage (like BUTTON MASHER by Viprin & More), or you can somewhat remedy it using the gravity trigger to increase the player’s gravity.
 
@@ -311,7 +295,7 @@ The swing is the slowest of all gamemodes, which is why I thought it would fit a
 
 {{< youtube A3ie-ALvmzE >}}
 
-4: Conclusion
+# 4: Conclusion
 
 In the end, this guide is still just a beginner's guide for you to understand how to choose and use your gamemodes. As time goes on and you get more and more experienced, you will be able to make intentional choices based on your own gameplay ideas, and use them effectively.
 
@@ -325,6 +309,6 @@ Lastly, here’s a video of the entire level if you’re interested in seeing ho
 
 {{< youtube FGAftuAcquM >}}
 
-Video:
+**Video:**
 
 {{< youtube Se2KWB1XgfE >}}
