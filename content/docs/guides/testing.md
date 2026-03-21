@@ -2,7 +2,7 @@
 draft: true
 title: testing
 seo:
-  - Testing a custom description
+  - 'description: "Testing a custom description"'
 weight: 100
 ---
 Testing
