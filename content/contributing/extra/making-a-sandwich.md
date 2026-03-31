@@ -5,6 +5,8 @@ date: 2026-04-01
 weight: 0
 math: false
 ---
+
+
 Note: This is *not* an April Fools guide. Just because it was released on April 1st does not mean this is just a joke. In my timezone it still says it’s March 32nd. Everything that follows is 100% true.
 
 # 1. Introduction
@@ -200,3 +202,154 @@ I’m hungry
 And honestly?—That’s progress.
 
 AUTOMOMICA!!
+
+# 17: Definition of a Sandwich
+
+It’s some other day now and we can tackle this complex topic now. According to Google, a **sandwich** is a *verb* that means *insert or squeeze (someone or something) between two other people or things, typically in a restricted space or so as to be uncomfortable.* Obviously, a sandwich isn’t a verb, it’s a noun. Google is a fucking chud. The G in google stands for chud. I’m gay btw, just in case you forgot. In reality, a **sandwich** is a piece of *food*, i.e. something to be eaten, digested, then is usually excreted in a toilet. If it is, it gets transported to a wastewater treatment plant, where the purified water then goes to a factory to dilute bleach, which will eventually find its way into another sandwich. That’s right, a sandwich is actually a *perpetual motion machine.* Albert Einstein said it was impossible, but he never ate bleach with his sandwiches. I bet he never even drank bleach at all! Moving on from that freaking chud, perpetual motion machines, along with other bread-bleach foods, can be classified using the **Cube Rule of Food:**
+
+{{< img src="undefined" >}}
+
+As you should know, a sandwich has two pieces of bread with a filling in between them. This would classify the sandwich under section 2, meaning a sandwich is in fact a sandwich. See how useful this diagram is? However, despite its usefulness, the Cube Rule is not all-powerful. For example, a “sandwich” made up of bread, lettuce, tomato, bacon, and bread, would be classified as a sandwich. However, this “sandwich” is not actually a sandwich, but a BLT. You may be thinking, “But isn’t a BLT a sandwich? I mean, a BLT sandwich has sandwich in its name!” Well, I ain’t reading allat.
+
+# 18: hungry ester
+
+Stop. Using. Arrows. In. Your. Levels.
+
+# 19: Using Inspirations
+
+As you may or may not have learned from the very beginning, using references for your art/levels/anything else is a crucial step towards improvement. Here are some images you can use to really boost your skills:
+
+{{< img src="undefined" >}}
+
+1. Idk I just googled stock images and this one’s pretty funny.
+
+
+   {{< img src="undefined" >}}
+2. A funny meme I found earlier today. As we all know by now, memes are a life-changing experience to look at and be amused by and you should embrace the whimsy before getting to do anything remotely serious (I know you’re still procrastinating writing that job application, but it’s okay :D)
+
+   {{< img src="undefined" >}}
+3. This guy is blue for a nefarious reason. You can make your sandwiches blue for a nefarious reason as well!
+
+That’s it, I'm getting tired. Someone else take care of the rest of this section while im gone thanks
+
+67: Why does this exist?
+
+You might be asking yourself, why does this guide exist in the first place? Well, 
+
+               and that’s why,
+
+                                               snuffleupagus.
+
+                               twelve crowbars ate, suffered no medical side effects,
+
+                            Did some One say Medical? Does someone Need medical (promo time)
+
+     Help?
+
+yeah close enough
+
+{{< img src="undefined" >}}
+
+                         Yo no one cares about ur stupid corny level
+
+{{< img src="undefined" >}}
+
+Picture of starfruit instead
+
+It’s so much better now
+
+Aw man
+
+# 68: Conclusion
+
+I love sandwiches. I hope you do too. 
+
+Thank you for following me on this journey.
+
+This guide was created for the love of the GD Creator School guides 
+
+I love you GD**CS**. Romantically.
+
+Cucumber 
+
+
+
+
+
+
+
+Expect the “Makin a sandwich” exercise releasing soon
+
+# Credits
+
+1. Lightning-Fire (li-fi give you wi-fi hehehehewegahjergwha)
+
+   {{< img src="undefined" >}}
+2. iisventi the computer scientist
+
+   {{< img src="undefined" >}}
+3. Checo Perez (the F1 driver fr)
+
+   {{< img src="undefined" >}}
+
+    ^^ ts u bro, yea
+4. CLENT THE PROTOGEN
+
+   {{< img src="undefined" >}}
+
+   ###### *ii. Mytho (chud) (NOT A CHUD)*
+
+   {{< img src="undefined" >}}
+5. Why is Mytho in a small font he’s so handsome he doesn’t deserve this little attention
+6. Told you mytho was a chu~
+7. youre right blud
+8. Wow thank you for this I’m sure mytho will be happy 😊
+9. Okay that’s a little
+10. Help
+11. No i don’t want to
+12. Ur mean :(((
+13. Imagine… having  2.2
+
+    braincells. Could be me…IQ
+14. GTeam people because they are cool and everyone else is a 
+
+    ## **CHUD**
+
+    ***\#GTeamSupremacy***
+
+    ***Guys, go to work on mimi’s delivery service (I’m doing you like flight of none***
+
+    ***Chud team - Emi)***
+15. revv up those fryers, cause I am sure hungry for one krabby patty -juny
+16. Am I or it??? The
+17. Inter < I saved this guide 
+18. XD < I saved this guide 2: electric boogaloo
+
+    {{< img src="undefined" >}}
+19. Issimo for an AMAZING reason 
+
+67.  Miauurre mrrwww mrrprp nyah :333 ahhh ha ha ha ha haaaaaaa says emi the auraful one 
+
+# Authors’ Notes:
+
+Goated sandwich
+
+{{< img src="undefined" >}}
+
+{{< img src="undefined" >}}
+
+# Bye
+
+Hi there, signing off, hope you enjoyed, these guys above exploded when they could let loose their silly. Unfortunately i have to stop being reasonable soon in the spirit of this farcical project, so before I lose it, here are some last words of wisdom: 
+
+\- sandwiches are a unimodular lattice in 24 dimensio – ugh its starting to happen… sec…
+
+Alright got it, what i meant to say was: thanks for supporting GDCS for all this time, what we’re doing is only possible thanks to the incessant volunteering of many and the support of y'all, so thank you. Here is an image to illustrate that:
+
+{{< img src="undefined" >}}
+
+Apologies, I couldn't help some sunfish slander.
+
+Decently affable spud, signing out.
+
+###### The overseers say hi 👋
