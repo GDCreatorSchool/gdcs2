@@ -7,13 +7,12 @@ weight: 6160
 date: 2026-03-05T00:00:00.000Z
 contributors:
   - theibra
-description: When making minigames, one of the important aspects to get right is
-  controls, as they are the way that the player interacts with your level,
-  making them complicated or confusing would lead to an unsatisfying experience
-  despite how good the gameplay is. However, doing so with the limited number of
-  inputs that Geometry Dash gives can be quite challenging. This guide discusses
-  how you can use different button combinations to create more actions all while
-  maintaining a manageable control layout.
+description: When making minigames, controls are a major aspect as they are what
+  the player uses to interact with your level. Making them complicated or
+  confusing can lead to the experience being less enjoyable. However, having
+  only 2 or 6 inputs can make this challenging. This guide discusses how
+  different button combinations can be used to create more actions while keeping
+  the control layout manageable.
 tags:
   - Grade 2
   - Trigger Setups
@@ -27,8 +26,12 @@ seo:
 
 
 
+
+
 This guide is missing the following:
 - Examples
+
+
 
 
 
@@ -37,8 +40,12 @@ This guide is missing the following:
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
 
+
+
 * While Geometry Dash only offers so many usable keys, you can add more actions to your level using various trigger setups.
 * Control schemes should be intuitive to the player, making sure they are easy to learn.
+
+
 
 {{< /callout >}}
 
@@ -46,7 +53,11 @@ This guide is missing the following:
 
 
 
+
+
 This guide contains interactive images; you can click or hover over elements to learn more about them.
+
+
 
 
 
@@ -97,103 +108,112 @@ Collisions work differently; while Toggle Orbs/Blocks exclusively detect jumps w
 A common usecase for collision is making mutually exclusive actions; the player can go left or right, but never both at once.
 
 {{< callout context="note" title="Note" icon="outline/clipboard-text" >}}
+
+
 It's also possible to detect collisions with the player and objects like portals or pads using the Event Trigger, although doing this has no visible benefits over Collision Blocks.
+
+
 {{< /callout >}}
 
 # 3: Custom Player
 
 If normal player controls don’t fit your needs (e.g. top-down gameplay), you can create  your own playable character.
 
-We will break this down into individual directional movements, which can be created using one of 2 trigger setups:
+We will break this down into individual movements, which can be created using one of 2 setups:
 
-## Setup A: Spawn loop:
+## A. Spawn loop
 
-* place 2 event triggers {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}}
-* the first detects \[key] push and activates groupID X
-* place a spawn trigger that activates groupID X, and a move trigger that moves your character a certain direction
-* give both these triggers the same delay and groupID X
-* the second event trigger detects \[key] release and activates a stop trigger that stops groupID X
+1. Place 2 event triggers. {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}} Make the first detect \[key] push and activate group X.
+2. Place a Spawn Trigger that activates group X and a move trigger that moves your character a certain direction.
+3. Give both triggers the same delay and groupID X.
+4. The second Event Trigger should detect \[key] release and activate a Stop Trigger that stops groupID X.
 
 <!-- EXAMPLE HERE -->
 
 {{< callout context="note" title="Note" icon="outline/clipboard-text" >}}
 
+The Move Trigger in this setup can be replaced with Rotate.
+
+{{< /callout >}}
+
+## B. Advanced Follow
+
+1. Give your character group X and make it the group parent.
+2. Place another object away from your character in the direction you want, and give it groups X and Y.
+3. Place 2 Event Triggers {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}}. The first should detect \[key] push and activate group Z, and the second should detect \[key] release and stop group Z.
+4. Place an Advanced Follow Trigger and give it group Z. Set the following values:
+
+* **TargetGID**: Group X
+* **FollowGID**: Group Y
+* **MaxSpeed**: Any number greater than 0
+
+<!-- EXAMPLE HERE -->
+
+These setups can be used to create more controls:
+
+## 8-Directional controls
+
+Using setup A for each of the 4 cardinal directions (up, down, right, left), you can create simple 8-directional movement.
+
+<!-- EXAMPLE HERE -->
 
 
-You can also replace the move trigger with a rotate trigger.
+{{< callout context="note" title="Note" icon="outline/clipboard-text" >}}
 
+
+Because Geometry Dash doesn't have native support for the S key (as of 2.2081), you can't add downwards movement with conventional means. You can bind down to any P2 key if all P1 keys are reserved.
 
 
 {{< /callout >}}
 
-## Setup B: Adv Follow:
+You may notice with setup A that moving 2 opposite directions at the same time can create some unexpected results, which can be fixed with either of these 2 solutions:
 
-* your character has a groupID X, with a center object being the parent of this group
-* place an object away from the center of your character and in your desired direction, give it groupIDs X and Y
-* place 2 event triggers {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}}
-* the first detects \[key] push and activates groupID Z
-* place an adv follow trigger and give it groupID Z
-* set TargetGID: X, FollowGID: Y and speed to a desired finite number
-* the second event trigger detects \[key] release and activates a stop trigger that stops groupID Z
+* **Overriding the Previous Input**: Event Trigger 1 activates a Stop Trigger that stops the loop of the opposite direction, and vice versa for Event Trigger 2.
+* **Changing Directions after Releasing a Key**: Event Trigger 1 activates a Pause Trigger that pauses the Event Trigger of the opposite direction, Event Trigger 2 activates a resume trigger that resumes it.
+ 
+These solutions can also be used to turn 8-directional into 4-directional movement!
 
-<!-- EXAMPLE HERE -->
-
-You can combine these 2 setups to create various controls:
-
-## Example 1: 8-Directional controls
-
-using setup A for each of the 4 directions (up, down, right, left) you can create a simple 8 directional movement.
-
-<!-- EXAMPLE HERE -->
-
-However, moving 2 opposite directions at the same time can give some unexpected results, to fix this, use either of these 2 solutions:
-
-* Newest pressed direction overrides the old one: event trigger 1 also activates a stop trigger that stops the spawn loop of the opposite direction
-* Only change directions after releasing a key: event trigger 1 activates a pause trigger that pauses the event trigger of the opposite direction, event trigger 2 activates a resume trigger that resumes it
-  You can also use these solutions to turn 8 directional movement into 4 directional!
-
-## Example 2: Driving controls
+## Driving controls
 
 If you want to create a top down racing game for example, you can use this setup:
 
-* Move forward: use setup B on your character
-* Steer left/right: use setup A on the object your character follows, replace the move trigger with a rotate trigger that rotates it around the center
+* **Move Forward**: use setup B on your character
+* **Steer left/right**: use setup A on the object your character follows, making sure to replace the move trigger with a rotate trigger that rotates around the character group.
 
 <!-- EXAMPLE HERE -->
 
-# 4: Advanced inputs
+# 4: Advanced Inputs
 
-With the limited number of available inputs, you may have to think differently to add more actions to your level. This section will teach you how to create useful key combinations like holding or double tapping
+With a limited number of available inputs, you may have to think outside the box to add more controls. This section will teach you how to create key combinations using holding or double-tapping.
 
 ## Hold (and release)
 
-### Touch trigger:
+### Touch Trigger
 
-This trigger already has a built in hold mode, it is generally used in classic mode as it doesn’t differentiate between keys. Since this mode toggles on and off objects, it can be used with collision blocks to create a similar effects to what event triggers can do
+This trigger already has a built-in Hold Mode, which is generally used in Classic as it can't differentiate between keys. Since this mode toggles objects, it can be used with collision blocks to create similar effects to what Event Triggers can do.
 
-### Event triggers:
+### Event Triggers
 
-* Place 2 event triggers {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}} A and B:
-* Event trigger A detects \[key] push, this is the hold state that activates your action
-* Event trigger B detects \[key] release, this means the player stopped holding, this trigger spawns a trigger that reverts your action, either using a stop trigger, toggle off trigger... etc.
-
-<!-- EXAMPLE HERE -->
-
-## Double taps
-
-This can be used to create actions like sprinting, or generally a stronger variation of your single tap action
-
-* Place an event trigger {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}} with \[key] push enabled
-* This event trigger activates 2 triggers:
-* A pickup trigger that adds 1 to itemID X
-* A spawn trigger with a small delay, it activates a pickup trigger that subtracts 1 from itemID X
-* Place a count trigger (multi activate) that detects when itemID X reaches a value of 2, this trigger is what detects a double tap
+1. Place 2 event triggers {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}} A and B.
+2. Event trigger A detects \[key] push, this is what activates your action.
+3. Event trigger B detects \[key] release, meaning the player let go of the key. This should revert or stop your action using a Stop Trigger, Toggle Trigger, etc.
 
 <!-- EXAMPLE HERE -->
 
-This setup can work for any number of taps by adjusting the value in the count trigger, just make sure the delay you place on the spawn trigger gives a reasonable time for the player to perform the double tap.
+## Double Taps
 
-## Key combos
+This can be used to create actions like sprinting, or a stronger variation of a single-tap action.
+
+1. Place an Event Trigger {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}} with \[key] push enabled, set to trigger Group X.
+3. Add a pickup trigger on Group X that adds 1 to Item ID X.
+4. Add a Spawn Trigger on Group X with a small delay that activates a Pickup Trigger, subtracting 1 from itemID X.
+5. Place a Count Trigger (multi activate) that detects when itemID X reaches a value of 2. This will detect a double-tap.
+
+<!-- EXAMPLE HERE -->
+
+This setup can work for any number of taps by adjusting the value in the Count Trigger, making sure the delay inside the spawn trigger has a lenient window for the player to perform the double tap.
+
+## Key Combinations
 
 Sometimes you may need multiple keys at once to be pressed
 
@@ -213,7 +233,11 @@ Order doesn’t matter, but the action should be done when all keys are pressed 
 
 
 
+
+
 If instead of having a small delay to press all keys you want to have the keys held all at once, you can change the spawn triggers with event triggers that detect [key] release
+
+
 
 
 
@@ -244,7 +268,11 @@ This is for when you need an ordered sequence of keys to activate your action an
 
 
 
+
+
 if instead of having a small delay for your key sequence you want to have keys held in a specific order, you can change the spawn triggers with event triggers that detect [key] release
+
+
 
 
 
@@ -357,8 +385,12 @@ Now, you can add a room or menu to the start of your level where the player can 
 
 
 
+
+
 * make sure to add a timer or a special key to cancel the key selection, for example, the event triggers could detect [key] release, the player can hold a key for 1s to cancel this action
 * cursors and buttons are interchangeable; you can move buttons to the cursors and vice-versa
+
+
 
 
 
