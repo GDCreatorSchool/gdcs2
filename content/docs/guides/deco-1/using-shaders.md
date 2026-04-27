@@ -14,18 +14,22 @@ tags:
 ---
 {{< callout context="caution" title="Incomplete guide" icon="outline/info-circle" >}}
 
+
 This guide is missing the following:
 
 * Proofreading
+
 
 {{< /callout >}}
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
 
+
 * Shaders can enhance your level's atmosphere and immersion, but they do not affect gameplay itself.
 * Use shaders in key moments like drops, transitions, and intensity changes to emphasize important beats in the music and structure of your level.
 * Keep effects controlled and make sure they have a clear purpose. Overusing shaders can cause lag, reduce visibility, and make your level feel messy, rather than polished.
 * You can use shaders beyond their regular "limits" to get different effects.
+
 
 {{< /callout >}}
 
@@ -50,9 +54,11 @@ Because of this, shaders should be treated as something you keep in mind through
 
 {{< callout context="caution" title="Ask yourself these 3 questions:" icon="outline/info-circle" >}}
 
+
 - Does the shader effect match the theme/mood of the music?
 - Does it improve the quality of the theme/mood?
 - Is it making the player's experience better and more immersive?
+
 
 {{< /callout >}}
 
@@ -139,13 +145,15 @@ This mask acts like an alpha trigger but makes it so that objects don't overlap.
 
 As you can see, the objects on the left don't overlap with eachother, unlike the objects on the right. Due to the fact that motion blur spaces out the blurs by the z layer on the x and y axis, if we just scale it up to something like 10000, the blurring effect will disappear, giving us the opaque object. This is because motion blur lowers the opacity of the objects based on the intensity, and also makes it so that any overlapping objects don't have the "overlapping" effect a standard alpha trigger would give. This mask is best used when there are many details in your level, just like Aperture.
 
-But you may have noticed that the colours look "washed out," or desaturated. This is because it is, which we can simply fix by adding a saturation booster.
+But you may have noticed that the colours look "washed out," or desaturated. This is because it is, which we can simply fix by adding a color booster.
 
-## Saturation Boosting
+## Color Boosting
 
-Saturation Boosting will be very beneficial for the next example and the example before. By using a Sepia, Grayscale, or Edit Color Shader, you can boost the saturation of any object on a z layer by pushing their values over 1. It's most useful when you feel like an object is washed out, or when other shader effects unintentionally lower the saturation of an object.
+Color Boosting will be very beneficial for the next example and the example before. There are actually 2 kinds of Color Boosters, Saturation Boosters and Contrast Boosters. By using a Sepia, Grayscale, or Edit Color Shader, you can boost the saturation and color of any object on a z layer by pushing their values over 1. It's most useful when you feel like an object is washed out, or when other shader effects unintentionally lower the saturation of an object.
 
-For example, the 3 images below show the before and after of using an edit colour saturation booster, combined with the motion blur opacity mask.
+#### Contrast Boosters
+
+Contrast Boosters are created from edit colour shaders, where you just simply multiply the RGB values of an object. They are mainly used for reverting the effect of objects being washed out. For example, the 3 images below show the before and after of using an edit colour contrast booster, combined with the motion blur opacity mask.
 
 {{< img-grid >}}
 {{< img src="https://lh3.googleusercontent.com/d/1M9IMZb0QkZmr9cc6oOGs5aoSiJlAQ8i7" >}}
@@ -154,6 +162,10 @@ For example, the 3 images below show the before and after of using an edit colou
 
 {{< img src="https://lh3.googleusercontent.com/d/1XZeH6jYLxRIFilIO1tYZwqvvjj59aH3f" >}}
 {{< /img-grid >}}
+
+#### Saturation Boosters
+
+Saturation Boosters on the other hand, increases the intensity and vividness of colors in objects. By pushing the colour intensity higher, it makes visuals more vibrant, which makes muted colours stand out more. It is made using a high value Grayscale or Sepia shader, you can boost the values of an object by a 180 degree hue. For the banding effect below, you need to use a Saturation Booster, or it won't work.
 
 ## Colour Banding Gradient Effect
 
@@ -170,7 +182,7 @@ Although this effect isn't very well known, it's actually used in levels like Et
 
 This creates a banding effect, despite being just one gradient trigger. It's a trippy effect that is very unstable, and very chaotic. Due to this fact, I suggest trying it out in a separate level and experimenting with it. You can also try putting black glow circles above the gradient to see what happens. Enjoy ;)
 
-{{< youtube id=LNMpe_BXtQM start=56 >}}
+{{< youtube id="LNMpe_BXtQM" start="56" >}}
 
 An example of this banding effect being used in Eta Carnis. You might not see it at first, but the colour banding is used for the background of this part (Screenshot of it below)
 
