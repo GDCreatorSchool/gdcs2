@@ -171,7 +171,7 @@ You may notice with setup A that moving 2 opposite directions at the same time c
 * **Overriding the Previous Input**: Event Trigger 1 activates a Stop Trigger that stops the loop of the opposite direction, and vice versa for Event Trigger 2.
 * **Changing Directions after Releasing a Key**: Event Trigger 1 activates a Pause Trigger that pauses the Event Trigger of the opposite direction, Event Trigger 2 activates a resume trigger that resumes it.
  
-These solutions can also be used to turn 8-directional into 4-directional movement!
+These solutions can also be used to limit your options to 4 directions!
 
 ## Driving controls
 
@@ -205,9 +205,9 @@ This trigger already has a built-in Hold Mode, which is generally used in Classi
 This can be used to create actions like sprinting, or a stronger variation of a single-tap action.
 
 1. Place an Event Trigger {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}} with \[key] push enabled, set to trigger Group X.
-3. Add a pickup trigger on Group X that adds 1 to Item ID X.
+3. Add a Pickup Trigger on Group X that adds 1 to Item ID X.
 4. Add a Spawn Trigger on Group X with a small delay that activates a Pickup Trigger, subtracting 1 from itemID X.
-5. Place a Count Trigger (multi activate) that detects when itemID X reaches a value of 2. This will detect a double-tap.
+5. Place a Count Trigger on Multi-Activate that detects when itemID X reaches a value of 2. This will detect a double-tap.
 
 <!-- EXAMPLE HERE -->
 
@@ -215,80 +215,57 @@ This setup can work for any number of taps by adjusting the value in the Count T
 
 ## Key Combinations
 
-Sometimes you may need multiple keys at once to be pressed
+### Unordered Key Combination
 
-### Unordered key combination:
+Order doesn’t matter, but the action should occur when all required keys are pressed at once. This can trigger when all keys are simply held, or if they are pressed within a certain time frame.
 
-Order doesn’t matter, but the action should be done when all keys are pressed at once, the combo can either be detected when all keys are held, or when all keys are pressed in a specific time window
-
-* For each key in your combo, place an event trigger {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}} that detects \[key] push
-* This event trigger activates 2 triggers:
-* a pickup trigger that adds 1 to itemID X
-* a spawn trigger with a small delay. Either activate a pickup trigger that subtracts 1 from itemID X
-* Place a count trigger (multi activate) that detects when ItemID X reaches the number of keys in your combo, this is the trigger that detects your combination
+1. For each key in the combination, place an Event Trigger {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}} that detects \[key] push.
+2. Each Event Trigger will activate a Pickup Trigger increasing Item ID X by 1, and a Spawn Trigger that subtracts 1 from X after some delay.
+3. Place a Count Trigger on Multi-Activate that detects when Item ID X reaches the desired number of keys, activating your action.
 
 <!-- EXAMPLE HERE -->
 
 {{< callout context="note" title="Note" icon="outline/clipboard-text" >}}
 
-
-
-
-
-If instead of having a small delay to press all keys you want to have the keys held all at once, you can change the spawn triggers with event triggers that detect [key] release
-
-
-
-
+If you want the player to just hold all required keys instead of timing inputs, you can replace the Spawn Triggers with Event Triggers that detect \[key] release.
 
 {{< /callout >}}
 
-### Modifier key:
+### Modifier Keys
 
-This is like the Shift and Ctrl keys used in computer shortcuts
+Modifier keys can be any usable keys that are analogous to the Shift and Ctrl keys on most keyboards. Although these keys aren't usable directly, any of the total 6 inputs can work as a substitute.
 
-* Place two event triggers {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}} that detect \[mod key] push (A) and \[mod key] release (B) respectively
-* The event trigger A spawns another event trigger C that detects \[key] push
-* the second event trigger B spawns a stop trigger that stops the event trigger C
+1. Place two Event Triggers. {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}} Trigger A will detect \[mod key] push (A) and trigger B will detect \[mod key] release.
+2. Event Trigger A spawns an Event Trigger C that detects \[key] push.
+3. Event trigger B spawns a Stop Trigger that stops Event Trigger C.
 
-### Key sequence:
+### Key Sequence
 
-This is for when you need an ordered sequence of keys to activate your action and is technically a, in this example we’ll use the following sequence: keyA -> keyB -> keyC
+Key sequences can activate an action only when the required keys are pressed in a certain order. In this example we’ll use the following sequence: key A -> key B -> key C.
 
-* Place an event trigger {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}} X that detects \[keyA] push
-* This event trigger activates 2 triggers:
-* an event trigger {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}} Y that detects \[KeyB] push
-* a spawn trigger with a delay, it activates a stop trigger that stops the event trigger Y
-* Repeat the same step for event trigger Y, where it should activate another event trigger Z that detects \[keyC] push
-* Since event trigger Z detects the last key in our sequence, this is the trigger that detects our key combo
+1. Place an Event Trigger X {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}} that detects \[key A] push. This will spawn an Event Trigger Y that detects \[Key B] push, and a Spawn Trigger that stops Event Trigger Y after some delay.
+2. Repeat Step 1 for Event Trigger Y that activates an Event Trigger Z detecting \[key C] push.
+3. Since event trigger Z is the last key in our sequence, this will be the one to trigger our action.
 
 <!-- EXAMPLE HERE -->
 
 {{< callout context="note" title="Note" icon="outline/clipboard-text" >}}
 
-
-
-
-
-if instead of having a small delay for your key sequence you want to have keys held in a specific order, you can change the spawn triggers with event triggers that detect [key] release
-
-
-
-
+You can switch out the delayed Spawn Triggers for Event triggers detecting \[key] release if you want to remove the timing window.
 
 {{< /callout >}}
 
 ## Buttons
 
-Buttons require different controls from what the player icon uses, depending on your use case, you might want to implement a different approach.
-In the following examples that don’t use the player as a cursor, we will use a collision block, collision can be either detected using the collision trigger and toggling on and off this block, or by spawning an instant collision trigger
+Buttons usually require controls separate from the player's movement, but you might want to implement a different approach depending on the usecase. 
 
-### Cycling through buttons:
+For the following examples that don’t use the player as a cursor, we will use a Collision Block. Collision can be detected by using the Collision Trigger and toggling the block, or by spawning an Instant Collision Trigger.
 
-This is the most common way to create buttons in the level, the player can control the cursor to cycle through all available buttons. This is useful for creating menus or inventory systems.
-there are various ways to achieve this:
+### Cycling Through Buttons
 
-* for a 2-key setup (cycle and select), use a sequence trigger with loop enabled, that loops over move triggers, each one teleports a collision trigger (your cursor) to the buttons
+This is the most common method to create buttons, as the player can use 1 or 2 keys to cycle through all available buttons. This is useful for  menus or inventory systems.
+
+For a 2-key setup (cycle and select), use a Sequence Trigger with loop enabled that loops through move triggers on \[key 1] push, and each Move Trigger moves the Collision Block to the selected button. Then, with an Event Trigger on \[key 2] push, toggle the block or spawn an Instant Collision Trigger.
 
 {{< image-details src="https://lh3.googleusercontent.com/d/1LEGZMgmZAbU4pHS8p0k3MnOfeqvxfMm4" tlbr="89 94 10 5">}}
 
@@ -312,7 +289,7 @@ there are various ways to achieve this:
 
 {{< /image-details >}}
 
-* for a 3-key setup (previous, next and select), space out your buttons evenly, then use 2 event triggers to move your cursor to the next or previous button, make sure the cursor can’t go out of bounds by placing a collision trigger in the end that either prevents the player from moving outside or loops them back to the first button. You can also use this trick for other behaviors like moving to the next row of buttons
+1. For a 3-key setup (previous, next and select), space out every button evenly (using Align X/Y can help with this), and use 2 Event Triggers to move the Collision Block to the next or previous button. Make sure the cursor can’t leave the bounds of the buttons by Collision Blocks on both sides that prevent the controlled Collision Block from moving outside or loops back to the button on the opposite side. This trick can be used for other behaviors like moving to a next row of buttons.
 
 {{< image-details src="https://lh3.googleusercontent.com/d/1Lc1cc4XFF4x-ZSc4Dym7XD9YA25UOQXE" tlbr="89 94 10 5">}}
 
@@ -341,79 +318,66 @@ there are various ways to achieve this:
 
 {{< /image-details >}}
 
-### Cursor-like controls using ship:
+### Ship/Jetpack controlled Cursor
 
-This is the simplest method to create a cursor, which is useful when creating point and click games.
+This method is simplest to create a cursor, which is useful for things like point-and-click games.
 
-* The ship gamemode is the cursor
-* use toggle orbs/blocks for buttons, resize them to make sure that they fit your button and that the player can’t accidentally click multiple at the same time
+* The Ship/Jetpack is the cursor.
+* You can use Toggle Orbs/Blocks for buttons, which can be resized to fit the button's graphic and set to prevent multiple inputs at once, if needed. This can be achieved by toggling the orb/block once clicked, and can be toggled back on after some delay or if an action finishes.
 
 <!-- EXAMPLE HERE -->
 
-### Cursor-like directional controls:
+### Cursor-like Directional Controls
 
-Unlike the previous method, this one controls the cursor using 4 directional buttons, with additional buttons for interacting with objects.
+Unlike the previous method, this is controlled by 4 directional buttons, with additional buttons for interacting with objects. In this example, we will create a cursor with only one interact key.
 
-This example creates a simple cursor, with one click button
-
-* Place a collision block and toggle it off, this will be your cursor
-* use the 4 directional control setup discussed in Custom Player
-* place 2 event triggers {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}} , the first detects \[key] push and activates a toggle on trigger, the second activates a toggle off trigger, this will be your clicking action
+1. Place a Collision Block and toggle it off. This will be your cursor.
+2. Use the 4-directional setup discussed in the Custom Player example for the cursor.
+3. Place 2 Event Triggers {{< img src="images/GDEmotes/Triggers/EventLink.png" class="emote">}}; The first detects \[key] push and toggles the block on, and the second will toggle it off. This will be what counts as the interact key.
 
 <!-- EXAMPLE HERE -->
 
 # 5: Custom keybinds
 
-Sometimes, your player controls may turn out to be unintuitive to some players.
+Sometimes, the default controls may be unintuitive to some players. While mobile players can change the button layout, PC players cannot change the vanilla keybinds (as of 2.2081). Because of this, you may want to give the option to remap your controls.
 
-While mobile players can change the button layout, pc players are stuck with the default keybinds as the game doesn’t support custom ones (as of 2.206). So for the moment you can implement a custom keybind system inside your level.
+## Custom Keybinds System
 
-## Custom keybinds system
+We’ll use the cursor system discussed in [the previous section](<>) as the middle man between the input detection (Touch, Event Trigger...) and the action; the input detection acts on the cursor Collision Block which interacts with buttons that are tied to your actions.
 
-We’ll use the cursor system discussed in [the previous section](<>) as the middle man between the input detection(touch, event trigger...) and the action; the input detection acts on the cursor collision blocks, which interact with buttons that are tied to your actions.
+Now, you can add a room or menu at the start of your level where the player can change their keybinds:
 
-Now, you can add a room or menu to the start of your level where the player can change their keybinds:
-
-* First, organize your cursor and button collision blocks for better clarity. Give each cursor collision block a groupID that we’ll note c1, c2... cn. do the same for button collision blocks that we’ll note b1, b2... bn.
-* Use any of the custom cursor techniques discussed in the previous section to create buttons for actions.
-* When the player selects which action to rebind (for example action1), activate a spawn trigger that remaps a groupID X to b1 and activates the following:
-* the system now has to wait for the player to press a key to bind to, place an event trigger for each possible key, when the player selects a key (for example key1) which activates a move trigger with target mode that moves groupID c1 to X (which will be remapped to b1 from the previous spawn trigger)
+1. Organize your cursor and button Collision Blocks for better clarity. Give each cursor Collision Block a group ID that we’ll note g1, g2... etc. Do the same for button Collision Blocks that we’ll note b1, b2, and so on.
+2. Use any of the techniques discussed in the previous section to create buttons for actions.
+3. When the player selects which action to rebind (for example action1), activate a Spawn Trigger that remaps a group ID X to b1 and activates a setup to check for which key this should be bound to.
+4. For said setup, place an Event Trigger for each possible key. When the player selects a key, for example key1, this will activate a Target Mode Move Trigger that moves group ID g1 to X, being the value that the Spawn Trigger will remap.
 
 <!-- EXAMPLE HERE -->
 
 {{< callout context="note" title="Notes" icon="outline/clipboard-text" >}}
 
-
-
-
-
-* make sure to add a timer or a special key to cancel the key selection, for example, the event triggers could detect [key] release, the player can hold a key for 1s to cancel this action
-* cursors and buttons are interchangeable; you can move buttons to the cursors and vice-versa
-
-
-
-
-
+* Make sure to add a timer and/or special key to cancel the selection. For example, the Event Triggers could detect \[key] push, and make sure the event stays pushed for 1s to cancel the action.
+* Cursors and buttons are interchangeable; you can move buttons to the cursors and vice-versa.
 
 {{< /callout >}}
 
 # 6: Limitations
 
-The previous sections discussed what is possible to achieve using the tools you are provided in the editor, though you should keep in mind that the game has some limitations which define what can and cannot be achieved, so you may have to approach your level differently:
+The previous sections discussed what's possible to achieve using the tools given in the editor, though you should keep in mind that the game has limitations which define what can and cannot be achieved, so you may have to approach your level differently:
 
-* There is a maximum of 6 keys (as of 2.206), so adding more actions requires using techniques like key combos, which get harder to remember the more complex they are.
-* Mouse controls are slow and finicky, so only use them when making slow paced gameplay or for menus.
-* On PC, since there is no in-game keymap customization feature, players are stuck with WAD, arrow keys, space bar and left click, which means adding actions like moving down for example may lead to confusing controls
+* There are 6 usable keys total (as of 2.2081), so more actions require using techniques like key combinations, which get harder to remember the more complex they are.
+* Mouse controls are slow and unreliable, making them usually suitable for slow-paced sections or UI navigation.
+* Because of the lack of remapping keybinds on PC, players are stuck with WAD, arrow keys, space bar and left click. This means adding actions like moving down for example require a different approach.
 * On mobile, players will realistically only be able to use their 2 thumbs.
 
 There are some rules you can follow to help you design a more robust control scheme:
 
-* **Intuitive:** The player should be able to pick them up in the first minutes of your level. If you’re introducing new mechanics, you can include a tutorial
-* **Simple:** Key combos get exponentially harder to remember the more keys you have to press, so it’s best to only use 2-key combos (considering mobile players too), and include less important and non time critical actions in menus
-* **Compact:** One key can fit multiple actions when they are mutually exclusive (one action can be performed at a time). Some examples include:
+* **Intuitive Controls:** The player should be able to pick them up in the first minutes of your level. If you’re introducing new mechanics, you can include a tutorial or safe area to get the player used to them.
+* **Simplicity:** Key combinations get exponentially harder to remember the more keys that are added, so they should stay at a low key count where possible. Time-critical actions can also be abrasive to the experience if they require a complex action in a short time window.
+* **Compactness:** One key can fit many actions when they are mutually exclusive (one action can be performed at a time). Some examples include:
 
-  * the player doesn’t move while using a menu, so you can use player left/right to navigate them
-  * toggle orbs/blocks can be used to interact with objects, as you don’t need to jump
-  * player jump can be used to jump while grounded and dash while mid-air
+  * **UI Controls**: The player usually won’t move while using a menu, so inputs like W/D/Left/Right can be repurposed for navigation.
+  * **Toggle Orbs/Blocks**: Can be used to interact with objects/groups, as they only register clicks when inside their hitbox.
+  * **Context-Specific Actions**: Actions from the player such as jumping can be used to perform multiple actions based on context. An example would be dashing while mid-air upon clicking.
 
-These rules can be broken in some specific cases (fighting games sometimes include 10-key combos), this is where playtesting comes in to confirm whether or not players can quickly adapt to your controls
+These rules can be broken in some cases, such as fighting games that utilize complex combinations. Playtesting is recommended for this as it lets you gauge how easy it is to learn your controls without creator bias.
