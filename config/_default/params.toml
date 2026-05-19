@@ -6,6 +6,10 @@ images = ["Banner2_Small.png"]
 # mainSections
 mainSections = ["docs", "contributing", "hub"]
 
+# Add-ons
+[add_ons]
+  docSearch = true # false (default) or true
+
 # Doks (@thulite/doks-core)
 [doks]
   # Color mode
@@ -22,7 +26,7 @@ mainSections = ["docs", "contributing", "hub"]
   navBarButtonText = "Get started"
 
   # FlexSearch
-  flexSearch = true # true (default) or false
+  flexSearch = false # true (default) or false
   searchExclKinds = [] # list of page kinds to exclude from search indexing (e.g. ["home", "taxonomy", "term"] )
   searchExclTypes = [] # list of content types to exclude from search indexing (e.g. ["blog", "docs", "legal", "contributors", "categories"])
   showSearch = [] # [] (all pages, default) or homepage (optionally) and list of sections (e.g. ["homepage", "blog", "guides"])

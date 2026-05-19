@@ -10,11 +10,7 @@ contributors:
   - yoreid
   - poryii
   - l.ucs
-description: Animations are often a complex and tedious part of creating levels,
-  but there are many practices you can use to simplify this process for
-  yourself. This guide explains the main types of animation you should consider
-  when making a block move, adding a custom cutscene to your level, or anything
-  similar.
+description: Animations are often a complex and tedious part of creating levels, but there are many practices you can use to simplify this process for yourself. This guide explains the main types of animation you should consider when making a block move, adding a custom cutscene to your level, or anything similar.
 tags:
   - Grade 1
   - Deco Skills
