@@ -195,7 +195,7 @@ The Swing is the least responsive of all the gamemodes; it will take a while for
 
 * Extremely smooth and unresponsive
 * Requires understanding of the physics and control over your gravity
-* Creates very curvy smooth gameplay
+* Creates very curvy and smooth gameplay
 
 # 3: Techniques & Interactions
 
