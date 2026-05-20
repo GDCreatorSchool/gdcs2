@@ -1,20 +1,25 @@
 ---
 draft: false
-title: Post Processing
-weight: 7230
-date: 2025-10-01T00:00:00.000Z
-description: At this point you’ve created your sound, but you may notice something’s off. Unless your sounds are soft or light, they likely lack any room or loudness to make them stand out. This is where post processing is used. This guide explains how you can edit and change your SFX afterward to mix it in seamlessly or to transform it into something different.
 authors:
   - electrifyxd
+title: Sound Design 3 (Post Processing)
+weight: 7230
+date: 2025-10-01T00:00:00.000Z
 contributors:
   - electrifyxd
   - notamoderatr
+description: At this point you’ve created your sound, but you may notice
+  something’s off. Unless your sounds are soft or light, they likely lack any
+  room or loudness to make them stand out. This is where post processing is
+  used. This guide explains how you can edit and change your SFX afterward to
+  mix it in seamlessly or to transform it into something different.
 tags:
   - Grade 2
   - Sound Design
 ---
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
+
 - Post Processing involves changing characteristics of sounds through methods like Distortion, Wave Folding, Delays & Reverb, and Compression. This can help make certain sounds more distinct in your track.
 - Delays can be used to add an echo to sounds, which allows effects like Reverb to function. This effect also helps with creating hypothetical rooms and their acoustics, like how a church has a large amount of echo.
 - Equalization (EQ) is commonly used in music production and can be utilized to limit certain frequencies of a sound, all of which are divided into their own groups: Low, Mid, and High bands. Filters can control these bands depending on the hz.
