@@ -41,13 +41,12 @@ Have you ever turned off your room’s lights and noticed how instant it went fr
 
 Most of the simplest trigger setups come from hard cut transitions; you might use an [alpha](https://www.gdcreatorschool.com/docs/guides/triggers-1/alpha/), a [toggle trigger](https://www.gdcreatorschool.com/docs/guides/triggers-1/toggle/) or a [shader trigger](https://www.gdcreatorschool.com/docs/guides/triggers-1/screen-filters/), and 2 groups for switching the cut.
 
+{{< callout context="note" title="" icon="outline/info-circle" >}}
 
+* Key message: snappiness. Like a snap of a finger, you’re not meant to dwell on a hard cut for that long unless you’re doing glitches. Otherwise, you’re trying to communicate a loading state or a part being off.
 
+{{< /callout >}}
 
-
-* Key message: snappiness
-
-Like a snap of a finger, you’re not meant to dwell on a hard cut for that long unless you’re doing glitches. Otherwise, you’re trying to communicate a loading state or a part being off.
 
 Factors to consider:
 
