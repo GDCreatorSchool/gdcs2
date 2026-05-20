@@ -55,7 +55,7 @@ Search for this level with the ID: `90903111` in order to check the camera simul
 
 Gamemode portals with fixed borders can move the camera depending on their Y-position. While locking the visuals in the X-position is simple, the Y-position is where things get tricky.
 
-{{< img src="https://lh3.googleusercontent.com/d/1VQ3DroGjgLfe679BfHCdt2oFAEHUNlIS" >}}
+{{< youtube QNWsIklQGv8 >}}
 
 You can simulate this movement into your objects with the help of a move trigger. From trial and error, the move trigger’s setup needs to have these units so that your objects can match with the camera’s movements, regardless of the Y units you add. Though as a safeguard, keep your Y units below `50` units.
 
@@ -63,7 +63,7 @@ You can simulate this movement into your objects with the help of a move trigger
 
 However, where should you place this move trigger? Do you snap it in the same grid with the portal? For simple camera locking, yes. This is because the portal’s hitbox and the move trigger’s hitbox would align perfectly.
 
-{{< img src="https://lh3.googleusercontent.com/d/1zIbh-SLUk0Hu_JhFusYB-BKaF7-6UFAN" >}}
+{{< youtube Z0J_uTAQ4MU >}}
 
 However, refresh rates complicate things. Depending on your game’s refresh rate, it detects the timing of your camera differently. This is not really an issue when it comes to simple camera visuals, but with more complexity in parallax, this needs to be taken into account. This will be more taxing for the borderless camera setup later.
 
@@ -81,27 +81,27 @@ Starting a camera movement will automatically negate all camera movements before
 
 1. The first move trigger instantly moves a one-object group up and down depending on the portal’s trend. Place this to the left of each portal.
 
-None
+{{< img src="https://lh3.googleusercontent.com/d/1k6FYcsEJAFSMcVYWwQQ_5sl0xUJGhvL9" >}}
 
 2. The second move trigger has Use Target where another one-object group moves to the previous group’s target position in step 1. Set the easing to “Ease In Out” with 1.4 easing rate and 0.4s move time. This will be spawn-triggered and multi-triggered to 2 more groups.
 
-None
+{{< img src="https://lh3.googleusercontent.com/d/1rwp3OBkhvVWDe5VUt7K6YJhsr9XQ5777" >}}
 
 3. A touch-triggered spawn trigger is exactly aligned with the portal to activate the object in Step 2. Meanwhile, a stop trigger is placed slightly to the left of the spawn trigger to interrupt the camera movement. Set both of these to a Follow Player Y trigger to ensure they will be touched.
 
-None
+{{< img src="https://lh3.googleusercontent.com/d/14CY4NbEbejeyuGK2jnPLOSNg5sQPMq61" >}}
 
 4. Group your visuals to a follow trigger with the follow ID from Step 2. Locking visuals will have `0` in the X-Mod and `1.00` in the Y-Mod. If you need vertical parallax, add another follow trigger and change the Y-mod to your liking.
 
-None
+{{< img src="https://lh3.googleusercontent.com/d/16O2ACE8KGV72ZAgVnTJCtxWeSFpOUF7X" >}}
 
 5. Playtest. Slightly move the triggers in Step 1 if the camera fails to move the whole way. The bordered setup is complete!
 
-{{< img src="https://lh3.googleusercontent.com/d/139Zq-uvq24NhxyFw3n-xweIOXhdM1XjO" >}}
+{{< youtube 2wQoWVdrK_E >}}
 
-{{< img src="https://lh3.googleusercontent.com/d/1X32WKG2c8v_9HzHrK12Hud8fb2sWBPAb" >}}
+{{< youtube 0rZnK0kdHeo >}}
 
-{{< img src="https://lh3.googleusercontent.com/d/1bBp4cVypgzpXzYdcKjngJ6H-azHekODF" >}}
+{{< youtube y86shKsuPV0 >}}
 
 However, this is not the only camera setup that you can make.
 
@@ -113,15 +113,15 @@ Search for this level with the ID: `92313313` in order to check the camera simul
 
 However, notice that for the robot and cube gamemode, the camera only moves if the player goes near the screen’s edges, so how would you simulate the camera with that condition? Referring to the trigger workflow, let’s specify the function, module, and truth conditions:
 
-> **Function**: Make the camera visuals lock to a borderless camera in the Y-axis. If the camera goes up by 10 units, the visuals go up by 10 units at the same speed. Because this is borderless, we need to take into account both the top edges and bottom edges of the screen.
+**Function**: Make the camera visuals lock to a borderless camera in the Y-axis. If the camera goes up by 10 units, the visuals go up by 10 units at the same speed. Because this is borderless, we need to take into account both the top edges and bottom edges of the screen.
 
-None
+{{< img src="https://lh3.googleusercontent.com/d/1PFw5c4cLkuYrvjGnqOh_lIGGxGsCqm09" >}}
 
-> **Module**: You’ll need two sets of collision blocks to build an **adjustment area** to the camera visuals; they are located at the top and bottom of the screen. For normal gravity, the upper adjustment area has 3 blocks, while the lower has 4 blocks. These blocks need to be grouped to a follow trigger where its X-mod needs to be `0` to avoid the blocks from moving horizontally.
+**Module**: You’ll need two sets of collision blocks to build an **adjustment area** to the camera visuals; they are located at the top and bottom of the screen. For normal gravity, the upper adjustment area has 3 blocks, while the lower has 4 blocks. These blocks need to be grouped to a follow trigger where its X-mod needs to be `0` to avoid the blocks from moving horizontally.
 
-None
+{{< img src="https://lh3.googleusercontent.com/d/1xhGYGdWudaEytDx5sttLC5hCPwCXBBAd" >}}
 
-> **Truth Condition**: Following Pin - A square with a Follow group ID which will move the camera visuals and adjustment area when activated. You’ll want to set the speed of the follow player Y to `0.1`. In this case, there are two truth conditions for the top and bottom areas of the screen. If the player passes either areas, the module will activate.
+**Truth Condition**: Following Pin - A square with a Follow group ID which will move the camera visuals and adjustment area when activated. You’ll want to set the speed of the follow player Y to `0.1`. In this case, there are two truth conditions for the top and bottom areas of the screen. If the player passes either areas, the module will activate.
 
 {{< img src="https://lh3.googleusercontent.com/d/1FBoPg6nlkzj0M6uB8ws-UgOpjn2vlC3u" >}}
 
@@ -136,7 +136,7 @@ Its trigger work will look like this.
 Referencing the image above, seven groups were used for the Y-lock:
 
 - Group `2` makes the camera module and visuals follow the following pin when activated.
- * For vertical parallax, you add two extra follow triggers for each adjustment area targeting a new group, then tweak the Y-Mod numbers to not equal `1.000`.
+- For vertical parallax, you add two extra follow triggers for each adjustment area targeting a new group, then tweak the Y-Mod numbers to not equal `1.000`.
 - Groups ‘3’ and ‘4’ are the following pins when the player touches either adjustment areas. They also follow each other when this happens.
 - Collision triggers that target groups `5` and `8` will activate the camera module and move the visuals. The difference is the adjustment area that it affects. Group `5` targets the top adjustment area while group `8` targets the bottom.
 - Collision triggers which target groups `6` and `9` use “Trigger on Exit”: when the player leaves the adjustment area, the camera stops following the pin.
@@ -164,7 +164,7 @@ Most importantly, set the spawn-triggered triggers as “Multi-trigger”.
 
 - If you have scale hack, you can even reduce the collision box’s size to `0.01` for extra accuracy. This is provided in the uploaded level.
 
-None
+{{< img src="https://lh3.googleusercontent.com/d/1P0rNeE93typ5RmhVAzKki-w1n48M5QW9" >}}
 
 5. Build the adjustment area and the necessary triggers.
 
@@ -172,7 +172,7 @@ None
 
 6. Playtest.
 
-{{< img src="https://lh3.googleusercontent.com/d/1UQ-1tyktyGsc147Y_ODBvoydoj7FP4WK" >}}
+{{< youtube xwVwxRuRdYo >}}
 
 Now that the main part is finished, it should be able to work without gravity changes. If you want gravity changes, however, there are extra steps to go through.
 
@@ -180,7 +180,7 @@ Now that the main part is finished, it should be able to work without gravity ch
 
 Recall how the bottom adjustment area has one extra collision block than the top? This needs to change when the player goes upside down. Putting the numbers, we need to shift this module downwards by `10` units, then return to its original setup in normal gravity. Referring back to the trigger workflow, switching gravity complicates the module and truth conditions.
 
-None
+{{< img src="https://lh3.googleusercontent.com/d/1WDCxvMRHBXoOMKB79Ce0GVvkn_n1GCGg" >}}
 
 Adding this setup costs two extra groups for the touch-triggered spawn triggers which act as truth conditions for the gravity changes. However, feel free to replace it with other spawns; for example, when it comes to blue orbs, toggle orbs are much more effective than spawn triggers as they activate alongside touching the blue orbs.
 
@@ -190,13 +190,13 @@ Triggers at the centre activate by either spawn triggers. Think of it as an OR g
 
 The toggle triggers at the bottom acts as a calibration sequence for the camera module. You know how when your laptop suddenly has problems, you turn the laptop off and then on again? That’s what the toggle triggers are doing for the gravity change.
 
-None
+{{< youtube -EogtpAbXrI >}}
 
 Ultimately, the borderless camera setup with gravity changes is complete.
 
-None
+{{< youtube hz6P8tGF9mk >}}
 
-None
+{{< youtube x7TdySbK9E4 >}}
 
 As a precaution, stick to building either the bordered or borderless setup separately.
 
