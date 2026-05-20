@@ -1,20 +1,22 @@
 ---
 draft: false
-title: Basic Sound Design
-weight: 7225
-date: 2025-03-01T00:00:00.000Z
-description: This guide explains how you can create basic sounds using a DAW, also known as an external audio-editing program.
 authors:
   - electrifyxd
+title: Sound Design 1 (Making Sounds)
+weight: 7225
+date: 2025-03-01T00:00:00.000Z
 contributors:
   - electrifyxd
   - notamoderatr
+description: This guide explains how you can create basic sounds using a DAW,
+  also known as an external audio-editing program.
 tags:
   - Grade 2
   - Sound Design
 ---
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
+
 - Using DAW software, you can create a variety of sounds to use in your level, making use of free plugins such as Vital for FL Studio.
 - There are four main soundwave types: Sine, Saw, Square, and Triangle waves.
 - Using Additive or Subtractive Synthesis, you can use the four basic soundwaves and combine them into more interesting sounds. Samplers can add to this process, giving the sound a distinct texture.
