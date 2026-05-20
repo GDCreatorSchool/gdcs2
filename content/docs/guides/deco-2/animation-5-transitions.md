@@ -13,17 +13,11 @@ tags:
 ---
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
 
-
-
-
-
 - A part transition within a level connects two separate parts together. How these parts connect can make or break a level's selling point depending on its execution.
 - There are many ways to choose the “right” transition for your parts which can be boiled down to 5 categories: Hard Cut, Fade, Screen Wipe, Match Cut, and Continuous.
 - Match cuts are subdivided to 3 more categories depending on which element you're putting more attention to: Shape, Momentum, and Color.
 - Each category communicates specific types of change, atmosphere, emotion, and context.
 - If you are unsure about which combination of transitions is appropriate for your level, reconsult your level’s vision to flesh out tangible details.
-
-
 
 {{< /callout >}}
 
@@ -41,24 +35,28 @@ Have you ever turned off your room’s lights and noticed how instant it went fr
 
 Most of the simplest trigger setups come from hard cut transitions; you might use an [alpha](https://www.gdcreatorschool.com/docs/guides/triggers-1/alpha/), a [toggle trigger](https://www.gdcreatorschool.com/docs/guides/triggers-1/toggle/) or a [shader trigger](https://www.gdcreatorschool.com/docs/guides/triggers-1/screen-filters/), and 2 groups for switching the cut.
 
-{{< callout context="note" title="" icon="outline/info-circle" >}}
+{{< callout context="note" title="Key Message: Snappiness." icon="outline/info-circle" >}}
 
-* Key message: snappiness. Like a snap of a finger, you’re not meant to dwell on a hard cut for that long unless you’re doing glitches. Otherwise, you’re trying to communicate a loading state or a part being off.
+* Like a snap of a finger, you’re not meant to dwell on a hard cut for that long unless you’re doing glitches. Otherwise, you’re trying to communicate a loading state or a part being off.
+
+{{< /callout >}}
+
+{{< callout context="note" title="Factors to Consider:" icon="outline/info-circle" >}}
+
+1. Frequency of hard cuts
 
 {{< /callout >}}
 
 
-Factors to consider:
-
-1. Frequency of hard cuts
-
 ## Example
 
-In [STARPUNK](https://youtu.be/-9fKSBc7naQ?si=k5JdQ8CNZDiYjvLb&t=7) by Ferdefunky, the cube transitions to the ball part with some minor glitches before an instant hard cut to the next part. The reason why this works is because the song allows this type of transition to happen.
+In STARPUNK by Ferdefunky, the cube transitions to the ball part with some minor glitches before an instant hard cut to the next part. The reason why this works is because the song allows this type of transition to happen.
 
+{{< youtube id="-9fKSBc7naQ" start="7" >}}
 
+Beachie’s intro for this example has the song starting out with this glitchy voice that speaks backwards, hence used both chromatic glitch and the glitch shader to convey that voice. Once the music starts playing, that's when the colors cut into place starting the level.
 
-[Beachie](https://youtu.be/p4XUF_fvU5Q?si=DD4Z7ZDEUlSoiWmV&t=2)’s intro for this example has the song starting out with this glitchy voice that speaks backwards, hence used both chromatic glitch and the glitch shader to convey that voice. Once the music starts playing, that's when the colors cut into place starting the level.
+{{< youtube id="p4XUF_fvU5Q" start="2" >}}
 
 # 2: Fades
 
