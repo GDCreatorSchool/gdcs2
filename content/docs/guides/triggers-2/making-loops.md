@@ -24,6 +24,7 @@ tags:
 ** **
 
 # 1: Spawn Loop
+
 A spawn loop is the most well-known and common loop. It uses a sequence of spawn triggers that activate other spawn triggers.
 
 The setup consists of three main parts: the activator, the steppers, and the looper. The **activator** is the __spawn trigger that initially activates the loop__. The **steppers** are the __spawn triggers that activate the next “steps” or sets of triggers in the loop__. The **looper** __reactivates the first set in the loop so that the loop can repeat__. If the loop only contains one set of triggers that activates itself, that set acts as both the stepper and the looper.
@@ -35,6 +36,7 @@ Each spawn trigger within the loop has a delay, which is the time it takes to ac
 {{< img src="https://lh3.googleusercontent.com/d/14-EiHzIWbwQ8Vth39YeLZaSmJMYwn6lO" >}}
 
 ## Setup
+
 1. Place down a spawn trigger (or any other condition trigger) and have it target a new group. This is the activator.
 2. Place down the triggers you want to spawn and a spawn trigger and have them all be spawn-triggered and multi-triggered. The spawn trigger is the stepper. Assign them the group the activator targets.
 3. Set the spawn trigger in the stepper to have a chosen delay and target a new group if needed.
@@ -63,12 +65,14 @@ To stop a spawn loop, simply add a group to the spawn triggers in the loop and s
 
 ## Pros and Cons
 
-+ Can have as many steps in the loop as you want
-+ Easy to have precise timings between steps
-+ In-game button so the loop is easier to make
+**Pros:**
++ Can have as many steps in the loop as you want.
++ Easy to have precise timings between steps.
++ In-game button so the loop is easier to make.
 
-\- Can break from lag
-\- Create Loop can be finicky to use, especially if your setup uses multiple types of IDs.
+**Cons:**
+- Can break from lag.
+- Create Loop can be finicky to use, especially if your setup uses multiple types of IDs.
 
 # 2: Spawn Ordered Loop
 
@@ -95,17 +99,19 @@ To stop the loop, toggle off the group of the loop using a toggle trigger. To re
 
 ## Pros and Cons
 
-+ Easy to set up
-+ Uses fewer groups
+**Pros:**
++ Easy to set up.
++ Uses fewer groups.
 
-\- Hard to have precise timings
-\- Can only be started with a spawn trigger
+**Cons:**
+- Hard to have precise timings.
+- Can only be started with a spawn trigger.
 
 # 3: Spawn Remap Loop
 
 This loop uses the spawn remap feature to remap the groups within the steppers. This gives you all the benefits of using spawn remap while also maintaining a loop.
 
-{{< img src="https://lh3.googleusercontent.com/d/1T0F-JEGbVdj6Id4mHS-1rPjI4yoAtFCG" >}}
+{{< gif src="https://lh3.googleusercontent.com/d/1T0F-JEGbVdj6Id4mHS-1rPjI4yoAtFCG" >}}
 
 The above example uses spawn ordered to activate the loop, but any other looping method can work as long as the looper uses a spawn trigger with spawn remap. Keep this in mind throughout the explanation.
 
@@ -157,15 +163,17 @@ Use the method for breaking and resetting the loop for whichever loop you used f
 
 ## Pros and Cons
 
-+ Can be useful in remap setups
+**Pros:**
++ Can be useful in remap setups.
 
-\- Extremely complicated loop
+**Cons:**
+- Extremely complicated loop.
 
 # 4: Collision Loop
 
 A collision loop is made up of collision blocks. A main collision block moves through a line of other collision blocks via a move trigger (the activator), each one acting as a stepper that activates a group of triggers. The final collision block in the line acts as the looper as it will activate a move trigger that moves the main block back, resetting the loop.
 
-{{< img src="https://lh3.googleusercontent.com/d/1mFXtX0SrLqzYNfehMWXG0NLCbg3mpgcC" >}}
+{{< gif src="https://lh3.googleusercontent.com/d/1mFXtX0SrLqzYNfehMWXG0NLCbg3mpgcC" >}}
 
 ## Setup
 
@@ -193,10 +201,12 @@ There are multiple ways to break a collision loop. One way to have it break and 
 
 ## Pros and Cons
 
-+ Extremely flexible loop
+**Pros:**
++ Extremely flexible loop.
 
-\- Uses a lot of Group and Collision IDs
-\- Can be difficult to get the timing correct
+**Cons:**
+- Uses a lot of Group and Collision IDs.
+- Can be difficult to get the timing correct.
 
 # 5: TPS Loop
 
@@ -222,15 +232,17 @@ To break the loop, move either collision block away so the two blocks don’t co
 
 ## Pros and Cons
 
-+ Quick and consistent loop
+**Pros:**
++ Quick and consistent loop.
 
-\- Not easy to set any other delays
+**Cons:**
+- Not easy to set any other delays.
 
 # 6: Time Event Loop
 
 The time event loop makes use of the time and time event triggers. Time triggers will act as the activator (starting the timer) and the looper (resetting the timer), while the time event triggers will activate steppers when the timer hits your desired time.
 
-{{< img src="https://lh3.googleusercontent.com/d/1Zy50nY61xprmHg4i1GZSjF72YlebhgAD" >}}
+{{< gif src="https://lh3.googleusercontent.com/d/1Zy50nY61xprmHg4i1GZSjF72YlebhgAD" >}}
 
 ## Setup
 
@@ -246,7 +258,7 @@ The time event loop makes use of the time and time event triggers. Time triggers
 
 If only one stepper is needed in the loop, the time trigger’s “Stop Time” feature can be used.
 
-{{< img src="https://lh3.googleusercontent.com/d/1BJQ10Fp9WAEjkiMZWQqnsqGZSPnBqxuw" >}}
+{{< gif src="https://lh3.googleusercontent.com/d/1BJQ10Fp9WAEjkiMZWQqnsqGZSPnBqxuw" >}}
 
 1. Have your desired activator spawn a new Group ID.
 2. Place down a time trigger and give it the Group ID. Make sure it’s spawn and multi-triggered.
@@ -264,18 +276,20 @@ To stop the loop, use the time control trigger to stop the timer. To restart it,
 
 ## Pros and Cons
 
-+ Visible timer to visualize timings
-+ Can modify the time speed
-+ Can have the loop unaffected by timewarps
+**Pros:**
++ Visible timer to visualize timings.
++ Can modify the time speed.
++ Can have the loop unaffected by timewarps.
 
-- Minor loss of timing accuracy
-- Steppers have to be placed a certain way
+**Cons:**
+- Minor loss of timing accuracy.
+- Steppers have to be placed a certain way.
 
 # 7: While Loop
 
 A while loop runs a loop *while* a condition is being met. The condition can be related to Item ID values, collision states, or any other trackable value. When the condition is not met, the loop stops. The condition is checked by using a trigger that can check the state of a value (i.e. instant count, instant collision, item comp, etc.)
 
-None
+{{< img src="https://lh3.googleusercontent.com/d/1_7EOh2hyWe8UOtk47IDvHIuJO951QpUS" >}}
 
 ## Setup
 
@@ -292,10 +306,12 @@ Use the method for breaking and resetting the loop for whichever condition or lo
 
 ## Pros and Cons
 
-+ Built-in way to break the loop
-+ Can use different types of loops
+**Pros:**
++ Built-in way to break the loop.
++ Can use different types of loops.
 
-\- Can be a little complicated to set up
+**Cons:**
+- Can be a little complicated to set up.
 
 # 8: For Loop
 
@@ -318,9 +334,11 @@ Use the method for breaking and resetting the loop for whichever condition or lo
 
 ## Pros and Cons
 
-+ Built-in way to break the loop
-+ Can use different kinds of loops
-+ Easy to loop for a specific number of times
+**Pros:**
++ Built-in way to break the loop.
++ Can use different kinds of loops.
++ Easy to loop for a specific number of times.
 
-- Slightly complicated setup
-- Have to specify the loop amount before activation
+**Cons:**
+- Slightly complicated setup.
+- Have to specify the loop amount before activation.
