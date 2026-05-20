@@ -1,20 +1,28 @@
 ---
 draft: false
-title: Combat Design
-weight: 7200
-date: 2024-09-06T00:00:00.000Z
-description: Combat is an extremely nuanced topic with lots of important concepts tied to it. This guide will help you identify what you want to do with your combat, make the player want to actually fight enemies, create action while they’re in a battle, design attacks to make your system fun to use, encourage players to strategize in/out of combat and design enemies to enhance the combat system. This guide will be somewhat oriented toward real-time combat, but almost all of these concepts apply to turn-based combat and strategy games too.
 authors:
   - illusion2
+title: Game Design 3 (Combat Design)
+weight: 7200
+date: 2024-09-06T00:00:00.000Z
 contributors:
   - chuckolate
   - illusion2
+description: Combat is an extremely nuanced topic with lots of important
+  concepts tied to it. This guide will help you identify what you want to do
+  with your combat, make the player want to actually fight enemies, create
+  action while they’re in a battle, design attacks to make your system fun to
+  use, encourage players to strategize in/out of combat and design enemies to
+  enhance the combat system. This guide will be somewhat oriented toward
+  real-time combat, but almost all of these concepts apply to turn-based combat
+  and strategy games too.
 tags:
   - Grade 2
   - Game Design
 ---
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
+
 - Defining the role of your combat system within the game and its importance relative to other systems will help you determine its complexity and design all related mechanics and aspects.
 - To keep players engaged with the combat system, provide reasons and opportunities to interact with it outside of battle, establish a noticeable and impactful progression, and ensure combat interactions feel meaningful and rewarding to the player.
 - You can enhance your combat system by interlinking all its mechanics around a central concept, this way the system will be cohesive, all mechanics will have greater significance, and you will keep gameplay interesting.
