@@ -22,6 +22,7 @@ seo:
 ---
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
+
 - The camera is a tool you can use to your advantage to enhance your gameplay.
 - The camera shouldn‘t distract but support the gameplay, for example by showing the player everything they need to see.
 - The camera can and should also be framed around certain things that need more attention.
