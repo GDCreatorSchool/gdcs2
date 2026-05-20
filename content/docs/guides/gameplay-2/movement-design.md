@@ -18,6 +18,7 @@ tags:
 ---
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
+
 - Movement is the core of most systems and can make something as simple as traversing feel fun.
 - Players should be able to see, hear, and expect a motion as soon as an input is executed.
 - Movements should feel consistent to refine accuracy and skill as opposed to feeling random.
