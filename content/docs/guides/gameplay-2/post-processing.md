@@ -16,6 +16,8 @@ description: At this point you’ve created your sound, but you may notice
 tags:
   - Grade 2
   - Sound Design
+seo:
+  canonical: post-processing
 ---
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
