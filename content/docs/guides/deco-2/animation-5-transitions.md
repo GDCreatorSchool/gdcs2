@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: Animation 5 (Transitions)
 weight: 8015
 date: 2026-05-19
@@ -39,7 +39,7 @@ Most of the simplest trigger setups come from hard cut transitions; you might us
 * Like a snap of a finger, you’re not meant to dwell on a hard cut for that long unless you’re doing glitches. Otherwise, you’re trying to communicate a loading state or a part being off.
 {{< /callout >}}
 
-{{< callout context="note" title="Factors to Consider:" icon="outline/info-circle" >}}
+{{< callout context="caution" title="Factors to Consider:" icon="outline/info-circle" >}}
 1. Frequency of hard cuts
 {{< /callout >}}
 
@@ -72,7 +72,7 @@ Fades provide the most gentle tone in transitions which makes them an excellent 
 * Fades need time to work. They don't work well with fast, abrupt transitions, but if you need a smooth change they are often the simplest option.
 {{< /callout >}}
 
-{{< callout context="note" title="Factors to Consider:" icon="outline/info-circle" >}}
+{{< callout context="caution" title="Factors to Consider:" icon="outline/info-circle" >}}
 
 1. Frequency of fades
 2. Time taken to complete the transition
@@ -106,7 +106,7 @@ Screen wipe transitions are made when one part is covered by a moving overlay th
 
 {{< /callout >}}
 
-{{< callout context="note" title="Factors to Consider:" icon="outline/info-circle" >}}
+{{< callout context="caution" title="Factors to Consider:" icon="outline/info-circle" >}}
 
 1. Frequency of screen wipes
 2. Shape of screen wipes
@@ -155,7 +155,7 @@ Match cuts happen when there is one element in between parts that stays consiste
 
 {{< /callout >}}
 
-{{< callout context="note" title="Factors to Consider:" icon="outline/info-circle" >}}
+{{< callout context="caution" title="Factors to Consider:" icon="outline/info-circle" >}}
 
 1. Composition of both parts (how they're organized)
 
@@ -201,40 +201,67 @@ and Shards of Siberia by Xender Game.
 
 {{< img src="https://lh3.googleusercontent.com/d/1n7sh1-DduQMu6bCoPko9LkMrwqFmP20B" >}}
 
-For this cut, both transition parts share the same color even if it has a different shape.
+For this cut, both transition parts share the same color even if they have different shapes.
 
-[CICADA3302](https://youtu.be/d6BbxlwY0lY?si=4JSWSRxCBn3KoT2M&t=364) by Darwin has a 4x speed transition that has a red color UI matching the color of the speed portal, and once the drop starts, the red blares throughout the background.
+CICADA3302 by Darwin has a 4x speed transition that has a red color UI matching the color of the speed portal, and once the drop starts, the red blares throughout the background.
+
+{{< youtube id="d6BbxlwY0lY" start="364" >}}
+
+{{< img src="https://lh3.googleusercontent.com/d/1ETDqUBNZZlo2zg8NgpvKhCfXm-wcS2zv" >}}
 
 # 5: Continuous
 
 Finally, a true continuous transition integrates almost all the elements of both parts together so that there is no definitive timestamp or visible cut separating the two parts.
 
-Key message: seamlessness
+{{< callout context="note" title="Key Message: Seamlessness." icon="outline/info-circle" >}}
 
-Most players when they talk about immersion usually flock to continuous transitions. However, similar to match cuts, you need a strong plan to commit to before doing this kind of transition, while also having a more complex trigger setup to make the transition seamless.
+* Most players when they talk about immersion usually flock to continuous transitions. However, similar to match cuts, you need a strong plan to commit to before doing this kind of transition, while also having a more complex trigger setup to make the transition seamless.
+{{< /callout >}}
 
-Factors to consider
-Elements before the transition
-Elements after the transition
-In-betweens
-Trigger setup
-Lag considerations
-Substitute for Low Detail Mode
+{{< callout context="caution" title="Factors to Consider:" icon="outline/info-circle" >}}
+
+1. Elements before the transition (shapes, colors, etc)
+2. Elements after the transition
+3. In-betweens
+4. Trigger setup (how will you smoothly transition?)
+5. Performance (can be laggy; consider adapting these when making a custom LDM)
+
+{{< /callout >}}
 
 ## Examples
 
-[City Rush’s transition from lumpy’s part to Devon’s part](https://youtu.be/w1269ZHvOk4?si=CokjbZ8W3iTZlkkI&t=37) is seamless due to how the part reveals itself through a single pink dash orb. And even then, lumpy’s part is still visible below as you’re playing Devon’s part.
+City Rush’s transition from lumpy’s part to Devon’s part is seamless due to how the part reveals itself through a single pink dash orb. And even then, lumpy’s part is still visible below as you’re playing Devon’s part.
+
+{{< img-grid >}}
+
+{{< img src="https://lh3.googleusercontent.com/d/1UkAtl8soxk7PxV8vI2bHqLiQzRxetgrA" >}}
+
+{{< img src="https://lh3.googleusercontent.com/d/1H9AQtHswmH9NTaYUDR8Sc3LtI5JiynuK" >}}
+
+{{< /img-grid >}}
+
+{{< youtube id="w1269ZHvOk4" start="37" >}}
 
 2.2 has made the setup for Continuous transitions much easier thanks to the new camera triggers:
 
-* [Space Invaders](https://youtu.be/q9fAbO15sts?si=docZTaXshM93D412&t=37) by Cornbread integrates the scale trigger and zooming effects to give a sense of travelling through space as per the Earth planet zooming out far into the background.
-* [Experiment](https://www.youtube.com/watch?v=vY2bwvFyg_A) by mbed and more has the static camera move seamlessly for each stage making them look like one gigantic whole.
-* [Duckstep](https://youtu.be/bO2M9D9G29Y?si=ewF2YaG0YUMuXAOP&t=41) by Knots
-* [Skeletal Shenanigans](https://youtu.be/AKqLAchDj4k?si=bSwuQFFbskYy4K9y&t=42) by YoReid & Airz has a cannonball section that while implements a continuous transition in the cannonball, the use of scale triggers also make the part lag, especially for lower-end devices.
+* Space Invaders by Cornbread integrates the scale trigger and zooming effects to give a sense of travelling through space as per the Earth planet zooming out far into the background.
+{{< youtube id="q9fAbO15sts" start="37" >}}
+
+* Experiment by mbed and more has the static camera move seamlessly for each stage making them look like one gigantic whole.
+{{< youtube id="vY2bwvFyg_A" >}}
+
+* Duckstep by Knots
+{{< youtube id="bO2M9D9G29Y" start="41" >}}
+
+* Skeletal Shenanigans by YoReid & Airz has a cannonball section that while implements a continuous transition in the cannonball, the use of scale triggers also make the part lag, especially for lower-end devices.
+
+{{< youtube id="AKqLAchDj4k" start="42" >}}
 
 # 6: Wrap Up
 
-Now you can choose which transition fits best for the part, note that usually multiple of these could work. To choose the combo that is the best or close enough, think about the environment your level takes place in and imagine which transition would make the most sense logically and/or emotionally with the song. If the player is teleporting a great distance or even between dimensions, a hard cut could be enough. If it’s not an instant teleportation or is a slower paced part, a fade could be added to soften the transition. If the player is moving continuously between environments that are too hard to integrate into each other, a screen wipe or match cut would fit more easily. What matters here is that the transitions that you choose clearly conveys your level’s vision.
+Now you can choose which transition fits best for the part, note that usually multiple of these could work.
+
+To choose the combo that is the best or close enough, think about the environment your level takes place in and imagine which transition would make the most sense logically and/or emotionally with the song. If the player is teleporting a great distance or even between dimensions, a hard cut could be enough. If it’s not an instant teleportation or is a slower paced part, a fade could be added to soften the transition. If the player is moving continuously between environments that are too hard to integrate into each other, a screen wipe or match cut would fit more easily. What matters here is that the transitions that you choose clearly conveys your level’s vision.
 
 You can have have different transitions for the entry and exit between two parts. Maybe the player can enter with a pulse fade followed by a screen wipe such as [Swingie’s TV transition](https://youtu.be/phrXeZSrGPY?si=ybCK8y20rXnz0_Ij&t=25). Or maybe, you can combine multiple transitions for the same entry/exit transition such as [STARGAZE](https://youtu.be/HxzcrtNtYw0?si=MtH8-ooU2ZY7JsAC&t=23)’s screen wipe and momentum match cut combo in the first ball part.
 
