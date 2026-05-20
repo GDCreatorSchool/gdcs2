@@ -1,20 +1,27 @@
 ---
 draft: false
-title: Bossfight Design
-weight: 7210
-date: 2024-09-18T00:00:00.000Z
-description: What makes a bossfight feel like one? Levels with bosses used to be quite limited, but Update 2.2 has broadened the scope of what you can make a boss do. And yet with more freedom comes more design choices, so this guide will explain how you can make bosses and what can contribute to its design.
 authors:
   - illusion2
+title: Game Design 4 (Bossfight Design)
+weight: 7210
+date: 2024-09-18T00:00:00.000Z
 contributors:
   - illusion2
   - psytrancegd
+description: What makes a bossfight feel like one? Levels with bosses used to be
+  quite limited, but Update 2.2 has broadened the scope of what you can make a
+  boss do. And yet with more freedom comes more design choices, so this guide
+  will explain how you can make bosses and what can contribute to its design.
 tags:
   - Grade 2
   - Game Design
+seo:
+  title: How to Make a Bossfight in Geometry Dash
+  canonical: bossfight-design
 ---
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
+
 - Bossfights have three main goals: provide thrilling action, make the player think critically, and help the player learn the boss effectively.
 - Decision-making is one of the most important parts of boss design, which you can emphasize by mixing the concept of risk vs reward into your boss.
 - You can help the player learn the boss more easily by making sure the boss is responsive and gives enough visual information to the player.
