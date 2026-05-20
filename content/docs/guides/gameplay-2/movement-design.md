@@ -1,21 +1,24 @@
 ---
 draft: false
-title: Movement Design
-weight: 7190
-date: 2024-11-30T00:00:00.000Z
-description: Movement is a core aspect of any game, and can make or break a game’s immersion and enjoyability. This guide will cover many fundamental details in the process of designing good movement systems.
 authors:
   - interestex
+title: Game Design 2 (Movement Design)
+weight: 7190
+date: 2024-11-30T00:00:00.000Z
 contributors:
   - interestex
   - illusion2
   - psytrancegd
+description: Movement is a core aspect of any game, and can make or break a
+  game’s immersion and enjoyability. This guide will cover many fundamental
+  details in the process of designing good movement systems.
 tags:
   - Grade 2
   - Game Design
 ---
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
+
 - Movement is the core of most systems and can make something as simple as traversing feel fun.
 - Players should be able to see, hear, and expect a motion as soon as an input is executed.
 - Movements should feel consistent to refine accuracy and skill as opposed to feeling random.
