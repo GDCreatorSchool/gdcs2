@@ -22,6 +22,7 @@ tags:
 ---
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
+
 - Level Design is divided into two parts: Room Design and World Design.
 - Room Design is how you create small sections or “rooms” of gameplay. This requires an objective for the player, obstacles they must overcome to reach the objective, and a Critical Path through the room.
 - World Design is how you combine rooms to make larger areas. This is an important way to weave Pacing and Flow into your gameplay. You can also make use of design patterns and Cognitive Mapping to help players learn what’s in an area.
