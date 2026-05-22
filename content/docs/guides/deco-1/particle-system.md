@@ -1,16 +1,19 @@
 ---
 draft: false
-title: Particle System
-weight: 5033
-date: 2023-11-01T00:00:00.000Z
-description: The particle system, while extremely powerful, can be daunting. This is especially due to the number of options, and values. However, with this guide and a little practice, you should be able to navigate the system with at least a little more confidence.
 authors:
   - komatic5
   - naem.less
+title: Particle System
+weight: 5033
+date: 2023-11-01T00:00:00.000Z
 contributors:
   - komatic5
   - naem.less
   - halfcookedramen
+description: The particle system, while extremely powerful, can be daunting.
+  This is especially due to the number of options, and values. However, with
+  this guide and a little practice, you should be able to navigate the system
+  with at least a little more confidence.
 tags:
   - Grade 1
   - Deco Features
@@ -130,6 +133,9 @@ Finally, you can use the numbered buttons to quickly change particle parameters:
 The **C** button doesn't have a purpose at the time of writing. Alternatively, the **black square** to its right lets you set a background color for the particle viewer.
 
 {{< youtube _iBZWxMGrrA >}}
+
+** **
+
 **Video:**
 
 {{< youtube -744rW8WKmA >}}
