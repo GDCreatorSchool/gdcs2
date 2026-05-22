@@ -1,19 +1,26 @@
 ---
 draft: false
+authors:
+  - intercomprehensible
 title: Mechanics 4 (Decision-Making)
 weight: 7040
 date: 2025-03-01T00:00:00.000Z
-desccription: This guide explains different kinds of choices (obvious, uninformed, and interested), how you can promote further strategy with tradeoffs, and the concept of Risk vs Reward.
-authors:
-  - intercomprehensible
 contributors:
   - intercomprehensible
   - illusion2
   - psytrancegd
   - komatic5
+description: Have you ever wondered how game designers make compelling decisions
+  that leave you thinking for hours on end? Maybe you’ve spent a lot of time
+  carefully optimizing your gear and accessories, or maybe you were stumped by a
+  puzzle that ended up clicking in a satisfying way. These are examples of
+  decision making, which we’ll cover the fundamentals of in this guide.
 tags:
   - Grade 2
   - Mechanics
+desccription: This guide explains different kinds of choices (obvious,
+  uninformed, and interested), how you can promote further strategy with
+  tradeoffs, and the concept of Risk vs Reward.
 ---
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
@@ -24,8 +31,6 @@ tags:
 {{< /callout >}}
 
 ** **
-
-Have you ever wondered how game designers make compelling decisions that leave you thinking for hours on end? Maybe you’ve spent a lot of time carefully optimizing your gear and accessories, or maybe you were stumped by a puzzle that ended up clicking in a satisfying way. These are examples of decision making, which we’ll cover the fundamentals of in this guide.
 
 # 1: What are choices?
 
@@ -45,8 +50,6 @@ Obvious choices are basically the opposite of uninformed choices. The informatio
 Again, if you think about it, is this really a choice at all? The decision is very obvious and thus devoid of any meaningful strategy.
 
 Coming back to the previous game example, imagine one of the games was received incredibly well, while the other was critiqued heavily. Which one would you pick now?
-
-** **
 
 However, there is still a use to an obvious choice. They’re useful in tutorials, but if you make the obvious choice itself interesting/unique, it can provide lots of depth to other choices down the line. If the obvious choice is supported by information that is difficult to uncover, it will provide much more engagement even though there’s one obvious solution. Think of it like a puzzle; one answer, still interesting.
 
@@ -129,15 +132,13 @@ Hollow Knight also implements risk and reward in a neat way. Players unlock trin
 
 {{< img src="https://lh3.googleusercontent.com/d/1RqGB-S9ikffapmKNH_xuuNCbebF7wGaB" >}}
 
--# Less powerful charms take up less notches. Note that there are less charms and notches than there otherwise would’ve been, because they’re not unlocked yet.
+Less powerful charms take up less notches. Note that there are less charms and notches than there otherwise would’ve been, because they’re not unlocked yet.
 
 {{< img src="https://lh3.googleusercontent.com/d/1VWsTUP9AODh2urG0r9Jf_cp-9b5xCT0j" >}}
 
-** **
-
--# More powerful charms take up more notches. This screenshot is from later in the game, which shows how they’re gradually unlocked during progression, but you can also see that the Shaman Stone charm costs 3 notches due to being extremely useful.
+More powerful charms take up more notches. This screenshot is from later in the game, which shows how they’re gradually unlocked during progression, but you can also see that the Shaman Stone charm costs 3 notches due to being extremely useful.
 
 However, I'd like to state that Risk vs Reward is one of those concepts that is very difficult to implement properly. If done incorrectly, it can lead to a game being more unbalanced than if it had not implemented risk vs reward.
 
-Adding on to this, it’s definitely worth knowing that not every game needs risk vs reward mechanics. As with a lot of other concepts, it’s important to have your target audience in mind when choosing to implement or exclude them.
+Adding on to this, it’s definitely worth knowing that not every game needs risk vs reward mechanics. As with a lot of other concepts, **it’s important to have your target audience in mind when choosing to implement or exclude them**.
 
