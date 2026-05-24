@@ -8,7 +8,9 @@ date: 2025-03-01T00:00:00.000Z
 contributors:
   - komatic5
   - illusion2
-description: Choosing gamemodes and gameplay elements for your levels is an important process, but one which many people mess up nonetheless. This guide will prepare you to use gamemodes properly.
+description: Choosing gamemodes and gameplay elements for your levels is an
+  important process, but one which many people mess up nonetheless. This guide
+  will prepare you to use gamemodes properly.
 tags:
   - Grade 1
   - Gameplay Basics
@@ -17,6 +19,7 @@ tags:
 * Everything you do in gameplay, especially your gamemode choices, should be with a purpose.
 * Each gamemode has unique properties that allow them to function in different situations. These properties should be used to choose your gamemodes.
 * There are a lot of unique interactions between gamemodes and other gameplay objects which you can use to your advantage.
+* This guide contains an overview on each gamemode's properties and interactions, and also includes good use cases for each gamemode.
 {{< /callout >}}
 
 - - -
@@ -65,6 +68,8 @@ Cube is the simplest gamemode. Since it always moves on a preset path, it’s in
 The Ship is probably the most complicated gamemode for the player to use, requiring a deep understanding of the game’s physics to master. As you can see from the image above, the Ship takes a long time to go back up after clicking whenever the player is falling down, but goes up almost immediately when the player is moving up. It’s not always snappy and responsive, and requires a lot of player control. Because the Ship gets floatier the higher the speed, slow Ship parts will require much more control than fast Ships.
 
 This gamemode is typically quite floaty, but you can make good use of it in fast & snappy parts thanks to orbs, giving it an edge over a gamemode like the Robot. This also means it has countless ways to be used; you can create simple straight flies, tight curved sections like the one in Astral Divinity, and so on.
+
+In 2.2, RobTop updated the ship gamemode's physics while upside down and in a dual to be consistent with the regular ship gravity. In levels created prior to this change, the upside down and dual gravities are much stronger. You can revert this change in the 2.2 editor and modify other physics changes under Legacy Options in the editor's settings page.
 
 {{< youtube Wt76QZqF-os >}}
 
@@ -259,7 +264,7 @@ This part is repetitive, slow, and floaty, hence why I chose the UFO. I made use
 
 Wave is incredibly unique because it has no physics whatsoever and has little to no interactions with anything gameplay-related. Having no diversity in your gameplay can get incredibly boring, which is why you should take advantage of everything you have. As another reminder: Wave is incredibly fast, precise, and the lack of physics makes it extremely jarring to use on a whim. Make sure you’re conscious of this whenever swapping to the Wave gamemode, as lots of perfectly good levels have developed chokepoints from this. If you’re not careful when transitioning to or from the gamemode, you’ll get inconsistency in your level.
 
-That aside, let’s look at what the Wave can actually do. The only orbs that actually work with the Wave are the blue, green, dash, and purple dash orbs. The blue and green are functionally the same, flipping your gravity, but you won’t see any actual difference in your trail until you release. The dash orbs are fun to use on the other hand, as the freedom of direction combined with the sharp and straight trail of the Wave work very well together. In addition, the Wave dies on contact with any surface unless you’ve placed the D block; make sure to take advantage of this as well.
+That aside, let’s look at what the Wave can actually do. The only orbs that actually work with the Wave are the blue, green, dash, spider, and purple dash orbs. The blue and green are functionally the same, flipping your gravity, but you won’t see any actual difference in your trail until you release. The dash orbs are fun to use on the other hand, as the freedom of direction combined with the sharp and straight trail of the Wave work very well together. The spider orb can also be used to snap the wave to a surface and change its gravity. In addition, the Wave dies on contact with any surface unless you’ve placed the D block; make sure to take advantage of this as well.
 
 This is still a relatively fast part yet different enough from the previous parts, so I chose wave. I made use of blue orbs, dash orbs, and D blocks wherever I could to keep the gameplay interesting.
 
@@ -283,13 +288,13 @@ Like the Cube, holding after of a black orb will perform a click as soon as you 
 
 {{< youtube VSw1c3L8szo >}}
 
-This is the Spider part in my level, rounding out this part of the drop. This specific part of the song is higher energy compared to the Cube, hence why I’m choosing a snappier gamemode. However, it’s still very similar, so I avoided using a gamemode like Wave. You can see that I’m using a lot of pads to emphasize the clicks as well as orbs to make the gameplay way more interesting.
+This is the spider part in my level, rounding out this part of the drop. This specific part of the song is higher energy compared to the cube, hence why I’m choosing a snappier gamemode. However, it’s still very similar, so I avoided using a gamemode like Wave. You can see that I’m using a lot of pads to emphasize the clicks as well as orbs to make the gameplay way more interesting.
 
 {{< youtube WgDc_lDeRvc >}}
 
 ## Swing
 
-Swing is widely considered as the worst gamemode due to how badly creators use it. They tend to slap it on top of Ship gameplay without considering what the Swing does best: big arcs and curves. Swing uses big curves best, so make sure you take advantage of that. Another important part of Swing is how long it takes for you to actually see your input. You can either you can use the gamemode’s unresponsiveness to your advantage (like BUTTON MASHER by Viprin & More), or you can somewhat remedy it using the gravity trigger to increase the player’s gravity.
+Swing is widely considered as the "worst gamemode" to many players and creators alike primarily due to how inexperienced creators can be at using it. They tend to slap it on top of Ship gameplay without considering what the Swing does best: big arcs and curves. Swing uses big curves best, so it is best to take advantage of that. Another important part of Swing is how long it takes for you to actually see your input. You can either you can use the gamemode’s unresponsiveness to your advantage (like BUTTON MASHER by Viprin & More), or you can somewhat remedy it using the gravity trigger to increase the player’s gravity to make it more similar to the old dual ball physics.
 
 {{< youtube 7b6NTNIa2Lg >}}
 
