@@ -20,11 +20,13 @@ tags:
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
 
 
+
 - Timing measures movement in terms of frames: slow moving objects have more frames in between while fast moving objects have less frames.
 - Slow timing usually communicates the following: delay, old age, heaviness, grace, timelessness, patience.
 - Fast timing usually communicates the following: responsiveness, youth, lightweight, flashiness, rush hour, deadlines.
 - Easing explains how these frames are spaced out. Due to how objects tend to accelerate and decelerate when they move, it also can be translated in animation: Slow In, Slow Out.
 - Within the context of Geometry Dash, some triggers are equipped with their own easings that you can choose; some of which will have more versatile use cases than others.
+
 
 
 {{< /callout >}}
@@ -159,6 +161,8 @@ You have the freedom to use easings to communicate how an object moves and behav
 
 {{< youtube SP9mU9VACjc >}}
 
-
-
 # 3. Examples
+
+![](https://ssb.wiki.gallery/images/thumb/0/00/GanondorfFSmashSSBU.gif/300px-GanondorfFSmashSSBU.gif "Ganondorf attack gif")
+
+Take this attack animation for example. Because the sword is extremely heavy, Ganondorf cannot swing it immediately, due to the inertia. The animation shows this by exaggerating the ease-in of the animation, to show him fighting against the sword's weight, before violently striking the ground from gravity.
