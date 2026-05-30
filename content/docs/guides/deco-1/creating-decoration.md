@@ -29,6 +29,7 @@ aliases:
 ---
 
 {{< callout context="note" title="TLDR – What this guide covers" icon="outline/info-circle" >}}
+
 - There are many types of decoration you can create; elements of deco are things like block designs and backgrounds, while styles are *how* you make those things.
 - It's important to stay organized when decorating. Use the editor's features, like editor layers, z layers, colors, and triggers, to organize your level in a way that's comfortable for you.
 - To actually decorate, start by getting a deco idea and references. Then use those references to come up with basic shapes and details for your deco. Finally, get feedback from other creators and repeat the process.
