@@ -23,11 +23,13 @@ tags:
 
 
 
+
 - Timing measures movement in terms of frames: slow moving objects have more frames in between while fast moving objects have less frames.
 - Slow timing usually communicates the following: delay, old age, heaviness, grace, timelessness, patience.
 - Fast timing usually communicates the following: responsiveness, youth, lightweight, flashiness, rush hour, deadlines.
 - Easing explains how these frames are spaced out. Due to how objects tend to accelerate and decelerate when they move, it also can be translated in animation: Slow In, Slow Out.
 - Within the context of Geometry Dash, some triggers are equipped with their own easings that you can choose; some of which will have more versatile use cases than others.
+
 
 
 
@@ -176,12 +178,12 @@ Take this attack animation for example. Because the sword is extremely heavy, Ga
 
 You can also take Sonic's sudden halt for example. Because he runs faster than the speed of light, he cannot just "stop moving" (Unless you break the laws of physics, of course.) That is why he goes into a dramatic sliding animation to fight his intense forward force and momentum. It mimics friction and the sudden deceleration of speed, making the viewer see how fast Sonic was before the stop.
 
-
-
 You can even show emotion through timing.
 
 ![](https://media.tenor.com/hKhRBbx1Oi8AAAAM/squidward-squidward-meme.gif)
 
 As you can see, Squidward clearly looks happy and relaxed, as he plops into the chair with fast movement. The fast timing directly correlates to the positive energy. The quick motion and the way he "plops" onto the chair and bounces shows that he feels good, rather then it being instantaneous with a hard impact where he just plummets onto it. On the other hand, if Squidward were tired, he'd probably get on the chair slowly, instead of quickly.
 
-![](https://media1.tenor.com/m/8UmntBwQJSsAAAAd/spongebob-spongebob-squarepants.gif)
+![](https://media1.tenor.com/m/8UmntBwQJSsAAAAd/spongebob-spongebob-squarepants.gif "squidward annoyed putting back chair")
+
+Or even here, where  Squidward is annoyed and quickly packs up his
