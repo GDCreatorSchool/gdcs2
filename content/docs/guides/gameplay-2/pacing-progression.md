@@ -9,8 +9,11 @@ contributors:
   - creeperiv
   - komatic5
   - azgamezyt
-description: |-
-  Pacing and Progression refer to how elements of a level change over time and the effects that this change can produce. Almost any gameplay element can be used to create and alter pacing and progression.
+description: >-
+  Pacing and Progression refer to how elements of a level change over time and
+  the effects that this change can produce. Almost any gameplay element can be
+  used to create and alter pacing and progression.
+
   Pacing tends to refer specifically to changes in either speed or intensity, whereas progression whilst including speed and intensity can refer to any element that evolves over the course of a level.
 tags:
   - Grade 2
@@ -25,7 +28,7 @@ tags:
 
 - - -
 
-# The Flow State
+# 1: The Flow State
 
 When we describe Pacing, another term related to it is the **Flow State**. The Flow State is a **mental state where you put intense concentration into one task and lose focus on everything else**. You may have also heard it referred to as “the zone” before.
 
@@ -37,7 +40,7 @@ Pacing is critical to inducing flow and getting and maintaining the player’s a
 * **Rapid Feedback:** You should know immediately if your actions will have a good effect or a bad one. Ideally, *an incorrect input should kill you quickly* so that you can more easily associate that death with the incorrect input. This helps a lot with learning what to do and what to avoid.
 * **Adequate Challenge:** There should be a good balance between your skill and the level’s difficulty. This helps prevent it from being too boring or too stressful. Typically this is more the responsibility of the player choosing a level for their skill level, as you can't make a level for everyone, but maintaining a reasonably consistent difficulty within the level is generally ideal.
 
-# Micro Flow
+# 2: Micro Flow
 
 **Micro flow** is a form of short-term flow that occurs from one second to the next as you play. It’s the main consideration when you’re *building* your gameplay.
 
@@ -47,7 +50,7 @@ As you may expect, the prior factors – clear goals, rapid feedback, and adequa
 * **Encouragement**: Your level should give the feeling whatever is done makes a sense of progression. This means that as the level creator, you can sometimes cheat the player a little bit and give them more room for error. This will be discussed more in the [Fairness](/docs/guides/gameplay-2/fairness/) guide.
 * **Positive Feedback:** Making the player feel good will keep them coming back in the short term. In your level, you can use visuals like decorations that respond to the player and encourage them. This will once again be discussed in-depth in the future.
 
-# Examples of Proper Pacing
+# 3: Examples of Proper Pacing
 
 One example of a level with good pacing would be **the second section of The Sewers**. This part has been designed to incorporate **autoscrolling**, a style of pacing in platformers where the camera's **field of view** *constantly* moves in a direction as the obstacles are unfolded in front of the player.
 
