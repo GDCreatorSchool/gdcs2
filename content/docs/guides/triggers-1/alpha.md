@@ -16,7 +16,9 @@ tags:
 ---
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
 
+
 - Alpha triggers work by setting any group of objects to a set opacity and also the time it takes to fade those objects to said opacity.
+
 
 
 {{< /callout >}}
