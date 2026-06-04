@@ -91,6 +91,8 @@ When choosing an easing, **think about the movement you’re trying to make**. A
 
 1. None - Completely linear and moves in a constant velocity. Usually for robotic movements or instant movements where easings are irrelevant.
 
+{{< youtube v=pPfMCqZe360 >}}
+
 {{< img src="https://lh3.googleusercontent.com/d/1YuQS6io6SiRjoP9pIvZSvVb2CKxbhSl8" >}}
 
 2. Ease In Out - Mildly faster velocity at the middle of the motion.
