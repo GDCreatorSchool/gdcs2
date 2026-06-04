@@ -1,5 +1,7 @@
 User-agent: *
 Disallow: /admin/
+Disallow: /tags/
+Disallow: /contributors/
 Sitemap: {{ "/sitemap.xml" | absURL }}
 
 
