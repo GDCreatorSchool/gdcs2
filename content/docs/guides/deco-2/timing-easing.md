@@ -25,11 +25,13 @@ tags:
 
 
 
+
 - Timing measures movement in terms of frames: slow moving objects have more frames in between while fast moving objects have less frames.
 - Slow timing usually communicates the following: delay, old age, heaviness, grace, timelessness, patience.
 - Fast timing usually communicates the following: responsiveness, youth, lightweight, flashiness, rush hour, deadlines.
 - Easing explains how these frames are spaced out. Due to how objects tend to accelerate and decelerate when they move, it also can be translated in animation: Slow In, Slow Out.
 - Within the context of Geometry Dash, some triggers are equipped with their own easings that you can choose; some of which will have more versatile use cases than others.
+
 
 
 
@@ -89,86 +91,31 @@ When choosing an easing, **think about the movement you’re trying to make**. A
 
 ### Easing Options
 
-1. None - Completely linear and moves in a constant velocity. Usually for robotic movements or instant movements where easings are irrelevant.
+{{< youtube pPfMCqZe360 >}}
 
-{{< youtube v=pPfMCqZe360 >}}
 
-{{< img src="https://lh3.googleusercontent.com/d/1YuQS6io6SiRjoP9pIvZSvVb2CKxbhSl8" >}}
 
-2. Ease In Out - Mildly faster velocity at the middle of the motion.
-
-   {{< img-grid >}}
-   {{< img src="https://lh3.googleusercontent.com/d/16TafhBKtUCQZMLwjN7FKlgI7ADbqxR57" >}}
-
-   {{< img src="https://lh3.googleusercontent.com/d/15PDb44Gm7P_3snqOksNgYg4b2EPlvPry" >}}
-
-   {{< img src="https://lh3.googleusercontent.com/d/1-5L4pm6ojmnQLK3V4N3gl-LvQgxMRikF" >}}
-   {{< /img-grid >}}
-3. Ease In - Mildly faster velocity at the end of the motion.
-4. Ease Out - Mildly faster velocity at the beginning of the motion. HOWEVER, due to how this easing was coded, it won’t accurately follow the graph below, even if the difference is subtle. As an alternative, you can stack 2 different move triggers where one has the Ease In and None Easing as long as the values cancel each other.
-5. Elastic In Out - Overshoots the  elastic velocity at the beginning and end of the motion.
-
-{{< img src="https://lh3.googleusercontent.com/d/1fapFI9kDFqkzAj6HQyHegoJ_1Agfd9ZG" >}}
-
-6. Elastic In - Overshoots elastic velocity at the end of the motion. Think of this like pulling a rubber band back before letting it fly.
-
-{{< img src="https://lh3.googleusercontent.com/d/12irD6jzxe2Gb7lYJqnjCHugoMGQ7oLsQ" >}}
-
-7. Elastic Out - Overshoots elastic velocity at the beginning of the motion. Think of this like a car screeching to a halt; you’ll move forward as the car brakes, then backwards into your seat after.
-
-{{< img src="https://lh3.googleusercontent.com/d/1rcFjqMhjt6oc8_GJELs-xXFQFmHejDi3" >}}
-
-8. Bounce In Out - Provides bounce-back velocity at the beginning and end of the motion. Usually for chaotic and erratic movements.
-
-{{< img src="https://lh3.googleusercontent.com/d/1XqoOoMi7ngV08CyGR0WDsRdJwk3L2SJk" >}}
-
-9. Bounce In - Bounce-back velocity at the end of the motion. This is usually for objects that are building up their jumps like a spring.
-
-{{< img src="https://lh3.googleusercontent.com/d/1XCtn9RfjKV9RTEo58xkaI0OZKDap2BjW" >}}
-
-10. Bounce Out - Bounce-back velocity at the beginning of the motion. Usually for objects to move into place in a more lenient and lively manner
-
-{{< img src="https://lh3.googleusercontent.com/d/1BaiwkWziKlnoLtjXrMv_2hL8fqq4D9ok" >}}
-
-11. Exponential In Out - Sharp velocity at the beginning and end of the motion. Usually for smooth movements that require a large contrast in its velocities to achieve an effect, such as motion graphics.
-
-{{< img src="https://lh3.googleusercontent.com/d/1xV_9_-EWiDF1Q5G9-n4mUm09coJCwlLK" >}}
-
-12. Exponential In - Sharp velocity at the end of the motion. Usually for objects accelerating as they exit.
-
-{{< img src="https://lh3.googleusercontent.com/d/1iDgvTkkesNBSvyAw8f67XsCYV0T_9Mwz" >}}
-
-13. Exponential Out - Sharp velocity at the beginning of the motion. One good use of it is for air particles to swoosh quickly at a drop section.
-
-{{< img src="https://lh3.googleusercontent.com/d/1rG2_FisJsnOnwA1fngw9Rl-i1p14MCp7" >}}
-
-14. Sine In Out - Sine wave-like velocity at the beginning and end of the motion. Usually for floaty S-curved movements
-
-{{< img src="https://lh3.googleusercontent.com/d/1urQAJZ7OQyKne6ggqkJJgM3XuM_FEg29" >}}
-
-15. Sine In - Sine wave-like velocity at the end of the motion creating a gradual exit from the screen.
-
-{{< img src="https://lh3.googleusercontent.com/d/113e6sDiquhZlX_C45qPN8LgDtPqcXYLM" >}}
-
-16. Sine Out - Sine wave-like velocity at the beginning of the motion. Creating a gradual entrance to the screen.
-
-{{< img src="https://lh3.googleusercontent.com/d/1miY-IwZsbnHicaaw6KQS4G6LpvWtK72L" >}}
-
-17. Back In Out - Slight anticipation and overshoot at the beginning and end of the motion. Usually for skittish or giddy movements.
-
-{{< img src="https://lh3.googleusercontent.com/d/1_MuZr-hw8l_dvHWfA1HWwHyqiIDIbdva" >}}
-
-18. Back In - Slight anticipation at the beginning of the motion
-
-{{< img src="https://lh3.googleusercontent.com/d/1yZdaQXHWxnmvzZgsHlhr2xUwB7t1h5ve" >}}
-
-19. Back Out - Slight overshoot at the end of the motion
-
-{{< img src="https://lh3.googleusercontent.com/d/1oanV2tX-cUTuhBZxdwwk9k7DR3Ye0Mag" >}}
+2. None - Completely linear and moves in a constant velocity. Usually for robotic movements or instant movements where easings are irrelevant.
+3. Ease In Out - Mildly faster velocity at the middle of the motion.
+4. Ease In - Mildly faster velocity at the end of the motion.
+5. Ease Out - Mildly faster velocity at the beginning of the motion. HOWEVER, due to how this easing was coded, it won’t accurately follow the movement in the video, even if the difference is subtle. As an alternative, you can stack 2 different move triggers where one has the Ease In and None Easing as long as the values cancel each other. (Or you can use sine out instead)
+6. Elastic In Out - Overshoots the elastic velocity at the beginning and end of the motion.
+7. Elastic In - Overshoots elastic velocity at the end of the motion. Think of this like pulling a rubber band back before letting it fly.
+8. Elastic Out - Overshoots elastic velocity at the beginning of the motion. Think of this like a car screeching to a halt; you’ll move forward as the car brakes, then backwards into your seat after.
+9. Bounce In Out - Provides bounce-back velocity at the beginning and end of the motion. Usually for chaotic and erratic movements.
+10. Bounce In - Bounce-back velocity at the end of the motion. This is usually for objects that are building up their jumps like a spring.
+11. Bounce Out - Bounce-back velocity at the beginning of the motion. Usually for objects to move into place in a more lenient and lively manner
+12. Exponential In Out - Sharp velocity at the beginning and end of the motion. Usually for smooth movements that require a large contrast in its velocities to achieve an effect, such as motion graphics.
+13. Exponential In - Sharp velocity at the end of the motion. Usually for objects accelerating as they exit.
+14. Exponential Out - Sharp velocity at the beginning of the motion. One good use of it is for air particles to swoosh quickly at a drop section.
+15. Sine In Out - Sine wave-like velocity at the beginning and end of the motion. Usually for floaty S-curved movements
+16. Sine In - Sine wave-like velocity at the end of the motion creating a gradual exit from the screen.
+17. Sine Out - Sine wave-like velocity at the beginning of the motion. Creating a gradual entrance to the screen.
+18. Back In Out - Slight anticipation and overshoot at the beginning and end of the motion. Usually for skittish or giddy movements.
+19. Back In - Slight anticipation at the beginning of the motion
+20. Back Out - Slight overshoot at the end of the motion
 
 You have the freedom to use easings to communicate how an object moves and behaves. Even more, you can stack those easings to create more complex movements. For instance, by stacking Sine In and Sine Out easings, you can create curvy movements like the example below.
-
-{{< youtube SP9mU9VACjc >}}
 
 # 3. Examples
 
