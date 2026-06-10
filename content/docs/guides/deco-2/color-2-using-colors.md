@@ -1,14 +1,16 @@
 ---
 draft: false
-title: Color 2 (Using Colors)
-date: 2023-11-30T00:00:00.000Z
-weight: 8020
-description: In this guide, we’ll explore colors further in depth. This guide will touch on how to masterfully utilize the tricky-to-use greens and grays. Then, it will elaborate more on color gradients, tints, and accents.
 authors:
   - kde
+title: Color 2 (Using Colors)
+weight: 8020
+date: 2023-11-30T00:00:00.000Z
 contributors:
   - tv_box
   - kde
+description: In this guide, we’ll explore colors further in depth. This guide
+  will touch on how to masterfully utilize the tricky-to-use greens and grays.
+  Then, it will elaborate more on color gradients, tints, and accents.
 tags:
   - Grade 2
   - Light & Color
@@ -42,8 +44,7 @@ When contrasted with another hue effectively, grays can often enhance the effect
 
 {{< img src="https://lh3.googleusercontent.com/d/1dX6kOb04K1JMFuw-enjHjQNEK2TnVxl8" >}}
 
-An example in GD is shown \[in this brief ship part](https://youtu.be/h0-n3qLVQ5k >}} t=18
-) by Xender Game. The relatively desaturated blue tones make up most of the color composition, allowing the more saturated red elements to stand out.
+An example in GD is shown [in this brief ship part](<https://youtu.be/h0-n3qLVQ5k>) by Xender Game. The relatively desaturated blue tones make up most of the color composition, allowing the more saturated red elements to stand out.
 
 ## Grays as a Transitional Color
 
