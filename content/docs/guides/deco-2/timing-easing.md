@@ -93,7 +93,7 @@ When choosing an easing, **think about the movement you’re trying to make**. A
 
 {{< youtube pPfMCqZe360 >}}
 
-You have the freedom to use easings to communicate how an object moves and behaves. Even more, you can stack those easings to create more complex movements. For instance, by stacking Sine In and Sine Out easings, you can create curvy movements, here
+You have the freedom to use easings to communicate how an object moves and behaves. Even more, you can stack those easings to create more complex movements. For instance, by stacking Sine In and Sine Out easings, you can create curvy movements, [here.](https://www.gdcreatorschool.com/docs/guides/triggers-1/stacking/#3-combined-effects)
 
 # 3. Examples
 
@@ -116,3 +116,9 @@ As you can see, Squidward clearly looks happy and relaxed, as he plops into the 
 ![](https://media1.tenor.com/m/8UmntBwQJSsAAAAd/spongebob-spongebob-squarepants.gif "squidward annoyed putting back chair")
 
 Or even here, where  Squidward is annoyed and quickly packs up his lawn chair. If it had a smooth, slow ease, it would probably look like he was gently packing up everything, looking happy and calm. If it didn't have any real timing at all, the movement would look robotic, like an emotionless task being completed. Because it starts slow and Squidward rushes back to his house, it tells us he is doing that out of pure spite and annoyance.
+
+
+
+Aside from all of that, you can even leave a big impact on the viewer as well. 
+
+Take a look at Jiequan from Nine Sols.
