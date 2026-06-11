@@ -112,6 +112,7 @@ collections:
   # gameplay
   - { name: gameplay-1, label: Basic Gameplay, folder: "content/docs/guides/gameplay-1", preview_path: "docs/guides/gameplay-1/{{filename}}", <<: *guide_base }
   - { name: gameplay-2, label: Intermediate Gameplay, folder: "content/docs/guides/gameplay-2", preview_path: "docs/guides/gameplay-2/{{filename}}", <<: *guide_base }
+  - { name: gameplay-3, label: Advanced Gameplay, folder: "content/docs/guides/gameplay-3", preview_path: "docs/guides/gameplay-3/{{filename}}", <<: *guide_base }
 
   # triggers
   - { name: triggers-1, label: Basic Triggers, folder: "content/docs/guides/triggers-1", preview_path: "docs/guides/triggers-1/{{filename}}", <<: *guide_base }
