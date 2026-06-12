@@ -8,7 +8,9 @@ date: 2024-09-06T00:00:00.000Z
 contributors:
   - electrifyxd
   - psytrancegd
-description: Making sound effects to include in your level will make the experience much more immersive. This guide will explain how to find sound effects to fit your level.
+description: Making sound effects to include in your level will make the
+  experience much more immersive. This guide will explain how to find sound
+  effects to fit your level.
 tags:
   - Grade 2
   - Sound Design
@@ -101,4 +103,4 @@ Furthermore, I can enable FFT to stretch the audio without having it sound digit
 
 And… voila! Now this sounds precisely like what I wanted out of my “Bald Eagle” calling sound effect, and I can finally use it for my **TOTALLY AMERICAN-THEMED GD LEVEL!!!**
 
-(video to be added)
+{{< youtube Sl29xVnj7Z0 >}}
