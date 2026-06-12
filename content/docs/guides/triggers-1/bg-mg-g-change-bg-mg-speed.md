@@ -1,14 +1,17 @@
 ---
 draft: false
+authors:
+  - eyz
 title: BG/MG/G Change & BG/MG Speed
 weight: 3470
 date: 2024-01-21T00:00:00.000Z
-description: This guide explains how the BG/MG/G Change & BG/MG Speed triggers work. They're triggers that let you change your level's background, midground, and ground, the speed of your background or midground, and the position of the midground.
-authors:
-  - eyz
 contributors:
   - komatic5
   - eyz
+description: This guide explains how the BG/MG/G Change & BG/MG Speed triggers
+  work. They're triggers that let you change your level's background, midground,
+  and ground, the speed of your background or midground, and the position of the
+  midground.
 tags:
   - Grade 1
   - Effect Triggers
@@ -22,29 +25,30 @@ tags:
 {{< /callout >}}
 
 ** **
+
 # 1: Recap
 
 In case you haven't read the editor guides, here is a quick recap of how backgrounds, midgrounds, and grounds work. Geometry Dash has a variety of backgrounds and grounds you can use, with midgrounds being added in Update 2.2.
 
-{{< img src="https://lh3.googleusercontent.com/d/16WTwgIPVZ2cioM4c60zEdHTRbUikJqcH" >}}
+{{< youtube 9bkYAJDwna0 >}}
 
 To change any of these options, go to the :Settings: Level Settings page and set them through the UI given. Note that if you're playing on version 2.200 (such as being on mobile), adding a MG to your level will permanently lock you out of the editor.
 
-{{< img src="https://lh3.googleusercontent.com/d/1EIitpgfNqrLA1zn8UueEaavtiFraT9RT" >}}
+{{< youtube jOQVZ_QocTw >}}
 
-# 2: :BGChangeTrigger: BG, MG, & G Change Triggers
+# 2: BG, MG, & G Change Triggers
 
-These triggers let you change the BG, MG, and G currently in your level. Their UIs all look somewhat like this when you click :EditObject: Edit Object.
+:BGChangeTrigger: These triggers let you change the BG, MG, and G currently in your level. Their UIs all look somewhat like this when you click :EditObject: Edit Object.
 
 {{< img src="https://lh3.googleusercontent.com/d/1LEq4LkGM-QMV_RgkJx-hPArIky8tkdsx" >}}
 
 When you click on the button in the middle, you'll be able to select a new BG, MG, or G for your level. You may also make these triggers Touch or Spawn Triggered of course.
 
-{{< img src="https://lh3.googleusercontent.com/d/1CS7n72SPQW78J-pYZ0r1nF8DMX5diq7G" >}}
+{{< youtube Bu4VhA8erj8 >}}
 
-# 3: :BGSpeedTrigger: BG & MG Speed Triggers
+# 3: BG & MG Speed Triggers
 
-These triggers let you change the speed at which your BG and MG move.
+:BGSpeedTrigger: These triggers let you change the speed at which your BG and MG move.
 
 {{< img src="https://lh3.googleusercontent.com/d/12W9r6DeNBNT3k-_VbFYT4zG_valVURiz" >}}
 
@@ -52,7 +56,7 @@ The **Mod X** and **Mod Y** values are the same as in the Follow trigger and set
 
 By default these are set to 0.1, but there are other criteria which determine how fast they move - most notably the :TimeWarpTrigger: Timewarp trigger and your speed changes.
 
-{{< img src="https://lh3.googleusercontent.com/d/1KUpA9-JbdvWghP_dRHCrgoKWgPgoO2Gk" >}}
+{{< youtube jjLmU5pvNfU >}}
 
 # 4: MidGround Trigger
 
@@ -60,7 +64,7 @@ You may also change the position of your level's MG using this trigger. As with 
 
 {{< img src="https://lh3.googleusercontent.com/d/11XJa36O8a0r2UJlh3eqng4QAO4bRpwP_" >}}
 
-{{< img src="https://lh3.googleusercontent.com/d/1OcI0uZE53bdesS6RrDXUpdRaW8_E3OiX" >}}
+{{< youtube alf7q7p3tZ0 >}}
 
 # 5: Additional BG Changes
 
