@@ -27,11 +27,13 @@ tags:
 
 
 
+
 - Timing measures movement in terms of frames: slow moving objects have more frames in between while fast moving objects have less frames.
 - Slow timing usually communicates the following: delay, old age, heaviness, grace, timelessness, patience.
 - Fast timing usually communicates the following: responsiveness, youth, lightweight, flashiness, rush hour, deadlines.
 - Easing explains how these frames are spaced out. Due to how objects tend to accelerate and decelerate when they move, it also can be translated in animation: Slow In, Slow Out.
 - Within the context of Geometry Dash, some triggers are equipped with their own easings that you can choose; some of which will have more versatile use cases than others.
+
 
 
 
@@ -121,6 +123,4 @@ Or even here, where  Squidward is annoyed and quickly packs up his lawn chair. I
 
 Aside from all of that, you can even leave a big impact on the viewer as well. 
 
-Take a look at Jiequan from Nine Sols.
-
-Take a look at this attack. When Jiequan leaps into the air slowly, it makes it feel as if the attack is slow and won't be very powerful. But in reality, the attack suddenly accelerates with immense force, which catches the player off guard. To make the strike feel heavy and powerful, the actual dash downward is only a few frames, compared to the startup with light movement. It creates high tension, a sense of danger, and strength.
+Take a look at Jiequan's attacks. When Jiequan leaps into the air slowly, it makes it feel as if the attack is slow and won't be very powerful. But in reality, the attack suddenly accelerates with immense force, which catches the player off guard. To make the strike feel heavy and powerful, the actual dash downward is only a few frames, compared to the startup with light movement. It creates high tension, a sense of danger, and strength.
