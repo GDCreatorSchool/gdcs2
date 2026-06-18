@@ -9,7 +9,11 @@ contributors:
   - averageundertalefan
   - sparktwee
   - poryii
-description: "How does a drawing come to life? For every animation movie that you’ve watched and every crazy Geometry Dash effect that you’ve seen, there are individual objects that change positions to simulate life-like movement. For the first animation principles guide, we’ll discuss two principles that communicate an object’s speed and acceleration: Timing and Easing."
+description: "How does a drawing come to life? For every animation movie that
+  you’ve watched and every crazy Geometry Dash effect that you’ve seen, there
+  are individual objects that change positions to simulate life-like movement.
+  For the first animation principles guide, we’ll discuss two principles that
+  communicate an object’s speed and acceleration: Timing and Easing."
 tags:
   - Grade 2
   - Animation
@@ -118,6 +122,8 @@ Or even here, where  Squidward is annoyed and quickly packs up his lawn chair. I
 ## Example 4: Jiequan
 
 Aside from all of that, you can even leave a big impact on the viewer as well. I will use **Jiequan from Nine Sols** as an example.
+
+{{< youtube z48S_FRQHwc >}}
 
 Take a look at these attacks. When Jiequan leaps into the air slowly, it makes it feel as if the attack is slow and won't be very powerful. But in reality, the attack suddenly accelerates with immense force, which catches the player off guard. To make the strike feel heavy and powerful, the actual dash downward is only a few frames, compared to the startup with light movement. It creates high tension, a sense of danger, and strength.
 
