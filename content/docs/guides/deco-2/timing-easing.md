@@ -123,12 +123,24 @@ As you can see, Squidward clearly looks happy and relaxed, as he plops into the 
 
 Or even here, where  Squidward is annoyed and quickly packs up his lawn chair. If it had a smooth, slow ease, it would probably look like he was gently packing up everything, looking happy and calm. If it didn't have any real timing at all, the movement would look robotic, like an emotionless task being completed. Because it starts slow and Squidward rushes back to his house, it tells us he is doing that out of pure spite and annoyance.
 
-Aside from all of that, you can even leave a big impact on the viewer as well. 
+Aside from all of that, you can even leave a big impact on the viewer as well. I will use Jiequan from Nine Sols as an example.
 
 Take a look at these attacks. When Jiequan leaps into the air slowly, it makes it feel as if the attack is slow and won't be very powerful. But in reality, the attack suddenly accelerates with immense force, which catches the player off guard. To make the strike feel heavy and powerful, the actual dash downward is only a few frames, compared to the startup with light movement. It creates high tension, a sense of danger, and strength.
 
-Another example of this is when Jiequan uses one of his Crimson Attacks, where you are forced to use the Unbounded Counter to deflect the attack, or suffer heavy damage. The Unbounded Counter takes around 0.5 seconds to charge, and Jiequan goes into a stance for around 2 seconds. This allows the player to start charging up their Unbounded Counter, treating it like a grace period. The timing forces you to master it, because Jiequan is the first bossfight you do after unlocking the Unbounded Counter.
+![](https://lh3.googleusercontent.com/d/1X_FuM2jEpouaLWqbLUOlOH-y_rx_zStg)
+
+Another example of this is when Jiequan uses one of his Crimson Attacks, where you are forced to use the Unbounded Counter to deflect the attack, or suffer heavy damage. The Unbounded Counter takes around 0.5 seconds to charge, and Jiequan goes into a stance for around 2 seconds. (Image 1) This allows the player to start charging up their Unbounded Counter, treating it like a grace period. The timing forces you to master it, because Jiequan is the first bossfight you do after unlocking the Unbounded Counter.
+
+{{< img-grid >}}
+![](https://lh3.googleusercontent.com/d/1fqOwMFflmPkeVASNPqhzIGlY04mZopLE)
+
+![](https://lh3.googleusercontent.com/d/1o3K5CUcu9QN0CySpYDkmxKB4AXFaL8_l)
+
+![](https://lh3.googleusercontent.com/d/1oegJsiWJckg5qOgyEFay_LrnHomc9iHg)
+{{< /img-grid >}}
 
 Finally, take a look at this attack where Jiequan throws mines at the player where they explode soon after. Unlike his quick and striking blade attacks, the mines follow unpredictable movements which can catch the player off guard. The mines themselves ease in, then start falling to the ground relatively slowly, which gives the player time to react. Instead of testing the player's reaction time, the slow timing makes the player think. It gives them time to ask themselves: "Where can I move without being hit?" This creates clear contrast due to the clear opposition in comparison to his agile strikes.
+
+![](https://lh3.googleusercontent.com/d/1Sw_ylLWvFuYBAKHAURCxNshHGVRbw0-O)
 
 Now that you know how Timing and Easing works, I highly suggest you try to implement it into any level or try playing around with it.
