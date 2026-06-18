@@ -8,20 +8,21 @@ date: 2024-01-21T00:00:00.000Z
 contributors:
   - komatic5
   - eyz
-description: This guide explains how the BG/MG/G Change & BG/MG Speed triggers work. They're triggers that let you change your level's background, midground, and ground, the speed of your background or midground, and the position of the midground.
+description: This guide explains how the BG/MG/G Change & BG/MG Speed triggers
+  work. They're triggers that let you change your level's background, midground,
+  and ground, the speed of your background or midground, and the position of the
+  midground.
 tags:
   - Grade 1
   - Effect Triggers
 ---
-
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
-- The BG, MG, and G Change Triggers let you change the Background, Midground, and Ground in your level. You may also change the defaults for these through the Level Settings menu.
-- The BG and MG Speed triggers let you change your BG and MG's speed.
-- The MG trigger lets you change the MG's position.
-
+* The BG, MG, and G Change triggers let you change the background, midground, and ground in your level. You may also change the defaults for these through the Level Settings menu.
+* The BG and MG Speed triggers let you change your background and midground's speed.
+* The MG trigger also lets you change the midground's position.
 {{< /callout >}}
 
-** **
+- - -
 
 # 1: Recap
 
@@ -35,7 +36,9 @@ To change any of these options, go to the {{< img src="images/GDEmotes/Buttons/S
 
 # 2: BG, MG, & G Change Triggers
 
-{{< img src="images/GDEmotes/Triggers/BGChange.png" class="largeemote" >}} {{< img src="images/GDEmotes/Triggers/MGChange.png" class="largeemote" >}} {{< img src="images/GDEmotes/Triggers/GChange.png" class="largeemote" >}} These triggers let you change the BG, MG, and G currently in your level. Their UIs all look somewhat like this when you click go to the {{< img src="images/GDEmotes/Buttons/EditObject.png" class="emote" >}} Edit Object.
+{{< img src="images/GDEmotes/Triggers/BGChange.png" >}}
+
+ {{< img src="images/GDEmotes/Triggers/MGChange.png" class="largeemote" >}} {{< img src="images/GDEmotes/Triggers/GChange.png" class="largeemote" >}} These triggers let you change the BG, MG, and G currently in your level. Their UIs all look somewhat like this when you click go to the {{< img src="images/GDEmotes/Buttons/EditObject.png" class="emote" >}} Edit Object.
 
 {{< img src="https://lh3.googleusercontent.com/d/1LEq4LkGM-QMV_RgkJx-hPArIky8tkdsx" >}}
 
@@ -45,7 +48,9 @@ When you click on the button in the middle, you'll be able to select a new BG, M
 
 # 3: BG & MG Speed Triggers
 
-{{< img src="images/GDEmotes/Triggers/BGSpeed.png" class="largeemote" >}} {{< img src="images/GDEmotes/Triggers/MGSpeed.png" class="largeemote" >}} These triggers let you change the speed at which your BG and MG move.
+{{< img src="images/GDEmotes/Triggers/BGSpeed.png" >}}
+
+ {{< img src="images/GDEmotes/Triggers/MGSpeed.png" class="largeemote" >}} These triggers let you change the speed at which your BG and MG move.
 
 {{< img src="https://lh3.googleusercontent.com/d/12W9r6DeNBNT3k-_VbFYT4zG_valVURiz" >}}
 
@@ -57,7 +62,7 @@ By default these are set to 0.1, but there are other criteria which determine ho
 
 # 4: MidGround Trigger
 
-You may also change the position of your level's MG using this trigger. As with the Move trigger you can input an offset, set a move time, and add an easing. As always, this can be Touch and Spawn Triggered.
+You may also change the position of your level's MG using this trigger. As with the Move trigger you can input an offset, set a move time, and add an easing. As always, this can be touch-triggered and spawn-triggered.
 
 {{< img src="https://lh3.googleusercontent.com/d/11XJa36O8a0r2UJlh3eqng4QAO4bRpwP_" >}}
 
@@ -65,4 +70,4 @@ You may also change the position of your level's MG using this trigger. As with 
 
 # 5: Additional BG Changes
 
-If you are bored with the backgrounds that GD offers, you can make your own custom ones. I won't go into detail here as it's outside of this guide's scope, but there is [another guide](/docs/guides/deco-1/making-backgrounds/) here which you can read for that.
+If you are bored with the default backgrounds that GD offers, you can make your own custom ones. Most art-themed levels use complex backgrounds with custom designs and movements You can learn more about decorating custom backgrounds by reading [another guide](/docs/guides/deco-1/making-backgrounds/) here.
