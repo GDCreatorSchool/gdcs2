@@ -1,28 +1,37 @@
 ---
 draft: false
+authors:
+  - mateussdev
 title: Advanced Hitboxes
 weight: 4215
 date: 2023-11-01T00:00:00.000Z
-description: Have you ever wondered when you hit a spike in an unconventional way you die, or wonder why the latter happened when you clearly hit a spike? These scenarios happen due to quirks in how the game handles object collisions. In this guide, we will learn how GD handles said collisions, the perks of having this system, and how you can use this to your advantage to get a desired difficulty.
-authors:
-  - mateussdev
 contributors:
   - mateussdev
   - notamoderatr
+description: Have you ever wondered when you hit a spike in an unconventional
+  way you die, or wonder why the latter happened when you clearly hit a spike?
+  These scenarios happen due to quirks in how the game handles object
+  collisions. In this guide, we will learn how GD handles said collisions, the
+  perks of having this system, and how you can use this to your advantage to get
+  a desired difficulty.
 tags:
   - Grade 1
   - Gameplay Basics
   - Gameplay Features
 ---
-
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
+
+
 - The game uses hitboxes that are not the same as the sprites that they represent.
 - The player has 3 hitboxes, with an extra one for slopes. The main Hitbox collides with mostly spikes and the floor/ceiling, the small - - Hitbox collides with solid objects, and the rotated Hitbox collides with everything that is rotated.
 - The game will check for collisions 4 times between processing, which are called sub-frames.
 
+
+
 {{< /callout >}}
 
-** **
+- - -
+
 To preface things: Geometry Dash uses multiple **hitboxes** to register collision between the player and many hazards and gameplay elements. This same goes for collision blocks.
 
 These hitboxes, from a game design standpoint, do not need to be accurate to the object’s texture, hence you get hitboxes like this:
@@ -33,15 +42,15 @@ You most likely know that hitboxes in GD are not perfect, however you may be int
 
 # 1: The Player Hitbox
 
-The player hitbox consists of three main parts: **The Main hitbox** (AKA the AABB hitbox), **The small hitbox** (AKA The Solid hitbox/The Blue hitbox) and **The Rotated Hitbox** (OBB hitbox).
+The player hitbox consists of three main parts: the **main hitbox** (AKA the AABB hitbox), the **small hitbox** (AKA The Solid hitbox/The Blue hitbox) and the **rotation hitbox** (OBB hitbox).
 
-There is also an extra hitbox-like area that’s called **The Slope Hitbox**.
+There is also an extra hitbox-like area that’s called the **slope hitbox.**
 
 Each of these hitboxes have different conditions for collision and registering events.
 
 # 2: The Main Hitbox
 
-This is the largest hitbox and the one that is most often used. It is exactly 30 Units tall and wide.
+This is the largest hitbox and the one that is most often used. It is exactly 30 units tall and 30 units wide.
 
 This hitbox is also sometimes called the AABB hitbox (Axis Aligned Bounding Box) because the game performs a different mathematical formula to calculate the position, unlike most other hitboxes.
 
@@ -49,20 +58,20 @@ This hitbox is also sometimes called the AABB hitbox (Axis Aligned Bounding Box)
 
 ## Collisions
 
-- This hitbox collides with any object that is not rotated, such as blocks and spikes if they are facing upward. It also collides with slopes.
-- This hitbox collides with solid blocks, but is not the reason why you die from horizontal collision of blocks.
-- This hitbox will not collide with anything rotated, meaning that if you rotate a spike by a small degree it will no longer collide with the main hitbox. It will instead collide with the Rotated hitbox, which will be gone over later.
-- This hitbox is used as an anchor on collisions with solid blocks, allowing the player to stay on top of structures.
+* This hitbox collides with any object that is not rotated, such as blocks and spikes if they are facing upward. It also collides with slopes.
+* This hitbox collides with solid blocks, but is not the reason why you die from horizontal collision of blocks.
+* This hitbox will not collide with anything rotated, meaning that if you rotate a spike by a small degree it will no longer collide with the main hitbox. It will instead collide with the Rotated hitbox, which will be gone over later.
+* This hitbox is used as an anchor on collisions with solid blocks, allowing the player to stay on top of structures.
 
 {{< img src="https://lh3.googleusercontent.com/d/1e3bGwPqGYHWb_S487Vzf_E_vA5pRQGKS" >}}
 
 ## Properties
 
-- This Hitbox has **Subframes**: __4 additional checks between every 2 frames of processing__ that prevent the player from phasing through objects on low FPS.
-- This hitboxes rightmost edge is used to calculate snapping, known as the snap bug, on the X axis.
-- This hitbox is also used for snapping on the Y axis, in scenarios where the player falls slightly short of touching the surface of a block. The conditions to trigger a Y snap are as follows:
- - The player’s Y velocity is 0 or it points towards the block
- - The player is on a 24 unit offset from the block
+* This Hitbox has **Subframes**: **4 additional checks between every 2 frames of processing** that prevent the player from phasing through objects on low FPS.
+* This hitboxes rightmost edge is used to calculate snapping, known as the snap bug, on the X axis.
+* This hitbox is also used for snapping on the Y axis, in scenarios where the player falls slightly short of touching the surface of a block. The conditions to trigger a Y snap are as follows:
+* The player’s Y velocity is 0 or it points towards the block
+* The player is on a 24 unit offset from the block
 
 # 3: The Solid Hitbox
 
@@ -72,8 +81,8 @@ This hitbox resides inside of the main one that is exclusively for **checking co
 
 ## Collisions
 
-- This hitbox will only collide with solid objects and slopes.
-- This hitbox determines whether the player dies if a solid object collides with it.
+* This hitbox will only collide with solid objects and slopes.
+* This hitbox determines whether the player dies if a solid object collides with it.
 
 # 4: Rotated Hitbox
 
@@ -83,13 +92,13 @@ This hitbox is an interesting one, as it uses the Oriented Bounding Box formula 
 
 ## Collisions
 
-- This hitbox collides only with rotated objects that have hitboxes and does not collide with any other objects.
-- This hitbox is also responsible for **Coyote Time**, which is __the amount of time you have as leeway to make a jump after falling from a ledge__. This behavior is present in the ball gamemode.
+* This hitbox collides only with rotated objects that have hitboxes and does not collide with any other objects.
+* This hitbox is also responsible for **Coyote Time**, which is **the amount of time you have as leeway to make a jump after falling from a ledge**. This behavior is present in the ball gamemode.
 
 ## Properties
 
-- This hitbox has no sub-frames, as the formula itself is resource-intensive and is usually not required to register collisions.
-- The rotation of this hitbox is connected to the **FPS**, __where high FPS (>= 1000) slows down the rotation of this hitbox, changing it's rotation and changing the bounding box__. This is most visible on the Ship gamemode, where rotation of the hitbox is the most sensitive. (Due to the 240 fps physics change in GD 2.2 this might become obsolete in future versions)
+* This hitbox has no sub-frames, as the formula itself is resource-intensive and is usually not required to register collisions.
+* The rotation of this hitbox is connected to the **FPS**, **where high FPS (>= 1000) slows down the rotation of this hitbox, changing it's rotation and changing the bounding box**. This is most visible on the Ship gamemode, where rotation of the hitbox is the most sensitive. (Due to the 240 fps physics change in GD 2.2 this might become obsolete in future versions)
 
 # 5: The Slope Hitbox
 
@@ -101,21 +110,21 @@ This hitbox is most noticeable during the wave gamemode, where the cause of deat
 
 ## Collisions
 
-- This hitbox collides only with slopes and diagonal surfaces. It functions identically like the solid hitbox, however it stays miniscule in size during any other gamemode except for the wave.
+* This hitbox collides only with slopes and diagonal surfaces. It functions identically like the solid hitbox, however it stays miniscule in size during any other gamemode except for the wave.
 
 ## Properties
 
-- This hitbox cannot be used to add difficulty, only to ensure that potential gaps like these are physically impossible.
+* This hitbox cannot be used to add difficulty, only to ensure that potential gaps like these are physically impossible.
 
 {{< img src="https://lh3.googleusercontent.com/d/1VCZI3rY1Pnl4MzufBratHEsgJbHNHc-N" >}}
 
-- This hitbox has no subframes.
+* This hitbox has no subframes.
 
 # 6: Subframes
 
 You may have read this term multiple times and not fully understand the meaning behind this term. This section shows all the details of how subframe hitboxes work.
 
-Subframes are __4 additional checks between every 2 frames__ of the game. They are placed in a perfect line between the center points of the hitboxes.
+Subframes are **4 additional checks between every 2 frames** of the game. They are placed in a perfect line between the center points of the hitboxes.
 
 In most cases the collisions are not the same as running the game on your frame rate multiplied by 4 due to some notable inaccuracies.
 
