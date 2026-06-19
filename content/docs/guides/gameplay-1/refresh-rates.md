@@ -1,14 +1,16 @@
 ---
 draft: false
+authors:
+  - unknown
 title: Refresh Rates
 weight: 4230
 date: 2023-03-18T00:00:00.000Z
-description: Refresh Rates are an integral part of how Geometry Dash physics work. As such, it's important to understand how refresh rates work when making gameplay.
-authors:
-  - unknown
 contributors:
   - graylasagna
   - unknown
+description: Refresh Rates are an integral part of how Geometry Dash physics
+  work. As such, it's important to understand how refresh rates work when making
+  gameplay.
 tags:
   - Grade 1
   - Gameplay Features
@@ -58,6 +60,7 @@ These seem to vary between refresh rates, making one person’s bug-tested and c
 
 # Sources
 
-- <https://www.youtube.com/watch?v=BiWtvKl0VCQ&ab_channel=KugelBlitZ>
-- <https://www.youtube.com/watch?v=hhBnSJx-0-k&ab_channel=Stormy>
+- [KugelBlitZ - Frame Perfects & GD physics](<https://www.youtube.com/watch?v=BiWtvKl0VCQ&ab_channel=KugelBlitZ>)
+- [Stormfly - 
+The 312 Bugs in Geometry Dash (2.113)](<https://www.youtube.com/watch?v=hhBnSJx-0-k&ab_channel=Stormy>)
 
