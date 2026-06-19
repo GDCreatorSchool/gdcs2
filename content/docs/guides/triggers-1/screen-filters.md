@@ -1,14 +1,15 @@
 ---
 draft: false
+authors:
+  - tdp9
 title: Screen Filters
 weight: 3220
 date: 2024-03-11T00:00:00.000Z
-description: This guide explains how the Screen Filter triggers work. These triggers place various screen filters or shaders on the level.
-authors:
-  - tdp9
 contributors:
   - tv_box
   - tdp9
+description: This guide explains how the Screen Filter triggers work. These
+  triggers place various screen filters or shaders on the level.
 tags:
   - Grade 1
   - Effect Triggers
@@ -35,7 +36,9 @@ Generally, shaders can be divided into 2 categories: Screen effects and Color fi
 # 1: Screen Effects
 
 ## Shader
+
 __Sets a range of Z layers that other shader triggers will affect.__
+
 - The cyan buttons are the minimum and maximum layers.
 - The green buttons are layers affected by the other shader triggers.
 - The gray buttons are layers unaffected by the other shader triggers.
@@ -45,7 +48,9 @@ __Sets a range of Z layers that other shader triggers will affect.__
 {{< youtube GBMR-d0AkqU >}}
 
 ## Shock Wave
+
 __Creates a shock wave that moves to or from a center point.__
+
 - **Speed**: __How fast the wave will move__. Higher values mean higher speed.
 - **Strength**: __The amount of distortion of the wave__. The higher the value, the more distorted objects will be in the wave.
 - **Thickness**: __How “long” the wave is__. The higher the value, the longer the wave of the effect will last. Generally, if the thickness is higher than the wave width, multiple waves will spawn to fill the gap of time, however the ratio is not 1:1 and more like 1.5:1 (in the thickness’s favor).
@@ -54,7 +59,6 @@ __Creates a shock wave that moves to or from a center point.__
 - **FadeOut**: __How smooth the wave will fade out from distortion__. In other words, this affects the inner part of the *last* wave in a wave sequence.
 - **TimeOff**: __The amount of seconds the effect will be offset by__. Negative values will delay the start of the waves, positive values will start the waves at an earlier point of the effect (This does not start the effect before the trigger is activated, think of it as the song offset but for an effect).
 - **MaxSize**: __The maximum distance the waves can travel__. 0 is the default and leaves no limit.
-
 - **ScreenOffX**: __The X offset of where the waves spawn__. Negative values go left, positive values go right.
 - **ScreenOffY**: __The Y offset of where the waves spawn__. Negative values go down, positive values go up.
 - **Invert**: __Inverts the movement of the wave__ so that it spawns waves that go from the edge of the screen to the center.
@@ -68,7 +72,9 @@ __Creates a shock wave that moves to or from a center point.__
 {{< youtube 9tm6Vzmm4Qo >}}
 
 ## Shock Line
+
 __Creates a shock wave effect that moves across the screen.__
+
 - **Speed**: How fast the wave will move. Higher values mean higher speed.
 - **Strength**: The amount of distortion of the effect. The higher the value, the more distorted the effect will make objects.
 - **Thickness**: How “long” the wave is. The higher the value, the longer the wave of the effect will last. Generally, if Thickness is higher than the Wave Width, multiple waves will spawn to fill the gap of time, however the ratio is not 1:1 and more like 1.5:1 (in the thickness’s favor)
@@ -77,7 +83,6 @@ __Creates a shock wave effect that moves across the screen.__
 - **FadeOut**: How smooth the wave will fade out from distortion. Basically effects the inner part of the *last* wave in a wave sequence.
 - **TimeOff**: The amount of seconds the effect will be offset by. Negative values will delay the start of the waves, positive values will start the waves at an earlier point of the effect (This does not start the effect before the trigger is activated, think of it as the song offset but for an effect).
 - **MaxSize**: The maximum distance the waves can show up from in the center of the screen. 0 is the default and leaves no limit.
-
 - **Invert**: __Inverts the amplitude of the wave__. Basically it turns the high parts of the wave to low parts and vice versa.
 - **Flip**: __Reflects the effect so that it moves from the opposite side of the screen__.
 - **Rotate**: __Rotates the effect so it moves along the y-axis instead of the x-axis__.
@@ -90,7 +95,9 @@ __Creates a shock wave effect that moves across the screen.__
 {{< youtube Gmau8P_saiQ >}}
 
 ## Glitch
+
 __Creates a glitch effect.__
+
 - **FadeTime**: __How long, in seconds, it takes to transition into the effect__.
 - **Strength**: __How strong the distortion is__. It is a multiplier for the other adjustable settings.
 - **Speed**: __How fast each glitch will occur__. Higher values mean more glitches happening per second.
@@ -102,15 +109,19 @@ __Creates a glitch effect.__
 {{< youtube IeHcRQEcg4A >}}
 
 ## Chromatic
+
 __Splits up RGB values and offsets them from each other.__
+
 - **TargetX**: __How far the colors move on the x-axis__. Must have “Use X” enabled for this to apply.
 - **TargetY**: __How far the colors move on the y-axis__. Must have “Use Y” enabled for this to apply.
-- FadeTime: How long, in seconds, it takes to transition into the effect. Easing gives options on what easing the transition will use.
+- **FadeTime**: How long, in seconds, it takes to transition into the effect. Easing gives options on what easing the transition will use.
 
 {{< youtube EM2WCzJT-p8 >}}
 
 ## Chromatic Glitch
+
 __Creates a different glitch effect, with slightly more emphasis on chromatic effects.__
+
 - **Speed**: __How fast the distortion effect moves__.
 - **RGBOff**: __How far from the x-axis the color split is offset__. Negative values can be entered to offset it to the right.
 - **Strength**: The amount of distortion of the effect. Higher values mean more distortion.
@@ -124,7 +135,9 @@ __Creates a different glitch effect, with slightly more emphasis on chromatic ef
 {{< youtube 8p9ySqcezMg >}}
 
 ## Pixelate
+
 __Pixelates the screen__.
+
 - **TargetX**: __How much the screen is pixelated on the x-axis__. “Use X” must be enabled for this to work.
 - **TargetY**: __How much the screen is pixelated on the y-axis__. “Use Y” must be enabled for this to work.
 - **FadeTime**: How long, in seconds, it takes to transition into the effect. Easing gives options on what easing the transition will use.
@@ -134,7 +147,9 @@ __Pixelates the screen__.
 {{< youtube euBSob6lH_A >}}
 
 ## Lens Circle
+
 __Creates a lens circle around a center point__
+
 - **Size**: __The radius of the effect__. Higher values means a larger circle.
 - **Fade**: __The size of the gradient of the circle__. The fade is dependent on the size. Any values higher than the current size of the circle will be ignored as the max size is the max fade of the circle.
 - **FadeTime**: How long, in seconds, it takes to transition into the effect. Easing gives options on what easing the transition will use.
@@ -147,7 +162,9 @@ __Creates a lens circle around a center point__
 {{< youtube XKRk8oeeB54 >}}
 
 ## Radial Blur
+
 __Blurs the screen from a center point__.
+
 - **Size**: __How far each layer of “blur” is from the origin__.
 - **FadeTime**: How long, in seconds, it takes to transition into the effect. Easing gives options on what easing the transition will use.
 - **Intensity**: __**Doesn’t seem to work as of now**__. __Is supposed to change the opacity of the blur__.
@@ -161,7 +178,9 @@ __Blurs the screen from a center point__.
 {{< youtube TOtKl_kzBYc >}}
 
 ## Motion Blur
+
 __Blurs the screen based on the movement of the camera, player, or selected object__.
+
 - **TargetX**: How much the screen is blurred on the x-axis. Positive numbers offset it to the left, negative numbers to the right. “Use X” must be enabled for this to work.
 - **TargetY**: How much the screen is blurred on the y-axis. Positive numbers offset it down, negative numbers up. “Use Y” must be enabled for this to work.
 - **Ref Channel**: Sets the color channel the blur will use as reference to fade objects to. By default, the blur will go into the color of the background.
@@ -176,7 +195,9 @@ __Blurs the screen based on the movement of the camera, player, or selected obje
 {{< youtube 6yDiecQ_h1Y >}}
 
 ## Bulge
+
 __Bulges the screen__.
+
 - **Bulge**: __How intense the bulge effect is__.
 - **Radius**: __The size of the radius of where the bulge is contained__.
 - **ScreenOffX**: Offsets the center of the blur from its original x-value.
@@ -187,7 +208,9 @@ __Bulges the screen__.
 {{< youtube ChPFTMYxHBY >}}
 
 ## Pinch
+
 __Distorts the screen by “pinching” it__. The opposite of the bulge effect.
+
 - **TargetX**: How much the x-axis gets distorted. Higher values mean higher distortion. “Use X” must be enabled for this to work.
 - **TargetY**: How much the y-axis gets distorted. Higher values mean higher distortion. “Use Y” must be enabled for this to work.
 - **ScreenOffX**: Offsets the center of the effect from its original x-value.
@@ -202,7 +225,9 @@ __Distorts the screen by “pinching” it__. The opposite of the bulge effect.
 # 2: Color Filters
 
 ## Grayscale
+
 __Filters the screen to a grayscale color__.
+
 - **Target**: __How much the filter is applied__. Lower values mean less grayscale.
 - **FadeTime**: How long, in seconds, it takes to transition into the effect. Easing gives options on what easing the transition will use.
 - **Tint Channel**: Uses a color channel to tint the screen by instead of gray. The box next to the input must be checked in order to work.
@@ -211,40 +236,50 @@ __Filters the screen to a grayscale color__.
 {{< youtube VLX5-fKeYpg >}}
 
 ## Sepia
+
 __Filters the screen with a sepia effect__.
+
 - **Target**: How much the filter is applied. Lower values mean less sepia coloring.
 - **FadeTime**: How long, in seconds, it takes to transition into the effect. Easing gives options on what easing the transition will use.
 
 {{< youtube H2807GrOMFM >}}
 
 ## Invert Color
+
 __Inverts the color of the screen__.
-**Target**: How much the filter is applied. Lower values mean less inversion.
-FadeTime: How long, in seconds, it takes to transition into the effect. Easing gives options on what easing the transition will use.
-**R G B Sliders**: __Determines the percentage of the RGB values that will be affected by the options below__.
-**EditRGB**: __Edits the final inversion filter__. The RGB sliders determine how much each color is affected by the inversion. Lower percentages mean less inversion. Values higher than 1 will transition into inversion faster, but will tint the final image.
-**TweenRGB**: __Transitions new values for an invert color trigger smoothly instead of instantly__. Needs “EditRGB” to work and only works after an active invert color effect.
-**ClampRGB**: __Limits the final max values for each color to 1/1/1__. Any values over 1 in the RGB sliders will be ignored.
+
+- **Target**: How much the filter is applied. Lower values mean less inversion.
+- **FadeTime**: How long, in seconds, it takes to transition into the effect. Easing gives options on what easing the transition will use.
+- **R G B Sliders**: __Determines the percentage of the RGB values that will be affected by the options below__.
+- **EditRGB**: __Edits the final inversion filter__. The RGB sliders determine how much each color is affected by the inversion. Lower percentages mean less inversion. Values higher than 1 will transition into inversion faster, but will tint the final image.
+- **TweenRGB**: __Transitions new values for an invert color trigger smoothly instead of instantly__. Needs “EditRGB” to work and only works after an active invert color effect.
+- **ClampRGB**: __Limits the final max values for each color to 1/1/1__. Any values over 1 in the RGB sliders will be ignored.
 
 {{< youtube MtO29gS8ttg >}}
 
 ## Hue Shift
+
 __Shifts the hue of the colors on screen__.
-**Degree**: __How many degrees the colors shift by__.
-**FadeTime**: How long, in seconds, it takes to transition into the effect. Easing gives options on what easing the transition will use.
+
+- **Degree**: __How many degrees the colors shift by__.
+- **FadeTime**: How long, in seconds, it takes to transition into the effect. Easing gives options on what easing the transition will use.
 
 {{< youtube lfgdCSofICw >}}
 
 ## Edit Color
+
 __Edits the RGB values of the colors on screen__.
-**FadeTime**: How long, in seconds, it takes to transition into the effect. Easing gives options on what easing the transition will use.
-**CR CG CB sliders**: C stands for color. __These sliders edit how much red, green, and blue colors are displayed__. Higher values mean more color and smaller values mean less color.
-**BR BG BB sliders**: B stands for brightness. __These sliders edit the brightness of the red, green, blue values__. Higher values mean more brightness and lower values mean less brightness.
+
+- **FadeTime**: How long, in seconds, it takes to transition into the effect. Easing gives options on what easing the transition will use.
+- **CR CG CB sliders**: C stands for color. __These sliders edit how much red, green, and blue colors are displayed__. Higher values mean more color and smaller values mean less color.
+- **BR BG BB sliders**: B stands for brightness. __These sliders edit the brightness of the red, green, blue values__. Higher values mean more brightness and lower values mean less brightness.
 
 {{< youtube SUraX52EAwA >}}
 
 ## Split Screen
+
 __Splits the screen into multiple screens__.
+
 - **TargetX**: __How many screens the trigger adds to the x-axis__. Higher values mean more screens. Negative values invert the x-axis. “Use X” must be enabled for this to work.
 - **TargetY**: __How many screens the trigger adds to the y-axis__. Higher values mean more screens. Negative values invert the y-axis. “Use Y” must be enabled for this to work.
 
