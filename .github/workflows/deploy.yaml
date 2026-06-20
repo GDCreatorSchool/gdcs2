@@ -102,12 +102,13 @@ jobs:
 
       - name: Build the site
         run: |
-          npm run predev
+          node scripts/copy-assets-for-decap-preview.js
           hugo build \
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
+          node scripts/copy-css.js
 
       - name: Cache save
         id: cache-save
