@@ -92,3 +92,18 @@ However, when attempting to translate a form across multiple axes at the same ti
 Now, what if your form is elevated or in the ground? For this kind of positioning, there are a few extra steps in order to make the perspective convincing.
 
 ## Elevated Above the Ground
+
+1. Scale the form to your liking as if it were level to the ground.
+2. Transfer the form however high you desire. Since all vertical lines are parallel, no vertical foreshortening will occur. The viewing angle will change, however, so adjust the form as needed.
+
+{{< img src="https://lh3.googleusercontent.com/d/1ic_uwXU-PKSdF7rpknNcYecu9pEvn9xb" >}}
+
+## In the Ground
+
+1. Scale the form as if it were level to the ground, then move it until you’ve reached the “wall” of the hole in the ground.
+2. Transfer the form onto the ground of the hole and move the form as needed, ensuring to move it one axis at a time.
+
+{{< gif src="https://lh3.googleusercontent.com/d/1ASr_bAJlVVt0fg4YrALg0C4UrVWxJVRd" >}}
+
+# 3. Practical Use Cases
+
