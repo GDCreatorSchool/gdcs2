@@ -123,6 +123,10 @@ LightPotatoDev decided to create an alleyway scene for a transition in their upc
 
 {{< img src="https://lh3.googleusercontent.com/d/1G6B62TMHG3qG-gs9T0MYxwDttOYU1QXt" >}}
 
-"entropie" by empsea
+There are cases in which you can use both types of perspective in a single situation. At the 0:41 mark in "entropie" by empsea, a cutscene transition utilizes both one- and two- point perspective as the camera moves around the bridge.
 
 {{< youtube dFI8pEitf9M >}}
+
+# Sources
+- Scott Robertson: How to Draw, Chapter 4
+- [Drawing Perfect Squares in Perspective](https://www.youtube.com/watch?v=h0HrmywKzFk)
