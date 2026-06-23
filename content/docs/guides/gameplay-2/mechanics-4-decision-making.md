@@ -10,11 +10,17 @@ contributors:
   - illusion2
   - psytrancegd
   - komatic5
-description: Have you ever wondered how game designers make compelling decisions that leave you thinking for hours on end? Maybe you’ve spent a lot of time carefully optimizing your gear and accessories, or maybe you were stumped by a puzzle that ended up clicking in a satisfying way. These are examples of decision making, which we’ll cover the fundamentals of in this guide.
+description: Have you ever wondered how game designers make compelling decisions
+  that leave you thinking for hours on end? Maybe you’ve spent a lot of time
+  carefully optimizing your gear and accessories, or maybe you were stumped by a
+  puzzle that ended up clicking in a satisfying way. These are examples of
+  decision making, which we’ll cover the fundamentals of in this guide.
 tags:
   - Grade 2
   - Mechanics
-desccription: This guide explains different kinds of choices (obvious, uninformed, and interested), how you can promote further strategy with tradeoffs, and the concept of Risk vs Reward.
+desccription: This guide explains different kinds of choices (obvious,
+  uninformed, and interested), how you can promote further strategy with
+  tradeoffs, and the concept of Risk vs Reward.
 ---
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
@@ -26,28 +32,33 @@ desccription: This guide explains different kinds of choices (obvious, uninforme
 
 ** **
 
-# 1: What are choices?
+# 1: What are Choices?
 
 A **choice** is a __decision that a player has to make during gameplay__. These can range from a small movement during a fight to a permanent upgrade for a weapon or character. They can also be long term day to day actions like deciding which chore to do first, or which movie to watch tonight.
 
 Generally, when you’re presented with any decision between two things, no matter how inconsequential it seems, you’re making a choice.
 
 As shown before, choices can be very varied. They can be defined by their impact, and how much information is given to the player to help them make the choice.
-## Uninformed choices
-Uninformed choices are choices where no information is given at all. When you think about it, this is a pretty boring choice, isn’t it? The player is forced to choose at random, which makes this decision devoid of any strategy.
+
+## Uninformed Choices
+
+Uninformed choices are **choices where no information is given at all**. When you think about it, this is a pretty boring choice, isn’t it? The player is forced to choose at random, which makes this decision devoid of any strategy.
 
 Another way a choice can be uninformed is when two separate options have nearly identical outcomes. This situation also constitutes an uninformed choice, as it would lead the player into having to choose at random.
 
 As a real-life example of an uninformed choice, imagine you’re deciding to buy one of two newly released games. There are little to no insightful reviews of the game, which means you have to go completely blind. How would you pick?
-## Obvious choices
-Obvious choices are basically the opposite of uninformed choices. The information given is so abundant that it feels like the game is telling you “option A is strictly better than option B.”
+
+## Obvious Choices
+
+Obvious choices are basically the opposite of uninformed choices. **The information given is so abundant that it feels like the game is telling you “option A is strictly better than option B”**.
 Again, if you think about it, is this really a choice at all? The decision is very obvious and thus devoid of any meaningful strategy.
 
 Coming back to the previous game example, imagine one of the games was received incredibly well, while the other was critiqued heavily. Which one would you pick now?
 
 However, there is still a use to an obvious choice. They’re useful in tutorials, but if you make the obvious choice itself interesting/unique, it can provide lots of depth to other choices down the line. If the obvious choice is supported by information that is difficult to uncover, it will provide much more engagement even though there’s one obvious solution. Think of it like a puzzle; one answer, still interesting.
 
-## Interested choices
+## Interested Choices
+
 After looking at uninformed and obvious choices, the next sensible step is to try to find a nice middle ground. There we find interested choices. **Interested choices** are __choices which contain some information, but not enough to make the choice entirely devoid of strategy__.
 
 Interested choices don’t have to be exactly in the middle between uninformed and obvious choices. Sometimes, if you want the player to think through their options thoroughly before making a choice, you can lean towards giving more limited information. If you want a choice that requires some strategy, but can be done quickly, you can lean towards giving more extensive information.
@@ -59,7 +70,9 @@ Both of these examples are interesting prospects, and they don’t really have a
 # 2: Tradeoffs
 
 The last choice we introduced can be considered an example of a tradeoff. These are an important aspect to consider when designing interested choices, and when implemented properly help create variety in your game overall.
-## What is a tradeoff?
+
+## What is a Tradeoff?
+
 In simple terms, a **tradeoff** is __a decision where there isn’t a clear best option__. Regardless of what you do, there will be benefits and drawbacks. These serve to cater to specific preferences, as mentioned before.
 
 Note that we still need to figure out what preferences a player might have in a given game. These are crucial to understand, as they’re the essence of tradeoffs themselves. Traditionally, this can be accomplished by extensive playtesting, but it can also be done by identifying your target audiences and adapting to their needs.
