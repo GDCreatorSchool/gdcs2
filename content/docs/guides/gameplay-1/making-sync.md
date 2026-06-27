@@ -8,16 +8,27 @@ date: 2025-01-14T00:00:00.000Z
 contributors:
   - e.clypse
   - notamoderatr
-description: Sync is one of the most intuitive appeal factors in gameplay. As such, it's important that you understand how to introduce sync in your gameplay. This guide will explain how you can create sync using the tools in the editor.
+description: Sync is one of the most intuitive appeal factors in gameplay. As
+  such, it's important that you understand how to introduce sync in your
+  gameplay. This guide will explain how you can create sync using the tools in
+  the editor.
 tags:
   - Grade 1
   - Types of Gameplay
 ---
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
 
+
+
+
+
 - Implementing sync into your level helps keep the level engaging for the player, and gives them a “foundation” for their clicks.
 - There are plenty of tools in the editor that allow you to create accurate sync, and can all be used to effectively build different types of sync.
 - Outside factors such as audio delay, polling rate, and speed portals can affect the result of how your gameplay syncs. Employing thorough playtesting can help combat these issues.
+
+
+
+
 
 
 {{< /callout >}}
@@ -36,15 +47,15 @@ There are many ways you can convey sync — and in turn energy — in your gamep
 
 ## Music Line
 
-The music line follows the X-position of the cube unless an arrow trigger is used, which switches between vertical or horizontal movement. Using the music line can be useful in this case since otherwise, it would be difficult to discern where to place synced elements or build transitions this way. It helps to use the playback option to start the music line from the arrow trigger for more accuracy. This option can also be enabled for speed portals.
+{{< img src="images/GDEmotes/Buttons/MusicPlaytest.png" class="emote">}} The music line follows the X-position of the cube unless an arrow trigger is used, which switches between vertical or horizontal movement. Using the music line can be useful in this case since otherwise, it would be difficult to discern where to place synced elements or build transitions this way. It helps to use the playback option to start the music line from the arrow trigger for more accuracy. This option can also be enabled for speed portals.
 
-While this feature is useful, it can be inconsistent. Arrow triggers, along with speed portals and X-axis teleportals are likely to conflict with this feature as of 2.207. It’s also limiting when building click-sync, since some clicks may not have an impact to go along with them.
+While this feature is useful, it can be inconsistent. Arrow triggers, along with speed portals and X-axis teleportals are likely to conflict with this feature as of 2.208. It’s also limiting when building click-sync, since some clicks may not have an impact to go along with them.
 
 {{< youtube mB9StwSiZjk >}}
 
 ## Editor Playtest
 
-Editor playtesting lets you test click behaviour thoroughly while playing, which is good for syncing with the player's movement. This includes different types of synchronization such as air-time or being idle.
+{{< img src="images/GDEmotes/Buttons/Playtest.png" class="emote">}} Editor playtesting lets you test click behaviour thoroughly while playing, which is good for syncing with the player's movement. This includes different types of synchronization such as air-time or being idle.
 
 Editor physics can differ from in-game physics, so do keep in mind that what you’re playtesting may not feel the same to the player; test sections of gameplay in-game occasionally to remedy this.
 
@@ -60,7 +71,7 @@ Since this feature doesn’t allow for differently colored or different opacitie
 
 ## BPM Trigger
 
-The [BPM trigger](/docs/guides/triggers-1/bpm/) works similarly to guidelines, but is strictly aligned to the BPM set. You can also place beats between the bars with the **BPB** (Beats Per Bar) slider. This is helpful for adding extra clicks in the gameplay, which allows for engaging click patterns.
+The {{< img src="images/GDEmotes/Triggers/BPM.png" class="emote">}} [BPM trigger](/docs/guides/triggers-1/bpm/) works similarly to guidelines, but is strictly aligned to the BPM set. You can also place beats between the bars with the **BPB** (Beats Per Bar) slider. This is helpful for adding extra clicks in the gameplay, which allows for engaging click patterns.
 
 This feature doesn’t work with vertical gameplay, limiting sync with things such as percussive instruments to the X-axis. It also suffers the same cons as music guidelines, and should be used in moderation to avoid clutter.
 
@@ -90,4 +101,18 @@ This problem is common for mobile devices due to bad polling rate from the devic
 
 ## Thorough Playtesting
 
-Using only one method of playtesting is generally not a good idea since many factors can affect the sync in noticeable ways. Using multiple methods to check for consistency helps greatly. **You should be specially wary of Speed portals, Arrow triggers and Teleport triggers placements**, since the point where the player interacts with these can drastically change the sync of the song.
+Using only one method of playtesting is generally not a good idea since many factors can affect the sync in noticeable ways. Using multiple methods to check for consistency helps greatly. Some examples of good playtesting methods include:
+
+* Using {{< img src="images/GDEmotes/Triggers/StartPos.png" class="emote">}} **Start Positions** to playtest each part
+
+* Using the {{< img src="images/GDEmotes/Triggers/TimeWarp.png" class="emote">}} **TimeWarp trigger in combination with the** {{< img src="images/GDEmotes/Triggers/EditSong.png" class="emote">}} **Edit Song trigger**, or if you have access to mods, **Speedhack** to slow the game down to check for sync and gameplay issues. 
+
+{{< callout context="note" title="Tips and Tricks:" icon="outline/info-circle" >}}
+If you use the Edit Song trigger and TimeWarp trigger, you can slow the game down to 50% speed by inputting 0.5 in the TimeWarp trigger, and -12 in the Edit Song Trigger.
+{{< /callout >}}
+
+* Grabbing a **friend** to help playtest your level and check for issues you may have missed.
+
+{{< callout context="caution" title="Important:" icon="outline/info-circle" >}}
+You should be specially wary of Speed portals, Arrow triggers and Teleport triggers placements, since the point where the player interacts with these can drastically change the sync of the song.
+{{< /callout >}}
