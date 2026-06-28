@@ -111,7 +111,7 @@ Using only one method of playtesting is generally not a good idea since many fac
 If you use the Edit Song trigger and TimeWarp trigger, you can slow the game down to 50% speed by inputting 0.5 in the TimeWarp trigger, and -12 in the Edit Song Trigger.
 {{< /callout >}}
 
-* Grabbing a **friend** to help playtest your level and check for issues you may have missed.
+* Getting a **friend** to help playtest your level and check for issues you may have missed.
 
 {{< callout context="caution" title="Important:" icon="outline/info-circle" >}}
 You should be specially wary of Speed portals, Arrow triggers and Teleport triggers placements, since the point where the player interacts with these can drastically change the sync of the song.
