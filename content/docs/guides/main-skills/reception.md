@@ -9,7 +9,13 @@ contributors:
   - sparktwee
   - psytrancegd
   - colon
-description: Why do some levels receive mass reception and critical acclaim while a vast majority get left by the wayside? What’s the common thread that makes them hits? Is it strictly the level’s quality? Is it from its in-game rating? Or maybe there is an invisible force controlling the numbers behind the scenes? Can that success be controlled and repeated? This guide attempts to explain the factors that contribute to a level’s reception and how much influence you have over that reception.
+description: Why do some levels receive mass reception and critical acclaim
+  while a vast majority get left by the wayside? What’s the common thread that
+  makes them hits? Is it strictly the level’s quality? Is it from its in-game
+  rating? Or maybe there is an invisible force controlling the numbers behind
+  the scenes? Can that success be controlled and repeated? This guide attempts
+  to explain the factors that contribute to a level’s reception and how much
+  influence you have over that reception.
 tags:
   - Grade 0
   - Community Work
@@ -162,7 +168,7 @@ If performance is below set expectations, that results in a letdown. Let’s see
 >
 > I WILL PERSONALLY VERIFY THIS LEVEL ON MOBILE, AND ON STREAM. IT WILL BE A LEGENDARY MASTERPIECE OF A STREAM WHERE THOUSANDS OF VIEWERS WILL SHOW UP TO SEE HISTORY BEING MADE. IF YOU LIKE WHAT YOU’RE READING, SHOW YOUR APPRECIATION BY SUBSCRIBING TO MY CHANNEL, *OR ELSE…*
 
-{{< img src="https://lh3.googleusercontent.com/d/1G5oBwEz5XGcDIMY1yGyia3frWdlznkS-" >}}
+{{< gif src="https://lh3.googleusercontent.com/d/1Bir-UUgOvCroe1oqcpvBCtUz3-pYXsoN" >}}
 
 If you felt annoyed by what you just read, then you’ve just been on the receiving end of **overhype**. You can promote so much that it comes off as annoying, or you can give such lofty, vague expectations like “perfect masterpiece” that it’ll look like a flop no matter how much polish is given.
 
