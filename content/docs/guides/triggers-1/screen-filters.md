@@ -99,7 +99,7 @@ Generally, shaders can be divided into 2 categories: Screen effects and Color fi
 
 ## Glitch
 
-**{{< img src="images/GDEmotes/Triggers/Glitch.png" class="emote">}}Creates a glitch effect.**
+**{{< img src="images/GDEmotes/Triggers/Glitch.png" class="emote">}} Creates a glitch effect.**
 
 * **FadeTime**: **How long, in seconds, it takes to transition into the effect**.
 * **Strength**: **How strong the distortion is**. It is a multiplier for the other adjustable settings.
