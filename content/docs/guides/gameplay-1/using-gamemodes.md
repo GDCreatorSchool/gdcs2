@@ -23,10 +23,12 @@ contributors:
 
 
 
+
 * Everything you do in gameplay, especially your gamemode choices, should be with a purpose.
 * Each gamemode has unique properties that allow them to function in different situations. These properties should be used to choose your gamemodes.
 * There are a lot of unique interactions between gamemodes and other gameplay objects which you can use to your advantage.
 * This guide contains an overview on each gamemode's properties and interactions, and also includes good use cases for each gamemode.
+
 
 
 
@@ -50,16 +52,18 @@ Knowing why you’re picking your gamemodes is a conscious skill that takes prac
 The first thing to understand with gamemodes is **their properties and how to use them**. For each gamemode, I’ll begin with an explanation of their unique properties, an explanation of where you can use these gamemodes based on these properties, and then a short list of pros and cons.
 
 ## Cube
-
+{{< img src="images/GDEmotes/Objects/CubeButton.png" class="emote">}} Cube is the simplest gamemode. Since it always moves on a preset path, it’s incredibly simple to make gameplay with it in any environment, making it a good jack of all trades. Its path is responsive enough for players to intuitively use it, but not so snappy that it’s incredibly limiting to make gameplay with. Due to its simplicity, the Cube may need to rely on orbs or portals to function interestingly, a tradeoff you may have to balance.
 * Click to jump, Hold to keep jumping
 * No air control, can only be controlled on the ground
 * Jump arcs are always the same, smaller when in mini version
 * Dies when hitting the side or bottom of a block
 * Faster speeds makes it jump longer 
 
+
 {{< img src="https://lh3.googleusercontent.com/d/1D6pKF9VB00QZU0PVsuzQi-5yfaign5Hc" >}}
 
-Cube is the simplest gamemode. Since it always moves on a preset path, it’s incredibly simple to make gameplay with it in any environment, making it a good jack of all trades. Its path is responsive enough for players to intuitively use it, but not so snappy that it’s incredibly limiting to make gameplay with. Due to its simplicity, the Cube may need to rely on orbs or portals to function interestingly, a tradeoff you may have to balance.
+
+
 
 | **Pros**  | **Cons**                          |
 | --------- | --------------------------------- |
@@ -67,6 +71,8 @@ Cube is the simplest gamemode. Since it always moves on a preset path, it’s in
 | Snappy    | Used in virtually every level     |
 
 ## Ship
+
+{{< img src="images/GDEmotes/Objects/ShipButton.png" class="emote">}} The Ship is probably the most complicated gamemode for the player to use, requiring a deep understanding of the game’s physics to master. As you can see from the image above, the Ship takes a long time to go back up after clicking whenever the player is falling down, but goes up almost immediately when the player is moving up. It’s not always snappy and responsive, and requires a lot of player control. Because the Ship gets floatier the higher the speed, slow Ship parts will require much more control than fast Ships.
 
 * Hold to fly up, release to stop flying
 * Has air control
@@ -76,7 +82,7 @@ Cube is the simplest gamemode. Since it always moves on a preset path, it’s in
 
 {{< img src="https://lh3.googleusercontent.com/d/1cbYsm2ZkiQ-Cp3btsRXzdM6BLpokYdmQ" >}}
 
-The Ship is probably the most complicated gamemode for the player to use, requiring a deep understanding of the game’s physics to master. As you can see from the image above, the Ship takes a long time to go back up after clicking whenever the player is falling down, but goes up almost immediately when the player is moving up. It’s not always snappy and responsive, and requires a lot of player control. Because the Ship gets floatier the higher the speed, slow Ship parts will require much more control than fast Ships.
+
 
 This gamemode is typically quite floaty, but you can make good use of it in fast & snappy parts thanks to orbs, giving it an edge over a gamemode like the Robot. This also means it has countless ways to be used; you can create simple straight flies, tight curved sections like the one in Astral Divinity, and so on.
 
@@ -90,6 +96,7 @@ In 2.2, RobTop updated the ship gamemode's physics while upside down and in a du
 | Works well in slower parts where an immediate response isn't necessary | Prior to 2.2, inconsistant physics between gravity & dual modes.                  |
 
 ## Ball
+{{< img src="images/GDEmotes/Objects/BallButton.png" class="emote">}} The Ball isn’t as snappy as the Cube, but it’s still relatively fast. It’s extremely simple and acts like a blue orb, yet that alone is enough to be really interesting. Since its movement is the same each time, it’s predictable and repetitive. Unlike the Cube though, you can click on platforms much faster. You don’t need to wait for the Ball to fall down or stabilize or anything as the movement is basically a straight line, giving more freedom when designing gameplay.
 
 * Click to swap gravity
 * No air control
@@ -99,7 +106,7 @@ In 2.2, RobTop updated the ship gamemode's physics while upside down and in a du
 
 {{< img src="https://lh3.googleusercontent.com/d/1cfrDo4ReuL6mgpS6LMBQfwCRvl5KZAOl" >}}
 
-The Ball isn’t as snappy as the Cube, but it’s still relatively fast. It’s extremely simple and acts like a blue orb, yet that alone is enough to be really interesting. Since its movement is the same each time, it’s predictable and repetitive. Unlike the Cube though, you can click on platforms much faster. You don’t need to wait for the Ball to fall down or stabilize or anything as the movement is basically a straight line, giving more freedom when designing gameplay.
+
 
 | **Pros**                                               | **Cons**                          |
 | ------------------------------------------------------ | --------------------------------- |
@@ -107,7 +114,7 @@ The Ball isn’t as snappy as the Cube, but it’s still relatively fast. It’s
 | Great at creating controlled repetition                | Simpler in nature                 |
 
 ## UFO
-
+{{< img src="images/GDEmotes/Objects/UFOButton.png" class="emote">}} This is the most snappy air gamemode, apart from Wave which is a whole other story. That alone makes it unique from the rest. Though it may seem like a floating Cube, the decreased gravity and air control allows it to be used in many different situations. For instance, you may see UFO parts where you must rapidly click to ascend, which isn’t easy to achieve with the Cube. Just like Cube however, the UFO doesn’t have too much control due to its snappiness and low gravity, so most UFO parts you see will usually have a set path for the UFO to follow.
 * Click to jump midair
 * Has air control
 * Jump arcs are always the same, but smaller when mini
@@ -116,11 +123,8 @@ The Ball isn’t as snappy as the Cube, but it’s still relatively fast. It’s
 
 {{< img src="https://lh3.googleusercontent.com/d/1lxIblNcu5TqdF9RaFYeq-QTIkYwXuoDh" >}}
 
-This is the most snappy air gamemode, apart from Wave which is a whole other story. That alone makes it unique from the rest. Though it may seem like a floating Cube, the decreased gravity and air control allows it to be used in many different situations. For instance, you may see UFO parts where you must rapidly click to ascend, which isn’t easy to achieve with the Cube. Just like Cube however, the UFO doesn’t have too much control due to its snappiness and low gravity, so most UFO parts you see will usually have a set path for the UFO to follow.
 
-Requires the most player control and understanding, difficult to fully understan/d/1lxIblNcu5TqdF9RaFYeq-QTIkYwXuoDh" >}}
 
-This is the most snappy air gamemode, apart from Wave which is a whole other story. That alone makes it unique from the rest. Though it may seem like a floating Cube, the decreased gravity and air control allows it to be used in many different situations. For instance, you may see UFO parts where you must rapidly click to ascend, which isn’t easy to achieve with the Cube. Just like Cube however, the UFO doesn’t have too much control due to its snappiness and low gravity, so most UFO parts you see will usually have a set path for the UFO to follow.
 
 | **Pros**                | **Cons**                   |
 | ----------------------- | -------------------------- |
@@ -128,7 +132,7 @@ This is the most snappy air gamemode, apart from Wave which is a whole other sto
 | Still relatively floaty | Has set paths while midair |
 
 ## Wave
-
+{{< img src="images/GDEmotes/Objects/WaveButton.png" class="emote">}} This is one the snappiest gamemode with air control, instantly changing direction when the player holds or releases. Due to the insanely fast response and the air control, this is also known to be one of the most precise and difficult gamemodes to play. The trail behind the Wave is a consistent line, which helps create repetition like the Ball gamemode. It can be used in parts that have high speeds or in parts that require control in a sharper way than the Ship. Be careful of combining it in high speeds with other gamemodes though; because it has no physics and travels in straight lines, it can very easily disrupt the flow of a part and feel extremely jarring. Because nothing changes as the speed increases, inputs have to be much more precise at high speeds; you don’t get any additional leeway like other gamemodes.
 * Hold to fly diagonally up, release to fly diagonally down
 * Has air control
 * Travels in a straight 45° line in normal size, and roughly 63.43° in mini size.
@@ -137,7 +141,7 @@ This is the most snappy air gamemode, apart from Wave which is a whole other sto
 
 {{< img src="https://lh3.googleusercontent.com/d/1H-4MFWGHdww5GlyRZHBzY3RPTiN0IojH" >}}
 
-This is one the snappiest gamemode with air control, instantly changing direction when the player holds or releases. Due to the insanely fast response and the air control, this is also known to be one of the most precise and difficult gamemodes to play. The trail behind the Wave is a consistent line, which helps create repetition like the Ball gamemode. It can be used in parts that have high speeds or in parts that require control in a sharper way than the Ship. Be careful of combining it in high speeds with other gamemodes though; because it has no physics and travels in straight lines, it can very easily disrupt the flow of a part and feel extremely jarring. Because nothing changes as the speed increases, inputs have to be much more precise at high speeds; you don’t get any additional leeway like other gamemodes.
+
 
 | **Pros**                                            | **Cons**                                                                    |
 | --------------------------------------------------- | --------------------------------------------------------------------------- |
@@ -145,7 +149,7 @@ This is one the snappiest gamemode with air control, instantly changing directio
 | Very fast and snappy                                | The most limiting fixed path of any gamemode - high risk of becoming boring |
 
 ## Robot
-
+{{< img src="images/GDEmotes/Objects/RobotButton.png" class="emote">}} The Robot functions similarly to the Cube, but uses holds instead. Due to this it requires more control, but the fact that it isn’t an air gamemode makes it a lot simpler to use. The Robot is good for a lot of long holds and emphasizing specific clicks, but because the jump height depends on the hold length, it’s harder to do high-click-per-second gameplay with a lot of movement. The gamemode may be similar to the Cube, but the changes make it useful in many different situations.
 * Hold to jump higher until the maximum height, release to stop jumping
 * Limited air control - can choose when to release when in midair
 * Has an arc that changes in height depending on when you release
@@ -154,7 +158,7 @@ This is one the snappiest gamemode with air control, instantly changing directio
 
 {{< img src="https://lh3.googleusercontent.com/d/1Ge_DeWj2ejgu-ridp7zvqquMw51aq9S3" >}}
 
-The Robot functions similarly to the Cube, but uses holds instead. Due to this it requires more control, but the fact that it isn’t an air gamemode makes it a lot simpler to use. The Robot is good for a lot of long holds and emphasizing specific clicks, but because the jump height depends on the hold length, it’s harder to do high-click-per-second gameplay with a lot of movement. The gamemode may be similar to the Cube, but the changes make it useful in many different situations.
+
 
 | **Pros**                        | **Cons**                                                          |
 | ------------------------------- | ----------------------------------------------------------------- |
@@ -162,6 +166,7 @@ The Robot functions similarly to the Cube, but uses holds instead. Due to this i
 | Good at emphasizing long clicks | Harder to use in high-cps parts                                   |
 
 ## Spider
+{{< img src="images/GDEmotes/Objects/SpiderButton.png" class="emote">}} This IS the snappiest gamemode in the game, hands down. The instant teleportation of the Spider allows for an extreme amount of movement in the shortest amount of time. Unfortunately, due to the instant teleportation, the player may die instantly without knowing why, as slightly mistiming a click can lead to you completely missing a platform. The Spider doesn’t need to wait to reach the ground or anything after clicking, meaning you can perform high-cps parts more easily with the Spider while still emphasizing the clicks a lot. Repetition will work for this gamemode too, due to the movements being straight vertical lines.
 
 * Click to teleport up and reverse your gravity
 * No air control
@@ -171,7 +176,7 @@ The Robot functions similarly to the Cube, but uses holds instead. Due to this i
 
 {{< img src="https://lh3.googleusercontent.com/d/1yKKnsqA_4IUzKnz1mCGks8Xso_XoqXZA" >}}
 
-This IS the snappiest gamemode in the game, hands down. The instant teleportation of the Spider allows for an extreme amount of movement in the shortest amount of time. Unfortunately, due to the instant teleportation, the player may die instantly without knowing why, as slightly mistiming a click can lead to you completely missing a platform. The Spider doesn’t need to wait to reach the ground or anything after clicking, meaning you can perform high-cps parts more easily with the Spider while still emphasizing the clicks a lot. Repetition will work for this gamemode too, due to the movements being straight vertical lines.
+
 
 | **Pros**                                | **Cons**                                                   |
 | --------------------------------------- | ---------------------------------------------------------- |
@@ -179,7 +184,7 @@ This IS the snappiest gamemode in the game, hands down. The instant teleportatio
 | Can perform high cps parts well         | Can easily become repetitive                               |
 
 ## Swing
-
+{{< img src="images/GDEmotes/Objects/SwingButton.png" class="emote">}} The Swing is the least responsive of all the gamemodes; it will take a while for you to actually see that you changed gravity and are going the other direction. Some argue that this makes Swing the worst gamemode, while others believe it’s unique because of it. The Swing requires an understanding of the physics as well as control over your gravity, and the movement of the gamemode allows for very curvy gameplay. As most recent gamemode, it’s unfamiliar to a majority of the playerbase. Due to the obviously different mechanics from the Ship, controlled gameplay shaped around the movement of the Swing will work a lot better than trying to substitute it into Ship parts.
 * Click to change gravity midair
 * Has air control
 * Movement of the Swing depends on its previous momentum, more gravity when mini
@@ -188,7 +193,7 @@ This IS the snappiest gamemode in the game, hands down. The instant teleportatio
 
 {{< img src="https://lh3.googleusercontent.com/d/1KdbKUPQeXGSKNhSS5EUBs72EuDFmRejH" >}}
 
-The Swing is the least responsive of all the gamemodes; it will take a while for you to actually see that you changed gravity and are going the other direction. Some argue that this makes Swing the worst gamemode, while others believe it’s unique because of it. The Swing requires an understanding of the physics as well as control over your gravity, and the movement of the gamemode allows for very curvy gameplay. As most recent gamemode, it’s unfamiliar to a majority of the playerbase. Due to the obviously different mechanics from the Ship, controlled gameplay shaped around the movement of the Swing will work a lot better than trying to substitute it into Ship parts.
+
 
 | **Pros**                               | **Cons**                                                            |
 | -------------------------------------- | ------------------------------------------------------------------- |
@@ -207,7 +212,7 @@ Ultimately, the how is a lot more nuanced as there are a nearly limitless amount
 
 ## Cube
 
-As mentioned earlier, Cube is reliant on orbs due to its simplicity. We don’t want to spam orbs though, because orb chains are inconsistent and it’ll diminish the value of the gamemode. Thus, try not to use orbs unless you need to; they can emphasize or mix things up, but try to make use of pads, falling, gravity changes, and even things like head hitters to make things interesting.
+{{< img src="images/GDEmotes/Objects/CubeButton.png" class="emote">}} As mentioned earlier, Cube is reliant on orbs due to its simplicity. We don’t want to spam orbs though, because orb chains are inconsistent and it’ll diminish the value of the gamemode. Thus, try not to use orbs unless you need to; they can emphasize or mix things up, but try to make use of pads, falling, gravity changes, and even things like head hitters to make things interesting.
 
 The Cube takes good advantage of holding after orbs, as holding after a black orb or a blue orb straight onto a platform will make the player automatically jump. This can make the Cube more unique, but can also be buggy at times so use it well. When holding before an orb, you’ll automatically click it when making contact. Keep in mind that the yellow orb functions exactly like a normal jump, allowing mixups, but it can also make the yellow orb feel less unique.
 
@@ -217,7 +222,7 @@ Here’s an example Cube part I made that uses orbs and the Cube’s natural pro
 
 ## Ship
 
-Ship parts can have a free-flowing nature, but you can still make this really interesting. Don’t always have the player idly float, and give them something to do. For example, have the player go up when the song’s melody or volume rises, or vice versa. As a gamemode with air control, structuring is really important for players to understand your gameplay, so try to keep things at least somewhat understandable.
+{{< img src="images/GDEmotes/Objects/ShipButton.png" class="emote">}} Ship parts can have a free-flowing nature, but you can still make this really interesting. Don’t always have the player idly float, and give them something to do. For example, have the player go up when the song’s melody or volume rises, or vice versa. As a gamemode with air control, structuring is really important for players to understand your gameplay, so try to keep things at least somewhat understandable.
 
 The Ship can also feel snappier using orbs as well. There are a lot of unique interactions with orbs because the Ship takes into account hold inputs at all times.
 
@@ -239,7 +244,7 @@ This is a small Ship part from the level earlier. I chose the gamemode here beca
 
 ## Ball
 
-Ball, as mentioned before, is good as an in-between of snappiness and smoothness, and it can function in both environments. Because you swap gravity on clicks, you can make a lot of interesting interactions with a lot of control over what you want the player to do.
+{{< img src="images/GDEmotes/Objects/BallButton.png" class="emote">}} Ball, as mentioned before, is good as an in-between of snappiness and smoothness, and it can function in both environments. Because you swap gravity on clicks, you can make a lot of interesting interactions with a lot of control over what you want the player to do.
 
 You should generally try to keep an even blend of normal clicks and orbs. Try to focus on creating interesting and fun patterns to play; the repetition of its patterns can be both impactful and boring depending on how you use it. The blue orb functions exactly the same as a Ball click, which you can use for the same function but in midair.
 
@@ -249,7 +254,7 @@ This is a Ball part in the same level; the slower repetitive melody that slowly 
 
 ## UFO
 
-UFO has most of the pros and cons of the Cube with some noticeable differences. First off, because it’s an air gamemode, you have much more freedom with what you do. Focus on having a set path that’s fun to pull off and constantly interesting, only using orbs to emphasize important clicks as always.
+{{< img src="images/GDEmotes/Objects/UFOButton.png" class="emote">}} UFO has most of the pros and cons of the Cube with some noticeable differences. First off, because it’s an air gamemode, you have much more freedom with what you do. Focus on having a set path that’s fun to pull off and constantly interesting, only using orbs to emphasize important clicks as always.
 
 The UFO does have a consistent jump arc every time, allowing for easy repetition, especially paired up with things like gravity portals. It’s why you tend to see patterns like this very often in levels.
 
@@ -263,7 +268,7 @@ This part is repetitive, slow, and floaty, hence why I chose the UFO. I made use
 
 ## Wave
 
-Wave is incredibly unique because it has no physics whatsoever and has little to no interactions with anything gameplay-related. Having no diversity in your gameplay can get incredibly boring, which is why you should take advantage of everything you have. As another reminder: Wave is incredibly fast, precise, and the lack of physics makes it extremely jarring to use on a whim. Make sure you’re conscious of this whenever swapping to the Wave gamemode, as lots of perfectly good levels have developed chokepoints from this. If you’re not careful when transitioning to or from the gamemode, you’ll get inconsistency in your level.
+{{< img src="images/GDEmotes/Objects/WaveButton.png" class="emote">}} Wave is incredibly unique because it has no physics whatsoever and has little to no interactions with anything gameplay-related. Having no diversity in your gameplay can get incredibly boring, which is why you should take advantage of everything you have. As another reminder: Wave is incredibly fast, precise, and the lack of physics makes it extremely jarring to use on a whim. Make sure you’re conscious of this whenever swapping to the Wave gamemode, as lots of perfectly good levels have developed chokepoints from this. If you’re not careful when transitioning to or from the gamemode, you’ll get inconsistency in your level.
 
 That aside, let’s look at what the Wave can actually do. The only orbs that actually work with the Wave are the blue, green, dash, spider, and purple dash orbs. The blue and green are functionally the same, flipping your gravity, but you won’t see any actual difference in your trail until you release. The dash orbs are fun to use on the other hand, as the freedom of direction combined with the sharp and straight trail of the Wave work very well together. The spider orb can also be used to snap the wave to a surface and change its gravity. In addition, the Wave dies on contact with any surface unless you’ve placed the D block; make sure to take advantage of this as well.
 
@@ -273,7 +278,7 @@ This is still a relatively fast part yet different enough from the previous part
 
 ## Robot
 
-The Robot is simple and precise. Its greatest weapon is in holds and micro clicks, and it uses orbs as seasoning rather than the sauce. One of the strengths of the Robot compared to other grounded gamemodes is that it can bring diversity to a part with just its default jump, something you should definitely take advantage of.
+{{< img src="images/GDEmotes/Objects/RobotButton.png" class="emote">}} The Robot is simple and precise. Its greatest weapon is in holds and micro clicks, and it uses orbs as seasoning rather than the sauce. One of the strengths of the Robot compared to other grounded gamemodes is that it can bring diversity to a part with just its default jump, something you should definitely take advantage of.
 
 Now will be a good time to talk about micro clicks and holds. Micro clicks, similar to head hitters with the UFO, work for subtler notes and variation. Holds are for long drawn-out notes, used for the emphasis and power behind those notes. However, you should also make use of everything in between; having controlled jumps where you’re not instantly letting go nor holding out for the full duration will make the player judge the length of their click based on your structuring, and it makes the player have something to constantly watch out for.
 
@@ -283,7 +288,7 @@ This Robot part is the very first part in my level. The song is slow and low ene
 
 ## Spider
 
-The Spider is the most powerful gamemode for emphasizing notes, and is successful at repetition too. Though it may look stale and uninteresting, only going up and down, the instantaneous teleportation combined with some interactions with orbs makes it an extremely bouncy and fun gamemode.
+{{< img src="images/GDEmotes/Objects/SpiderButton.png" class="emote">}} The Spider is the most powerful gamemode for emphasizing notes, and is successful at repetition too. Though it may look stale and uninteresting, only going up and down, the instantaneous teleportation combined with some interactions with orbs makes it an extremely bouncy and fun gamemode.
 
 Like the Cube, holding after of a black orb will perform a click as soon as you land (though not with a blue orb). This allows you to make clicks much more consistent as well as control the flow of the part much easier. In addition, clicking into a pad will instantly activate it, letting you bounce, change gravity, or do whatever you want after a click. This constant up and down combined with bounces and orbs is extremely satisfying; you can see an example of it in this part of TROLLMACHINE.
 
@@ -295,7 +300,7 @@ This is the spider part in my level, rounding out this part of the drop. This sp
 
 ## Swing
 
-Swing is widely considered as the "worst gamemode" to many players and creators alike primarily due to how inexperienced creators can be at using it. They tend to slap it on top of Ship gameplay without considering what the Swing does best: big arcs and curves. Swing uses big curves best, so it is best to take advantage of that. Another important part of Swing is how long it takes for you to actually see your input. You can either you can use the gamemode’s unresponsiveness to your advantage (like BUTTON MASHER by Viprin & More), or you can somewhat remedy it using the gravity trigger to increase the player’s gravity to make it more similar to the old dual ball physics.
+{{< img src="images/GDEmotes/Objects/SwingButton.png" class="emote">}} Swing is widely considered as the "worst gamemode" to many players and creators alike primarily due to how inexperienced creators can be at using it. They tend to slap it on top of Ship gameplay without considering what the Swing does best: big arcs and curves. Swing uses big curves best, so it is best to take advantage of that. Another important part of Swing is how long it takes for you to actually see your input. You can either you can use the gamemode’s unresponsiveness to your advantage (like BUTTON MASHER by Viprin & More), or you can somewhat remedy it using the gravity trigger to increase the player’s gravity to make it more similar to the old dual ball physics.
 
 {{< youtube 7b6NTNIa2Lg >}}
 
