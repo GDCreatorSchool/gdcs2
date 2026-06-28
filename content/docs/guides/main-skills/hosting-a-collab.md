@@ -7,7 +7,9 @@ weight: 2140
 date: 2023-09-30T00:00:00.000Z
 contributors:
   - komatic5
-description: Collabs are always a popular way to make Geometry Dash levels. However, you'll make many fatal mistakes unless you know how to manage them properly. This guide will explain how to host a collab properly.
+description: Collabs are always a popular way to make Geometry Dash levels.
+  However, you'll make many fatal mistakes unless you know how to manage them
+  properly. This guide will explain how to host a collab properly.
 tags:
   - Grade 0
   - Community Work
@@ -33,7 +35,7 @@ However, over 90% of collabs fail to get off the ground, and the ones which are 
 
 {{< youtube xpAVk3yrLQM >}}
 
-Before you ask a single person to join your collab, I recommend having a clear idea for why you want to collaborate in the first place. When advertising to others, you’ll need to explain why their time and effort should be spent on your level instead of anything else in their life. If you want to collab because you “don’t feel like making a full level by yourself”, stop right here. Nobody will work for a host who doesn’t have any motivation to work on their own level.
+Before you ask a single person to join your collab, **it's recommended to have a clear idea for why you want to collaborate in the first place**. When advertising to others, you’ll need to explain why their time and effort should be spent on your level instead of anything else in their life. If you want to collab because you “don’t feel like making a full level by yourself”, stop right here. Nobody will work for a host who doesn’t have any motivation to work on their own level.
 
 Here are some good reasons to form a collab. *Don’t use these to justify your collab after the fact*, but use them when you first evaluate your level idea.
 
@@ -55,7 +57,7 @@ Once you have a thought-out level plan and a reason to collab, feel free to star
 
 One major benefit of collabs is that you don’t have to do things you aren’t good at. If you’re good with decoration but can’t make gameplay well, you can get someone to make gameplay for you instead.
 
-However, it’s important that you define each person’s role in the level. Otherwise, multiple people could all work on the same task at once, and someone’s work *will* be wasted as a result. I recommend you organize your level by the required tasks. For example, Ocular Miracle became famous as a high-profile collab that separated tasks between gameplay and deco creators.
+However, **it’s important that you define each person’s role in the level**. Otherwise, multiple people could all work on the same task at once, and someone’s work *will* be wasted as a result. I recommend you organize your level by the required tasks. For example, Ocular Miracle became famous as a high-profile collab that separated tasks between gameplay and deco creators.
 
 {{< youtube rZkyjo_4brY >}}
 
@@ -98,7 +100,7 @@ Once you’ve decided when people will work, it’s time to decide what they can
 
 # 4: Sharing Resources
 
-Level resources are quite limited. You only get 999 color channels and groups, and a limited selection of Item IDs and Z layers. When you’re working in a collab, these limits become very noticeable - if a level has 25 parts, each person has only 39 groups to make gameplay, decoration, and fix bugs with. While Update 2.2 will expand these limits, it’s still important that everyone knows what resources they can use.
+Level resources are quite limited. You only get 999 color channels and 9999 groups, and a limited selection of Item IDs and Z layers. When you’re working in a collab, these limits become very noticeable - if a level has 25 parts, each person has only 39 groups to make gameplay, decoration, and fix bugs with. While Update 2.2 expanded these limits, **it’s still important that everyone knows what resources they can use**.
 
 You must make it clear which resources each person can use for their part, otherwise your level will be a mess to manage. Integrate color and group assignments into your level plan, and ensure that everyone knows which resources they can use. If multiple people work on the same part, make sure they divide their groups and organize their layering properly; that way, you won’t need to replace an entire background because it’s on the wrong layers.
 
@@ -110,10 +112,10 @@ Once you give people a reason to join your collab, communicate your ideas, and e
 
 {{< youtube KCst0sO4RpY >}}
 
-First, encourage your members to communicate with you. Set up regular progress checks where you ask each member how much work they’ve done over some time. Use this time to answer any questions about your level vision, provide feedback on progress, and make changes to your plans as necessary.
+First, **encourage your members to communicate with you**. Set up regular progress checks where you ask each member how much work they’ve done over some time. Use this time to answer any questions about your level vision, provide feedback on progress, and make changes to your plans as necessary.
 
-Second, make sure people who slack off are handled accordingly. Don’t be afraid to replace people if they fail to respond or show satisfactory progress. At the same time, make sure you lead by example. Put in the effort to conduct progress checks and show your passion for your level, otherwise people won’t be interested in building at all. Nobody wants to work for a lazy host, so don’t be one.
+Second, **make sure people who slack off are handled accordingly**. Don’t be afraid to replace people if they fail to respond or show satisfactory progress. At the same time, make sure you lead by example. Put in the effort to conduct progress checks and show your passion for your level, otherwise people won’t be interested in building at all. Nobody wants to work for a lazy host, so don’t be one.
 
-And finally, just try to have fun and know your members well. Many collabs do well because the members have strong relationships and can enjoy working with each other.
+And finally, **just try to have fun and know your members well**. Many collabs do well because the members have strong relationships and can enjoy working with each other.
 
 With these tips in mind, you should be well on your way to making a good Geometry Dash collab. There will be challenges and roadblocks over time, but you’ll succeed with the right management skills. Best of luck!
