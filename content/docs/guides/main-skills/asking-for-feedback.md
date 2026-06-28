@@ -1,13 +1,15 @@
 ---
 draft: false
+authors:
+  - komatic5
 title: Asking for Feedback
 weight: 2040
 date: 2023-03-09T00:00:00.000Z
-description: In this guide, we’ll outline how you should approach giving and receiving feedback. This should help you receive better feedback and get more meaningful interactions when you do so.
-authors:
-  - komatic5
 contributors:
   - komatic5
+description: In this guide, we’ll outline how you should approach giving and
+  receiving feedback. This should help you receive better feedback and get more
+  meaningful interactions when you do so.
 tags:
   - Grade 0
   - Creating Process
@@ -25,7 +27,7 @@ tags:
 
 First, you should know exactly what you need feedback on *before* you post. If you give vague questions, you’ll get vague answers.
 
-For example, suppose you posted in #gd-chat and said “I want to make a modern block”. How much detail will your block have? What colors are you going to use? Have you *tried* to make anything? There’s a lot of guesswork for everyone else, and you won’t get many helpful responses. If you were more specific and said “I want to make a simple block which looks like a bookshelf”, then you’d get more relevant feedback that would help you more.
+For example, suppose you posted in the GD Discord server and said “I want to make a modern block”. How much detail will your block have? What colors are you going to use? Have you *tried* to make anything? There’s a lot of guesswork for everyone else, and you won’t get many helpful responses. If you were more specific and said “I want to make a simple block which looks like a bookshelf”, then you’d get more relevant feedback that would help you more.
 
 Here are some sample questions you could use to describe your work. The more specific you can be, the better.
 
@@ -36,7 +38,7 @@ Here are some sample questions you could use to describe your work. The more spe
 
 # 2: Taking Feedback
 
-It can be really irritating to give someone feedback and receive a rude response or a list of excuses for everything you pointed out. With this in mind, be polite when you receive feedback.
+It can be really irritating to give someone feedback and receive a rude response or a list of excuses for everything you pointed out. **With this in mind, be polite when you receive feedback**.
 
 Try not to be defensive when someone points out issues in your work. If you see it as absolutely necessary, politely explain your intentions further.
 
@@ -46,9 +48,9 @@ Note that you don’t *have* to accept all the feedback you’re given. Sometime
 
 Finally, let’s move to the step of using the feedback you receive. The steps below provide an outline for how to best use feedback.
 
-**1.** Make a list of suggestions and issues you’ve been given.
-**2.** Evaluate how each suggestion or issue would change your work.
-**3.** Choose the changes you want to make, and change your work accordingly.
+1. Make a list of suggestions and issues you’ve been given.
+2. Evaluate how each suggestion or issue would change your work.
+3. Choose the changes you want to make, and change your work accordingly.
 
 Remember that feedback is a process of improving your work. If you’ve made changes to your work and would like more feedback, contact the people whom you spoke to before and get their thoughts! You’re only going to improve as a result.
 
