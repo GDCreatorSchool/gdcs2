@@ -7,7 +7,14 @@ weight: 8230
 date: 2026-06-22T00:00:00.000Z
 contributors:
   - sethlai
-description: Equipped with the perspective tools from the previous guides, you are now able to construct custom perspective grids, which you can use for various complex drawings. This guide will cover the techniques needed in order to accurately construct these grids, along with other crucial skills needed to use them.
+description: >-
+  Equipped with the perspective tools from the previous guides, you are now able
+  to construct custom perspective grids, which you can use for various complex
+  drawings. This guide will cover the techniques needed in order to accurately
+  construct these grids, along with other crucial skills needed to use them.
+
+
+  test
 tags:
   - Grade 2
   - Perspective
