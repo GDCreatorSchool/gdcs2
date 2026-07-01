@@ -20,7 +20,7 @@ defaults:
 
 jobs:
   build:
-    if: github.repository == 'komatic5/gdcs2'
+    if: github.repository == 'GDCreatorSchool/gdcs2'
     runs-on: ubuntu-latest
     env:
       DART_SASS_VERSION: 1.98.0
