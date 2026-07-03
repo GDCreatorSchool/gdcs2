@@ -8,7 +8,8 @@ date: 2023-04-24T00:00:00.000Z
 contributors:
   - komatic5
   - notamoderatr
-description: This guide explains what mechanics are, how they relate to player skill, and how best to introduce them to the player in your gameplay.
+description: This guide explains what mechanics are, how they relate to player
+  skill, and how best to introduce them to the player in your gameplay.
 tags:
   - Grade 2
   - Mechanics
@@ -22,9 +23,10 @@ tags:
 {{< /callout >}}
 
 ** **
+
 **Mechanics** are __rules or gimmicks in gameplay that add more to the existing gameplay a level has__. An example of this is the health bar, where once it’s depleted, you die. What makes mechanics interesting is their ability to completely change how the player approaches the level, giving the opportunity to make creative gameplay.
 
-This guide will explain the process behind creating custom mechanics for your gameplay. For implementing them, you should check out #triggers-2 for its logic-based guides.
+This guide will explain the process behind creating custom mechanics for your gameplay. For implementing them, you should check out the [Intermediate Triggers](/docs/guides/triggers-2/the-trigger-process/) unit for its logic-based guides.
 
 # 1: Getting Ideas
 
