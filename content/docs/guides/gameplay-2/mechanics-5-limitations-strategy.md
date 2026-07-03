@@ -10,7 +10,9 @@ contributors:
   - psytrancegd
   - everedeck
   - themilkcat_tmc
-description: Designing mechanics involves heavy nuance behind connecting major principles of strategic gameplay. This guide will help you apply the concept of limitations to creating strategic mechanics and gameplay.
+description: Designing mechanics involves heavy nuance behind connecting major
+  principles of strategic gameplay. This guide will help you apply the concept
+  of limitations to creating strategic mechanics and gameplay.
 tags:
   - Grade 2
   - Mechanics
@@ -62,18 +64,21 @@ In this video, we have a green swing which brings the player 180° around the ce
 
 {{< youtube fV17tlonBZo >}}
 
-> Lock: I need to launch right
-> Key: I can launch right from the top left
-> Lock: I need to get to the top left
-> Key: I can get to the top left from the bottom right
-> Lock: I need to get to the bottom right
-> Key: I can get to the bottom right from the bottom left
+- Lock: I need to launch right.
+- Key: I can launch right from the top left.
+- Lock: I need to get to the top left.
+- Key: I can get to the top left from the bottom right.
+- Lock: I need to get to the bottom right.
+- Key: I can get to the bottom right from the bottom left.
+
 This is slightly unrelated to strategy, but I’ve put this room early on in the level in order to introduce the player to the concept of lock & key chains early on. If the player doesn’t know how they work, they’ll struggle a lot later on when they encounter more difficult and confusing gameplay.
 
 # 2: Strategic Gameplay
 
 Now that you’ve learned how limitations work, let’s go over how you can apply them to create strategic gameplay.
+
 ## Applying Limitations to Strategy
+
 To put it simply, a **strategy** is __a self-derived process made to fulfill a goal__. When solving a puzzle, you start at the solution and find the way backwards. Lock & key chains allow the creator to make a puzzle that works backwards seamlessly. However, even if you have a “critical path” through the room, you still need to make the critical path interesting and detailed enough that it makes the player feel smart. For example, let’s take a look at this collectible section in my level.
 
 {{< img src="https://lh3.googleusercontent.com/d/1kGE5y_v4HAZmkZ7FtP2L-0WgOGt0i8Xp" >}}
@@ -102,7 +107,7 @@ Congratulations, we now have our path to both collectibles!
 
 {{< youtube DSB7mTveSp0 >}}
 
-The strategy or puzzle in this comes from how we have only one resource, yet we have to think about how to use that resource to get a path to both of these collectibles. The player can’t just look at the section and instantly know what to do because the problem isn’t linear and involves taking advantage of something in multiple ways. Speaking of using something in multiple ways, using existing gameplay in a different context is extremely useful in making the player think about what they’re doing. This is because they have to erase their preconceived image of the section and then figure out how to complete the puzzle. The section above is a good example of this because I’m using the red hook in different contexts and angles, but you can apply this on a larger scale too.
+The strategy or puzzle in this comes from how we have only one resource, yet we have to think about how to use that resource to get a path to both of these collectibles. The player can’t just look at the section and instantly know what to do because the problem isn’t linear and involves taking advantage of something in multiple ways. Speaking of using something in multiple ways, **using existing gameplay in a different context is extremely useful in making the player think about what they’re doing**. This is because they have to erase their preconceived image of the section and then figure out how to complete the puzzle. The section above is a good example of this because I’m using the red hook in different contexts and angles, but you can apply this on a larger scale too.
 
 Here's an example where the player has to go through the section, but later they have to backtrack through it, making them think about it in a new way. On the topic of this video, notice how it has locks and keys as well, but it’s made in a linear way where the player doesn’t have to think too hard about how to get through.
 
@@ -138,9 +143,9 @@ Now, how do you create strategic freedom? You can make strategic freedom with LO
 
 Along the topic of XC3, let’s look at how its main combat mechanic, the class system, works well with strategic freedom. The game uses a job system, which means you unlock classes as you get through the game, and you can rank up the classes if you put them on a character. When ranking up classes, you can get their arts and skills to use them while using other classes. Every class is a big upgrade to your arsenal; your damage will scale a lot. There are 24 classes in total, with 5 different arts/skills from each of them, which is 120 different abilities. This gives the player options to customize a lot. With 6 characters, the possibilities are nearly endless. At the max level you do around a million damage per minute, but the best players can do about 20 million because of how far they’ve been able to push the game.
 
-There’s another great way to create strategic freedom, though it’s pretty different from the other techniques. Rather than making an extremely complex system, you could make a simple system that has a lot of options when combined, like a sandbox system. TotK is like this; you have simple Zonai devices that you can combine in different ways. This is how Minecraft and Chess do it too. In Minecraft, you have somewhat simple components like redstone dust or the repeater, but the way you combine them allows you to use them in almost any way. In chess, you only have 6 unique pieces, yet almost every game is different. Because this technique works best in sandbox or multiplayer games, it won’t clash with limitations or balancing (which is why TotK doesn’t work as well).
+There’s another great way to create strategic freedom, though it’s pretty different from the other techniques. **Rather than making an extremely complex system, you could make a simple system that has a lot of options when combined**, like a sandbox system. TotK is like this; you have simple Zonai devices that you can combine in different ways. This is how Minecraft and Chess do it too. In Minecraft, you have somewhat simple components like redstone dust or the repeater, but the way you combine them allows you to use them in almost any way. In chess, you only have 6 unique pieces, yet almost every game is different. Because this technique works best in sandbox or multiplayer games, it won’t clash with limitations or balancing (which is why TotK doesn’t work as well).
 
-Speedrunning is another good way to have your player find strategies for different things, but the difference is how you promote the strategy. Celeste Minimum Grabs% is a speedrun category where you have to minimize grabs in Celeste, and it takes about 118 hours standing still to optimize it. It’s a cool speedrun category but the game mechanics aren’t necessarily built around this. Speedrunning Celeste in general is more interesting because the game naturally has you find cooler movement tech to go faster. Great Hopper% in Hollow Knight is a speedrun where you have to kill a Great Hopper enemy. The reason why this speedrun relates to strategic freedom better is because it forces the player to find a way to skip to a late-game area, using all their resources in a unique way.
+Speedrunning is another good way to have your player find strategies for different things, but the difference is *how* you promote the strategy. Celeste Minimum Grabs% is a speedrun category where you have to minimize grabs in Celeste, and it takes about 118 hours standing still to optimize it. It’s a cool speedrun category but the game mechanics aren’t necessarily built around this. Speedrunning Celeste in general is more interesting because the game naturally has you find cooler movement tech to go faster. Great Hopper% in Hollow Knight is a speedrun where you have to kill a Great Hopper enemy. The reason why this speedrun relates to strategic freedom better is because it forces the player to find a way to skip to a late-game area, using all their resources in a unique way.
 
 ## Balancing Freedom & Limits
 
@@ -158,7 +163,7 @@ Now that we’ve seen the issues with TotK, let’s consider how it could be bet
 
 This doesn’t solve the exploration aspect though, because you can still just fly to wherever you want out in Hyrule. With some shenanigans, locking Control Sticks and Rockets from the player until they pass a certain point in the story would somewhat fix this, because they’ll only get access to easy flying machines after they’ve explored the rest of the world. This won’t solve the problem of the player launching out of the Skyview Towers and just gliding to their destination (because the limits currently in place can easily be circumvented), but that’s not easily fixed without rewriting a major aspect of either the Skyview Towers or gliding. Overall, since TotK did not implement its limitations properly, the game is able to be broken in many unintended and unfun ways.
 
-*(this entire temple is based around using minecarts for navigation, but it gets completely negated by flying machines and your partner being able to magically teleport)*
+*(This entire temple is based around using minecarts for navigation, but it gets completely negated by flying machines and your partner being able to magically teleport.)*
 
 {{< img src="https://lh3.googleusercontent.com/d/1vjnacB3eSlZq0ehV2f9PrzXPSzLsy4r3" >}}
 
