@@ -8,7 +8,10 @@ date: 2023-06-22T00:00:00.000Z
 contributors:
   - kde
   - komatic5
-description: Backgrounds are often difficult to create because they must not only look interesting on their own, but also work well with your block designs. This guide explains how you can accomplish both of these goals when making your backgrounds.
+description: Backgrounds are often difficult to create because they must not
+  only look interesting on their own, but also work well with your block
+  designs. This guide explains how you can accomplish both of these goals when
+  making your backgrounds.
 tags:
   - Grade 1
   - Deco Skills
@@ -25,16 +28,15 @@ tags:
 
 # 1: Creating Fitting Backgrounds
 
-Backgrounds should always help the block design express the key ideas or themes of a part. Their main point shouldn’t be to fill space, but to provide another way to show your ideas.
+Backgrounds are **the non-interactive visual elements behind a level's layout and block designs**. They should always help the block design express the key ideas or themes of a part. Their main point shouldn’t be to just fill space, *but to provide another way to show your ideas*.
 
-Picture what things would make sense to be with the block design, and mark them as candidates to be put into the background.
-As an example, suppose your part takes place in a factory, where your block design might be based on the factory’s industrial machinery. Then, a good choice may be to include conveyor belts and foundries in the background to elaborate further upon the theme.
+Picture what things would make sense to be with the block design, and mark them as candidates to be put into the background. As an example, suppose your part takes place in a factory, where your block design might be based on the factory’s industrial machinery. Then, a good choice may be to include conveyor belts and foundries in the background to elaborate further upon the theme.
 
 For maximum effectiveness, ensure that your background and foreground ideas aren’t too similar. Instead, use the background as an opportunity to further explore the theme. At the same time, the background should still fit together coherently with the foreground, and not stick out like a sore thumb.
 
 # 2: Background Contrast
 
-The background must contrast from the foreground so that it is easy to distinguish between the two at simply a glance. You don’t want your blocks to blend in with the background, as that’ll make it hard to see where the gameplay is.
+The background must contrast from the foreground so that it is easy to distinguish between the two at simply a glance. **You don’t want your blocks to blend in with the background, as that’ll make it hard to see where the gameplay is**.
 
 Furthermore, with enough contrast you can establish a focal point for your level. Do you want the player to focus on the level’s background, or should the player be drawn to the block design instead? Your decisions here will affect what people focus on, and as such, what should be more detailed.
 
@@ -50,11 +52,11 @@ One thing you can do is make less important details contrast less. For example, 
 
 Here are some levels which use detail contrast effectively.
 
-`Bloomng`’s part in `Honeydew` – The background is low contrast in color, with only a few subtle brightness and hue changes in the leaves and the sky. Additionally, it is quite simple in terms of details. This differs from the foreground, which has a high contrast in color between the gray stone, the green grass, and the flowers – all of which have lots of detail. This way, the player’s attention is dominated by the foreground.
+**Bloomng’s part in Honeydew** – The background is low contrast in color, with only a few subtle brightness and hue changes in the leaves and the sky. Additionally, it is quite simple in terms of details. This differs from the foreground, which has a high contrast in color between the gray stone, the green grass, and the flowers – all of which have lots of detail. This way, the player’s attention is dominated by the foreground.
 
 {{< youtube jLplew2Dwsw >}}
 
-`No Return` (Preview) by `Culuc` and `nikrodox` – The background is the main focus for this particular section. The foreground is intentionally left as a solid color to allow the background to stand out more.
+**No Return (Preview) by Culuc and nikrodox** – The background is the main focus for this particular section. The foreground is intentionally left as a solid color to allow the background to stand out more.
 
 {{< youtube tuN6gERbMk0 >}}
 
@@ -68,11 +70,11 @@ Sometimes, you may have an orb that happens to match the color of the background
 
 Here are some examples of levels which use brightness contrast well.
 
-`Reunomi`’s part in `Scorpius` – The foreground block design is considerably darker than the background, allowing you to clearly see the shape of the structures.
+**Reunomi’s part in Scorpius** – The foreground block design is considerably darker than the background, allowing you to clearly see the shape of the structures.
 
 {{< youtube 7HJPL4RLZdc >}}
 
-`Dynamical` by `HanStor` – This level uses a more abstract style. Even so, notice how despite the numerous changes in hue, the difference in brightness between the foreground and background is maintained throughout the level.
+**Dynamical by HanStor** – This level uses a more abstract style. Even so, notice how despite the numerous changes in hue, the difference in brightness between the foreground and background is maintained throughout the level.
 
 {{< youtube 4wl_mpnIjGI >}}
 
@@ -82,17 +84,17 @@ A background and foreground can work spectacularly together to create depth, an 
 
 ## Parallax
 
-This is an easy way to create depth in your part. The basic principle of **parallax** is this: __As something moves further into the background, it will move slower on the screen__. For example, a mountain deep in the background should appear to hardly move on the screen at all, while the foreground moves backwards at a faster rate.
+This is an easy way to create depth in your part. The basic principle of **parallax** is this: __As something moves further into the background, it will move slower on the screen__. For example, a mountain deep in the background should appear to hardly move on the screen at all, while the foreground moves backwards at a faster rate. The following video demonstrates how parallax works intuitively.
 
-{{< youtube 2z4OTRFuLP8 >}} – This video demonstrates how parallax works intuitively.
+{{< youtube 2z4OTRFuLP8 >}} 
 
 To implement parallax in GD, get some object to follow player X and player Y using a move trigger. Then, use the follow trigger on the background layers and set the trigger’s follow group to the group of the aforementioned object. To tweak the speed of the background layer, you can vary the “XMod” and “YMod” properties on the trigger.
 
-{{< img src="https://lh3.googleusercontent.com/d/1Wfb0Wz4iJB9HAPZQVr48KqIqC4o-vq0u" >}}
+{{< youtube 8MkAhM8Nwxs >}}
 
 Furthermore, your background can have multiple layers, each further back than the last. As more layers are added, the more the overall result resembles a three dimensional space. The effect is especially strong when combined with parallax.
 
-For example, look at `Culuc`’s part in `Emerald Realm` . Many parallax background layers are used in this part, which gives the impression of a three dimensional space. The way it affects the viewer’s perception of the river is especially powerful; because of the many parallax background layers moving at the river banks, an illusion is created where the river (which is ultimately just a flat rectangle in shape) looks like it is being viewed from above, going into the far distance.
+For example, look at **Culuc’s part in Emerald Realm**. Many parallax background layers are used in this part, which gives the impression of a three dimensional space. The way it affects the viewer’s perception of the river is especially powerful; because of the many parallax background layers moving at the river banks, an illusion is created where the river (which is ultimately just a flat rectangle in shape) looks like it is being viewed from above, going into the far distance.
 
 {{< youtube fMAYifajDac >}}
 
