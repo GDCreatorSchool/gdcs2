@@ -95,7 +95,7 @@ The `seo` section controls how the page appears in search engines and when share
 
 The property `contributors` receives a list of all [contributors](/contributors/) who have helped shape the guide in some way. This can encompass writing segments, researching, proofreading, adding examples, and so on.
 
-The list of contributors can be found in [data/contributors.yaml](https://github.com/komatic5/gdcs2/blob/main/data/contributors.yaml). The file stores for each contributor:
+The list of contributors can be found in [data/contributors.yaml](https://github.com/GDCreatorSchool/gdcs2/blob/main/data/contributors.yaml). The file stores for each contributor:
 
 - `ID`: Their **discord** user ID.
 - `username`: Their **discord** username.
@@ -109,7 +109,7 @@ The property `authors` is a subset of `contributors`. It specifies which contrib
 {{< img src="https://lh3.googleusercontent.com/d/13ZxzcyAO13XCe9EjIfIQbnA3djRG9Vp5" >}}
 {{< /img-grid >}}
 
-To fill the authors and contributors attributes in the frontmatter, **you must register the username of the contributors**, not the ID nor preferredUsername. If a new contributor not in [data/contributors.yaml](https://github.com/komatic5/gdcs2/blob/main/data/contributors.yaml) needs to be credited on a guide, their attributes should be added to that file.
+To fill the authors and contributors attributes in the frontmatter, **you must register the username of the contributors**, not the ID nor preferredUsername. If a new contributor not in [data/contributors.yaml](https://github.com/GDCreatorSchool/gdcs2/blob/main/data/contributors.yaml) needs to be credited on a guide, their attributes should be added to that file.
 
 Do note that filling these is optional, but it is recommended to include them so everyone's work gets recognized directly on the site. Either way, all contributions get registered on GitHub and show up on the *Recent Page Edits* section of the [homepage](/).
 
@@ -314,11 +314,11 @@ The images will render as follows.
 
 Some guides make use of certain emojis, such as {{< img src="images/GDEmotes/Triggers/Move.png" class="emote" >}} triggers and {{< img src="images/GDEmotes/Buttons/EditSpecial.png" class="emote" >}} editor buttons.
 
-You can find a list of all emojis [here](https://github.com/komatic5/gdcs2/tree/main/assets/images/GDEmotes). If you need to add more emojis, this is also where you add them.
+You can find a list of all emojis [here](https://github.com/GDCreatorSchool/gdcs2/tree/main/assets/images/GDEmotes). If you need to add more emojis, this is also where you add them.
 
 When inserting an emoji, use the `{{</* img */>}}` shortcode. For instance, `{{</* img src="images/GDEmotes/Icons/Clock.png" class="emote" */>}}` displays as the {{< img src="images/GDEmotes/Icons/Clock.png" class="emote" >}} emoji. Use the `class="emote"` part to ensure emotes show as the right size.
 
-You can find multiple examples of emojis in the [github page](https://github.com/komatic5/gdcs2/blob/main/content/docs/guides/The%20Editor/Placing%20Objects.md) for this example.
+You can find multiple examples of emojis in the [github page](https://github.com/GDCreatorSchool/gdcs2/blob/main/content/docs/guides/The%20Editor/Placing%20Objects.md) for this example.
 
 ## Videos
 

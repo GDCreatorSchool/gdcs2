@@ -3,7 +3,7 @@ baseurl = "gdcreatorschool.com/"
 
 [params.repository]
 branch = 'main'
-owner = 'komatic5'
+owner = 'GDCreatorSchool'
 repo = 'gdcs2'
 service = 'GitHub'
 urlPatternEdit = 'https://github.com/%s/%s/edit/%s/%s'

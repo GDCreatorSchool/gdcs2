@@ -8,7 +8,7 @@
 {{ $guide := replace $slug "-" " " }}
 {{ $class := replace $collection "-" " " }}
 
-{{ $url := printf "https://github.com/komatic5/gdcs2/issues/new?template=issue-report.md&title=Issue+with+%s+(%s)" (title $guide) (title $class) }}
+{{ $url := printf "https://github.com/GDCreatorSchool/gdcs2/issues/new?template=issue-report.md&title=Issue+with+%s+(%s)" (title $guide) (title $class) }}
 <div class="edit-page">
   <a href="{{ $url }}">
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2">

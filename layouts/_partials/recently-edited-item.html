@@ -6,7 +6,7 @@
     </h4>
     <p class="">
         Last Edited on {{ .Lastmod.Format "2 January" }} in commit
-    <i><a href="https://github.com/komatic5/gdcs2/commit/{{.GitInfo.Hash}}" target="_blank">
+    <i><a href="https://github.com/GDCreatorSchool/gdcs2/commit/{{.GitInfo.Hash}}" target="_blank">
         {{ with .GitInfo }}{{ .Subject }}{{ else }}[Commit description]{{ end }} by
         {{ with .GitInfo }}<strong>{{ .AuthorName }}</strong>{{ end }}
 

@@ -55,7 +55,7 @@ The typical set of steps to contribute to anything hosted on GitHub applies: for
 
 The step by step process to open a cloned repository is:
 
-Make a fork of the gdcs2 repository, which can be found [here](https://github.com/komatic5/gdcs2/tree/main). The button used to fork should be near the top right.
+Make a fork of the gdcs2 repository, which can be found [here](https://github.com/GDCreatorSchool/gdcs2/tree/main). The button used to fork should be near the top right.
 <span style="color: gray;">*Refer to the image below.*</span>
 
 {{< img src="https://lh3.googleusercontent.com/d/1GNRVlG5tjCV0s2jThHUUshlsXVjEzvpt" >}}

@@ -1,0 +1,72 @@
+{{ define "main" }}
+<div class="row justify-content-center">
+  <div class="col-md-12 col-lg-10 col-xl-8">
+      <h1 class="text-center">
+        {{ if eq .CurrentSection .FirstSection }}
+          {{ .Section | humanize }}
+        {{ else }}
+          {{ .Title }}
+        {{ end }}
+      </h1>
+
+      {{ with .Content }}
+        <div class="text-center">{{ . }}</div>
+      {{ end }}
+
+      <div class="card-list">
+  </div>
+</div>
+{{ if or (eq .Section "docs") (eq .Section "contributing") (eq .Section "guides") }}
+        {{ $paginator := .Paginate .RegularPages }}
+
+
+
+          <div class="row justify-content-center">
+            {{ range $paginator.Pages }}
+              <div class="col-16 col-lg-8">
+                <div class="card mt-2 ">
+                  <div class="card-body">
+                    <article>
+
+                      {{ if .Params.tags }}
+                        <div style="margin-bottom: -1rem; margin-top: 1.5rem;">
+                          {{ partial "main/tags.html" . }}
+                        </div>
+                      {{ end }}
+
+                      <h2 class="h3 mb-0">
+                        <a class="stretched-link text-body" href="{{ .RelPermalink }}">
+                          {{ partial "main/title.html" .Params.title }}
+                        </a>
+                      </h2>
+
+                      {{ partial "main/contributor-blog-meta.html" . }}
+
+                    </article>
+                  </div>
+                </div>
+              </div>
+            {{ end }}
+          </div>
+
+{{ else }}
+
+          {{ range $paginator.Pages }}
+          <article>
+            <div class="card my-3">
+              <div class="card-body">
+                <a class="stretched-link" href="{{ .RelPermalink }}">
+                  {{ .Params.title | title }} &rarr;
+                </a>
+              </div>
+            </div>
+          </article>
+          {{ end }}
+
+        {{ end }}
+
+      </div>
+
+  </div>
+</div>
+{{ end }}
