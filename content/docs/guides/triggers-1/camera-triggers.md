@@ -9,6 +9,7 @@ contributors:
   - etherail
   - itsnub1x
   - sparktwee
+  - v1ewsh0t
   - zars70
 description: Camera Triggers allow you to manipulate the camera in a level. In
   this guide, we'll explore nine different triggers that can affect the level’s
