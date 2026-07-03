@@ -128,7 +128,7 @@ The **Degrees** slider modifies the camera's angle. By default, the angle sets t
 
 2.2’s official release, however, adds the **Add** checkbox which __stacks the angle with the previous rotation.__ If the camera is set to 60°, inputting 20° would rotate the camera to 80° instead of 20°.
 
-Alongside Add is **Snap360** which __rotates the camera’s position to the nearest 360° angle. In other words, it uprights the camera back to its default position__ As of 2.205, however, it seems that this feature does not work. Even so, you can just input 0° and/or 360° if you want to stabilize the camera.
+Alongside Add is **Snap360** which __rotates the camera’s position to the nearest 360° angle. In other words, it uprights the camera back to its default position__ As of 2.208, however, it seems that this feature does not work. Even so, you can just input 0° and/or 360° if you want to stabilize the camera.
 
 Here's how the game looks rotated 20°:
 
