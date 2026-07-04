@@ -1,16 +1,22 @@
 ---
 draft: false
-title: Priority Order
-weight: 6030
-date: 2024-09-17T00:00:00.000Z
-description: Priority Order is the second activation system in Geometry Dash. It’s a lot more subtle than Spawn Order, but its impacts are far and wide. Priority order affects how objects with the same Z-Order will layer, Spawn Family triggers activate, and which orbs you click first when they’re layered on each other. This guide explains how Priority Order works in-game. Although this is no longer manipulable in-game, it is still useful to know for various in-editor circumstances.
 authors:
   - theibra
   - typexleta
+title: Priority Order
+weight: 6030
+date: 2024-09-17T00:00:00.000Z
 contributors:
   - notamoderatr
   - theibra
   - typexleta
+description: Priority Order is the second activation system in Geometry Dash.
+  It’s a lot more subtle than Spawn Order, but its impacts are far and wide.
+  Priority order affects how objects with the same Z-Order will layer, Spawn
+  Family triggers activate, and which orbs you click first when they’re layered
+  on each other. This guide explains how Priority Order works in-game. Although
+  this is no longer manipulable in-game, it is still useful to know for various
+  in-editor circumstances.
 tags:
   - Grade 2
   - Trigger Concepts
@@ -110,7 +116,7 @@ If "spawn triggered" is enabled, triggers will be activated from left to right, 
 
 ## Order Value Priority
 
-**As of 2.206, this feature suffers from multiple bugs, and should be avoided when possible until it’s fixed.** This can trigger on portals, pads, and orbs but has no visible effects. This can also break triggers if they aren’t set up properly.
+**As of 2.208, this feature suffers from multiple bugs, and should be avoided when possible until it’s fixed.** This can trigger on portals, pads, and orbs but has no visible effects. This can also break triggers if they aren’t set up properly.
 
 This feature is only used for regular or touch-enabled triggers. Their order values are compared in ascending order, meaning the triggers with the lowest value activate first. You can change a trigger’s order value in the bottom left of EditGroup , and a trigger’s value must be larger than all other triggers before it in order to prevent breaking.
 
