@@ -43,7 +43,7 @@ seo:
 # 1: Item Edit
 
 
-The **Item Edit** {{< img src="images/GDEmotes/Triggers/ItemEdit.png" class="emote" >}} trigger lets you make simple equations using the values stored in Item IDs.
+The **Item Edit** {{< img src="images/GDEmotes/Triggers/ItemEdit.png" class="largeemote" >}} trigger lets you make simple equations using the values stored in Item IDs.
 
 
 To start, you need at least one existing Item ID. Ideally, these IDs should already be modified by a Pickup trigger so its value is not zero.
@@ -58,11 +58,11 @@ ItemID1 & ItemID2 are the IDs containing the values you want to use in your equa
 The checkboxes correspond to each Item ID’s type:
 
 
-* Item - A normal item counter like that used in the Pickup trigger.
-* Timer - A timer item counter. Place a Counter object, set its Item ID, and enable the “Time Counter” checkbox. You can then use this with the Time triggers.
-* Points - A point item counter. In the Counter object, use the “Points” checkbox; this works with the Points mechanic in Platformer Mode.
-* Time - The amount of time you’ve taken on your current attempt. Use the “MainTime” checkbox in the Counter object.
-* Attempts (Att) - The amount of attempts you’ve taken so far. Use the “Attempts” checkbox in the Counter object.
+* **Item** - A normal item counter like that used in the Pickup trigger.
+* **Timer** - A timer item counter. Place a Counter object, set its Item ID, and enable the “Time Counter” checkbox. You can then use this with the Time triggers.
+* **Points** - A point item counter. In the Counter object, use the “Points” checkbox; this works with the Points mechanic in Platformer Mode.
+* **Time** - The amount of time you’ve taken on your current attempt. Use the “MainTime” checkbox in the Counter object.
+* **Attempts (Att)** - The amount of attempts you’ve taken so far. Use the “Attempts” checkbox in the Counter object.
 
 
 Once your IDs are set up, you’ll get an equation in the box.
@@ -100,7 +100,7 @@ You can set the Target ID to be an Item ID, Timer value, or points.
 >
 >
 >
-> The “NA” options allow for rounding:
+The “NA” options allow for rounding:
 
 
 * Round (RND) - Rounds numbers to the nearest integer. `0.4` rounds to `0`, while `0.5` goes to `1`.
