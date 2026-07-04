@@ -8,6 +8,7 @@ date: 2023-06-26T00:00:00.000Z
 contributors:
   - creeperiv
   - komatic5
+  - v1ewsh0t
 description: Optimization, like simplification, is an important way to make your
   decoration efficient. Unlike simplification, its main goal is to keep your
   levels as accessible as possible. This guide explains the process you should
@@ -34,23 +35,26 @@ tags:
 There are many techniques you can use to make your object use more efficient.
 
 ## Overlapping
-{{< img src="https://lh3.googleusercontent.com/d/1Lge92lAIYBDXYsGVR-ylEOvxTaoF1Leh" >}}
 
 Removing **Overlapping** objects is usually the easiest way to optimize. You simply delete objects which are fully covered by others. This works best on decoration that utilizes many layers.
 
-## Scaling
-{{< img src="https://lh3.googleusercontent.com/d/1JGbw0hMG0e2TSnwFLWCSPcUMb56QhSRF" >}}
+{{< img src="https://lh3.googleusercontent.com/d/1Lge92lAIYBDXYsGVR-ylEOvxTaoF1Leh" >}}
 
-**Scaling** is another simple way to reduce object counts. By making one object take up more space, you can use far fewer objects to fill in a space. Note that this is much easier with scale hack. You can also use the warp function as it has more freedom, but warping it too much will bug it out a lot.
+## Scaling
+
+**Scaling** is another simple way to reduce object counts. By making one object take up more space, you can use far fewer objects to fill in a space. In order to do this, you can use the warp function introduced in update 2.2, but keep in mind that warping an object too much may cause it to bug out.
+
+{{< img src="https://lh3.googleusercontent.com/d/1JGbw0hMG0e2TSnwFLWCSPcUMb56QhSRF" >}}
 
 {{< callout context="caution" title="Warning: GD renders large objects differently depending on their hitboxes. Be careful with this because it can cause visual errors." icon="outline/info-circle" >}}
 Note: This can be remedied by enabling NoTouch to remove the hitbox.
 {{< /callout >}}
 
 ## Object Types
-{{< img src="https://lh3.googleusercontent.com/d/1cTddEgtJ9tYvgeYDakYHuqbyIewQFait" >}}
 
 **Object Types** are the strongest way to efficiently optimize, although using them requires experience. Essentially, some objects can be sufficient to maintain similar quality with far lower object counts. These objects will depend on what you’re trying to do with the objects.
+
+{{< img src="https://lh3.googleusercontent.com/d/1cTddEgtJ9tYvgeYDakYHuqbyIewQFait" >}}
 
 For example, you can get away with using the wood objects in the 1st and 9th tabs instead making your own custom wood. In general, be aware that custom assets will always be more inefficient than using default objects, which include things like custom curves.
 
