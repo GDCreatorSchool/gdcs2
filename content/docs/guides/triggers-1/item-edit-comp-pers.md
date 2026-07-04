@@ -80,13 +80,13 @@ The 4th and 5th options choose between absolute value or negative value.
 {{< img src="https://lh3.googleusercontent.com/d/1pTx-GsHOdYoPab2g7W6fbLFKqV1EFi8B" >}}
 
 
-* Equals (=) - Equals sign; there can be only one in the equation.
-* Addition (+) - Adds the two Item IDs.
-* Subtraction (-) - Subtracts the first Item ID by the second Item ID.
-* Multiplication (•) - Multiplies the two Item IDs.
-* Division (/) - Divides the first Item ID by the second.
-* Absolute value (A) - Makes the equation result always positive.
-* Negative value (N) - Makes the equation result always negative.
+* **Equals (=)** - Equals sign; there can be only one in the equation.
+* **Addition (+)** - Adds the two Item IDs.
+* **Subtraction (-)** - Subtracts the first Item ID by the second Item ID.
+* **Multiplication (•)** - Multiplies the two Item IDs.
+* **Division (/)** - Divides the first Item ID by the second.
+* **Absolute value (A)** - Makes the equation result always positive.
+* **Negative value (N)** - Makes the equation result always negative.
 
 
 {{< callout context="caution" title="Note:" icon="outline/info-circle" >}}
@@ -103,9 +103,9 @@ You can set the Target ID to be an Item ID, Timer value, or points.
 The “NA” options allow for rounding:
 
 
-* Round (RND) - Rounds numbers to the nearest integer. `0.4` rounds to `0`, while `0.5` goes to `1`.
-* Floor (FLR) - Rounds numbers to the nearest *lesser* integer. `0.9` rounds to `0`.
-* Ceiling (CEI) - Rounds numbers to the nearest *greater* integer. `0.1` rounds to `1`.
+* **Round (RND)** - Rounds numbers to the nearest integer. `0.4` rounds to `0`, while `0.5` goes to `1`.
+* **Floor (FLR)** - Rounds numbers to the nearest *lesser* integer. `0.9` rounds to `0`.
+* **Ceiling (CEI)** - Rounds numbers to the nearest *greater* integer. `0.1` rounds to `1`.
 
 
 {{< callout context="caution" title="Note:" icon="outline/alert-triangle" >}}
@@ -120,7 +120,7 @@ Be careful when taking the floor or ceiling of negative numbers, as they may not
 {{< youtube SG0LNJ_Omvw >}}
 
 
-**Item Edit** {{< img src="images/GDEmotes/Triggers/ItemEdit.png" class="emote" >}}  also allows you to do complex algorithms like the Fibonacci Sequence and Recursion.
+**Item Edit** {{< img src="images/GDEmotes/Triggers/ItemEdit.png" class="largeemote" >}}  also allows you to do complex algorithms like the Fibonacci Sequence and Recursion.
 
 
 {{< youtube rupPPGXXYos >}}
@@ -132,7 +132,7 @@ Be careful when taking the floor or ceiling of negative numbers, as they may not
 # 2: Item Compare (Item Comp)
 
 
-The **Item Comp** {{< img src="images/GDEmotes/Triggers/ItemComp.png" class="emote" >}} trigger compares the values of two Item IDs and activates group IDs depending on the outcome.
+The **Item Comp** {{< img src="images/GDEmotes/Triggers/ItemComp.png" class="largeemote" >}} trigger compares the values of two Item IDs and activates group IDs depending on the outcome.
 
 
 {{< callout context="caution" title="Note:" icon="outline/alert-triangle">}}
@@ -144,12 +144,12 @@ The **Item Comp** {{< img src="images/GDEmotes/Triggers/ItemComp.png" class="emo
 {{< /callout >}}
 
 
-The options in this trigger are very similar to {{< img src="images/GDEmotes/Triggers/ItemEdit.png" class="emote" >}} **Item Edit;** the values from two Item IDs are used in an equation and the outcome is saved in another Item ID.
+The options in this trigger are very similar to {{< img src="images/GDEmotes/Triggers/ItemEdit.png" class="largeemote" >}} **Item Edit;** the values from two Item IDs are used in an equation and the outcome is saved in another Item ID.
 
 
-* TrueID - the ID that activates if the comparison is true.
-* FalseID - the ID that activates if the comparison is false.
-* Tol - the allowed margin of error for the True and False ID conditions.
+* **TrueID** - the ID that activates if the comparison is true.
+* **FalseID** - the ID that activates if the comparison is false.
+* **Tol** - the allowed margin of error for the True and False ID conditions.
 
 
 {{< img src="https://lh3.googleusercontent.com/d/1FEyfics0P0rjGuZe0fAzFQUov3alVUMr" >}}
@@ -158,12 +158,12 @@ The options in this trigger are very similar to {{< img src="images/GDEmotes/Tri
 The modification options and ID types are the same as well, but the differences come in the operations it lets you perform. These operations are **relational** and **compare values instead of manipulating them**:
 
 
-* Equals (==) - I1 must equal I2 in value.
-* Less than (<) - I1 must be less than I2.
-* Less than or equal to (<=) - I1 must be less than or equal to I2.
-* Greater than (>) - I1 must be greater than I2.
-* Greater than or equal to (>=) - I1 must be greater than or equal to I2.
-* Not equals (!=) - I1 must not equal I2.
+* **Equals (==)** - I1 must equal I2 in value.
+* **Less than (<)** - I1 must be less than I2.
+* **Less than or equal to (<=)** - I1 must be less than or equal to I2.
+* **Greater than (>)** - I1 must be greater than I2.
+* **Greater than or equal to (>=)** - I1 must be greater than or equal to I2.
+* **Not equals (!=)** - I1 must not equal I2.
 
 
 {{< youtube FSBUYABrU4w >}}
@@ -172,7 +172,7 @@ The modification options and ID types are the same as well, but the differences 
 # 3: Persistent Item (Item Pers)
 
 
-The **Item Pers** {{< img src="images/GDEmotes/Triggers/ItemPers.png" class="emote" >}} trigger lets Item ID values remain the same after the player dies. This basically acts as a replacement for the Attempt-Based Data guides from 2.1.
+The **Item Pers** {{< img src="images/GDEmotes/Triggers/ItemPers.png" class="largeemote" >}} trigger lets Item ID values remain the same after the player dies. This basically acts as a replacement for the Attempt-Based Data guides from 2.1.
 
 
 {{< img src="https://lh3.googleusercontent.com/d/1gL9eh-cBKJwAK6FRibY0EWYj0holzW6K" >}}
@@ -181,10 +181,10 @@ The **Item Pers** {{< img src="images/GDEmotes/Triggers/ItemPers.png" class="emo
 The checkboxes provide options for the Item ID:
 
 
-* Timer - select if the Item ID is a timer item counter.
-* Persistent - sets the Item ID as “persistent” to work after the player dies.
-* Target All - targets every persistent item at once.
-* Reset - reset the Item ID’s value.
+* **Timer** - select if the Item ID is a timer item counter.
+* **Persistent** - sets the Item ID as “persistent” to work after the player dies.
+* **Target All** - targets every persistent item at once.
+* **Reset** - reset the Item ID’s value.
 
 
 {{< youtube Hwx1Q1-nGzI >}}
