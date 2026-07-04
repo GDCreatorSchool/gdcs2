@@ -1,18 +1,22 @@
 ---
 draft: false
+authors:
+  - komatic5
 title: Optimizing
 weight: 5130
 date: 2023-06-26T00:00:00.000Z
-description: Optimization, like simplification, is an important way to make your decoration efficient. Unlike simplification, its main goal is to keep your levels as accessible as possible. This guide explains the process you should use to optimize your levels.
-authors:
-  - komatic5
 contributors:
   - creeperiv
   - komatic5
+description: Optimization, like simplification, is an important way to make your
+  decoration efficient. Unlike simplification, its main goal is to keep your
+  levels as accessible as possible. This guide explains the process you should
+  use to optimize your levels.
 tags:
   - Grade 1
   - Deco Skills
 ---
+
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
 - Optimizing refers to reducing the amount of objects used without affecting appearance, important for creating less lag when playing levels.
@@ -29,7 +33,13 @@ tags:
 
 There are many techniques you can use to make your object use more efficient.
 
-**Overlapping** objects is usually the easiest way to optimize. You simply delete objects which are fully covered by others. This works best on decoration that utilizes many layers.
+## Overlapping
+{{< img src="https://lh3.googleusercontent.com/d/1Lge92lAIYBDXYsGVR-ylEOvxTaoF1Leh" >}}
+
+Removing **Overlapping** objects is usually the easiest way to optimize. You simply delete objects which are fully covered by others. This works best on decoration that utilizes many layers.
+
+## Scaling
+{{< img src="https://lh3.googleusercontent.com/d/1JGbw0hMG0e2TSnwFLWCSPcUMb56QhSRF" >}}
 
 **Scaling** is another simple way to reduce object counts. By making one object take up more space, you can use far fewer objects to fill in a space. Note that this is much easier with scale hack. You can also use the warp function as it has more freedom, but warping it too much will bug it out a lot.
 
@@ -37,9 +47,18 @@ There are many techniques you can use to make your object use more efficient.
 Note: This can be remedied by enabling NoTouch to remove the hitbox.
 {{< /callout >}}
 
+## Object Types
+{{< img src="https://lh3.googleusercontent.com/d/1cTddEgtJ9tYvgeYDakYHuqbyIewQFait" >}}
+
 **Object Types** are the strongest way to efficiently optimize, although using them requires experience. Essentially, some objects can be sufficient to maintain similar quality with far lower object counts. These objects will depend on what you’re trying to do with the objects.
 
 For example, you can get away with using the wood objects in the 1st and 9th tabs instead making your own custom wood. In general, be aware that custom assets will always be more inefficient than using default objects, which include things like custom curves.
+
+{{< callout context="caution" title="Warning: Layer Issues" icon="outline/info-circle" >}}
+Certain objects have different priority when it comes to layering, no matter what z order you set it to. You can check this by looking at the number next to the "Z Layer" text. The lower the number, the higher the priority. This means, objects with priority 0 will always be above objects with priority 8 if both are on the same Z layer.
+
+(The priority is due to which spritesheet the object is located on.)
+{{< /callout >}}
 
 # 2: Reducing Objects
 
