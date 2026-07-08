@@ -122,7 +122,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           path: ./public
-          artifact_name: 'github-pages'
+          name: 'github-pages'
         continue-on-error: true
 
   deploy:
