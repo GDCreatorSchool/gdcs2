@@ -121,8 +121,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          path: ${{ github.workspace }}/dist
-          artifact_name: dist
+          path: ./public
+          artifact_name: 'github-pages'
         continue-on-error: true
 
   deploy:
