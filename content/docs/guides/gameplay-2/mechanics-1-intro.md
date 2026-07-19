@@ -8,8 +8,7 @@ date: 2023-04-24T00:00:00.000Z
 contributors:
   - komatic5
   - notamoderatr
-description: This guide explains what mechanics are, how they relate to player
-  skill, and how best to introduce them to the player in your gameplay.
+description: This guide explains what mechanics are, how they relate to player skill, and how best to introduce them to the player in your gameplay.
 tags:
   - Grade 2
   - Mechanics

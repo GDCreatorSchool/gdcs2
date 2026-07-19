@@ -9,10 +9,7 @@ contributors:
   - creeperiv
   - komatic5
   - v1ewsh0t
-description: Optimization, like simplification, is an important way to make your
-  decoration efficient. Unlike simplification, its main goal is to keep your
-  levels as accessible as possible. This guide explains the process you should
-  use to optimize your levels.
+description: Optimization, like simplification, is an important way to make your decoration efficient. Unlike simplification, its main goal is to keep your levels as accessible as possible. This guide explains the process you should use to optimize your levels.
 tags:
   - Grade 1
   - Deco Skills

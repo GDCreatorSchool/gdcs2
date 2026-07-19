@@ -9,9 +9,7 @@ contributors:
   - kde
   - komatic5
   - poryii
-description: This guide will explain what decoration styles are. Even if you
-  don't think you have a style, it helps to be aware of what they are and if
-  they're important at all.
+description: This guide will explain what decoration styles are. Even if you don't think you have a style, it helps to be aware of what they are and if they're important at all.
 tags:
   - Grade 1
   - Deco Skills

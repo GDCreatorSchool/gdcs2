@@ -10,9 +10,7 @@ contributors:
   - psytrancegd
   - everedeck
   - themilkcat_tmc
-description: Designing mechanics involves heavy nuance behind connecting major
-  principles of strategic gameplay. This guide will help you apply the concept
-  of limitations to creating strategic mechanics and gameplay.
+description: Designing mechanics involves heavy nuance behind connecting major principles of strategic gameplay. This guide will help you apply the concept of limitations to creating strategic mechanics and gameplay.
 tags:
   - Grade 2
   - Mechanics

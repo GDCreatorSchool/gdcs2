@@ -10,13 +10,7 @@ contributors:
   - notamoderatr
   - theibra
   - typexleta
-description: Priority Order is the second activation system in Geometry Dash.
-  It’s a lot more subtle than Spawn Order, but its impacts are far and wide.
-  Priority order affects how objects with the same Z-Order will layer, Spawn
-  Family triggers activate, and which orbs you click first when they’re layered
-  on each other. This guide explains how Priority Order works in-game. Although
-  this is no longer manipulable in-game, it is still useful to know for various
-  in-editor circumstances.
+description: Priority Order is the second activation system in Geometry Dash. It’s a lot more subtle than Spawn Order, but its impacts are far and wide. Priority order affects how objects with the same Z-Order will layer, Spawn Family triggers activate, and which orbs you click first when they’re layered on each other. This guide explains how Priority Order works in-game. Although this is no longer manipulable in-game, it is still useful to know for various in-editor circumstances.
 tags:
   - Grade 2
   - Trigger Concepts

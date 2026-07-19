@@ -8,10 +8,7 @@ date: 2023-06-22T00:00:00.000Z
 contributors:
   - kde
   - komatic5
-description: Backgrounds are often difficult to create because they must not
-  only look interesting on their own, but also work well with your block
-  designs. This guide explains how you can accomplish both of these goals when
-  making your backgrounds.
+description: Backgrounds are often difficult to create because they must not only look interesting on their own, but also work well with your block designs. This guide explains how you can accomplish both of these goals when making your backgrounds.
 tags:
   - Grade 1
   - Deco Skills
