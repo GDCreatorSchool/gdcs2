@@ -24,13 +24,14 @@ Sorting algorithms are incredibly useful when dealing with **large amounts of da
 
 Sorting algorithms are also used in many applications that deal with parsing through and retrieving information from large datasets. 
 
-## List structure:
-
-In this guide, I will be using a **simple dynamic array** structure that has 1000 addresses. Your structure **does not** need to include that many, but to showcase performance and speed, I will be using this structure.
-
-If you need a refresher on how to make a dynamic array structure, you can follow along here, otherwise you can skip to the algorithms.
-
 # 2: Sorting Algorithms
+
+{{< callout context="caution" title="Caution:" icon="outline/info-circle" >}}
+
+  This guide uses **Python** for its code. I highly suggest learning the [syntax](https://docs.python.org/3/library/index.html) before continuing this guide if you don't already know.
+
+
+{{< /callout >}}
 
 ## Algorithm 1: Bubble Sort
 
@@ -48,81 +49,6 @@ The time complexity is listed below:
 
 ### Implementation
 
-## Algorithm 2: Selection Sort:
-
-Selection Sort is a **comparison based algorithm**, the second easiest in this guide. Commonly used for **small data sets** and in situations where memory is limited due to the fact that it’s an in **place sorting algorithm.**
-
-Selection Sort works by finding the **smallest element in the array, swapping it with its current item, the pointer moving to the next element in the array.** This repeats until the full array has been sorted. 
-Like Bubble Sort, Selection Sort is useful for small data sets as computational time significantly increases as the array increases.
-
-The time complexity is listed below:
-
-* Best: `O(n^2)`
-* Average: `O(n^2` 
-* Worst: `O(n^2)`
-
-### Implementation
-
-## Algorithm 3: Merge Sort
-
-Merge Sort is a very popular sorting algorithm due to its efficiency and stability. Used for large datasets and when memory is not an issue. 
-
-Merge Sort works by **splitting** the array into **smaller arrays**, dividing the arrays in half until it can no longer be divided. It then **sorts each subarray** in pairs using the Merge Sort algorithm and **merges** the subarrays, repeating the process until the array is fully sorted. *(Confused? Don’t worry, I was too when learning this.)* There are two implementations of the Merge Sort algorithm, the **Top Down** approach and the **Bottom Up** approach, the Bottom Up approach being the one we are implementing here.
-
-#### Bottom-Up Approach
-
-We begin with our array of values. `[0,8,6,4,9,3,4,2]` We are going to imagine that each individual item in this array is its **own subarray** `[[0],[8],[6],[4],[9],[3],[4],[2]]` We are now going to **take each adjacent pair of subarrays and sort them**.
-
-```
-0,8 → 0,8
-6,4 → 4,6
-9,3 → 3,9
-4,2 → 2,4
-```
-
-Now, we are going to **merge** the subarrays one layer. `[[0,8],[4,6],[3,9],[2,4]]`
-
-Now that we have this new array, we are going to sort the adjacent list again, comparing the first item in the first array with each item in the second array, moving the smaller value into another array:
-
-```
-[0,8] + [4,6] → [8] + [4,6] → [8] + [6] → [8]    →    [] 
-[]              [0]           [0,4]       [0,4,6]     [0,4,6,8]  
-
-
-[3,9] + [2,4] → [3,9] + [4] → [9] + [4] -> [9]   →    []
-[]              [2]           [2,3]        [2,3,4]    [2,3,4,9]    
-```
-
-Now we **repeat** the process 1 more time, **merging** `[0,4,6,8]` and `[2,3,4,9]` together:
-
-```
-[0,4,6,8] + [2,3,4,9] → [4,6,8] + [2,3,4,9] → [4,6,8] + [3,4,9] → [4,6,8] + [4,9] →  
-[]                      [0]                   [0,2]               [0,2,3]       
-           
-[6,8] + [4,9] → [6,8] + [9] → [8] + [9]    →    [9]         →         []
-[0,2,3,4]       [0,2,3,4,4]   [0,2,3,4,4,6]     [0,2,3,4,4,6,8]       [0,2,3,4,4,6,8,9]
-```
-
-**Remember**, Merge sort **never rearranges elements** inside a subarray, it only **merges already-sorted subarrays.**
-
-Because of its **efficiency**, merge sort is a **very popular algorithm**, often used for large data sets.
-
-The time complexity is listed below:
-
-* Overall: `O(n log n)`
-
-### Implementation
-
-## Algorithm 4: Counting Sort
-
-### Implementation
-
-## Algorithm 5: Radix Sort
-
-# Summary
-
-# TEMP CODE BLOCKS:
-
 ```
 '''1. Bubble Sort'''
 
@@ -139,6 +65,21 @@ def Bubble_Sort(Array):
                 Swapped = True # Continues loop
     return Array
 ```
+
+## Algorithm 2: Selection Sort:
+
+Selection Sort is a **comparison based algorithm**, the second easiest in this guide. Commonly used for **small data sets** and in situations where memory is limited due to the fact that it’s an in **place sorting algorithm.**
+
+Selection Sort works by finding the **smallest element in the array, swapping it with its current item, the pointer moving to the next element in the array.** This repeats until the full array has been sorted. 
+Like Bubble Sort, Selection Sort is useful for small data sets as computational time significantly increases as the array increases.
+
+The time complexity is listed below:
+
+* Best: `O(n^2)`
+* Average: `O(n^2` 
+* Worst: `O(n^2)`
+
+### Implementation
 
 ```
 '''2. Selection Sort'''
@@ -158,6 +99,43 @@ def Selection_Sort(Array):
         Array[MI] = CIV
     return Array
 ```
+
+## Algorithm 3: Merge Sort
+
+Merge Sort is a very popular sorting algorithm due to its efficiency and stability. Used for large datasets and when memory is not an issue. 
+
+Merge Sort works by **splitting** the array into **smaller arrays**, dividing the arrays in half until it can no longer be divided. It then **sorts each subarray** in pairs using the Merge Sort algorithm and **merges** the subarrays, repeating the process until the array is fully sorted. There are two implementations of the Merge Sort algorithm, the **Top Down** approach and the **Bottom Up** approach, the Bottom Up approach being the one we are implementing here.
+
+#### Bottom-Up Approach
+
+We begin with our array of values. `[0,8,6,4,9,3,4,2]` We are going to imagine that each individual item in this array is its **own subarray** `[[0],[8],[6],[4],[9],[3],[4],[2]]` We are now going to **take each adjacent pair of subarrays and sort them**.
+
+{{< img src="https://lh3.googleusercontent.com/d/1jJ1Glpwv4OerTidS0z98OITy1ldGaD6B" >}}
+
+Now, we are going to **merge** the subarrays one layer. `[[0,8],[4,6],[3,9],[2,4]]`
+
+Now that we have this new array, we are going to sort the adjacent list again, comparing the first item in the first array with each item in the second array, moving the smaller value into another array:
+
+{{< img src="https://lh3.googleusercontent.com/d/1131wcbecWFfHDAUoT_aIdeDidGQpKf5S" >}}
+
+Now we **repeat** the process 1 more time, **merging** `[0,4,6,8]` and `[2,3,4,9]` together:
+
+{{< img src="https://lh3.googleusercontent.com/d/1019fJGYoV2LMFegQu1CHzXZgQYVKNTvQ" >}}
+
+{{< callout context="note" title="Remember:" icon="outline/info-circle" >}}
+
+  Merge sort **never rearranges elements** inside a subarray, it only **merges already-sorted subarrays.**
+
+{{< /callout >}}
+
+
+Because of its **efficiency**, merge sort is a **very popular algorithm**, often used for large data sets.
+
+The time complexity is listed below:
+
+* Overall: `O(n log n)`
+
+### Implementation
 
 ```
 '''#3. Merge Sort'''
@@ -200,6 +178,10 @@ def Merge_Sort(Array):
     return(Array)
 ```
 
+## Algorithm 4: Counting Sort
+
+### Implementation
+
 ```
 '''4. Counting Sort'''
 
@@ -227,6 +209,10 @@ def Counting_Sort(Array):
 
     return FinalArray
 ```
+
+## Algorithm 5: Radix Sort
+
+### Implementation
 
 ```
 '''5. Radix Sort'''
@@ -258,47 +244,7 @@ def Radix_Sort(Array):
     return Array
 ```
 
-```
-'''6. EXTRA Quick Sort'''
-
-def partition(QuickSort_Array,low,high): #Hoare's Partition Scheme
-    pivot = QuickSort_Array[low]
-    LI = low - 1 #Left Index
-    RI = high + 1 #Right Index
-    
-    while True:
-        LI += 1
-        # Finds Array element greater-than or equal to pivot
-        while QuickSort_Array[LI] < pivot:
-            LI += 1
-            
-        RI -= 1
-        # Finds Array element less-than or equal to pivot
-        while QuickSort_Array[RI] > pivot:
-            RI -= 1
-        # When both LI and RI pointers meet
-        if LI >= RI:
-            return RI
-        
-        # Swaps LI and RI Array elements. Uses Temp as temporary storage
-        Temp = QuickSort_Array[LI]
-        QuickSort_Array[LI] = QuickSort_Array[RI]
-        QuickSort_Array[RI] = Temp
-
-
-def Quick_Sort(QuickSort_Array,Low,High):
-    if (Low < High):
-        #Pi = Partitioning Index
-        Pi = partition(QuickSort_Array,Low,High)
-        # Sort Elements Before Partition
-        Quick_Sort(QuickSort_Array,Low,Pi)
-        # Sort Elements After Partition
-        Quick_Sort(QuickSort_Array,Pi + 1, High)  
-#__________________________________________________ 
-
-Quick_Sort(QuickSort_Array,0,len(Array)-1)
-print (QuickSort_Array)
-```
+# Summary
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
 
@@ -306,7 +252,11 @@ print (QuickSort_Array)
 
 
 
+
+
 -
+
+
 
 
 
