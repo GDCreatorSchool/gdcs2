@@ -81,7 +81,7 @@ The time complexity is listed below:
 
 ### Implementation
 
-```
+```py
 '''2. Selection Sort'''
 
 def Selection_Sort(Array):
@@ -136,7 +136,7 @@ The time complexity is listed below:
 
 ### Implementation
 
-```
+```py
 '''#3. Merge Sort'''
 
 def MS_SortSubArray(LeftArray,RightArray):
@@ -181,7 +181,7 @@ def Merge_Sort(Array):
 
 ### Implementation
 
-```
+```py
 '''4. Counting Sort'''
 
 def Counting_Sort(Array):
@@ -213,7 +213,7 @@ def Counting_Sort(Array):
 
 ### Implementation
 
-```
+```py
 '''5. Radix Sort'''
 
     
