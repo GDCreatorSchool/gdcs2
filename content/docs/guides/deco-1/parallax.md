@@ -8,7 +8,8 @@ date: 2024-01-15T00:00:00.000Z
 contributors:
   - komatic5
   - sparktwee
-description: This guide will explain the main properties you need to know to effectively make use of parallax in your GD levels.
+description: This guide will explain the main properties you need to know to
+  effectively make use of parallax in your GD levels.
 tags:
   - Grade 1
   - Visual Effects
@@ -51,7 +52,7 @@ If the reference point is finitely far away, everything in front of it will move
 
 Still Life by Empika places the reference point in the tower itself. The ground in front of the tower moves to the left while the ground behind the tower moves to the right.
 
-{{< youtube OpUG1Aim0wU >}}
+{{< youtube id="OpUG1Aim0wU" start="71" >}}
 
 # 3: Relative Motion
 
@@ -65,9 +66,9 @@ This illusion also helps creators to make ambiguous movement in their levels, bu
 
 # 4: Implementing Parallax
 
-Use follow triggers. They let your parallax adjust automatically with the camera’s speed. Once your level is complete you can use the player’s speed to manually adjust the parallax values, which is more optimized for actual gameplay but requires more work for you.
+__Follow triggers__ let your parallax adjust automatically with the camera’s speed. Once your level is complete you can use the player’s speed to manually adjust the parallax values, which is more optimized for actual gameplay but requires more work for you.
 
-In GD 2.2, you can use “Lock to Camera X” and “Lock to Camera Y” instead of the follow trigger setup. Some actions, like slowing down the player’s movement relative to everything, will require you to use additional follow triggers.
+In GD 2.2, you can use “__Lock to Camera X__” and “__Lock to Camera Y__” with a modifier less than 1 instead of the follow trigger setup. This is useful in comparison to "Lock to *Player* X/Y" because the parallax will automatically adjust to any custom camera movements that occur, rather than looking strange due to the parallax only following the player's constant movement. Some actions, like slowing down the player’s movement relative to everything, will require you to use additional follow triggers.
 
 Sometimes you’ll see parallax where some of the moving objects just look out of place. This is due to how many layers there are. The more parallax layers you have, the more context you’ll give your parallax and the more natural it’ll look.
 
