@@ -1,30 +1,27 @@
 ---
 draft: true
+authors:
+  - v1ewsh0t
 title: Sorting Algorithms
 weight: 9110
 date: 2026-07-21
+contributors:
+  - v1ewsh0t
 description: Guide describing various sorting systems and their implementations.
 tags:
   - Grade 3
   - Applied Math & Algorithms
-seo:
-  title: null
-  description: null
-  canonical: ""
-  noindex: false
 math: true
 ---
+
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}} 
 
 - Uses and implementations of various sorting algorthms such as **Bubble Sort, Selection Sort, Merge Sort, Counting Sort, and Radix Sort.** 
 
-
-
-
-
 {{< /callout >}}
 
 - - -
+
 # 1: Introduction
 
 ### What is a sorting algorithm?
@@ -41,7 +38,6 @@ Sorting algorithms are also used in many applications that deal with parsing thr
 
   This guide uses **Python** for its code. I highly suggest learning the [syntax](https://docs.python.org/3/library/index.html) before continuing this guide if you don't already know.
 
-
 {{< /callout >}}
 
 ## Algorithm 1: Bubble Sort
@@ -54,9 +50,9 @@ Bubble Sort is useful for when the **data set is minimal** as larger arrays **si
 
 The time complexity is listed below:
 
-* Best: `O(n)` 
-* Average: `O(n^2)` 
-* Worst: `O(n^2)`
+* Best: $O(n)$.
+* Average: $O(n^2)$.
+* Worst: $O(n^2)$.
 
 ### Implementation
 
@@ -86,9 +82,9 @@ Like Bubble Sort, Selection Sort is useful for small data sets as computational 
 
 The time complexity is listed below:
 
-* Best: `O(n^2)`
-* Average: `O(n^2` 
-* Worst: `O(n^2)`
+* Best: $O(n^2)$.
+* Average: $O(n^2)$. 
+* Worst: $O(n^2)$.
 
 ### Implementation
 
@@ -120,30 +116,28 @@ Merge Sort works by **splitting** the array into **smaller arrays**, dividing th
 #### Bottom-Up Approach
 
 We begin with our array of values. `[0,8,6,4,9,3,4,2]` We are going to imagine that each individual item in this array is its **own subarray** `[[0],[8],[6],[4],[9],[3],[4],[2]]` We are now going to take each adjacent pair of subarrays and sort them, **merging** the subarrays one layer.  `[[0,8],[4,6],[3,9],[2,4]]`
+
 {{< img src="https://lh3.googleusercontent.com/d/1jJ1Glpwv4OerTidS0z98OITy1ldGaD6B" >}}
-
-
 
 Now that we have these new arrays, we are going to sort the adjacent list again, **comparing** the first item in the first array with each item in the second array, moving the smaller value into another array:
 
-{{< img src="https://lh3.googleusercontent.com/d/1131wcbecWFfHDAUoT_aIdeDidGQpKf5S" >}}
+{{< gif src="https://lh3.googleusercontent.com/d/1131wcbecWFfHDAUoT_aIdeDidGQpKf5S" >}}
 
 Now we **repeat** the process 1 more time, **merging** `[0,4,6,8]` and `[2,3,4,9]` together:
 
-{{< img src="https://lh3.googleusercontent.com/d/1019fJGYoV2LMFegQu1CHzXZgQYVKNTvQ" >}}
+{{< gif src="https://lh3.googleusercontent.com/d/1019fJGYoV2LMFegQu1CHzXZgQYVKNTvQ" >}}
 
 {{< callout context="note" title="Remember:" icon="outline/info-circle" >}}
 
-  Merge sort **never rearranges elements** inside a subarray, it only **merges already-sorted subarrays.**
+Merge sort **never rearranges elements** inside a subarray, it only **merges already-sorted subarrays.**
 
 {{< /callout >}}
-
 
 Because of its **efficiency**, merge sort is a **very popular algorithm**, often used for large data sets.
 
 The time complexity is listed below:
 
-* Overall: `O(n log n)`
+* Overall: $O(n \log n)$.
 
 ### Implementation
 
@@ -189,14 +183,15 @@ def Merge_Sort(Array):
 ```
 
 ## Algorithm 4: Counting Sort
+
 **Counting Sort** is a non-comparison based sorting algorithm, great for arrays with small integer values. It works by taking count of every **distinct** number in the array, computing their **starting positions** via **cumulative sums**, and mapping the original array to the new array using said new positions.
 
 Because of its **simplicity, efficiency, and stability**, it is commonly used in conjunction with other sorting algorithms such as **Radix Sort**, which will be discused in the next section.
 
 The time complexity is listed below:
 
-* Overall: `O(n + k)`
-* k = range of keys
+* Overall: $O(n + k)$.
+* $k$: range of key.
 
 ### Implementation
 
@@ -229,22 +224,23 @@ def Counting_Sort(Array):
 ```
 
 ## Algorithm 5: Radix Sort
+
 **Radix Sort** is a non-comparative, stable sorting algorithm that sorts values by their **Significant Digits**, going from the *Most Significant Digit* to the *Least Significant Digit*. To sort the individual digits, Radix Sort relies on a secondary, *Stable sorting algorthim*, commonly using **Counting Sort** as said algorithm.
  
 **Radix Sort** is most commonly used for sorting **large integer-based datasets** including string based sets.
 
 The time complexity is listed below:
 
-* Overall: `O(d*(n + b))` 
-* D is the # of digits in the largest element and b is the base # system
+* Overall: $O(d*(n + b))$.
+* $d$ is the # of digits in the largest element and $b$ is the base # system.
+
 ### Implementation
 
 ```py
 '''5. Radix Sort'''
-
-    
     ''' Same as normal Counting Sort, but sorts using the integer in the 
     specific decimal place indicated via the exp variable'''
+
 def RS_CountingSort(Array,num,exp):
     FinalArray = [0] * num
     CountArray = [0] * 10
@@ -268,6 +264,3 @@ def Radix_Sort(Array):
         exp *= 10 #Increases exp by a factor of 10
     return Array
 ```
-
-
-- - -
