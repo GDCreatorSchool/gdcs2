@@ -231,7 +231,7 @@ def Counting_Sort(Array):
 ## Algorithm 5: Radix Sort
 **Radix Sort** is a non-comparative, stable sorting algorithm that sorts values by their **Significant Digits**, going from the *Most Significant Digit* to the *Least Significant Digit*. To sort the individual digits, Radix Sort relies on a secondary, *Stable sorting algorthim*, commonly using **Counting Sort** as said algorithm.
  
-**Radix Sort** is most commonly used for sorting **large integer-based datasets** including sets like strings.
+**Radix Sort** is most commonly used for sorting **large integer-based datasets** including string based sets.
 
 The time complexity is listed below:
 
