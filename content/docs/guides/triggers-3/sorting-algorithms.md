@@ -4,7 +4,7 @@ authors:
   - v1ewsh0t
 title: Sorting Algorithms
 weight: 9110
-date: 2026-07-21
+date: 2026-07-21T00:00:00.000Z
 contributors:
   - v1ewsh0t
 description: Guide describing various sorting systems and their implementations.
@@ -14,9 +14,9 @@ tags:
 math: true
 ---
 
-{{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}} 
+{{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
 
-- Uses and implementations of various sorting algorthms such as **Bubble Sort, Selection Sort, Merge Sort, Counting Sort, and Radix Sort.** 
+- Uses and implementations of various sorting algorthms such as **Bubble Sort, Selection Sort, Merge Sort, Counting Sort, and Radix Sort.**
 
 {{< /callout >}}
 
@@ -30,7 +30,7 @@ A sorting algorithm is a **function** that takes in a **list/array** and **sorts
 
 Sorting algorithms are incredibly useful when dealing with **large amounts of data** that have a certain priority to the items inside. For example, in 3D engines, triangles are drawn from **farthest to closest**. *(this does not apply to techniques such as raytracing)* If the triangles were left unsorted, tris farther away can render on top of tris closer to the camera. To combat this, engines will **sort the tris based off of their Z position**, sorting from least to greatest. Other uses include **pathfinding/AI**, where nodes need to be sorted by their **priority** in what's commonly called an **"open list" or "frontier"** to determine where to move next.
 
-Sorting algorithms are also used in many applications that deal with parsing through and retrieving information from large datasets. 
+Sorting algorithms are also used in many applications that deal with parsing through and retrieving information from large datasets.
 
 # 2: Sorting Algorithms
 
@@ -44,7 +44,7 @@ Sorting algorithms are also used in many applications that deal with parsing thr
 
 Out of the 5 algorithms listed in this guide, this is the **easiest one conceptually and to implement**. It is commonly used for educational purposes due to its high learnability, and small datasets (1-20) as the performance increase from faster algorithms are negligible.
 
-Bubble Sort works by **repeatedly swapping adjacent elements** if they are in the wrong order. The algorithm makes multiple passes through the array, ignoring sorted values. 
+Bubble Sort works by **repeatedly swapping adjacent elements** if they are in the wrong order. The algorithm makes multiple passes through the array, ignoring sorted values.
 
 Bubble Sort is useful for when the **data set is minimal** as larger arrays **significantly increase computational time.**
 
@@ -65,7 +65,7 @@ def Bubble_Sort(Array):
         Swapped = False; #Sets loop up to end if no swap
         for i,v in enumerate(Array):
             # Checks to see if both index > 0 and current value is less than last value
-            if i > 0 and v < Array[i-1]: 
+            if i > 0 and v < Array[i-1]:
                 minvalue = v # Saves the current value for swapping
                 Array[i] = Array[i-1] #Swaps the current value with the last value
                 Array[i-1] = minvalue # Sets the last value to the saved current value
@@ -77,13 +77,13 @@ def Bubble_Sort(Array):
 
 Selection Sort is a **comparison based algorithm**, the second easiest in this guide. Commonly used for **small data sets** and in situations where memory is limited due to the fact that it’s an in **place sorting algorithm.**
 
-Selection Sort works by finding the **smallest element in the array, swapping it with its current item, the pointer moving to the next element in the array.** This repeats until the full array has been sorted. 
+Selection Sort works by finding the **smallest element in the array, swapping it with its current item, the pointer moving to the next element in the array.** This repeats until the full array has been sorted.
 Like Bubble Sort, Selection Sort is useful for small data sets as computational time significantly increases as the array increases.
 
 The time complexity is listed below:
 
 * Best: $O(n^2)$.
-* Average: $O(n^2)$. 
+* Average: $O(n^2)$.
 * Worst: $O(n^2)$.
 
 ### Implementation
@@ -109,7 +109,7 @@ def Selection_Sort(Array):
 
 ## Algorithm 3: Merge Sort
 
-Merge Sort is a very popular sorting algorithm due to its efficiency and stability. Used for large datasets and when memory is not an issue. 
+Merge Sort is a very popular sorting algorithm due to its efficiency and stability. Used for large datasets and when memory is not an issue.
 
 Merge Sort works by **splitting** the array into **smaller arrays**, dividing the arrays in half until it can no longer be divided. It then **sorts each subarray** in pairs using the Merge Sort algorithm and **merges** the subarrays, repeating the process until the array is fully sorted. There are two implementations of the Merge Sort algorithm, the **Top Down** approach and the **Bottom Up** approach, the Bottom Up approach being the one we are implementing here.
 
@@ -148,10 +148,10 @@ def MS_SortSubArray(LeftArray,RightArray):
     SubArray = [] #Final Sorted SubArray
     LAI = 0 #Left Array Index
     RAI = 0 #Right Array Index
-    
+
     '''Continuously goes through both Left and Right Arrays, checking for min values
     and appending to SubArray'''
-    
+
     while LAI < len(LeftArray) and RAI < len(RightArray):
         if LeftArray[LAI] < RightArray[RAI]:
             SubArray.append(LeftArray[LAI])
@@ -171,11 +171,11 @@ def Merge_Sort(Array):
     SAS = 2 #Sub Array Size
     while SAS < 2 * len(Array):
         for SAI in range(0,len(Array),SAS): #Sub Array Index
-            
+
             #Sets up both Left and Right Arrays
             LeftArray = Array[SAI : SAI + (SAS//2)]
             RightArray = Array[(SAI + SAS//2) : SAI + SAS]
-            
+
             Array[SAI : SAI + len(LeftArray) + len(RightArray)] = \
             MS_SortSubArray(LeftArray,RightArray) # Sorts Individual Sub arrays
         SAS *= 2 #Increases Sub Aray Index by a multiple of 2
@@ -203,19 +203,19 @@ def Counting_Sort(Array):
     MaxNum = max(Array) + 1
     CountArray = [0] * MaxNum
     FinalArray = [0] * (len(Array))
-    
+
     #Counts all instances of each number in Array
     for i in Array:
         CountArray[i] += 1
-    
+
     #Stores cumulative sum of elements in CountArray
     for i in range(1,len(CountArray)):
         CountArray[i] += CountArray[i-1]
-    
-    '''Uses the Array Value as an Index to Count Array, 
-    Using Count array's resulting value as an index for Final Array, 
+
+    '''Uses the Array Value as an Index to Count Array,
+    Using Count array's resulting value as an index for Final Array,
     subtracting 1 to align with Array'''
-    
+
     for i in range(len(Array)-1,-1,-1):
         FinalArray[CountArray[Array[i]]-1] = Array[i]
         CountArray[Array[i]] -= 1
@@ -226,19 +226,19 @@ def Counting_Sort(Array):
 ## Algorithm 5: Radix Sort
 
 **Radix Sort** is a non-comparative, stable sorting algorithm that sorts values by their **Significant Digits**, going from the *Most Significant Digit* to the *Least Significant Digit*. To sort the individual digits, Radix Sort relies on a secondary, *Stable sorting algorthim*, commonly using **Counting Sort** as said algorithm.
- 
+
 **Radix Sort** is most commonly used for sorting **large integer-based datasets** including string based sets.
 
 The time complexity is listed below:
 
-* Overall: $O(d*(n + b))$.
+* Overall: $O(d\cdot(n + b))$.
 * $d$ is the # of digits in the largest element and $b$ is the base # system.
 
 ### Implementation
 
 ```py
 '''5. Radix Sort'''
-    ''' Same as normal Counting Sort, but sorts using the integer in the 
+    ''' Same as normal Counting Sort, but sorts using the integer in the
     specific decimal place indicated via the exp variable'''
 
 def RS_CountingSort(Array,num,exp):
@@ -252,13 +252,13 @@ def RS_CountingSort(Array,num,exp):
         FinalArray[CountArray[(Array[i] // exp) % 10] - 1] = Array[i]
         CountArray[(Array[i] // exp) % 10] -= 1
     return FinalArray
-        
-        
+
+
 def Radix_Sort(Array):
     num = len(Array)
     MaxNum = max(Array) #Gets maximum number in Array
     exp = 1 #Initializes exponent
-    
+
     while MaxNum / exp > 0:
         Array = RS_CountingSort(Array,num,exp)
         exp *= 10 #Increases exp by a factor of 10
