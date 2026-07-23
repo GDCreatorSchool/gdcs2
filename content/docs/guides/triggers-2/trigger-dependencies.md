@@ -34,7 +34,7 @@ Triggers technically are **functions** - they take various **inputs** *(e.g. gro
 
 For example, activating a rotate trigger **before** a move trigger when the object is off center will make the object to rotate first, then move, causing the object to **rest outside the original objects circle of revolution.** Activating the rotate trigger **after** the move trigger will **shift the circle of revolution**, increasing or decreasing its size, but keeping the rotating object aligned with it.
 
-(Image goes here)
+{{< img src="https://lh3.googleusercontent.com/d/1srVzLgeM2YN0ksdc2Ow5yd9qi-Qh_nhs" >}}
 
 Other examples include:
 - **Item edit triggers** and PEMDAS order of operations
@@ -90,7 +90,8 @@ Utilizing **tracking objects and item ids** can help **display** the statuses of
 - **Background Pulses** or **Blank Objects** to indicate when something activates.
 - **Text Objects** that toggle on and off depending on what action is being performed.
 
-(Image goes here)
+{{< img src="https://lh3.googleusercontent.com/d/1YsYdNuZwmv2H6fF9TC8y7mOBNLrzknHX" >}}
+
 
 ### Dependent to Independent
 **Converting dependent operations into independent operations** can help keep operations seperate and easily reversable.
@@ -114,7 +115,6 @@ Follow triggers have dependencies with move triggers but they dont affect each o
 These are triggers activated normally one after another, either being activated through **Spawn ordered,** or without being activated by **spawn-activating triggers** at all.
 - The **closest** two triggers can be before **activating in the same frame** is `1.00` unit.
 
-(Image goes here)
 
 By using **Spawn Ordered** spawn triggers, it is possible to change the activation order **In runtime** by physically moving the triggers being activated.
 
@@ -134,9 +134,11 @@ Massive credits to [HDanke](https://uhdanke.github.io/gd_docs/triggers/general/g
 
 # Spawn Dependencies & Control Flow
 ### Branching & Merging
-Branching is when one trigger calls multiple different **branches** of triggers, each branch performing different sequences of actions; each branch having the ability to be activated and controlled separately. 
+Branching is when one trigger calls multiple different **branches** of triggers, each branch performing different sequences of actions - each branch having the ability to be activated and controlled separately. 
 
-(gif goes here)
+{{< img src="https://lh3.googleusercontent.com/d/1gWNAQZ4sbW5FF_anUfr-4YYr3wRNYxBc" >}}
+
+
 
 Activating multiple trigger setups at the same time **does not** activate them in parralel, instead relying on the **game loop's activation order.** 
 
