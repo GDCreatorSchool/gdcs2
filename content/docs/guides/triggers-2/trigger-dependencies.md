@@ -16,6 +16,12 @@ tags:
   - Trigger Concepts
 ---
 
+{{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
+
+- Uh... TLDR ._.
+{{< /callout >}}
+
+- - -
 
 
 # What Are Dependencies?
@@ -110,7 +116,8 @@ Follow triggers have dependencies with move triggers but they dont affect each o
 
 {{< /callout >}}
 
-# Non-Spawn Dependencies
+# Ordered Depencencies
+
 ## Sequential
 These are triggers activated normally one after another, either being activated through **Spawn ordered,** or without being activated by **spawn-activating triggers** at all.
 - The **closest** two triggers can be before **activating in the same frame** is `1.00` unit.
