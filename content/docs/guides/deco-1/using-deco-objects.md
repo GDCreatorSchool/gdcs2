@@ -3,28 +3,30 @@ draft: false
 authors:
   - komatic5
 title: Using Deco Objects
-seo:
-  title: How to Use Decoration Objects in Geometry Dash
-  description: Learn how to choose and use decoration objects in Geometry Dash to build detailed, readable, and interesting levels.
-  canonical: ""
-  noindex: false
 weight: 5010
 date: 2024-04-28T00:00:00.000Z
 contributors:
   - komatic5
-description: Objects are the key to all decoration, but learning the fundamental skills for using them can be tricky. This guide explains the basic editor skills you must apply to use objects well in your deco.
+description: Objects are the key to all decoration, but learning the fundamental
+  skills for using them can be tricky. This guide explains the basic editor
+  skills you must apply to use objects well in your deco.
 tags:
   - Grade 1
   - Deco Basics
+seo:
+  title: How to Use Decoration Objects in Geometry Dash
+  description: Learn how to choose and use decoration objects in Geometry Dash to
+    build detailed, readable, and interesting levels.
+  canonical: ""
+  noindex: false
 ---
-
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
-- All decoration is made with shapes, and all shapes are made from objects. You can use a variety of methods to create your own custom shapes and curves, which usually comes down to choosing objects and dissecting them to make shapes.
-- Shapes are also colored, which can be done by setting new color channels for your objects. You can also use Blending and Opacity to use colors in more interesting ways.
-
+* All decoration is made with shapes, and all shapes are made from objects. You can use a variety of methods to create your own custom shapes and curves, which usually comes down to choosing objects and dissecting them to make shapes.
+* Shapes are also colored, which can be done by setting new color channels for your objects. You can also use Blending and Opacity to use colors in more interesting ways.
 {{< /callout >}}
 
-** **
+- - -
+
 # 1: Choosing Objects By Shape
 
 As a new decorator, you might wonder how to choose objects. Should you look at an object’s texture? Its size? Color? While those are good to consider, they’re largely unimportant.
@@ -80,6 +82,7 @@ To this extent, if a polygon isn’t already in the editor, you could make it us
 Alternatively, you could place down a set of points and connect them using lines or glow, which is better for outlining shapes:
 
 {{< youtube 5EyV-rse2ZI >}}
+
 In either case, you’ll be able to make your complex polygons very quickly with a bit of practice.
 
 > Pro tip: Try to remove any visual bugs you encounter. For example, fill in the corners of your shapes so they don’t look amateurish. You can find these corner pieces in the second tab, along with the other outline objects. (Image of the corner objects on some block outlines)
@@ -93,20 +96,25 @@ Custom curves are really just a collection of lines or rectangles stacked next t
 For example, you could make a circle by rotating lines around a center point. Be aware of where each object’s rotation center is, as it’ll make certain objects harder to make custom circles with:
 
 {{< youtube UKgBJ4utA5Q >}}
+
 Or, you could make a parabolic curve by combining a bunch of straight lines:
 
 {{< youtube PCYK6TDL9ps >}}
+
 Using the warping feature, you can stretch out the pre-made curves to make larger circles more efficiently:
 
 {{< youtube ICk0Th3UEmg >}}
+
 And finally, you could freehand your curves if you’re patient and want a lot of control:
 
 {{< youtube NQaPbyNjN0A >}}
+
 Once again, practice makes perfect here. This is especially true of the last two methods, as they can be quite time-consuming.
 
 As a final thing, you can also combine curves to create custom ones with more complexity. Feel free to mix and match different parts of curves as you wish, or to scale, warp, and transform them as necessary:
 
 {{< youtube IZPYCrbjKw0 >}}
+
 ## Combining Geometric & Organic Shapes
 
 You don’t need your shapes to be entirely geometric or entirely organic. Combining the two together can make your decoration far more interesting. You’ll learn a lot more about how this works in future guides, but for now take these examples as inspiration - try to dissect them and see how their shapes work for yourself.
@@ -126,6 +134,7 @@ In Geometry Dash, object colors are the same. As you can expect, you start by di
 I recommend you learn to choose colors by hand instead of strictly using hex codes or HSV numbers; specific numerical colors will not help you learn as much as eyeballing things and getting a good feel for what works.
 
 {{< youtube KuHNWtOekvw >}}
+
 # 4: Layering Objects & Texturing
 
 This is the most complex section of the guide for a reason. Once you add Z layers and the ability to stack objects, decoration becomes far more convoluted to learn, and I do not recommend practicing this without a solid grasp on the prior skills.
@@ -134,17 +143,17 @@ That aside, stacking objects on each other is most useful when you want to add a
 
 The process for making a texture should be familiar by now; identify the material of the object, then stack objects to emulate that texture. However, this is only the most basic explanation and texture requires a lot of lighting knowledge to fully understand it. You will learn that eventually; for now, just be patient and focus on how you use objects.
 
-There are two main ways to stack objects; using blending and using opacity. Objects generally will not show underneath other objects without one of these being present.
+There are two main ways to stack objects; using Blending and using Opacity. Objects generally will not show underneath other objects without one of these being present.
 
 ## Stacking with Blending
 
 Blending (or Additive Blending) combines colors together when they’re placed on top of each other. On a technical level it adds the colors together, so blending on black is invisible and blending objects don’t show up on white.
 
-Stacking blending objects usually limits you to basic shapes or ones you can create without overlapping objects. Otherwise you risk your objects looking very messy, as blending creates new shapes that are much harder to control.
+Stacking blending objects usually limits you to basic shapes or ones you can create without overlapping objects. Otherwise you risk your objects looking very messy, as Blending creates new shapes that are much harder to control.
 
 {{< img src="https://lh3.googleusercontent.com/d/1k1cITEoQi-7PRj1B1CPmND6CawCMhqT2" >}}
 
-However, blending also lets you experiment with colors more. You can use Hue Shifting to create gradients that change hue as they get brighter, which looks more dynamic than keeping everything the same color.
+However, Blending also lets you experiment with colors more. You can use Hue Shifting to create gradients that change hue as they get brighter, which looks more dynamic than keeping everything the same color.
 
 {{< img src="https://lh3.googleusercontent.com/d/16KOoBdkDs3uneptCfIfDRMQB6mKaO17e" >}}
 
@@ -158,7 +167,9 @@ When using blending objects on top of non-blending objects, make sure the non-bl
 
 ## Stacking with Opacity
 
-{{< img src="images/GDEmotes/Triggers/Alpha.png" class="emote" >}} Opacity makes objects transparent or see-through. This is useful when you want to lower the visibility of an object, such as a gradient or something with blending colors. It is also useful with objects that have complex shapes, like animated objects and some objects from the particle tab.
+{{< img src="images/GDEmotes/Triggers/Alpha.png" >}}
+
+ Opacity makes objects transparent or see-through. This is useful when you want to lower the visibility of an object, such as a gradient or something with blending colors. It is also useful with objects that have complex shapes, like animated objects and some objects from the particle tab.
 
 {{< img src="https://lh3.googleusercontent.com/d/1guo7zHxbA25uaT4eUk-in6jmZ4SAgDUS" >}}
 
@@ -166,11 +177,11 @@ Opacity lets you layer an object over another to make textures without the brigh
 
 {{< img src="https://lh3.googleusercontent.com/d/1yeP3fcyGnpS2noCXXYmqyQw9x4_lUAmF" >}}
 
-As with blending, make sure your stacked objects don’t overpower your normal ones. This will make your deco messy and incomprehensible.
+As with Blending, make sure your stacked objects don’t overpower your normal ones. This will make your deco messy and incomprehensible.
 
 {{< img src="https://lh3.googleusercontent.com/d/1Ke2rrlOb4fDNxMxJVvWOTqZP94lUqhUD" >}}
 
-You can also combine opacity with blending, of course. This makes your blending objects even less visible, just like if you darken them.
+You can also combine Opacity with Blending, of course. This makes your blending objects even less visible, just like if you darken them.
 
 Finally, note that you can use low opacity copies of objects to create blurred shapes, which is quite time-efficient.
 
