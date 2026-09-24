@@ -2,7 +2,7 @@
 draft: false
 title: Fill 2
 seo:
-  title:  How to Fill Empty Space in Geometry Dash Decoration Part 1
+  title: How to Fill Empty Space in Geometry Dash Decoration Part 1
   description: Learn more ways to fill space in Geometry Dash decoration using gradients & glow.
   canonical: ""
   noindex: false

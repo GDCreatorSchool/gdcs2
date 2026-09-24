@@ -2,7 +2,7 @@
 title: Disclaimer
 description: ""
 summary: ""
-date: 2026-09-22T15:19:07.000Z
+date: 2023-09-22T15:19:07.000Z
 lastmod: 2026-09-22T15:19:07.000Z
 draft: false
 type: legal

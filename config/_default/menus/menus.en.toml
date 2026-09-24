@@ -90,6 +90,11 @@
   url = "/privacy/"
   weight = 10
 
+[[footer]]
+  name = "Disclaimer"
+  url = "/disclaimer/"
+  weight = 20
+
 # [[footer]]
 #   name = "Terms of Service"
 #   url = "/terms/"
