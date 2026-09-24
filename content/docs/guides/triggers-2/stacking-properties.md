@@ -10,12 +10,7 @@ seo:
   noindex: false
 weight: 6045
 date: 2026-09-02T00:00:00.000Z
-description: Stacking is an important component of using triggers. By combining
-  two triggers, you can achieve different effects depending on the type of
-  triggers used. For example, an object targeted by two move triggers activated
-  simultaneously will have both move effects applied at once. In this guide,
-  we’ll untangle the ways that triggers can stack, and also cover useful setups
-  involving stacking.
+description: Stacking is an important component of using triggers. By combining two triggers, you can achieve different effects depending on the type of triggers used. For example, an object targeted by two move triggers activated simultaneously will have both move effects applied at once. In this guide, we’ll untangle the ways that triggers can stack, and also cover useful setups involving stacking.
 tags:
   - Grade 2
   - Trigger Concepts
