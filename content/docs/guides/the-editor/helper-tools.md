@@ -2,10 +2,12 @@
 draft: false
 authors:
   - poryii
+contributors:
+  - azgamezyt
 title: Helper Tools
 weight: 1110
 date: 2026-10-21T00:00:00.000Z
-description: This guide explains how to use the utility functions the editor provides.
+description: With the new 2.209 update, RobTop added several new tools that you can use in the editor. These include the Visibility tab, the Grid tab, the View tab, and the Helper tab. This guide will explain their usage, purposes, and how to best utilize them to their full potential.
 tags:
   - Grade 0
   - Advanced Editor
@@ -16,20 +18,16 @@ seo:
   noindex: false
 ---
 
-
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
-* This guide covers the new Visibility, Grid, View, and Helper tabs.
 * The Visibility tab lets you hide the editor interface.
 * The Grid tab gives you the ability to modify the grid size.
 * The View tab shows options for changing what visuals are shown.
 * The Helper tab enables the use of auxiliary tools to speed up creation.
 {{< /callout >}}
 
-With the new 2.209 update, RobTop added several new tools that you can use in the editor. These include the Visibility tab, the Grid tab, the View tab, and the Helper tab. This guide will explain their usage, purposes, and how to best utilize them to their full potential.
-
 # 1. Visibility Tab
 
-The Visibility tab allows you to hide the Editor's UI and interface, so you can get a clear look at your own level inside the editor. Since it removes all menus on your screen, you are able to see the level the way a normal player would see it when they play the level. It also allows you to take clear screenshots without any visual obstructions, or to spot any defects there may be in your level.
+**The Visibility tab allows you to hide the Editor's UI and interface**, so you can get a clear look at your own level inside the editor. Since it removes all menus on your screen, you are able to see the level the way a normal player would see it when they play the level. It also allows you to take clear screenshots without any visual obstructions, or to spot any defects there may be in your level.
 
 Below are two images of the editor with and without the visibility tab option turned on. If you are on PC, you can also activate it by pressing Tab.
 
@@ -41,15 +39,13 @@ Below are two images of the editor with and without the visibility tab option tu
 
 # 2. Grid Tab
 
-The Grid tab allows you to change the size of the grid in the editor. You may be thinking, "Well, isn't that kind of useless? Compared to the Visibility tab, the Grid tab doesn't really do much!" You'd be right, if not for these factors.
+**The Grid tab allows you to change the size of the grid in the editor**. You may be thinking, "Well, isn't that kind of useless? Compared to the Visibility tab, the Grid tab doesn't really do much!" You'd be right, if not for these factors.
 
-With Grid Snap enabled, anything you move freely will automatically snap to the center of the nearest grid square. Adjusting the grid size with the Grid tab changes the snapping precision, enabling you to lock objects cleanly to your desired grid spaces. It also modifies the distance objects move, as the scale of movement is proportional to the grid size.
+With Grid Snap enabled, **anything you move freely will automatically snap to the center of the nearest grid square**. Adjusting the grid size with the Grid tab changes the snapping precision, enabling you to lock objects cleanly to your desired grid spaces. It also modifies the distance objects move, as the scale of movement is proportional to the grid size.
 
 An example of this is separating triggers from each other to make them more organized. It also provides a clearer reference if you are trying to make objects bigger or smaller.
 
-Additionally, this feature is particularly useful when working with different decorative details, as certain grid sizes may serve as better references. When creating small details in a block design, you can make the grid size smaller so you can line everything up as smoothly as possible.
-
-On the other hand, if you are creating a large background, a bigger grid size might be better so you can see everything more clearly and use larger reference points, similar to the grid method used in portrait drawing
+Additionally, this feature is particularly useful when working with different decorative details, as certain grid sizes may serve as better references. When creating small details in a block design, you can make the grid size smaller so you can line everything up as smoothly as possible. On the other hand, if you are creating a large background, a bigger grid size might be better so you can see everything more clearly and use larger reference points, similar to the grid method used in portrait drawing
 
 You can use Shift+G to toggle your custom grid size, Ctrl+G to swap between them, or simply click the "Grid" button to adjust it.
 
@@ -81,7 +77,7 @@ The list of options here is:
 * **Ignore Damage:** Ignores deaths during playtesting in the editor.
 * **Effect Lines:** Toggles on/off trigger lines that show when it will occur.
 * **Dur Lines:** Toggles on/off trigger lines that show the duration of the trigger.
-* **Song Lines:** Shows/Hides lines you make yourself in Custom Song Selection -> Create Lines
+* **Song Lines:** Shows/Hides lines you make yourself in Custom Song Selection -> Create Lines.
 * **BPM Lines:** Shows/Hides lines made from the BPM trigger.
 * **Local Markers:** Shows/Hides where you have died in the level.
 * **Global Markers:** Shows/Hides where everyone has died in the level.
