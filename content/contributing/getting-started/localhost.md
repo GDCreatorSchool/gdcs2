@@ -8,6 +8,7 @@ authors:
   - imtherealimagineiq
 contributors:
   - imtherealimagineiq
+  - chuckolate
 tags:
   - Contributing
 seo:
@@ -28,31 +29,44 @@ seo:
 
 While small changes can be made directly in the GitHub web interface, it is highly recommended to use an EditorConfig capable editor such as Notepad++ or VSCode (Preferred) for larger projects and changes.
 
-To preview changes locally, you will need Node.js, NPM, and Hugo version 0.147.8. NPM should come with installing Node.js by default. You will also need to have winget tool as well if you do not already have it as its necessary for installing certain packages, although usually it comes standard with windows OS as part of the app installer.
+To preview changes locally, you will need Node.js, NPM, and Hugo version 0.147.8. You will also need to have winget tool as well if you do not already have it as its necessary for installing certain packages, although usually it comes standard with windows OS as part of the app installer.
 
-Node.js has an installer that can be found at: [https://nodejs.org/en](https://nodejs.org/en
-)
+## Node & NPM
 
-Hugo can be installed from the Winget package manager directly on the command line for windows. To access the command line: press the windows key, type cmd, and press enter, you should see a Command Prompt window appear.
+Node.js has an installer that can be found at: [https://nodejs.org/en](https://nodejs.org/en). NPM should come with installing Node.js by default.
+
+## Hugo
+
+There's multiple ways to install Hugo, depending on your operating system:
+
+For **Windows**, can be installed from the Winget package manager directly on the command line. To access the command line: press the windows key, type cmd, and press enter, you should see a Command Prompt window appear.
 
 {{< img src="https://lh3.googleusercontent.com/d/1J1f7jX6bPKN0qgxTewvz1uPcXVrz0rfc" >}}
 
-Inside the command line you will paste the following command: `winget install Hugo.Hugo.Extended` and press enter; if it asks you to agree to all the source agreements terms type `Y` and press enter again.
-
-{{< img src="https://lh3.googleusercontent.com/d/1rTekzU6qpn_oqQoFOQS89zSIZcw2voNT" >}}
-
-If all goes well you should get a message back saying it was successfully installed. That message should look something like this:
+In the command line type in `winget install -e --id Hugo.Hugo.Extended -v "0.147.8"` and press enter; if it asks you to agree to all the source agreements terms type `Y` and press enter again. If all goes well you should get a message back saying it was successfully installed. That message should look something like this:
 
 {{< img src="https://lh3.googleusercontent.com/d/1rvdQJWml_ZnPeCjCV-j20s_5o-BLf2ce" >}}
 
-Additionally, you should also be sure to install GitHub Desktop along with Git itself. The installer for GitHub Desktop can be found at: [https://desktop.github.com/download/](https://desktop.github.com/download/)
+For **macOS**, download `hugo_extended_0.147.8_darwin-universal.tar.gz` from the [Hugo v0.147.8 release](https://github.com/gohugoio/hugo/releases/tag/v0.147.8). For **Linux**, download `hugo_extended_0.147.8_linux-amd64.tar.gz` instead. Then, open your terminal and run the following instructions to install Hugo:
 
-You can install Git through its [website](https://git-scm.com/install/), or through the command line. Here are instructions for that:
-- For **Windows**, make sure you have **winget** as described above. Then follow the same instructions to open the command prompt, and type in `winget install -e --id Hugo.Hugo.Extended -v "0.147.8"`.
-- For **Mac**, go to Github and install `hugo_extended_0.147.8_darwin-universal.tar.gz`
-Open the terminal, run `cd ~/Downloads`, then `tar -xzf hugo_extended_0.147.8_darwin-universal.tar.gz`, after that `sudo mv hugo /opt/homebrew/bin/` (and enter your password)
-Finally, you can check with `hugo version` on your terminal and see if it says hugo v0.147.8.
-- For **Linux**, follow the instructions on the Git website for your specific distro.
+```sh
+cd ~/Downloads
+
+# macOS
+tar -xzf hugo_extended_0.147.8_darwin-universal.tar.gz
+# Linux
+tar -xzf hugo_extended_0.147.8_linux-amd64.tar.gz
+
+sudo install -m 755 hugo /usr/local/bin/hugo
+```
+
+Finally, run `hugo version` on your terminal to verify the installation, It should say `hugo v0.147.8 extended`.
+
+## Git
+
+You can install Git through its [website](https://git-scm.com/install/), or through the command line. The instructions are on their website.
+
+Additionally, you could also install GitHub Desktop along with Git itself. The installer for GitHub Desktop can be found at: [https://desktop.github.com/download/](https://desktop.github.com/download/).
 
 # 2: Instructions
 
