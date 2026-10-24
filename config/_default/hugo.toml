@@ -24,6 +24,7 @@ copyRight = "Copyright (c) 2026 Geometry Dash Creator School"
 [params.logo]
   path = 'favicon.png' # in assets directory
   alt = 'Geometry Dash Creator School'
+  shortTitle = 'GDCS'
 
 [mediaTypes."text/netlify"]
   suffixes = [""]

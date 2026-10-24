@@ -18,19 +18,23 @@
   {{ end -}}
 
     <!-- Site title -->
-     <header>
+    <header>
       {{ with site.Params.logo.path }}
-      <a href="{{ site.Home.Permalink }}">
+      <a href="{{ site.Home.Permalink }}" class="logo-link">
         {{ with resources.Get . }}
-        <img src="{{ .RelPermalink }}" style="filter: drop-shadow(1.5px 1.5px #00000060); outline: solid white 0.1rem; border: solid black 0.1rem; border-radius: 50%;"class="largeemote" alt="{{ site.Params.logo.alt | default site.Title }}">
+        <img src="{{ .RelPermalink }}" class="largeemote logo-img" alt="{{ site.Params.logo.alt | default site.Title }}">
         {{ else }}
           {{ errorf "Unable to find %s in assets directory" . }}
         {{ end }}
+        <span class="d-none d-xl-inline logo-text">
+          {{ site.Params.logo.alt | default site.Title }} &emsp;
+        </span>
+        <span class="d-inline d-xl-none logo-text">
+          {{ site.Params.logo.shortTitle | default site.Title }} &emsp;
+        </span>
       </a>
       {{ else }}
-      <h1 class="site-title">
-        <a href="{{ site.Home.Permalink }}">{{ .Site.Title }}</a>
-      </h1>
+      <h1><a href="{{ site.Home.Permalink }}">{{ site.Title }}</a></h1>
       {{ end }}
     </header>
     <!-- <a class="navbar-brand me-auto me-lg-3" href="{{ relLangURL "" }}">{{ .Site.Title }}</a> -->
@@ -308,4 +312,3 @@
 {{ if site.Params.doks.flexSearch -}}
 {{ partial "header/search-modal" . }}
 {{ end -}}
-
