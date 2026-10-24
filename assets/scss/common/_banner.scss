@@ -1,0 +1,39 @@
+
+.website-banner {
+    max-width: none;
+    min-height: 640px;
+    margin-inline: calc(50% - 50vw);
+
+    background-image: linear-gradient(
+      rgba(0, 23, 65, 0.1),
+      rgba(5, 221, 221, 0.35)
+    ), url("/home-banner-blur.webp");
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+    padding: 48px 24px;
+    text-align: center;
+    color: #fff;
+}
+
+.website-banner-content {
+    width: 100%;
+    max-width: 920px;
+    margin-inline: auto;
+}
+
+.website-banner .btn {
+  color: #fff;
+  background-color: #09835a;
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-color: #fff;
+  --bs-btn-disabled-color: #fff;
+  background-image: linear-gradient(
+    rgba(28, 145, 255, 0.904),
+    rgba(0, 81, 255, 0.8),
+  );
+  border: 2px solid #000;
+  box-shadow: 0 0 0 2px #fff;
+}

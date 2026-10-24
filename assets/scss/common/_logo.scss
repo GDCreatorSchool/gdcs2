@@ -1,0 +1,25 @@
+.logo {
+  margin: 0;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-img {
+  filter: drop-shadow(1.5px 1.5px #00000060);
+  outline: solid white 0.1rem;
+  border: solid black 0.1rem;
+  border-radius: 50%;
+  margin-bottom: 0;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 0;
+}

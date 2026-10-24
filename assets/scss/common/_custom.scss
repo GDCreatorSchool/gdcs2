@@ -1,5 +1,19 @@
 // Put your custom SCSS code here
 
+[data-bs-theme="light"] {
+  --bs-body-bg: #fff;
+  --bs-body-color: #212529;
+  --bs-secondary-bg: #f8f9fa;
+}
+
+[data-bs-theme="dark"] {
+  --bs-bg: #0f27a0;
+}
+
+[data-bs-theme="dark"] .logo-text {
+  color: var(--bs-heading-color);
+}
+
 .callout-empty {
   border-left-color: #444444;
 }

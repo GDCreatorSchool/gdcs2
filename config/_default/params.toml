@@ -83,9 +83,11 @@ mainSections = ["docs", "contributing", "hub"]
 
   # SCSS colors
   # backGround = "yellowgreen"
+
   ## Dark theme
   # textDark = "#dee2e6" # "#dee2e6" (default), "#dee2e6" (orignal), or custom color
   # accentDark = "#5d2f86" # "#5d2f86" (default), "#5d2f86" (original), or custom color
+
   ## Light theme
   # textLight = "#1d2d35" # "#1d2d35" (default), "#1d2d35" (orignal), or custom color
   # accentLight = "#8ed6fb" # "#8ed6fb" (default), "#8ed6fb" (orignal), or custom color

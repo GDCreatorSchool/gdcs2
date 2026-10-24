@@ -1,39 +1,52 @@
 {{ define "main" }}
-<section class="section container-fluid mt-n3 pb-3">
-  <div class="row justify-content-center">
-    <div class="col-lg-12 text-center">
-      <h1>{{ .Title }}</h1>
-    </div>
-    <div class="col-lg-9 col-xl-8 text-center">
-      <p class="lead">{{ .Params.lead | safeHTML }}</p>
-      <a class="btn btn-primary btn-cta rounded-pill btn-lg my-3 hover-scale"
+<section class="website-banner">
+  <div class="website-banner-content">
+    <h1>{{ .Params.lead | safeHTML }}</h1>
+    <p class="lead">{{ .Params.description | safeHTML }}</p>
+
+
+    <a
+      class="btn btn-primary btn-cta rounded-pill btn-lg my-3 hover-scale"
+      style="
+        font-size: 1.6rem; padding: 0.8rem 2.5rem;
+        background-image: linear-gradient(rgba(132, 255, 32, 0.823), rgba(0, 179, 192, 0.15));
+      "
+
       href="/docs/user-guide/"
-      role="button">{{ "All Guides" }}</a>
-      {{ .Content }}
+      role="button"
+    >
+      <strong>{{ "Start here!" }}</strong>
+    </a>
+
+    <br>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; column-gap: 2rem; row-gap: 0.0rem;">
+      <a
+        class="btn btn-primary btn-cta rounded-pill btn-lg my-3 hover-scale"
+        href="https://discord.com/invite/gdlevels"
+        role="button"
+      >
+        {{ "Join our Discord server" }}
+      </a>
+      <a
+        class="btn btn-primary btn-cta rounded-pill btn-lg my-3 hover-scale"
+        href="/contributing/contributing-guide/"
+        role="button"
+      >
+        {{ "Consider contributing" }}
+      </a>
     </div>
+
+    {{ .Content }}
   </div>
 </section>
 {{ end }}
 
 {{ define "sidebar-prefooter" }}
-  {{ if site.Params.doks.backgroundDots -}}
-  <div class="d-flex justify-content-start">
-    <div class="bg-dots"></div>
-  </div>
-  {{ end -}}
   {{ if eq $.Site.Language.LanguageName "English" }}
   <section class="section section-md section-features">
     <div class="container">
       <div class="row justify-content-center text-center">
-        <p>This is a free, community-run resource to help you make Geometry Dash levels! <br>Every guide is made by dozens of passionate community members,
-          making sure you can get all the knowledge you need.
-          <br>Check out the guides here,
-          or join the <a href="https://discord.com/invite/gdlevels" target="_blank" rel="noopener">Discord server</a> for practice materials!</p>
-
-          <div class="col-lg-14">
-          <strong>Want to help us add new content? Consider
-          <span class="links"><a href="/contributing/contributing-guide/" target="_blank" rel="noopener">contributing</a></span>!</strong>
-        </div>
 
         <div class="col-lg-14">
           {{ partial "latest-guides.html" . }}
