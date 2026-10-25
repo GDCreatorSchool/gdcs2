@@ -4,14 +4,14 @@ title: Percent
 weight: 3271
 date: null
 description: The Percent trigger allows you to modify how the percent bar is displayed on platformer levels. This guide will explain how to use it.
+authors:
+  - ibra
 tags:
   - Grade 1
   - Gameplay Triggers
 seo:
   title: How to Use the Percent Trigger in Geometry Dash.
   description: Learn how to change the percent bar on platformer levels in Geometry Dash.
-  authors:
-    - ibra
   canonical: ""
   noindex: false
 ---
