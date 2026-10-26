@@ -801,9 +801,13 @@ Don’t you sweat it, baby, $x$’s alright!
 
 {{< /callout >}}
 
-As we know how to compute polynomials, we can move on to more complicated functions. Trying to calculate arbitrary functions is trickier because they won’t necessarily be defined by using only summation and multiplication; the exponential functions is defined as a limit, the logarithm as the inverse of the exponential, sin and cosine as the projections on the x and y plane respectively of the unit circle, and so on. We can't apply these definitions using the item edit trigger since it only allows basic operations. Fortunately, we can work around this. Even though functions like the exponential, logarithm or sine aren't defined directly by basic arithmetic, we can *approximate* them using polynomials, and although the approximation may not be perfect, it can come extremely close to the actual result. This is the key idea behind the **Taylor series**. Given this, if we can write a complicated function as a sum of polynomial terms, then we can compute it using the methods already discussed.
+As we know how to compute polynomials, we can move on to more complicated functions. Trying to calculate arbitrary functions is trickier because they won’t necessarily be defined by using only summation and multiplication; the exponential functions is defined as a limit, the logarithm as the inverse of the exponential, sin and cosine as the projections on the x and y plane respectively of the unit circle, and so on. We can't apply these definitions using the item edit trigger since it only allows basic operations.
+
+Fortunately, we can work around this. Even though functions like the exponential, logarithm or sine aren't defined directly by basic arithmetic, we can *approximate* them using polynomials, and although the approximation may not be perfect, it can come extremely close to the actual result. This is the key idea behind the **Taylor series**. Given this, if we can write a complicated function as a sum of polynomial terms, then we can compute it using the methods already discussed.
 
 From now on, we will introduce derivatives into the mix. If you’re not familiar with them, or calculus as a whole, *and* you want to understand the logic of the stuff we will use, it’s highly recommended that you watch the Essence of Calculus series by 3Blue1Brown, as it intuitively explains where do derivatives come from and why they are useful, among other stuff.
+
+The main takeaway here is that **you do not need to actually memorize the definition** of a Taylor series, just know that a lot of the following functions you’re constructing will make use of this idea at some point.
 
 {{< callout context="note" icon="outline/photo" >}}
 
@@ -811,11 +815,9 @@ These stuff just won’t come off my teeth will they? (Kelly using dental floss)
 
 {{< /callout >}}
 
-The main takeaway here is that **you do not need to actually memorize the definition** of a Taylor series, just know that a lot of the following functions you’re constructing will make use of this idea at some point.
-
 ### The Exponential Function - $\exp(x)$
 
-We will start with the easiest example, I’ll call it $\exp(x) = e^x$, where the number $e=2.71828...$
+We will start with the easiest example, I’ll call it $\exp(x) = e^x$, with the number $e=2.71828...$
 
 This function is special in that it turns addition into multiplication. Let’s sprinkle in a magic number to our input…
 
@@ -843,4 +845,55 @@ $$
 \exp(x) = \frac {x^0} {0!} + \frac {x^1} {1!} + \frac {x^2} {2!} + \frac {x^3} {3!} + \frac {x^4} {4!} + \cdots
 $$
 
-I will assume you know a thing or two about the !
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+You might already be familiar with the $!$ symbol, this is the factorial function where you multiply every whole number up to itself!
+
+$$ 0! = 1 $$
+
+$$ 4! = 4 \times 3 \times 2 \times 1 = 24 $$
+
+$$ 5! = 5 \times 4 \times 3 \times 2 \times 1 = 120 $$
+
+{{< /callout >}}
+
+You might have noticed that $4 \times 3 \times 2 \times 1$ also seems to appear in $5!$, which means:
+
+$$ 5! = 5 \times 4 \times 3 \times 2 \times 1 = 5
+ \times 4! $$
+
+This is important as we will rely on this knowledge to build up our sum. We can look at this transformation as follows:
+
+$$ \frac {x^5} {5!} = \frac {x^4 \times x} {4! \times 5} = \frac {x^4} {4!} \times \frac x 5 $$
+
+What you'll see is that our current term $\frac {x^5} {5!}$ is just our previous term $\frac {x^4} {4!}$, multiplied by an additional $\frac x 5$.
+
+The intuition follows that you have a variable that keeps track of the multiplied inputs ($x^4$), maybe called `T3`, and another variable `T4` to keep track of the factorial ($5!$), probably one more `I5` to keep track of the next number to multiply for said factorial.
+
+{{< callout context="success" icon="outline/movie" >}}
+
+`I5 = I5 + 1.000`
+
+`T4 = T4 * I5`
+
+`T3 = T3 * T1`
+
+Now, add the fraction to the total
+
+`T2 = T2 + T3 / T4`
+
+{{< /callout >}}
+
+You might have noticed that we can repeat this process an infinite number of times. We can package this into a spawn sequence and then call it multiple times:
+
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+You can learn more about how to build 0-tick mechanisms in the [Loop Unrolling](/docs/guides/triggers-2/making-functions/#loop-unrolling) section of the Making Functions guide.
+
+{{< /callout >}}
+
+{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+
+Completing the exponential
+
+{{< /callout >}}
