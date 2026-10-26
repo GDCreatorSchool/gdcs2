@@ -15,7 +15,8 @@ seo:
   canonical: ""
   noindex: false
 ---
-
+{{< callout context="caution" title="This guide needs proofreading" icon="outline/info-circle" >}}
+{{< /callout >}}
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
 
 - The Percent Trigger allows you to add visible progress to your Platformer levels
