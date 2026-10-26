@@ -882,18 +882,44 @@ Now, add the fraction to the total
 
 `T2 = T2 + T3 / T4`
 
+*Spawn + Multi + Group*
+
 {{< /callout >}}
 
-You might have noticed that we can repeat this process an infinite number of times. We can package this into a spawn sequence and then call it multiple times:
+You might have noticed that we can repeat this process for as much as we want. We can package this into a spawn sequence and then call it multiple times:
 
 {{< callout context="caution" title="Note" icon="outline/info-circle" >}}
 
-You can learn more about how to build 0-tick mechanisms in the [Loop Unrolling](/docs/guides/triggers-2/making-functions/#loop-unrolling) section of the Making Functions guide.
+You can learn more about zero-tick mechanisms in the [Loop Unrolling](/docs/guides/triggers-2/making-functions/#loop-unrolling) section of the Making Functions guide.
 
 {{< /callout >}}
 
+So far we're 80% of the way there, however we're still missing one important piece - the first step!
+
+There, we will initialize the stuff required to run the loop correctly, namely the output and the extra variables.
+
+{{< callout context="success" icon="outline/movie" >}}
+
+`T2 = 1.000`
+
+Our first term is $\frac {x^0} 0 = 1$.
+
+`T3 = 1.000` $x^0 = 1$
+
+`T4 = 1.000` $0! = 1$
+
+`I5 = 0.000`
+
+When the loop runs, this will be incremented. $1! = 1 \times 0!$
+
+*Spawn + Multi + Group*
+
+{{< /callout >}}
+
+Great job! You have just made your first complicated function! That said, there is one slight problem with this: if you repeat the loop 13 or more times, the output value becomes pretty much useless.
+
 {{< callout context="tip" title="TODO" icon="outline/edit" >}}
 
-Completing the exponential
+Growth and limits
 
 {{< /callout >}}
