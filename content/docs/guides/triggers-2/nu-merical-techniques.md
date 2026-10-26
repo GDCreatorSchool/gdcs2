@@ -445,21 +445,82 @@ Anyways, we have now the bread and butter setup that converts IDs into trigger v
 
 ## Ratios
 
-Sometimes it may not be desirable to
+Sometimes it may not be desirable to move units exactly as indicated by IDs, but perhaps for larger chunks. This is doable in two ways:
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+1. Scale your inputs before feeding into the yes-no chain
+2. Make all your move triggers... move more
 
-Ratios
+A combination of these two will be useful for certain conversion setups. I will mainly demonstrate the use of ratios with the first method.
+
+{{< callout context="note" icon="outline/photo" >}}
+
+(A thorn monster with an arrow pointing to the space 3 grid units right)
+
+{{< /callout >}}
+
+Suppose you want to move an object 3 grid blocks to the right. Since 1 block is 10 move units, moving 3 grid blocks just means moving 30 move units. This just means you multiply the input number by 10.
+
+{{< callout context="note" icon="outline/photo" >}}
+
+`I1 = I1 * 10.000`.
 
 {{< /callout >}}
 
 ## Precision
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+If you look closely at the Rotate trigger, you might have noticed that the "rotate" trigger accepts decimal inputs. This is a problem since most of the values you've worked with only accept whole numbers. Oh no!
 
-Precision
+Luckily, there's a way to fix this. Instead of making 1 correspond to $1\degree$, we can make it so that it only moves $0.1\degree$. We would now need to input 10 for it to rotate the same $1\degree$ as before. This is the second method, moving (or rotating) less for every input.
+
+Combined with the first method, this gives us a way to input decimal values and get decimal-value rotations.
+
+{{< callout context="success" icon="outline/movie" >}}
+
+T:1=35.5
+
+Degrees: `0.10`
+
+Degrees: `0.20`
+
+Degrees: `0.40`
+
+Degrees: `0.80`
+
+Degrees: `1.60`
+
+Degrees: `3.20`
+
+Degrees: `6.40`
+
+Degrees: `12.80`
+
+Degrees: `25.60`
+
+Degrees: `51.20`
+
+Degrees: `102.40`
+
+Degrees: `204.80`
+
+These are our doubling values...
+
+`T1 = T1 * 10.000`
+
+Our input moves 355 units, or 35.5 degrees.
+
+▶️
+
+Double-check the provided rotation.
 
 {{< /callout >}}
+
+{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+
+Provide more info about Small step in move triggers
+
+{{< /callout >}}
+
+These changes will allow our setup to convert numerical IDs into trigger values however we want, with the most precision the game allows. We will now cover one of the most interesting applications that using IDs as trigger values has.
 
 ## Coordinate Systems
 
@@ -501,10 +562,10 @@ This is your line! (Kelly holding a bar slanted $2:1$)
 
 In mathematical notation, our function would be written as $p(x) = 2 \times x + (- 1)$. Specifically,
 
-- $x$ is our input number (Variable 1)
-- $p(x)$ is our output (Variable 2)
+- $x$ is our input number `I1`
+- $p(x)$ is our output `I2`
 - $2$ is the number we multiply
-- $- 1$ is the number we add
+- $- 1$ is the extra number we add
 
 Together, this means that we take our input number $x$, multiply it by $2$, add $-1$ and then give the result as an output.
 
