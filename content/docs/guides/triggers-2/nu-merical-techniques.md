@@ -868,19 +868,19 @@ $$ \frac {x^5} {5!} = \frac {x^4 \times x} {4! \times 5} = \frac {x^4} {4!} \tim
 
 What you'll see is that our current term $\frac {x^5} {5!}$ is just our previous term $\frac {x^4} {4!}$, multiplied by an additional $\frac x 5$.
 
-The intuition follows that you have a variable that keeps track of the multiplied inputs ($x^4$), maybe called `T3`, and another variable `T4` to keep track of the factorial ($5!$), probably one more `I5` to keep track of the next number to multiply for said factorial.
+The intuition follows that you have a variable that keeps track of the multiplied inputs ($x^4$), maybe called `T3`, and another variable `I4` to keep track of the factorial ($5!$), probably one more `I5` to keep track of the next number to multiply for said factorial.
 
 {{< callout context="success" icon="outline/movie" >}}
 
 `I5 = I5 + 1.000`
 
-`T4 = T4 * I5`
+`I4 = I4 * I5`
 
 `T3 = T3 * T1`
 
 Now, add the fraction to the total
 
-`T2 = T2 + T3 / T4`
+`T2 = T2 + T3 / I4`
 
 *Spawn + Multi + Group*
 
@@ -902,11 +902,11 @@ There, we will initialize the stuff required to run the loop correctly, namely t
 
 `T2 = 1.000`
 
-Our first term is $\frac {x^0} 0 = 1$.
+Our first term is $\frac {x^0} {0!} = 1$.
 
 `T3 = 1.000` $x^0 = 1$
 
-`T4 = 1.000` $0! = 1$
+`I4 = 1.000` $0! = 1$
 
 `I5 = 0.000`
 
@@ -916,10 +916,38 @@ When the loop runs, this will be incremented. $1! = 1 \times 0!$
 
 {{< /callout >}}
 
-Great job! You have just made your first complicated function! That said, there is one slight problem with this: if you repeat the loop 13 or more times, the output value becomes pretty much useless.
+Great job! You have just made your first complicated function!
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+You'll notice that each repeat produces smaller and smaller differences to the output, but the numerator `T3` stays positive. Theoretically, the sum goes on forever without an ending, and it would seem quite daunting to add up all of the infinitely many terms.
 
-Growth and limits
+In reality, Timer IDs can only store numbers up to a certain number of decimal places. Eventually the denominator `I4` will get big enough that the whole fraction is effectively zero. You can safely cut this off after only a few repeats (8 would do) and get a fairly accurate answer.
+
+{{< callout context="note" title="TODO" icon="outline/photo" >}}
+
+(Kelly blowing a balloon)
 
 {{< /callout >}}
+
+That said, there is one slight problem with this: if you repeat the loop 13 or more times, the output value suddenly becomes pretty much useless.
+
+The problem arises when the game tries to compute $13!$, because it evaluates to $6,227,020,800$, which is almost three times the counter limit!
+
+Factorials are known to grow in size absurdly quickly. That said, this is a rather simple fix. Instead of calculating $x^4$ and $4!$ separately, we can combine those into a single variable `T3` that tracks the whole fraction. Here's the reworked version of our repeat code:
+
+{{< callout context="success" icon="outline/movie" >}}
+
+`I5 = I5 + 1.000`
+
+`T3 = T3 * T1`
+
+`T3 = T3 / I5`
+
+Now, add the fraction to the total
+
+`T2 = T2 + T3`
+
+*Spawn + Multi + Group*
+
+{{< /callout >}}
+
+We will see that the more we run this, the closer `T3` approaches zero. Since factorials are already baked in the term, we no longer have to worry about number limits. This means we can finally go past 13 repeats and get eerily close to the actual value! Amazing!
