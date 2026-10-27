@@ -2,6 +2,8 @@
 draft: false
 authors:
   - ibra
+contributors:
+  - ibra
 title: Percent
 weight: 3271
 date: 2026-10-26
