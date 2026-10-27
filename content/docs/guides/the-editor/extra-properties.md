@@ -8,6 +8,8 @@ authors:
   - xplode09
   - illusion2
 contributors:
+  - xplode09
+  - illusion2
   - chuckolate
 tags:
   - Grade 0
