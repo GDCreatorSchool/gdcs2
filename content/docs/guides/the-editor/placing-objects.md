@@ -155,7 +155,9 @@ This tab houses different settings that affect how you view the editor. You can 
 - **Hitbox**: Allows you to toggle the **internal hitboxes** of your level.
 - **Ground**: Allows you to toggle the **ground** of your level in the editor.
 
-{{< youtube T1jyzSxeZH0 >}}
+If you'd like to know more, this tab is explained in detail in the {{< img src="images/GDEmotes/CustomGuideIcons/TheEditor/helper-tools.png" class="emote">}} [Helper Tools](/docs/guides/the-editor/helper-tools/#3-view-tab) guide.
+
+{{< youtube ZbzPyO53O2M >}}
 
 # Wrap-Up
 
