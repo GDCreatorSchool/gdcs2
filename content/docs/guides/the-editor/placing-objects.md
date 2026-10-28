@@ -7,6 +7,7 @@ weight: 1000
 date: 2023-03-20T00:00:00.000Z
 contributors:
   - komatic5
+  - Sethlai
 description: Welcome to the first Editor guide! Here, we’ll show you how to
   place objects, remove them, and navigate the editor.
 tags:
