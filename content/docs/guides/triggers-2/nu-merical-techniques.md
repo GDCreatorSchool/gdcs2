@@ -324,7 +324,13 @@ Kelly in front of a row of 0, 10, 20, …, 90
 
 {{< /callout >}}
 
-If you’re smart enough, you may have already found a better method. But to those who aren’t, all it takes is a change in perspective. Previously we have been looking at numbers in their decimal representation, but we can also look at it, how computers interpret it: binary!
+You may have already found a better method for this, but if you haven’t, all it takes is a change in perspective. Previously we have been looking at numbers in their decimal representation, but we can also look at it, how computers interpret it: binary!
+
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+A detailed explanation about how this works can be found in [Binary Stacking](/docs/guides/triggers-2/stacking-properties/#4-binary-stacking) section of the guide. I will only go through a basic example to illustrate how it can be applied.
+
+{{< /callout >}}
 
 I know the term might sound scary at first, but one of the special things about it is how simple it really is. Everything is presented as a yes-no choice: chicken or egg, live wire or neutral wire, to add 64 or not to, zero or one, that’s it.
 
@@ -441,7 +447,7 @@ The completed line setup with annotations and numbers from 256 down to 1
 
 {{< /callout >}}
 
-Anyways, we have now the bread and butter setup that converts IDs into trigger values. With this idea you can make the move trigger move to the left, up or down instead of to the right, or use other triggers like the rotate trigger in order to input numbers as degrees of rotation, or use the scale trigger to increase or decrease the size of anything. From here, we can add, modify, and optimize some aspects about the setup to improve it.
+This is the bread and butter setup that converts IDs into trigger values. From here, we can add, modify, and optimize some aspects about it to improve it.
 
 ## Ratios
 
@@ -470,7 +476,7 @@ Suppose you want to move an object 3 grid blocks to the right. Since 1 block is 
 
 If you look closely at the Rotate trigger, you might have noticed that the "rotate" trigger accepts decimal inputs. This is a problem since most of the values you've worked with only accept whole numbers. Oh no!
 
-Luckily, there's a way to fix this. Instead of making 1 correspond to $1\degree$, we can make it so that it only moves $0.1\degree$. We would now need to input 10 for it to rotate the same $1\degree$ as before. This is the second method, moving (or rotating) less for every input.
+Luckily, there's a way to fix this. Instead of making 1 correspond to $1°$, we can make it so that it only moves $0.1°$. We would now need to input 10 for it to rotate the same $1°$ as before. This is the second method, moving (or rotating) less for every input.
 
 Combined with the first method, this gives us a way to input decimal values and get decimal-value rotations.
 
@@ -951,3 +957,181 @@ Now, add the fraction to the total
 {{< /callout >}}
 
 We will see that the more we run this, the closer `T3` approaches zero. Since factorials are already baked in the term, we no longer have to worry about number limits. This means we can finally go past 13 repeats and get eerily close to the actual value! Amazing!
+
+## Periodic Functions
+
+You might know a thing or two about rotations, the observation at hand here is that when a wheel rotates 360°, it makes a full turn. Turning a wheel 15° produces the same result as turning it 375°.
+
+{{< callout context="note" title="TODO" icon="outline/photo" >}}
+
+(Kelly spinning a disc upright)
+
+{{< /callout >}}
+
+If you've used the Rotate trigger before, you will know what the "x360" option does, leaving the resulting rotation intact while adding one or two additional twists in the process:
+
+{{< callout context="success" icon="outline/movie" >}}
+
+Degrees: `60`
+x360: `0`
+
+Degrees: `60`
+x360: `1`
+
+▶️
+
+Both objects end up the same...
+
+...but one does an extra spin!
+
+{{< /callout >}}
+
+This is the core idea behind periodic functions: those that cycle over one pattern, over and over again. You will see yourself using them from time to time when dealing with motion, so do keep this in mind.
+
+### Sine and cosine - $\sin(x), \cos(x)$
+
+Try to focus on the up-down motion of that red dot: it goes up, smootly glides over the top, goes down, glides over the bottom, then back up. This motion generates a wavy pattern that is extremely satisfying to watch!
+
+{{< callout context="success" icon="outline/movie" >}}
+
+Illustration of a point on a circle tracing out the sine and cosine functions
+
+{{< /callout >}}
+
+Notice how the blue function has a pattern that repeats forever, that's our periodic function! Let's call this one the sine or $\sin(x)$, since it moves like the "Sine In Out" easing option.
+
+{{< callout context="note" title="TODO" icon="outline/photo" >}}
+
+Just like a swing! (Swing moving up and down with dashed trails)
+
+{{< /callout >}}
+
+You might have noticed another of the same wave that goes up, it traces out basically the same path! That's our sine's cousin function! We'll call it the co-sine, since it's a **co**usin of **sine** (get it?); or $\cos(x)$ for short. It's always ahead of the regular sine by a right angle, this is where we get the relation:
+
+$$\cos(x) = \sin(x + 90°)$$
+
+These two functions are the bread and butter for all things periodic, we will use them a lot moving on!
+
+{{< callout context="caution" title="Degrees and Radians" icon="outline/info-circle" >}}
+
+Normally, you'll be taught the definition of sine and cosine involving angles in **degrees** (°). However, most computer programs, including Geometry Dash, will involve calculations with **radians**.
+
+Radians are special in that they make angles act like arc lengths:
+- An arc length of $\frac {\pi} 2$ is a quarter of the circumference $2\pi$, covering an angle of $90°$.
+- An arc length of $\frac {\pi} 3$ is a sixth of the circumference $2\pi$, covering an angle of $60°$.
+
+For this guide, we will assume that **units are given in radians**. If you have inputs in degrees, apply this conversion recipe: $1 ° = \frac {180} {\pi}$
+
+{{< /callout >}}
+
+Their Taylor series are the following:
+
+$$
+\sin(x) = \frac {x^1} {1!} - \frac {x^3} {3!} + \frac {x^5} {5!} - \frac {x^7} {7!} + \frac {x^9} {9!} - \frac {x^{11}} {11!} + \cdots
+$$
+
+$$
+\cos(x) = \frac {x^0} {0!} - \frac {x^2} {2!} + \frac {x^4} {4!} - \frac {x^6} {6!} + \frac {x^8} {8!} - \frac {x^{10}} {10!} + \cdots
+$$
+
+These two functions look quite similar, and they in fact are. The key idea is that we can use the same loop for both sine and cosine. Let's see how the terms relate:
+
+$$
+- \frac {x^{10}} {10!} = -1 \times \frac {x^2 \times x^8} {10 \times 9 \times 8!} = \frac {-1 \times x^2} {10 \times 9} \times \frac {x^8} {8!}
+$$
+
+Putting this into perspective, there are a total of five things to consider when transforming each term:
+
+1. Multiply by $-1$
+2. Multiply by $x^2$
+3. Divide by $n$
+4. Divide by $n+1$
+5. Add to total
+
+Let's look at how we can implement it:
+
+{{< callout context="success" icon="outline/movie" >}}
+
+T:6=2.40 (Input) T:7 = ??? (Output) T:8 = ??? (Term) I:9 = 5
+
+`T8 = T8 * -1.000`
+
+`T8 = T8 * T6 * T6`
+
+`T8 = T8 / I9`
+
+`I9 = I9 + 1.000` $n \to n+1$
+
+`T8 = T8 / I9`
+
+`T7 = T7 + T8`
+
+`I9 = I9 + 1.000` $n+1 \to n+2$
+
+*(Spawn + Trigger + Multi + G21)*
+
+{{< /callout >}}
+
+As stated earlier, both functions share the same loop. This means that they differ only by the first step. Let's take a look at both and see how they differ.
+
+Let's first look at one for $\cos(x)$:
+
+{{< callout context="success" icon="outline/movie" >}}
+
+T:6=2.40 (Input) T:7 = ??? (Output) T:8 = ??? (Term) I:9 = 5
+
+`T7 = 1.000` First term is $1$
+
+`T8 = 1.000` First term is $1$
+
+`I9 = 1.000` Divide by $1$ and $2$ next
+
+*(Spawn + Trigger + Multi + G22)*
+
+Using 5 iterations...
+
+▶️
+
+Can get you really close!
+
+{{< /callout >}}
+
+Now, for $\sin(x)$:
+
+{{< callout context="success" icon="outline/movie" >}}
+
+T:6=2.40 (Input) T:7 = ??? (Output) T:8 = ??? (Term) I:9 = 5
+
+`T7 = T6` First term is $x$
+
+`T8 = T6` First term is $x$
+
+`I9 = 2.000` Divide by $2$ and $3$ next
+
+*(Spawn + Trigger + Multi + G23)*
+
+Using 5 iterations again...
+
+▶️
+
+Is way more than enough!
+
+{{< /callout >}}
+
+Now that you have working sine and cosine functions, let's take a look on how to make them work for large inputs!
+
+### Watching waves repeat
+
+{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+
+How to reduce inputs to $\left[-\frac {\pi} 2, \frac {\pi} 2 \right]$, as well as the idea behind the reduction
+
+{{< /callout >}}
+
+### Making everything periodic
+
+{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+
+How to generate any periodicity using reduction, with a contrived example
+
+{{< /callout >}}
