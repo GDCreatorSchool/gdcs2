@@ -7,20 +7,24 @@ weight: 1000
 date: 2023-03-20T00:00:00.000Z
 contributors:
   - komatic5
-description: Welcome to the first Editor guide! Here, we’ll show you how to place objects, remove them, and navigate the editor.
+  - sethlai
+description: Welcome to the first Editor guide! Here, we’ll show you how to
+  place objects, remove them, and navigate the editor.
 tags:
   - Grade 0
   - Basic Editor
 seo:
   title: How to Use the Geometry Dash Editor
-  description: How to use Geometry Dash's level editor, going over how to navigate the editor, and the build, edit, and delete tabs.
+  description: How to use Geometry Dash's level editor, going over how to navigate
+    the editor, and the build, edit, and delete tabs.
   canonical: placing-objects
   noindex: false
 ---
 
-{{< callout context="danger" title="This guide is outdated" icon="outline/info-circle" >}}
+{{< callout context="caution" title="Some emojis are outdated or missing" icon="alert-triangle" >}}
 
-With update 2.209, a lot of changes were made to the editor. This guide on its current state holds up until 2.208, and is currently being updated.
+- The emojis for the Build, Edit, and Delete tabs are outdated as of update 2.209, so keep in mind that these icons are different in-game.
+- Some emojis for the View tab are missing.
 
 {{< /callout >}}
 
@@ -52,61 +56,64 @@ At the **top** of the screen, you'll see a **slider** with a **circular {{< img 
 
 On the **left side** of the screen, you'll see these {{< img src="images/GDEmotes/Buttons/ZoomIn.png" class="emote">}}{{< img src="images/GDEmotes/Buttons/ZoomOut.png" class="emote">}} buttons. These are the **Zoom** buttons, which let you see more (or less) of your level at once. Zoom out move around faster, and zoom in to fine-tune your location.
 
-{{< youtube 7KmBdg82Y94 >}}
+{{< youtube MepeaDa8tM0 >}}
 
 # 2: The Build Tab
 
-{{< img src="images/GDEmotes/Buttons/BuildTab.png" class="largeemote">}} The **Build Tab** is where you can find and place objects. To place an object, *click on its button* in the Build tab, then *click* anywhere in the open space.
+{{< img src="images/GDEmotes/Buttons/BuildTab.png" class="largeemote">}} The **Build** tab is where you can find and place objects. To place an object, *click on its button* in the Build tab, then *click* anywhere in the open space.
 
-Once you place an object, it will be **selected**. Any changes you make in other tabs, such as the Edit Tab, will *only apply to objects you have selected*. You can use the {{< img src="images/GDEmotes/Buttons/DeSelect.png" class="emote">}} **De-Select** button to stop selecting an object.
+Once you place an object, it will be **selected**. Any changes you make in other tabs, such as the Edit tab, will *only apply to objects you have selected*. You can use the {{< img src="images/GDEmotes/Buttons/DeSelect.png" class="emote">}} **De-Select** button to stop selecting an object.
 
 {{< callout context="" title="Fun Fact" icon="outline/info-circle" >}}
 
-If you click on an object while in the Build Tab, the tab will **show you where to find that object again**.
+If you click on an object while in the Build tab, the tab will **show you where to find that object again**.
 
 Doing this while the object is **selected** lets you *copy its properties*, such as its size and color, when placing a new one.
 {{< /callout >}}
 
-{{< youtube v9PjLdzX3Vw >}}
+{{< youtube BS2FuhxDZ6Y >}}
 
 **Objects are organized into many tabs**, which you’ll learn about later. If you want to find a specific object, decide what [category](/docs/guides/the-editor/object-types) it goes in, such as blocks or spikes, then try searching for it in that tab.
 
 But what if you want to place many objects at once?
 
-If you want to do that, look in the *bottom-right corner* of your editor, and find the {{< img src="images/GDEmotes/Buttons/Swipe.png" class="emote">}} **Swipe** button. While you're in the Build Tab, this lets you **click and drag** to place lots of objects on the grid.
+If you want to do that, look in the *bottom-right corner* of your editor, and find the {{< img src="images/GDEmotes/Buttons/Swipe.png" class="emote">}} **Swipe** button. While you're in the Build tab, this lets you **click and drag** to place lots of objects on the grid.
 
 {{< callout context="caution" title="Caution: Swipe and Navigation" icon="outline/alert-triangle" >}}
 
 While **Swipe** is enabled, clicking and dragging will **not** move you around the editor. You must use the slider to get around, or **disable Swipe** by clicking on it again.
 {{< /callout >}}
 
-{{< youtube PpLad3Hj5aE >}}
+{{< youtube Z2RrqbYK-v8 >}}
 
 # 3: The Edit Tab
 
-{{< img src="images/GDEmotes/Buttons/EditTab.png" class="largeemote">}} The **Edit Tab** is where you can change an object’s location, size, and rotation. You must **select** objects before you can edit these properties.
+{{< img src="images/GDEmotes/Buttons/EditTab.png" class="largeemote">}} The **Edit** tab is where you can change an object’s location, size, and rotation. You must **select** objects before you can edit these properties.
 
-To **select** objects, either *place a new one* from the Build Tab, or *click on an existing one* while in the Edit Tab. If you want to **select multiple objects**, click on the {{< img src="images/GDEmotes/Buttons/Swipe.png" class="emote">}} **Swipe** button.
+To **select** objects, either *place a new one* from the Build tab, or *click on an existing one* while in the Edit tab. If you want to **select multiple objects**, click on the {{< img src="images/GDEmotes/Buttons/Swipe.png" class="emote">}} **Swipe** button.
 
 As before, use the {{< img src="images/GDEmotes/Buttons/DeSelect.png" class="emote">}} **De-Select** button to de-select every object.
 
-{{< youtube PxovKuvUsYI >}}
+{{< youtube v_dmm_C2-iQ >}}
 
 After selecting objects, you can change their properties as follows:
 
-## Object Location
+## Moving Objects
 
-- {{< img src="images/GDEmotes/Buttons/SmallSmallArrow.png" class="emote">}} The *thin, small arrows* move objects by *1/60th of a block*.
-- {{< img src="images/GDEmotes/Buttons/SmallArrow.png" class="emote">}} The *small arrows* move objects by *1/15th of a block*.
-- {{< img src="images/GDEmotes/Buttons/SmallMediumArrow.png" class="emote">}} The *small arrows with a line in them* move objects by *1/2 of a block*.
-- {{< img src="images/GDEmotes/Buttons/MediumArrow.png" class="emote">}} The *medium arrows* move an object *1 block*.
-- {{< img src="images/GDEmotes/Buttons/LargeArrow.png" class="emote">}} The *large arrows* move objects by *5 blocks*.
+The {{< img src="images/GDEmotes/Buttons/EditTabArrow.png" class="emote">}} arrows in this tab determine how far an object will move when the movement arrows are clicked. The movement arrows surround a number, which displays how far an object will move. Here are the arrow buttons you'll probably be using the most:
 
-- In the **bottom right** of the editor, you can find the {{< img src="images/GDEmotes/Buttons/FreeMove.png" class="emote">}} **Free Move** and {{< img src="images/GDEmotes/Buttons/Snap.png" class="emote">}} **Snap** buttons.
-  - The {{< img src="images/GDEmotes/Buttons/FreeMove.png" class="emote">}} **Free Move** button lets you *drag objects* to new places on the screen.
-  - While using **Free Move**,  the {{< img src="images/GDEmotes/Buttons/Snap.png" class="emote">}} **Snap** button lets you *snap those objects to the grid*.
+- {{< img src="images/GDEmotes/Buttons/EditTabDoubleArrow.png" class="emote">}} The **double arrow** (WASD) moves objects by **1 grid space**.
+- {{< img src="images/GDEmotes/Buttons/EditTabTripleArrow.png" class="emote">}} The **triple arrow** moves objects by **5 grid spaces**.
+- {{< img src="images/GDEmotes/Buttons/EditTabSubArrow.png" class="emote">}} The **leftmost split arrow** moves objects by **1/2 of a grid space**.
+- {{< img src="images/GDEmotes/Buttons/EditTabArrowYellow.png" class="emote">}} The **leftmost yellow arrow** (Shift + WASD) moves objects by **1/15th of a grid space**.
 
-## Object Rotation & Flipping
+You can find out about the rest of the movement options in [this guide](/docs/guides/the-editor/transforming-objects/#1-arrow-buttons) once you feel ready to explore this area of the editor more.
+
+In the **bottom right** of the editor, you can find the {{< img src="images/GDEmotes/Buttons/FreeMove.png" class="emote">}} **Free Move** and {{< img src="images/GDEmotes/Buttons/Snap.png" class="emote">}} **Snap** buttons.
+- The {{< img src="images/GDEmotes/Buttons/FreeMove.png" class="emote">}} **Free Move** button lets you *drag objects* to new places on the screen.
+- While using **Free Move**,  the {{< img src="images/GDEmotes/Buttons/Snap.png" class="emote">}} **Snap** button lets you *snap those objects to the grid*.
+
+## Rotating and Flipping Objects
 
 - {{< img src="images/GDEmotes/Buttons/RotateCW.png" class="emote">}} {{< img src="images/GDEmotes/Buttons/RotateCCW.png" class="emote">}} The **rotate buttons** rotate objects by 90 degrees, either *clockwise* or *counter-clockwise*.
 
@@ -120,15 +127,15 @@ After selecting objects, you can change their properties as follows:
 
 - In the **bottom right** of the editor, you can find the {{< img src="images/GDEmotes/Buttons/RotateButton.png" class="emote">}} **Rotate** button. This is identical to the {{< img src="images/GDEmotes/Buttons/FreeRotate.png" class="emote">}} **Free Rotate** button.
 
-## Object Scaling
+## Scaling Objects
 
 - {{< img src="images/GDEmotes/Buttons/ScaleButton.png" class="emote">}} Use the **scale button** to change an object's size. Objects can have any size between `0.25` and `4`.
 
 - {{< img src="images/GDEmotes/Buttons/ScaleXY.png" class="emote">}} Use the **scale XY button** to squash or stretch an object. You can make an object's X or Y scale anything between `0.25` and `4`.
 
-- {{< img src="images/GDEmotes/Buttons/Warp.png" class="emote">}} Use the **warp button** to change an object's size and skew. Unlike scaling, there is no size limit here. This is explained more in the [Transforming Objects](/docs/guides/the-editor/transforming-objects) guide.
+- {{< img src="images/GDEmotes/Buttons/Warp.png" class="emote">}} Use the **warp button** to change an object's size and skew. Unlike scaling, there is no size limit here. This is explained more in the [Transforming Objects](/docs/guides/the-editor/transforming-objects/#4-warp--scale-buttons) guide.
 
-{{< youtube lGJ7G-StnZ8 >}}
+{{< youtube KQF2t2wYFaU >}}
 
 # 4: The Delete Tab
 
@@ -140,7 +147,18 @@ While in this tab, the {{< img src="images/GDEmotes/Buttons/Swipe.png" class="em
 
 The other buttons in this tab let you *filter what objects you delete* based on their properties. This is explained in more detail [in this guide](/docs/guides/the-editor/organizing-objects/#2-select-filter).
 
-{{< youtube FijgIgJH20c >}}
+{{< youtube XzBn1lW2eXo >}}
+
+# 5: The View Tab
+
+This tab houses different settings that affect how you view the editor. You can enable or disable these settings for visual clarity, playtesting, or other purposes. **They do *not* change the level's appearance when playing said level outside of the editor.** For now, the most useful settings for you will likely be:
+- {{< img src="images/GDEmotes/Buttons/DamageOff.png" class="emote">}}  **Ignore Damage**: Allows you to playtest your level in the editor **without fear of crashing**. This option can also be toggled in the pause menu while playing outside of the editor.
+- **Hitbox**: Allows you to toggle the **internal hitboxes** of your level.
+- **Ground**: Allows you to toggle the **ground** of your level in the editor.
+
+If you'd like to know more, this tab is explained in detail in the {{< img src="images/GDEmotes/CustomGuideIcons/TheEditor/helper-tools.png" class="emote">}} [Helper Tools](/docs/guides/the-editor/helper-tools/#3-view-tab) guide.
+
+{{< youtube ZbzPyO53O2M >}}
 
 # Wrap-Up
 

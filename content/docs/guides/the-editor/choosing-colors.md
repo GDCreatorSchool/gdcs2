@@ -6,6 +6,7 @@ date: 2024-01-15T00:00:00.000Z
 authors:
   - tdp9
 contributors:
+  - tdp9
   - illusion2
   - vexilo5
 description: In this editor guide we’ll explain what color channels are, and how you can add and modify colors.
