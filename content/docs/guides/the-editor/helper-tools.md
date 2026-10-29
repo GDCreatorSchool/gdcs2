@@ -2,13 +2,16 @@
 draft: false
 authors:
   - poryii
-contributors:
-  - poryii
-  - azgamezyt
 title: Helper Tools
 weight: 1110
 date: 2026-10-21T00:00:00.000Z
-description: With the new 2.209 update, RobTop added several new tools that you can use in the editor. These include the Visibility tab, the Grid tab, the View tab, and the Helper tab. This guide will explain their usage, purposes, and how to best utilize them to their full potential.
+contributors:
+  - poryii
+  - azgamezyt
+description: With the new 2.209 update, RobTop added several new tools that you
+  can use in the editor. These include the Visibility tab, the Grid tab, the
+  View tab, and the Helper tab. This guide will explain their usage, purposes,
+  and how to best utilize them to their full potential.
 tags:
   - Grade 0
   - Advanced Editor
@@ -18,12 +21,13 @@ seo:
   canonical: ""
   noindex: false
 ---
-
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
+
 * The Visibility tab lets you hide the editor interface.
 * The Grid tab gives you the ability to modify the grid size.
 * The View tab shows options for changing what visuals are shown.
 * The Helper tab enables the use of auxiliary tools to speed up creation.
+
 {{< /callout >}}
 
 # 1. Visibility Tab
@@ -124,4 +128,4 @@ The list of options here is:
 
 Here is a video showcasing the Helper tab:
 
-{{< youtube Jpp53xs6kZ4 >}}
+{{< youtube bb-pVktN9Ds >}}
