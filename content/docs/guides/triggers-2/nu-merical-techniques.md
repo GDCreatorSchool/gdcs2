@@ -320,7 +320,98 @@ As they have double the bits, two item counters can do the trick. And similar to
 
 {{< callout context="tip" title="TODO" icon="outline/edit" >}}
 
-go a bit in depth on floating point precision
+include a bit of info on magnitude limits, as well as a bit of double-precision.
+
+a tl;dr would help if the reader wants to skip some nasty math
+
+{{< /callout >}}
+
+Whole numbers have one bit for the sign (the sign bit) and 31 for everything else... great. The problem comes when you try to put a decimal point somewhere.
+
+If you put it right in the middle:
+
+$$ 0001011100010111.1001000101001001_2 $$
+
+Now, the first 16 bits become part of the whole number, while the latter 16 are used for the fraction. This binary representation corresponds with:
+
+$$ \frac {387420489} {65536} = 5911\frac {37193} {65536} = 5911.5675201416015625 $$
+
+By doing this, you introduce two new problems:
+
+1. When the whole value is too small, the decimal precision might not be adequate.
+2. When the whole value is too large, the decimal is effectively nothing.
+3. The amount of values this number can take gets massively truncated; now your number can only range from $-32768$ up to $32767.9999...$, which is absurdly low!
+
+{{< callout context="note" icon="outline/photo" >}}
+
+(Kelly next to a dinosaur) Yes, this dinosaur is 66,000,006 years old!
+
+{{< /callout >}}
+
+Don't get me wrong, there are valid uses for this kind of decimal point placement, perhaps you need position calculations to be consistent even at large distances, or maybe you want to simplify operations.
+
+That said, most of the time, this clean 50/50 decimal split is not needed. You might prefer going between -256 and 256 with more precision, or reach the tens of millions with less.
+
+{{< callout context="note" icon="outline/photo" >}}
+
+(Kelly confused in a web of binaries with floating points) Here, there, everywhere, but where?
+
+{{< /callout >}}
+
+Trying to remember where the decimal point is in each case is a solution, albeit not a very good one. Sometimes you want to work between big and small numbers, and a system like this fails to be flexible.
+
+This is where you let computers memorize the decimal point for you: sacrifice 8 bits out of 31 for the decimal point (also called the "exponent"), and the remaining 24 bits (23 available, plus an implicit leading `1`) can be the raw number (the "mantissa").
+
+{{< callout context="note" icon="outline/photo" >}}
+
+(Diagram of IEEE 754 single-precision float)
+
+{{< /callout >}}
+
+This means a floating point technically consists of two numbers, one to locate the decimal point, and the other to represent the raw number.
+
+There are 24 bits in the mantissa, which means we can expect about 6 to 7 significant digits of precision. This is more than enough for what we need... hopefully... I think.
+
+{{< callout context="caution" title="Note: How GD stores decimals under the hood" icon="outline/info-circle" >}}
+
+The method Geometry Dash (as well as a lot of other programs) uses to store these numbers can get really complicated, you can refer to [Kahan's FPA Lecture Notes](https://people.eecs.berkeley.edu/~wkahan/ieee754status/IEEE754.PDF) for further information. This page is almost 30 years old at the time of writing!
+
+I will leave an example here for the curious of you.
+
+Let's look at how to represent $\frac {503586} {262144} (\approx 1.92)$ in this format:
+
+1. $503586_{10} = 1111010111100100010_2$.
+2. The number currently only has 19 bits, we can bump it up to 24 by doubling the number 5 times, or multiplying by $32$.
+
+$$ 503586_{10} \times 32_{10} = 16114752_{10} $$
+
+$$ 16114752_{10} = 111101011110010001000000_2 $$
+
+3. We can omit the leading `1`, our mantissa becomes `11101011110010001000000`.
+4. The denominator must be equivalently multiplied by 32, $262144 \times 32 = 8388608$.
+5. This number is also the result of doubling $1$, 23 times!
+6. The decimal point always evens out at $127$, since we're halving the mantissa 23 times, the expressed exponent is $127_{10} - 23_{10} = 104_{10}$.
+7. $104_{10} = 1101000_{2}$. Our exponent is `01101000`.
+8. The sign bit is `0` since the number is positive.
+9. Combining it all into a single representation
+
+`0 01101000 11101011110010001000000`
+
+This is how Geometry Dash internally stores the number as a TimerID.
+
+{{< /callout >}}
+
+{{< callout context="caution" title="Note: Clamping" icon="outline/info-circle" >}}
+
+Numbers lose precision as they get bigger in magnitude, TimerIDs like all other floats can only theoretically display second-accurate time up to `16,777,216.00` before it starts "skipping" (or counting by twos).
+
+Because of this technical limitation, RobTop has introduced an additional constraint where the magnitude of timers may never exceed $9,999,999.00$. Unlike with ItemIDs where the change is visual, value clamping for TimerIDs is **enforced**.
+
+{{< /callout >}}
+
+{{< callout context="note" icon="outline/photo" >}}
+
+(Derp mechanic Kelly sitting in a maintenance room) If you can't handle big jumpy timers, might as well bump it down to some arbitrary maximum...
 
 {{< /callout >}}
 
