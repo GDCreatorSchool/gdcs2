@@ -162,7 +162,7 @@ Set the right one to -1.
 
 Both triggers should be spawn trigger and multi trigger.
 
-Select both, then go to Edit Group and assign one group.
+Select both, then go to Edit Group and assign group 1.
 
 When a spawn trigger is activated…
 
@@ -184,9 +184,143 @@ Let’s revisit our workflow and improve on it a bit.
 
 The latter two steps are exactly the same as our previous one, but the first one is different. Up to now we’ve only ever added raw numbers, not other variables. Unfortunately, our Pickup trigger cannot accomplish such a task, so I will introduce you to a new trigger, Item Edit.
 
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+You can find more information about this trigger in [Item Edit, Comp, & Pers](/docs/guides/triggers-1/item-edit-comp-pers/) guide.
+
+{{< /callout >}}
+
+Observe closely.
+
+{{< callout context="success" icon="outline/movie" >}}
+
+Place down an item edit trigger.
+
+Set ItemID1 to 1 and enable Item. Our input is Variable 1, or `I1`.
+
+Set Target ItemID to 2 and enable Item. Our output is Variable 2, or `I2`.
+
+Set Mod to `2.000`. We are multiplying the input by 2.
+
+Don’t forget to enable Spawn Trigger and Multi Trigger!
+
+Grant this object group 3.
+
+Now, whenever group 3 is activated, the output `I2` becomes the input `I1`, doubled.
+
+`I2 = I1 · 2.000` This frame shows you what operation is being done.
+
+Place down another item edit trigger.
+
+Set Target ItemID to 2 and enable Item.
+
+Set the first operation button to `-`.
+
+This will subtract the Mod (`1.000`) from the output `I2`.
+
+*Spawn + Multi + Group 3*
+
+`I2 = I2 - 1.000` From now on, only this section is shown for this trigger.
+
+{{< /callout >}}
+
+With this, you now have a proper function, the output is now one less than double the input, and the input stays intact, matching up with how actual functions work.
+
+## Understanding Integer & Float Numbers
+
+The item edit trigger has quite a lot of buttons, and I mean it! This is because Geometry Dash offers multiple **kinds** of numbers. The main two we'll be looking at for this guide are **ItemIDs** (for whole numbers) and **TimerIDs** (for decimals)
+
+### Whole numbers (a.k.a.) Integers
+
+The letter `I` here stands for "Item," or a number to count items, this is typically done with **whole numbers**.
+
+In theory, numbers can extend out and up to infinity, and some games do make use of really large numbers. However, most computer programs only need to work with numbers within a certain range. This is where we see the distinction between 32-bit and 64-bit values come into play.
+
+When looking at numbers, you can see the individual digits that compose them, as well as how much they contribute. For example, the hundreds digit shows how much of a multiple of 100 is needed for this number.
+
+{{< callout context="note" icon="outline/photo" >}}
+
+Kelly in front of a row of 0, 100, 200, …, 900
+
+{{< /callout >}}
+
+Let's take our example: 158. It has three digits, 1 hundred, 5 tens and 8 ones. From a mathematical perspective:
+
+$$ 158 = 100 + 50 + 8 $$
+
+{{< callout context="note" icon="outline/photo" >}}
+
+Kelly tapping digits 1, 5 and 8.
+
+{{< /callout >}}
+
+Computers do indeed store numbers in a very similar fashion. That said you'll probably know that under the hood they never work with decimal values directly, but in "bits and bytes" or "binary."
+
+I know the idea of bits might sound scary at first, but one of the special things about it is how simple it really is. Each bit is presented as a yes-no choice: chicken or egg, live wire or neutral wire, to add 64 or not to, zero or one, that’s it.
+
+{{< callout context="note" icon="outline/photo" >}}
+
+To peanut or not to peanut (Kelly in peanut shape)
+
+{{< /callout >}}
+
+To illustrate an example, let’s take our 158 again and run it through my curated set of yes-no questions:
+
+1. Is 158… larger than or equal to 256? No! ❎
+2. Is 158… larger than or equal to 128? Yes! ✅ 158 - 128 = 30
+3. Is 30… larger than or equal to 64? No! ❎
+4. Is 30… larger than or equal to 32? No! ❎
+5. Is 30… larger than or equal to 16? Yes! ✅ 30 - 16 = 14
+6. Is 14… larger than or equal to 8? Yes! ✅ 14 - 8 = 6
+7. Is 6… larger than or equal to 4? Yes! ✅ 6 - 4 = 2
+8. Is 2… larger than or equal to 2? Yes! ✅ 2 - 2 = 0
+9. Is 0… larger than or equal to 1? No! ❎
+
+This is interesting in a few ways. Each question is always double the one after it, 32 is 16 twice, 128 is 64 twice, so on and so forth. However, you can start trying out the numbers immediately after it: 159, 160, etc. What you’ll see is that they all eventually reach 0 in some way or another, meaning that if you add up all the values to the “Yes!” responses, you get back to the original number.
+
+$$ 158 = 128 + 16 + 8 + 4 + 2 $$
+
+The “yes-no” responses act as digits for the number’s binary representation. In this case, we can write down 158 in binary as `010011110`.
+
+Much like how numbers are unique in decimal, they also have unique representations in binary. In a way, all “yes-no” sequences are exclusive to one number.
+
+{{< callout context="note" icon="outline/photo" >}}
+
+It’s like a Rorschach test for numbers! Don’t you think?
+
+{{< /callout >}}
+
+All numbers below 500 can be broken down into a sum with only these 9 numbers, and they either appear once (Yes) or not at all (No). This is what's known as a **9-bit number**.
+
+As stated earlier, a computer generally deals with 32 or 64 bits, meaning they have 32 or 64 of these yes-no questions, and they have very long strings of `0`s and `1`s!
+
+$$ 387420489_{10} = 00010111000101111001000101001001_2 $$
+
+The maximum that a 32 bit number can hold is the number $1$, doubled 32 times, which amounts to $4,294,967,296$ (a huge number!), but since computers also needs to store the number $0$, so the actual cap is $4,294,967,295$.
+
+Additionally, they might also need to store negative numbers in equal capacity, so the leading bit is typically reserved for a different yes-no question:
+
+> Is this number negative?
+
+The idea is that if the answer is no (meaning that it's a positive number), nothing happens. If the answer is yes (negative), then the actual number is **subtracted by** $\mathbf{4,294,967,296}$, ensuring that it stays negative. This is what's known as the **sign bit**.
+
+This clamps our range of numbers between $-2,147,483,648$ and $2,147,483,647$, and this is exactly the range of item counters in Geometry Dash. You might see that the number seemingly stops increasing past $999,999,999$; this is only a visual quirk and does not affect the actual number value.
+
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+I'll spare you most of the details of 64-bit values, since
+- They aren't needed for the vast majority of setups
+- They lack out of the box implementaions, so you'll have to implement one yourself.
+
+As they have double the bits, two item counters can do the trick. And similar to how 32-bit numbers operate, they have a hard range that goes from $-9,223,372,036,854,775,808$ to $9,223,372,036,854,775,807$.
+
+{{< /callout >}}
+
+### Decimals and floating-point values
+
 {{< callout context="tip" title="TODO" icon="outline/edit" >}}
 
-Item Edit
+go a bit in depth on floating point precision
 
 {{< /callout >}}
 
@@ -242,9 +376,7 @@ The right hand side should be the number 1.
 
 Set TrueID to 6.
 
-Don’t forget to enable Spawn Trigger and Multi Trigger!
-
-Go to Edit Group, then grant this object group 4.
+*Spawn + Multi + Group 4*
 
 Now, place a color trigger.
 
@@ -304,27 +436,19 @@ The previous section has already demonstrated how you may switch between differe
 
 However, there are some cases where you want your number value to directly correspond to the amount of movements. Setting the number to 451 should cause the object to move 451 units. While it is tempting to invent a new TrueID and move trigger for every single number possible, this setup becomes messy when the amount of possible inputs becomes arbitrarily large.
 
+{{< callout context="note" icon="outline/photo" >}}
+
+(Kelly gets hit by a row of item compare triggers) Ouch!
+
+{{< /callout >}}
+
 Luckily, move triggers can have their effects **stacked**, meaning two move triggers running at the same time will produce the combined distance. This allows us to combine the effects of multiple move triggers as if they were a single one.
 
-Let’s focus on the “Move X” for the Move trigger. Suppose, you want the object to move 158 blocks to the right. How would you do that?
+Let’s focus on the “Move X” for the Move trigger. Suppose, you want the object to move 648 blocks to the right. How would you do that?
 
-{{< callout context="note" icon="outline/photo" >}}
+Your first instinct could be to split these numbers into digits, and then move them said digits. However, making one condition for every tens from `10`, `20` all the way to `90`, takes up a lot of triggers and GroupIDs that could be better used for something else.
 
-Kelly tapping digits 1, 5 and 8.
-
-{{< /callout >}}
-
-Your first instinct could be to split these numbers into digits, and then move them said digits. 158 = 100 + 50 + 8, so it’d be intuitive to have three move triggers to do the job: one to pull the 100, one to pull the 50 and the other to pull the 8.
-
-This is easy to think about, but you quickly run into a problem. For each position you would need to check for the 10 possibilities for the digit, and for each of them you have to move a fixed amount of distance. An increase of 20 triggers for every digit is impractical at best and time-consuming at worst.
-
-{{< callout context="note" icon="outline/photo" >}}
-
-Kelly in front of a row of 0, 10, 20, …, 90
-
-{{< /callout >}}
-
-You may have already found a better method for this, but if you haven’t, all it takes is a change in perspective. Previously we have been looking at numbers in their decimal representation, but we can also look at it, how computers interpret it: binary!
+Luckily, there's already a better method discussed previously, which is looking at it, how computers interpret it: binary!
 
 {{< callout context="caution" title="Note" icon="outline/info-circle" >}}
 
@@ -332,45 +456,7 @@ A detailed explanation about how this works can be found in [Binary Stacking](/d
 
 {{< /callout >}}
 
-I know the term might sound scary at first, but one of the special things about it is how simple it really is. Everything is presented as a yes-no choice: chicken or egg, live wire or neutral wire, to add 64 or not to, zero or one, that’s it.
-
-{{< callout context="note" icon="outline/photo" >}}
-
-To peanut or not to peanut (Kelly in peanut shape)
-
-{{< /callout >}}
-
-To illustrate an example, let’s take our 158 again and run it through my curated set of yes-no questions:
-
-1. Is 158… larger than or equal to 256? No! ❎
-2. Is 158… larger than or equal to 128? Yes! ✅ 158 - 128 = 30
-3. Is 30… larger than or equal to 64? No! ❎
-4. Is 30… larger than or equal to 32? No! ❎
-5. Is 30… larger than or equal to 16? Yes! ✅ 30 - 16 = 14
-6. Is 14… larger than or equal to 8? Yes! ✅ 14 - 8 = 6
-7. Is 6… larger than or equal to 4? Yes! ✅ 6 - 4 = 2
-8. Is 2… larger than or equal to 2? Yes! ✅ 2 - 2 = 0
-9. Is 0… larger than or equal to 1? No! ❎
-
-This is interesting in a few ways. Each question is always double the one after it, 32 is 16 twice, 128 is 64 twice, so on and so forth. However, you can start trying out the numbers immediately after it: 159, 160, etc. What you’ll see is that they all eventually reach 0 in some way or another, meaning that if you add up all the values to the “Yes!” responses, you get back to the original number.
-
-{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
-
-If you want to be a bit more in-depth, the “yes-no” responses act as digits for the number’s binary representation. In this case, we can write down 158 in binary as `010011110`.
-
-Much like how numbers are unique in decimal, they also have unique representations in binary. In a way, all “yes-no” sequences are exclusive to one number.
-
-{{< /callout >}}
-
-{{< callout context="note" icon="outline/photo" >}}
-
-It’s like a Rorschach test for numbers! Don’t you think?
-
-{{< /callout >}}
-
-All numbers below 500 can be broken down into a sum with only these 9 numbers, and they either appear once (Yes) or not at all (No).
-
-This means that with only 9 move triggers you can move an object any distance to the right within 500 units. Let’s see how you can make use of this:
+We're moving objects within 1000 units, so all that's needed is 10 bits. Let’s see how you can make use of this:
 
 {{< callout context="success" icon="outline/movie" >}}
 
@@ -468,7 +554,7 @@ Suppose you want to move an object 3 grid blocks to the right. Since 1 block is 
 
 {{< callout context="note" icon="outline/photo" >}}
 
-`I1 = I1 * 10.000`.
+`I1 = I1 · 10.000`.
 
 {{< /callout >}}
 
@@ -510,7 +596,7 @@ Degrees: `204.80`
 
 These are our doubling values...
 
-`T1 = T1 * 10.000`
+`T1 = T1 · 10.000`
 
 Our input moves 355 units, or 35.5 degrees.
 
@@ -587,7 +673,7 @@ This is the point where I need to introduce you to the concept of multiplying a 
 
 {{< callout context="note" icon="outline/photo" >}}
 
-This is how you do it! (`T2 = T1 * T1`)
+This is how you do it! (`T2 = T1 · T1`)
 
 {{< /callout >}}
 
@@ -599,7 +685,7 @@ In reality, this extra number is known as a coefficient. However I will be consi
 
 {{< /callout >}}
 
-By setting the mod to `3.000`, the operation now reads `T2 = T1 * T1 * 3.000`, meaning that the output multiplies the input by itself, and then multiplies it by 3.
+By setting the mod to `3.000`, the operation now reads `T2 = T1 · T1 · 3.000`, meaning that the output multiplies the input by itself, and then multiplies it by 3.
 
 In mathematical notation, this is referred to as $p(x) = x \times x \times 3$. Since we multiply the input (`T1` or $x$) two times, we can simplify the expression to $p(x) = 3x^2$.
 
@@ -611,8 +697,8 @@ For any whole number $x$, the function $p(x) = x^2$ produces a square number, th
 
 A full quadratic function is a sum of three things:
 
-1. The input multiplied by itself, then by some number: `T3 = T1 * T1 * 4.000`
-2. The input multiplied by some number: `T4 = T1 * 12.000`
+1. The input multiplied by itself, then by some number: `T3 = T1 · T1 · 4.000`
+2. The input multiplied by some number: `T4 = T1 · 12.000`
 3. A loose number: `T5 = 9.000`
 
 I’ll give an example by constructing $p(x) = 4x^2 + 12x + 9$, our output `I2` will be a sum of the three above variables:
@@ -621,9 +707,9 @@ I’ll give an example by constructing $p(x) = 4x^2 + 12x + 9$, our output `I2` 
 
 T:1=5.00 T:2 T:3 T:4 T:5
 
-`T3 = T1 * T1 * 4.000`
+`T3 = T1 · T1 · 4.000`
 
-`T4 = T1 * 12.000`
+`T4 = T1 · 12.000`
 
 `T5 = 9.000`
 
@@ -695,7 +781,7 @@ Set `T3` as your $x$ accumulator.
 
 It starts at $x^0 = 1$.
 
-`T2 = T2 + T3 * -36.000`
+`T2 = T2 + T3 · -36.000`
 
 This is our first term.
 
@@ -705,11 +791,11 @@ In the first step, the term $-36$ (or $-36x^0$) is added to the total. Our timer
 
 {{< callout context="success" icon="outline/movie" >}}
 
-`T3 = T3 * T1`
+`T3 = T3 · T1`
 
 The `T3` variable now contains $x^1$.
 
-`T2 = T2 + T3 * 132`
+`T2 = T2 + T3 · 132`
 
 {{< /callout >}}
 
@@ -717,11 +803,11 @@ Our second step calculates $136x$ and adds it to the output total.
 
 {{< callout context="success" icon="outline/movie" >}}
 
-`T3 = T3 * T1`
+`T3 = T3 · T1`
 
 The `T3` variable now contains $x^2$.
 
-`T2 = T2 + T3 * 101`
+`T2 = T2 + T3 · 101`
 
 {{< /callout >}}
 
@@ -729,29 +815,29 @@ Our third step calculates $101x^2$ and adds it to the output total.
 
 {{< callout context="note" icon="outline/photo" >}}
 
-`T3 = T3 * T1` $x^3$
+`T3 = T3 · T1` $x^3$
 
-`T2 = T2 + T3 * -629.000`
+`T2 = T2 + T3 · -629.000`
 
-`T3 = T3 * T1` $x^4$
+`T3 = T3 · T1` $x^4$
 
-`T2 = T2 + T3 * 209.000`
+`T2 = T2 + T3 · 209.000`
 
-`T3 = T3 * T1` $x^5$
+`T3 = T3 · T1` $x^5$
 
-`T2 = T2 + T3 * 421.000`
+`T2 = T2 + T3 · 421.000`
 
-`T3 = T3 * T1` $x^6$
+`T3 = T3 · T1` $x^6$
 
-`T2 = T2 + T3 * -154.000`
+`T2 = T2 + T3 · -154.000`
 
-`T3 = T3 * T1` $x^7$
+`T3 = T3 · T1` $x^7$
 
-`T2 = T2 + T3 * -68.000`
+`T2 = T2 + T3 · -68.000`
 
-`T3 = T3 * T1` $x^8$
+`T3 = T3 · T1` $x^8$
 
-`T2 = T2 + T3 * 24.000`
+`T2 = T2 + T3 · 24.000`
 
 {{< /callout >}}
 
@@ -773,7 +859,7 @@ Watch.
 
 $24 x^3 - 68 x^2 - 154 + 421$
 
-`T2 = T2 * T1`
+`T2 = T2 · T1`
 
 $24 x^4 - 68 x^3 - 154 x^2 + 421 x$
 
@@ -791,7 +877,7 @@ Let’s look at the first two steps with this method:
 
 Now for the second step,
 
-`T2 = T2 * T1`
+`T2 = T2 · T1`
 
 `T2 = T2 - 68`
 
@@ -880,9 +966,9 @@ The intuition follows that you have a variable that keeps track of the multiplie
 
 `I5 = I5 + 1.000`
 
-`I4 = I4 * I5`
+`I4 = I4 · I5`
 
-`T3 = T3 * T1`
+`T3 = T3 · T1`
 
 Now, add the fraction to the total
 
@@ -944,7 +1030,7 @@ Factorials are known to grow in size absurdly quickly. That said, this is a rath
 
 `I5 = I5 + 1.000`
 
-`T3 = T3 * T1`
+`T3 = T3 · T1`
 
 `T3 = T3 / I5`
 
@@ -1054,9 +1140,9 @@ Let's look at how we can implement it:
 
 T:6=2.40 (Input) T:7 = ??? (Output) T:8 = ??? (Term) I:9 = 5
 
-`T8 = T8 * -1.000`
+`T8 = T8 · -1.000`
 
-`T8 = T8 * T6 * T6`
+`T8 = T8 · T6 * T6`
 
 `T8 = T8 / I9`
 
