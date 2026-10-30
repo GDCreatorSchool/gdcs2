@@ -374,7 +374,7 @@ There are 24 bits in the mantissa, which means we can expect about 6 to 7 signif
 
 {{< callout context="caution" title="Note: How GD stores decimals under the hood" icon="outline/info-circle" >}}
 
-The method Geometry Dash (as well as a lot of other programs) uses to store these numbers can get really complicated, you can refer to [Kahan's FPA Lecture Notes](https://people.eecs.berkeley.edu/~wkahan/ieee754status/IEEE754.PDF) for further information. This page is almost 30 years old at the time of writing!
+The method Geometry Dash (as well as a lot of other programs) uses to store these numbers can get really complicated, you can refer to [Kahan's FPA Lecture Notes](https://people.eecs.berkeley.edu/~wkahan/ieee754status/IEEE754.PDF) for further information. That page is almost 30 years old at the time of writing!
 
 I will leave an example here for the curious of you.
 
@@ -401,11 +401,11 @@ This is how Geometry Dash internally stores the number as a TimerID.
 
 {{< /callout >}}
 
-{{< callout context="caution" title="Note: Clamping" icon="outline/info-circle" >}}
+{{< callout context="caution" title="Note: Item Edit Clamping" icon="outline/info-circle" >}}
 
-Numbers lose precision as they get bigger in magnitude, TimerIDs like all other floats can only theoretically display second-accurate time up to `16,777,216.00` before it starts "skipping" (or counting by twos).
+Numbers lose precision as they get bigger in magnitude, TimerIDs like all other floats can only theoretically store second-accurate time up to `16,777,216.00` before it starts "skipping" (or counting by twos).
 
-Because of this technical limitation, RobTop has introduced an additional constraint where the magnitude of timers may never exceed $9,999,999.00$. Unlike with ItemIDs where the change is visual, value clamping for TimerIDs is **enforced**.
+The Item Edit trigger sets a soft limit for what timer values it can output, between `-9,999,999.00` and `9,999,999.00`. You can look to range reduction as a workaround, it is discussed later in this guide.
 
 {{< /callout >}}
 
@@ -783,6 +783,8 @@ In mathematical notation, this is referred to as $p(x) = x \times x \times 3$. S
 {{< callout context="caution" title="Note" icon="outline/info-circle" >}}
 
 For any whole number $x$, the function $p(x) = x^2$ produces a square number, therefore we refer to $x^2$ as “$x$ squared.”
+
+The expression $x^7$ would be called "$x$ to the power of $7$," and the corner number is known as the **power**. The power can be any number, like $8$, $15$ or $22$.
 
 {{< /callout >}}
 
