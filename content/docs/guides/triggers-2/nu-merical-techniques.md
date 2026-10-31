@@ -1407,16 +1407,188 @@ Now that you have working sine and cosine functions, let's take a look on how to
 
 ### Watching waves repeat
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+You will see that you need a lot of iterations for $\sin(666)$ to ever approach an acceptable value, and probably waste a lot of your precious computing resources.
 
-How to reduce inputs to $\left[-\frac {\pi} 2, \frac {\pi} 2 \right]$, as well as the idea behind the reduction
+The good thing is that periodic functions repeat themselves after a while. For sine and cosine, they repeat along lengths of $2\pi$ each.
+
+$$ \sin(x) = \sin(x+2\pi), ~~~~ \cos(x) = \cos(x + 2\pi) $$
+
+If you still remember how division works, there exists a quotient, and a remainder. The quotient here is irrelevant since it gets multiplied by $2\pi$ and ignored. This means that **only the remainder** is considered.
+
+Let's construct our division scenario:
+
+{{< callout context="success" icon="outline/movie" >}}
+
+T:6 (Remainder) C:10 (Quotient) T:11=24000 (Input)
+
+`T6 = T11`
+
+`I10 = FLR(T6 / 6.283)`
+
+`T6 = T6 - I10 · 6.283`
+
+*(Spawn + Trigger + Multi + G22 + G23)*
+
+▶️
+
+T:6=5.223
 
 {{< /callout >}}
 
+You might have noticed that if you find the remainder on a calculator, it will return a number around $5.223$, which is quite far off from your $4.515$.
+
+{{< callout context="caution" title="Note: Alignment" icon="outline/info-circle" >}}
+
+Remember, small alignment errors can lead to massive differences over large distances!
+
+{{< /callout >}}
+
+Fortunately, TimerIDs can store up to 6 correct decimal places. Since $\pi \approx \frac {13176795}{4194304}$, we can save this fraction into a variable:
+
+{{< callout context="success" icon="outline/movie" >}}
+C:12 = 13176195 C:13 = 4194304 T:314 ($\pi$) T:628 ($2\pi$)
+
+`T314 = I12 / I13`
+
+`T157 = T314 / 2.000`
+
+`T628 = T314 · 2.000`
+
+▶️
+
+T:157=1.57 T:314=3.14 T:315=6.28
+
+{{< /callout >}}
+
+Now, we can try getting the remainder once again with a more accurate value of $\pi$:
+
+{{< callout context="success" icon="outline/movie" >}}
+
+T:6 (Remainder) C:10 (Quotient) T:11=24000 (Input) T:628 ($2\pi$)
+
+`T6 = T11`
+
+`I10 = FLR(T6 / T628)`
+
+`T6 = T6 - I10 · T628`
+
+▶️
+
+T:6=4.515
+
+{{< /callout >}}
+
+This value is now practically the same as our calculator's! We're still not done with it, though we're not done yet. Flooring the quotient will yield a number from $0$ to $2\pi$. However, our Taylor expansions are centered at $0$, so we want to shift our range of remainders to between $-\pi$ and $\pi$.
+
+This is as simple as changing the NA-operation to `RND`; when the fractional part surpasses $0.5$, the division rounds the quotient up, causing the remainder to be negative:
+
+{{< callout context="success" icon="outline/movie" >}}
+
+T:6 (Remainder) C:10 (Quotient) T:11=24000 (Input) T:628 ($2\pi$)
+
+`I10 = RND(T6 / T628)`
+
+▶️
+
+T:6=-1.769
+
+{{< /callout >}}
+
+We have effectively made sine and cosine reasonably accurate for all values. However, don't get too excited about that just yet, because there is one more ad-hoc optimization for our functions.
+
+The sine function input can be further constrained between $-\frac \pi 2$ and $\frac \pi 2$ through the trigonometric property:
+
+$$ \sin(x) = \cos \left( x - \frac \pi 2 \right) = -\cos \left( x + \frac \pi 2 \right) $$
+
+To implement it, we branch into two conditions: negative and positive.
+
+{{< callout context="success" icon="outline/movie" >}}
+
+`T6 >= 0.000`
+
+If true, run the following
+
+`T6 = T6 + T157`
+
+Otherwise, run the following
+
+`T6 = T6 - T157`
+
+`T7 = NEG(T7)`
+
+In both cases, initialize conditions for cosine, then loop.
+
+▶️
+
+{{< /callout >}}
+
+Similarly, with cosine we will use the following property:
+
+$$ \cos(x) = \sin \left( x + \frac \pi 2 \right) = -\sin \left( x - \frac \pi 2 \right) $$
+
+Branch into two conditions: negative and positive.
+
+{{< callout context="success" icon="outline/movie" >}}
+
+`T6 >= 0.000`
+
+If true, run the following
+
+`T6 = T6 - T157`
+
+`T7 = NEG(T7)`
+
+Otherwise, run the following
+
+`T6 = T6 + T157`
+
+In both cases, initialize conditions for sine, then loop.
+
+▶️
+
+{{< /callout >}}
+
+This will ensure that inputs stay very close to the center $0$ and produce accurate results.
+
 ### Making everything periodic
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+Periodicity is not limited to the most special classes of functions, in fact you can construct any periodic function using another function as a base.
 
-How to generate any periodicity using reduction, with a contrived example
+{{< callout context="note" icon="outline/photo" >}}
+
+Kelly swimming in wavy function graph
+
+{{< /callout >}}
+
+I will demonstrate an example with this wavy shape function. Each section of this arc corresponds to the base function $f(x) = x^2$ between $-0.5$ and $0.5$.
+
+There are three steps to this procedure:
+
+1. Determine the period, or how far to go before your function repeats itself.
+2. Find the remainder after **RND**-dividing by the period. It goes from negative to positive and is centered at 0.
+3. Calculate the base function at that point.
+
+Let's see how we can implement this in action:
+
+{{< callout context="success" icon="outline/movie" >}}
+T:13=66.60 (Input) T:14 (Working) T:15 (Output) C:16 (Quotient)
+
+`I16 = RND(T13)` (Division by 1 is ignored)
+
+`T14 = T13 - I16` (Multiplication by 1 is ignored)
+
+`T15 = T14 * T14`
+
+▶️
+
+T:15=0.16
+
+{{< /callout >}}
+
+Because the input is wrapped around the negative, the input gets transformed into $-0.4$, meaning the output is $(-0.4)^2=0.16$.
+
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+If your base function is not centered at 0, remember to introduce offsets or re-center the function yourself!
 
 {{< /callout >}}
