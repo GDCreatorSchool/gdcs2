@@ -436,11 +436,7 @@ The magnitude of TimerIDs can go as small as $1.1755\times 10^{-38}$ and as larg
 
 As with any 64-bit value, these are values you have to implement by yourself. IEEE 754 designates 1 bit for the sign, 11 bits for the exponent and 53 bits for the mantissa.
 
-{{< callout context="note" icon="outline/photo" >}}
-
 (Diagram of IEEE 754 double-precision float)
-
-{{< /callout >}}
 
 These numbers cover a much greater range (up to $1.79\times10^{308}$) and achieve a precision level of 16-17 significant digits.
 
@@ -738,9 +734,88 @@ These changes will allow our setup to convert numerical IDs into trigger values 
 
 ## Coordinate Systems
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+Coordinates operate on one simple basis: Every pixel on your screen has two numbers that intuitively tell where it is.
 
-A guide about Descartes' coordinates
+There are two main methods to describe position, both implemented by GD triggers:
+
+1. **Cartesian:** Move a distance across (X), and another up and down (Y). This is how Niko moves in [OneShot](https://store.steampowered.com/app/420530/OneShot/).
+2. **Polar:** Look at somewhere (θ), then move in that direction (r). This is common with 3D first-person games such as [Left 4 Dead 2](https://store.steampowered.com/app/550/Left_4_Dead_2/).
+
+All levels have an internal coordinate system, and it is shared by all triggers. For example, the Move trigger moves an object relative to this coordinate system, and the Rotate trigger also takes this system into account for rotations of multiple objects.
+
+However, there is one big caveat: you can't directly read the position of any level object, only change it and guess where it might be. Oh no!
+
+{{< callout context="note" icon="outline/photo" >}}
+
+I don't think, therefore, I don't am. (Kelly brain empty)
+
+{{< /callout >}}
+
+Nevertheless this is not the end of the world when it comes to implementing coordinates. You can set an object to be an aribitrary origin, and then track/reposition other objects relative to it via two ItemIDs.
+
+### Tracking the player
+
+The idea is that every time the player moves, you update its position to where it currently is. If the player moves 15 untis up, you add 15 to its Y-position counter.
+
+This is acheived through four collision sensors on four sides, as well as a player collider. Each time the player collides with one of the sensors, the sensors move one unit to readjust to the player.
+
+{{< callout context="success" icon="outline/movie" >}}
+
+C:1=50 C:2=5
+
+The player starts at $(50, 5)$.
+
+Place a player collider. Enable dynamic block.
+
+Place four collisions 1-4.
+
+Space them apart from the player collider 1 purple unit.
+
+Make a TPS loop *Group 5*
+
+Place an instant collision trigger.
+
+Check if the player collider `11` touches the top sensor `1`.
+
+If true, move the sensor up 1 unit and update position.
+
+Enable Silent on move trigger to avoid bugs.
+
+Do the same for the other 3 sensors.
+
+*Spawn + Multi + Group 5*
+
+▶️
+
+The player's position can now be tracked with ItemIDs.
+
+{{< /callout >}}
+
+As you can see, this system is actually quite versatile! For one, the player collider can track other things than the player. Sensors can also be placed further apart for less precision.
+
+The frequency of this check means that the player collider never escapes the sensors, even at 4x mini wave. Escaping only becomes a problem when measurements become more precise or the loop runs less frequently.
+
+{{< callout context="note" icon="outline/photo" >}}
+
+Kelly caging a random player.
+
+{{< /callout >}}
+
+### Repositioning objects
+
+We have taken a look at how ID conversion works when moving objects. One chain moves in one direction, so four of them will move in all four directions!
+
+Normally, the object will start moving from its current position. To position the object relative to an origin, you can prefix the movement by relocating to the origin object.
+
+{{< callout context="success" icon="outline/movie" >}}
+
+(A move trigger, then four ID conversion chains)
+
+First, move an object to the origin.
+
+Then, move up (+Y), down (-Y), left (-X) and right(+X).
+
+▶️
 
 {{< /callout >}}
 
