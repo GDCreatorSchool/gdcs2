@@ -230,6 +230,25 @@ With this, you now have a proper function, the output is now one less than doubl
 
 The item edit trigger has quite a lot of buttons, and I mean it! This is because Geometry Dash offers multiple **kinds** of numbers. The main two we'll be looking at for this guide are **ItemIDs** (for whole numbers) and **TimerIDs** (for decimals)
 
+### TL;DR - Numbers in Geometry Dash
+
+I have sorted the main properties of each kind of ID on a table, as well as some triggers that interact with them.
+
+|              | ItemID                                 | TimerID                       |
+|--------------|----------------------------------------|-------------------------------|
+| **Values**   | Whole numbers (e.g. $342$)             | Decimals (e.g. $3.42$)        |
+| **Lowest**   | $-2147483648$                          | $-9,999,999.00$               |
+| **Highest**  | $2147483647$                           | $9,999,999.00$                |
+| **Triggers** | Pickup, Count, Item Edit, Item Compare | Time, Item Edit, Item Compare |
+
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+The following two sections will go into a **lot** of detail about how numbers work, and I mean it!
+
+You are not required to understand how numbers are stored in Geometry Dash to follow along the guide, so these sections can be freely skipped!
+
+{{< /callout >}}
+
 ### Whole numbers (a.k.a.) Integers
 
 The letter `I` here stands for "Item," or a number to count items, this is typically done with **whole numbers**.
@@ -318,14 +337,6 @@ As they have double the bits, two item counters can do the trick. And similar to
 
 ### Decimals and floating-point values
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
-
-include a bit of info on magnitude limits, as well as a bit of double-precision.
-
-a tl;dr would help if the reader wants to skip some nasty math
-
-{{< /callout >}}
-
 Whole numbers have one bit for the sign (the sign bit) and 31 for everything else... great. The problem comes when you try to put a decimal point somewhere.
 
 If you put it right in the middle:
@@ -412,6 +423,26 @@ The Item Edit trigger sets a soft limit for what timer values it can output, bet
 {{< callout context="note" icon="outline/photo" >}}
 
 (Derp mechanic Kelly sitting in a maintenance room) If you can't handle big jumpy timers, might as well bump it down to some arbitrary maximum...
+
+{{< /callout >}}
+
+{{< callout context="caution" title="Note: Limits" icon="outline/info-circle" >}}
+
+The magnitude of TimerIDs can go as small as $1.1755\times 10^{-38}$ and as large as $3.403\times10^{38}$.
+
+{{< /callout >}}
+
+{{< callout context="caution" title="Note: Double-Precision format" icon="outline/info-circle" >}}
+
+As with any 64-bit value, these are values you have to implement by yourself. IEEE 754 designates 1 bit for the sign, 11 bits for the exponent and 53 bits for the mantissa.
+
+{{< callout context="note" icon="outline/photo" >}}
+
+(Diagram of IEEE 754 double-precision float)
+
+{{< /callout >}}
+
+These numbers cover a much greater range (up to $1.79\times10^{308}$) and achieve a precision level of 16-17 significant digits.
 
 {{< /callout >}}
 
