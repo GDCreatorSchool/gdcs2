@@ -87,3 +87,17 @@ image
 - Point Cycle - For every press a user hits a note on, it traverses to the next point on the LFO and holds it there.  
 
 The last thing LFO offers is its tempo. You can essentially adjust the speed of the LFO by the tempo of the DAW.  
+
+image
+
+You can slide up and down on the fraction to speed up or slow down the tempo of the LFO however you see fit. If you click on the note, there are other options to play around with including Triplets, Dotted, and even time-orientated tempos (in seconds).   
+
+Already you can see how much potential this LFO brings to the table in terms of producing sound. Just to name a couple of examples, we can use this to create vibratos (Modulating Pitches with LFO), tremolo (Modulating OSC with LFO), and many more.
+
+# 4: Warping Waveforms
+
+  You do not have to confine yourself to basic shapes in a waveform. You can warp a basic shape into more complex shapes that create unique, distinct sounds.
+
+Warping in a wavetable synthesis is the process of mathematically deforming a single wave cycle before applying other effects. This alters, boosts, or otherwise creates new harmonics that we otherwise don't really get to hear in timbre from other shapes.  Vital is fortunate to give us 2 types of warping: Wave morph warping, and Spectral warp. Lets look into each warp modes and see what we can do to pre-existing shapes. On the right side of the shape of the oscillator, there is an unlabelled knob.
+
+ Clicking on “---” brings you to a dropdown menu that allows you to play with different modes. We’ll knock out wave morph warping first since its more common to find on wavetable synths: 
