@@ -159,3 +159,17 @@ Example: Shepard Tone (link here)
 We want to briefly cover some of the extra sound design techniques and effects that are less common, but far more interesting. Unfortunately, we would be here all day if we were to talk about them all. But let’s go over some of the more advanced techniques that professional producers and sound designers use to make their sounds. I don't think these are stuff to be glossed over, hence why we bring them up, so I suggest looking into these for your recommendation:
 
 - **  Macros**: This term should sound familiar to you outside of music production. Perhaps you have used a macro for a Geometry Dash hack. This works the same way. Essentially, it is a function thats binded to something else. In this case, we have four knobs to set a macro to, visibly seen on the left side of the OSC tab.  
+
+image
+
+To set a knob to one of the macros, simply hold click where the macro text is, and drag it to a destination that you want to control. This is especially useful because in the Matrix, you can set macros to multiple destinations at once simply by dragging them to another destination, creating dynamic and versatile sounds at your disposal in one knob instead of multiple automations.   
+
+image
+
+This creates a macro wheel, where you can adjust how much control the macro should have onto the knob.  If you want to remove a destination, simply right click the macro wheel and click “Remove”. You may also click “Bypass” if you want to remove its destination temporarily.  
+
+image
+
+- Portamento / Vibrato: creates a smooth pitch slide from one note to another when multiple notes are played at once. This is done by having only one voice, Activating “Always Glide” and “Legato” and setting the Glide time using the Glide knob. This creates a “vibrato” effect in notes.  
+
+- Voices: As shown in the screenshot above, it creates a stacked, wider, layered sound on top of the same sound. Note that this ends up creating more CPU Load onto your DAW.   
