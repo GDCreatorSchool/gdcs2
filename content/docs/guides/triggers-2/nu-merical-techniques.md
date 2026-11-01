@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: Numerical Techniques
 weight: 6170
 date: 2026-10-25T00:00:00.000Z
@@ -1285,7 +1285,7 @@ Illustration of a point on a circle tracing out the sine and cosine functions
 
 Notice how the blue function has a pattern that repeats forever, that's our periodic function! Let's call this one the sine or $\sin(x)$, since it moves like the "Sine In Out" easing option.
 
-{{< callout context="note" title="TODO" icon="outline/photo" >}}
+{{< callout context="note" icon="outline/photo" >}}
 
 Just like a swing! (Swing moving up and down with dashed trails)
 
@@ -1321,8 +1321,7 @@ $$
 
 These two functions look quite similar, and they in fact are. The key idea is that we can use the same loop for both sine and cosine. Let's see how the terms relate:
 
-$$
-- \frac {x^{10}} {10!} = -1 \times \frac {x^2 \times x^8} {10 \times 9 \times 8!} = \frac {-1 \times x^2} {10 \times 9} \times \frac {x^8} {8!}
+$$ - \frac {x^{10}} {10!} = -1 \times \frac {x^2 \times x^8} {10 \times 9 \times 8!} = \frac {-1 \times x^2} {10 \times 9} \times \frac {x^8} {8!}
 $$
 
 Putting this into perspective, there are a total of five things to consider when transforming each term:
@@ -1590,5 +1589,106 @@ Because the input is wrapped around the negative, the input gets transformed int
 {{< callout context="caution" title="Note" icon="outline/info-circle" >}}
 
 If your base function is not centered at 0, remember to introduce offsets or re-center the function yourself!
+
+{{< /callout >}}
+
+{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+
+Periodicizing an off-center function
+
+{{< /callout >}}
+
+## Range Reduction
+
+### What it is
+
+{{< callout context="note" icon="outline/photo" >}}
+
+(Kelly throwing a computer out of a window)
+
+{{< /callout >}}
+
+We've looked at a way we can split up a number into a quotient and remainder. Periodic functions are special in that the quotient can be thrown away and forgotten about.
+
+However, even if a function is not periodic, some can also be broken down in this way or similar, the only catch is that now the quotient would also be involved. This means that their inputs can also be reduced to a short strip and grafted anywhere akin to periodic functions, albeit somehow warped by the quotient.
+
+### A second look at the exponential
+
+Our exponential function is remarkably accurate for small inputs, but its error also grows exponentially. This is where range reduction becomes useful, it allows us to work with smaller inputs and then scale the output consistently.
+
+We have taken a look at how exponentiation turns addition into multiplication:
+
+$$
+\exp(x + 0.693) = e^{x+0.693} = e^{0.693} \times e^x = 2 \times e^x
+$$
+
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+$0.693$ is approximate, not exact!
+
+You can use the fraction $\frac {1453635} {2097152}$, which is GD's best approximation of the real value.
+
+{{< /callout >}}
+
+From this, we can say that by adding $0.693$ to the input, we double the output. Likewise, if we subtract $0.693$, the number is halved.
+
+The idea is that we can continue subtracting $0.693$ until the input is within a small range, then compensate for all the halving by equivalent doubling. The same goes from the negative side, add $0.693$ until the input is within range, then compensate with halving.
+
+This allows us to bring our input down to a remainder between $-0.347$ and $0.347$, and a quotient pointing to a multiplier along the doubling sequence (e.g. $512, 1024$).
+
+Let's take a look at how we might implement this:
+
+{{< callout context="success" icon="outline/movie" >}}
+T:6=8.5 (Input) C:7 (Quotient) T:1 (Remainder) T:8=0.693
+
+`T1 = T6`
+
+`I7 = T6 / T8`
+
+`T1 = T1 - I7 · T8`
+
+▶️
+
+C:7=12, T:1=0.182
+
+{{< /callout >}}
+
+Notice that we have turned the input into the following:
+
+$$
+e^{8.5} = e^{12 \times 0.693} \times e^{0.182} = 2^{12} \times e^{0.182}
+$$
+
+This entails two steps:
+
+1. Calculate $e^{0.182}$ using a known method (e.g. Taylor expansion)
+2. Multiply its output by $2^{12} = 4096$, the 12th doubling number.
+
+I will assume that you have already implemented the first step in some way, it is explained earlier in this guide. To divide by a doubling number $2^n$ based on a position, we can use the following ID conversion setup:
+
+{{< callout context="success" icon="outline/movie" >}}
+T:2=1.20 (Output) C:7=12 (Quotient)
+
+`I7 >= 16.000` → `I7 = I7 - 16.000` `T2 = T2 / 65536.000`
+
+`I7 >= 8.000` → `I7 = I7 - 8.000` `T2 = T2 / 256.000`
+
+`I7 >= 4.000` → `I7 = I7 - 4.000` `T2 = T2 / 16.000`
+
+`I7 >= 2.000` → `I7 = I7 - 2.000` `T2 = T2 / 4.000`
+
+`I7 >= 1.000` → `I7 = I7 - 1.000` `T2 = T2 / 2.000`
+
+▶️
+
+T:2=4914.77 C:7=0
+
+{{< /callout >}}
+
+### The Natural Logarithm - $\ln(x)$
+
+{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+
+Geometric input scaling & additive transformation
 
 {{< /callout >}}
