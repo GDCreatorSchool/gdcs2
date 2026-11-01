@@ -138,7 +138,7 @@ image
 
 - __Smear__: Blurs the partial boundaries for a softer timbre
 
-- __  Random Amplitude__: Randomizes the partial levels for a noisier, evolving sound  
+- __Random Amplitude__: Randomizes the partial levels for a noisier, evolving sound  
 
 - __Low Pass / High Pass__: I would categorize them into one section here because they are similar; adjust the brightness of the sound akin to a high pass and a low pass filter.  
 
