@@ -125,3 +125,29 @@ image
   Here’s a video demonstration of applying each wave morph in an oscillator: https://cdn.discordapp.com/attachments/396504131088547842/1566197973799665955/2026-10-31_17-06-19.mp4?ex=6ae7ab07&is=6ae65987&hm=20f01a19cbe05321d5c6f3d78d0c31c50dabd18822bb764ca238dbde94dbe1f4&   
 
 Now that you are familiar with the traditional warping modes, lets look at Vital’s spectral warp modes. The knob next to the one on the far-right should give you another drop-down menu with its own set of modes to play around with. Let's look at each one: 
+
+image
+
+- Vocode: adds a vocoder-like warp to the wavetable by adding formant textures to make it sound “vowel”-y  
+
+- Formant Scale: Changes the tonal character of the oscillator  
+
+- Harmonic Stretch: Stretches or compresses the harmonic spacing of the wavetable  
+
+- Inharmonic Stretch: Distorts the harmonic spacing of the wavetable, creating more metallic textures.  
+
+- Smear: Blurs the partial boundaries for a softer timbre
+
+-   Random Amplitude - Randomizes the partial levels for a noisier, evolving sound  
+
+- Low Pass / High Pass - I would categorize them into one section here because they are similar; adjust the brightness of the sound akin to a high pass and a low pass filter.  
+
+- Phase Disperse - Shifts the phases of the partials, almost as if its applying a swirly characteristic to the wavetable as it shifts along.  
+
+- Shepard Tone - Loops a pitch thats continuously rising and falling at the same time, creating an auditory illusion by overlapping 2 octaves together and phasing in-between them.  
+
+Example: Shepard Tone
+
+-   Spectral Time Skew / Time Skew - skews the partial of the wavetable in terms of time, creating phase-like effects.  
+
+- Data Compress - Compresses the data of the sound down to its harmonic peaks  Spectral Filter / Phaser / Flanger - I’ll group them all into 3 simply because these are all self-explanatory; they simply apply a filter, or phaser, or flanger into a tunable knob and applied directly to the oscillator.   Here’s a video applying each spectral morph into an oscillator for demonstration: https://cdn.discordapp.com/attachments/396504131088547842/1566195990560505907/2026-10-31_16-57-42.mp4?ex=6ae7a92e&is=6ae657ae&hm=6713503f5308905627d3358da525ab9559335b1feb79277239ac80a448f6ad3c&  Miscellaneous Features  We want to briefly cover some of the extra sound design techniques and effects that are less common, but far more interesting. Unfortunately, we would be here all day if we were to talk about them all. But let’s go over some of the more advanced techniques that professional producers and sound designers use to make their sounds. I don't think these are stuff to be glossed over, hence why we bring them up, so I suggest looking into these for your recommendation:  Macros - This term should sound familiar to you outside of music production. Perhaps you have used a macro for a Geometry Dash hack. This works the same way. Essentially, it is a function thats binded to something else. In this case, we have four knobs to set a macro to, visibly seen on the left side of the OSC tab.  
