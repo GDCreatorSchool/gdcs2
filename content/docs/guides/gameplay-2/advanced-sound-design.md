@@ -79,3 +79,11 @@ image
 -   Sustain Envelope - Similar to the envelope, it starts from first point to the last point, but ONLY when the sustain part of the Envelope is triggered. You can adjust this with the Envelope’s release knob.
 
 -   Loop Point - Starts from the first point, then loops a segment of the waveform between this slider position. 
+
+image
+
+- Loop Hold - Loops from the first point to the slider position shown above, and then goes all the way to the end point and holds there depending on the Envelope’s Release.   
+
+- Point Cycle - For every press a user hits a note on, it traverses to the next point on the LFO and holds it there.  
+
+The last thing LFO offers is its tempo. You can essentially adjust the speed of the LFO by the tempo of the DAW.  
