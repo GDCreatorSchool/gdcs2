@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: Numerical Techniques
 weight: 6170
 date: 2026-10-25T00:00:00.000Z
