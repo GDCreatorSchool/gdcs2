@@ -128,7 +128,7 @@ Now that you are familiar with the traditional warping modes, lets look at Vital
 
 image
 
-- _Vocode_: adds a vocoder-like warp to the wavetable by adding formant textures to make it sound “vowel”-y  
+- __Vocode__: adds a vocoder-like warp to the wavetable by adding formant textures to make it sound “vowel”-y  
 
 - __Formant Scale__: Changes the tonal character of the oscillator  
 
