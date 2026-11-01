@@ -61,3 +61,13 @@ image
 https://cdn.discordapp.com/attachments/396504131088547842/1558295989679423521/2026-10-09_21-48-23.mp4?ex=6acaebbb&is=6ac99a3b&hm=6475e96f2812f3d31c54f87723f02a6541ce53e9bcc6f30d77b8cacac645f016&  
 
 The video below shows an example of dragging LFO to Osc 1’s level knob to control it whilst also adjusting the modulation amount. As you can see in the video, you can also be able to adjust the wavetable itself. If you don't like a particular wavetable, you can switch a preset of wavetables in the Triangle dropdown menu.  
+
+image
+
+The LFO also applies to the effects, but you can't simply just click and drag it into the effects tab. You would have to do this manually by going over to the Matrix tab at the top of the UI and change its Destination.  
+
+image
+
+There are different modes for how you may utilize an LFO: 
+
+image
