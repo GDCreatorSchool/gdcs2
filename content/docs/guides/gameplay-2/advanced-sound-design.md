@@ -78,7 +78,7 @@ image
 
 -   __Sustain Envelope__: Similar to the envelope, it starts from first point to the last point, but ONLY when the sustain part of the Envelope is triggered. You can adjust this with the Envelope’s release knob.
 
-- __  Loop Point__: Starts from the first point, then loops a segment of the waveform between this slider position. 
+- __Loop Point__: Starts from the first point, then loops a segment of the waveform between this slider position. 
 
 image
 
@@ -108,7 +108,7 @@ image
 
 - __Sync__: Multiplies the speed of the waveform cycle, leading to higher frequencies and sometimes aggressive sounds.
 
-- __  Formant__: Shifts the partial positions forward while it still preserves its pitch center.  
+- __Formant__: Shifts the partial positions forward while it still preserves its pitch center.  
 
 - __Quantize__: Creates steps for the wave shape, ultimately lowering the resolution of the sound and creating its own bitcrush distortion.  
 
