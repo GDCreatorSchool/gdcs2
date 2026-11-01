@@ -128,15 +128,15 @@ Now that you are familiar with the traditional warping modes, lets look at Vital
 
 image
 
-- Vocode: adds a vocoder-like warp to the wavetable by adding formant textures to make it sound “vowel”-y  
+- _Vocode_: adds a vocoder-like warp to the wavetable by adding formant textures to make it sound “vowel”-y  
 
-- Formant Scale: Changes the tonal character of the oscillator  
+- __Formant Scale__: Changes the tonal character of the oscillator  
 
-- Harmonic Stretch: Stretches or compresses the harmonic spacing of the wavetable  
+- __Harmonic Stretch__: Stretches or compresses the harmonic spacing of the wavetable  
 
-- Inharmonic Stretch: Distorts the harmonic spacing of the wavetable, creating more metallic textures.  
+- __Inharmonic Stretch__: Distorts the harmonic spacing of the wavetable, creating more metallic textures.  
 
-- Smear: Blurs the partial boundaries for a softer timbre
+- __Smear__: Blurs the partial boundaries for a softer timbre
 
 - __  Random Amplitude__: Randomizes the partial levels for a noisier, evolving sound  
 
