@@ -138,13 +138,13 @@ image
 
 - Smear: Blurs the partial boundaries for a softer timbre
 
--   Random Amplitude - Randomizes the partial levels for a noisier, evolving sound  
+- __  Random Amplitude__: Randomizes the partial levels for a noisier, evolving sound  
 
-- Low Pass / High Pass - I would categorize them into one section here because they are similar; adjust the brightness of the sound akin to a high pass and a low pass filter.  
+- __Low Pass / High Pass__: I would categorize them into one section here because they are similar; adjust the brightness of the sound akin to a high pass and a low pass filter.  
 
-- Phase Disperse - Shifts the phases of the partials, almost as if its applying a swirly characteristic to the wavetable as it shifts along.  
+- __Phase Disperse__: Shifts the phases of the partials, almost as if its applying a swirly characteristic to the wavetable as it shifts along.  
 
-- Shepard Tone - Loops a pitch thats continuously rising and falling at the same time, creating an auditory illusion by overlapping 2 octaves together and phasing in-between them.  
+- __Shepard Tone__: Loops a pitch thats continuously rising and falling at the same time, creating an auditory illusion by overlapping 2 octaves together and phasing in-between them.  
 
 Example: Shepard Tone (link here)
 
