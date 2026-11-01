@@ -152,13 +152,13 @@ Example: Shepard Tone (link here)
 
 - Data Compress - Compresses the data of the sound down to its harmonic peaks  
 
-- Spectral Filter / Phaser / Flanger - I’ll group them all into 3 simply because these are all self-explanatory; they simply apply a filter, or phaser, or flanger into a tunable knob and applied directly to the oscillator.   Here’s a video applying each spectral morph into an oscillator for demonstration: https://cdn.discordapp.com/attachments/396504131088547842/1566195990560505907/2026-10-31_16-57-42.mp4?ex=6ae7a92e&is=6ae657ae&hm=6713503f5308905627d3358da525ab9559335b1feb79277239ac80a448f6ad3c&  
+- __Spectral Filter / Phaser / Flanger__: I’ll group them all into 3 simply because these are all self-explanatory; they simply apply a filter, or phaser, or flanger into a tunable knob and applied directly to the oscillator.   Here’s a video applying each spectral morph into an oscillator for demonstration: https://cdn.discordapp.com/attachments/396504131088547842/1566195990560505907/2026-10-31_16-57-42.mp4?ex=6ae7a92e&is=6ae657ae&hm=6713503f5308905627d3358da525ab9559335b1feb79277239ac80a448f6ad3c&  
 
 # 5: Miscellaneous Features  
 
 We want to briefly cover some of the extra sound design techniques and effects that are less common, but far more interesting. Unfortunately, we would be here all day if we were to talk about them all. But let’s go over some of the more advanced techniques that professional producers and sound designers use to make their sounds. I don't think these are stuff to be glossed over, hence why we bring them up, so I suggest looking into these for your recommendation:
 
-- **  Macros**: This term should sound familiar to you outside of music production. Perhaps you have used a macro for a Geometry Dash hack. This works the same way. Essentially, it is a function thats binded to something else. In this case, we have four knobs to set a macro to, visibly seen on the left side of the OSC tab.  
+- __Macros__: This term should sound familiar to you outside of music production. Perhaps you have used a macro for a Geometry Dash hack. This works the same way. Essentially, it is a function thats binded to something else. In this case, we have four knobs to set a macro to, visibly seen on the left side of the OSC tab.  
 
 image
 
@@ -170,6 +170,6 @@ This creates a macro wheel, where you can adjust how much control the macro shou
 
 image
 
-- Portamento / Vibrato: creates a smooth pitch slide from one note to another when multiple notes are played at once. This is done by having only one voice, Activating “Always Glide” and “Legato” and setting the Glide time using the Glide knob. This creates a “vibrato” effect in notes.  
+- __Portamento / Vibrato__: creates a smooth pitch slide from one note to another when multiple notes are played at once. This is done by having only one voice, Activating “Always Glide” and “Legato” and setting the Glide time using the Glide knob. This creates a “vibrato” effect in notes.  
 
-- Voices: As shown in the screenshot above, it creates a stacked, wider, layered sound on top of the same sound. Note that this ends up creating more CPU Load onto your DAW.   
+- __Voices__: As shown in the screenshot above, it creates a stacked, wider, layered sound on top of the same sound. Note that this ends up creating more CPU Load onto your DAW.   
