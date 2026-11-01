@@ -106,6 +106,16 @@ Clicking on “---” brings you to a dropdown menu that allows you to play with
 
 image
 
-Sync: Multiplies the speed of the waveform cycle, leading to higher frequencies and sometimes aggressive sounds.  Formant:  Shifts the partial positions forward while it still preserves its pitch center.  Quantize: Creates steps for the wave shape, ultimately lowering the resolution of the sound and creating its own bitcrush distortion.  Bend: Warps the shape symmetrically or asymmetrically, creating distortions in the process.  Squeeze: Compresses or otherwise expands the waveform for timbre shifts  Pulse: Creates a single square in between the cycle to make a pulse sound.  FM <- Destination: Frequency Modulation to another oscillator. The output frequency of one oscillator alters the destination’s frequency, creating more metallic harmonics.   RM <- Destination: Ring Modulation to another oscillator. The output sound of one oscillator multiplies the signal to its destination, creating more metallic harmonics or inverted sidebands.   Heres a video demonstration of applying each wave morph in an oscillator: https://cdn.discordapp.com/attachments/396504131088547842/1566197973799665955/2026-10-31_17-06-19.mp4?ex=6ae7ab07&is=6ae65987&hm=20f01a19cbe05321d5c6f3d78d0c31c50dabd18822bb764ca238dbde94dbe1f4&   
+- Sync: Multiplies the speed of the waveform cycle, leading to higher frequencies and sometimes aggressive sounds.
+
+-   Formant: Shifts the partial positions forward while it still preserves its pitch center.  
+
+- Quantize: Creates steps for the wave shape, ultimately lowering the resolution of the sound and creating its own bitcrush distortion.  
+
+- Bend: Warps the shape symmetrically or asymmetrically, creating distortions in the process.  
+
+- Squeeze: Compresses or otherwise expands the waveform for timbre shifts  Pulse: Creates a single square in between the cycle to make a pulse sound.  FM <- Destination: Frequency Modulation to another oscillator. The output frequency of one oscillator alters the destination’s frequency, creating more metallic harmonics.   RM <- Destination: Ring Modulation to another oscillator. The output sound of one oscillator multiplies the signal to its destination, creating more metallic harmonics or inverted sidebands.
+
+  Here’s a video demonstration of applying each wave morph in an oscillator: https://cdn.discordapp.com/attachments/396504131088547842/1566197973799665955/2026-10-31_17-06-19.mp4?ex=6ae7ab07&is=6ae65987&hm=20f01a19cbe05321d5c6f3d78d0c31c50dabd18822bb764ca238dbde94dbe1f4&   
 
 Now that you are familiar with the traditional warping modes, lets look at Vital’s spectral warp modes. The knob next to the one on the far-right should give you another drop-down menu with its own set of modes to play around with. Let's look at each one: 
