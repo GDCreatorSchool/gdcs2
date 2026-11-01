@@ -42,9 +42,9 @@ The mix knob is how much should this effect be applied to your sound.  There
 image
 
 Vital has 3 unique envelopes to play around with, and its represented by a graph here. The longer the shape, the more time has passed whilst holding down the note.   The knobs at the bottom represent the 4 (sometimes 5) main fundamentals of Envelopes, to which we create the acronym: ADSR (or AHDSR)  - Attack is how much time it needs to fade into its first point in the envelope, usually its loudest.
-- Hold is optionally a second transitional point between the Attack and the Decay. Speaking of which: - Decay is the time it takes for the Attack (or Hold when its applicable) to transition over to the Sustain.
-- Sustain is the second (or third, once again if Hold is being applied) point where the sound softens down once the note is held past the Decay. At this point, if the note is held any longer, the envelope stays at the sustain until the note is released from the key.
-- Release is the time it needs for it to fade out once the key is released.  The Delay knob is grouped up with the rest of the knobs, but I can assure you that it is not a part of AHDSR. The delay knob in this case delays the entire envelope if the note is held.   A good usage of implementing Envelopes to sound is creating plucks. Many audio engineers and sound designers like to create plucks using this envelope by getting rid of all knobs minus the decay.  
+- __Hold__ is optionally a second transitional point between the Attack and the Decay. Speaking of which: - Decay is the time it takes for the Attack (or Hold when its applicable) to transition over to the Sustain.
+- __Sustain__ is the second (or third, once again if Hold is being applied) point where the sound softens down once the note is held past the Decay. At this point, if the note is held any longer, the envelope stays at the sustain until the note is released from the key.
+- __Release__ is the time it needs for it to fade out once the key is released.  The Delay knob is grouped up with the rest of the knobs, but I can assure you that it is not a part of AHDSR. The delay knob in this case delays the entire envelope if the note is held.   A good usage of implementing Envelopes to sound is creating plucks. Many audio engineers and sound designers like to create plucks using this envelope by getting rid of all knobs minus the decay.  
 
 image
 
@@ -72,19 +72,19 @@ There are different modes for how you may utilize an LFO: 
 
 image
 
-- Trigger: The most basic mode; starts from first point to the last point, and then loops back to the first point and repeats until the note is released.  Sync - The LFO cycle is constant and never re-triggers its cycle, regardless of whether the user presses or releases the note; syncs with the DAW and not the note.  
+- __Trigger__: The most basic mode; starts from first point to the last point, and then loops back to the first point and repeats until the note is released.  Sync - The LFO cycle is constant and never re-triggers its cycle, regardless of whether the user presses or releases the note; syncs with the DAW and not the note.  
 
-- Envelope: Acts like a traditional envelope, starts from first point to the last point, but stays at the last point until the user releases the note. It re-triggers the cycle once the user presses the note again.
+- __Envelope__: Acts like a traditional envelope, starts from first point to the last point, but stays at the last point until the user releases the note. It re-triggers the cycle once the user presses the note again.
 
--   Sustain Envelope: Similar to the envelope, it starts from first point to the last point, but ONLY when the sustain part of the Envelope is triggered. You can adjust this with the Envelope’s release knob.
+-   __Sustain Envelope__: Similar to the envelope, it starts from first point to the last point, but ONLY when the sustain part of the Envelope is triggered. You can adjust this with the Envelope’s release knob.
 
--   Loop Point: Starts from the first point, then loops a segment of the waveform between this slider position. 
+- __  Loop Point__: Starts from the first point, then loops a segment of the waveform between this slider position. 
 
 image
 
-- Loop Hold: Loops from the first point to the slider position shown above, and then goes all the way to the end point and holds there depending on the Envelope’s Release.   
+- __Loop Hold__: Loops from the first point to the slider position shown above, and then goes all the way to the end point and holds there depending on the Envelope’s Release.   
 
-- Point Cycle: For every press a user hits a note on, it traverses to the next point on the LFO and holds it there.  
+- __Point Cycle__: For every press a user hits a note on, it traverses to the next point on the LFO and holds it there.  
 
 The last thing LFO offers is its tempo. You can essentially adjust the speed of the LFO by the tempo of the DAW.  
 
