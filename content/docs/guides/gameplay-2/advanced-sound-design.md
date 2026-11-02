@@ -128,7 +128,9 @@ Clicking on “---” brings you to a dropdown menu that allows you to play with
 
 - __RM <- Destination__: Ring Modulation to another oscillator. The output sound of one oscillator multiplies the signal to its destination, creating more metallic harmonics or inverted sidebands.
 
-  Here’s a video demonstration of applying each wave morph in an oscillator: https://cdn.discordapp.com/attachments/396504131088547842/1566197973799665955/2026-10-31_17-06-19.mp4?ex=6ae7ab07&is=6ae65987&hm=20f01a19cbe05321d5c6f3d78d0c31c50dabd18822bb764ca238dbde94dbe1f4&   
+  Here’s a video demonstration of applying each wave morph in an oscillator: 
+
+{{< youtube sAQ7lRcRoc0 >}}
 
 Now that you are familiar with the traditional warping modes, lets look at Vital’s spectral warp modes. The knob next to the one on the far-right should give you another drop-down menu with its own set of modes to play around with. Let's look at each one: 
 
