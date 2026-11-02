@@ -200,6 +200,8 @@ If you want to remove a destination, simply right click the macro wheel and clic
 
 {{< img src="https://lh3.googleusercontent.com/d/1s7TasLuyRyk4k46EWTOkun59RqnyX0X3" >}}
 
-- __Portamento/Vibrato__: Creates a smooth pitch slide from one note to another when multiple notes are played at once. This is done by having only one voice, Activating “Always Glide” and “Legato” and setting the Glide time using the Glide knob. This creates a “vibrato” effect in notes.  {{< img src="https://lh3.googleusercontent.com/d/1sRXLOJpPpie2ahvrL5_AS9Qwj-OPx7eo" >}}
+- __Portamento/Vibrato__: Creates a smooth pitch slide from one note to another when multiple notes are played at once. This is done by having only one voice, Activating “Always Glide” and “Legato” and setting the Glide time using the Glide knob. This creates a “vibrato” effect in notes.
+
+  {{< img src="https://lh3.googleusercontent.com/d/1sRXLOJpPpie2ahvrL5_AS9Qwj-OPx7eo" >}}
 
 - __Voices__: As shown in the screenshot above, it creates a stacked, wider, layered sound on top of the same sound. Note that this ends up creating more CPU load onto your DAW.
