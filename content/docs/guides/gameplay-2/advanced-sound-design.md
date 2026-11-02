@@ -153,6 +153,7 @@ We’ll knock out wave morph warping first since its more common to find on wave
 {{< youtube sAQ7lRcRoc0 >}}
 
 Now that you’re familiar with the traditional warping modes, lets look at Vital’s spectral warp modes. The knob next to the one on the far-right should give you another drop-down menu with its own set of modes to play around with. 
+
 Let's look at each one:
 
 {{< img src="https://lh3.googleusercontent.com/d/1ixUcE5mGU5FFqOXc1GiDFasnBTyFIeRw" >}}
@@ -160,7 +161,10 @@ Let's look at each one:
 - __Vocode__: adds a vocoder-like warp to the wavetable by adding formant textures to make it sound “vowel”-y
 
 - __Formant Scale__: Changes the tonal character of the oscillator 
-- __Harmonic Stretch__: Stretches or compresses the harmonic spacing of the wavetable  - __Inharmonic Stretch__: Distorts the harmonic spacing of the wavetable, creating more metallic textures.  - __Smear__: Blurs the partial boundaries for a softer timbre
+
+- __Harmonic Stretch__: Stretches or compresses the harmonic spacing of the wavetable
+
+  - __Inharmonic Stretch__: Distorts the harmonic spacing of the wavetable, creating more metallic textures.  - __Smear__: Blurs the partial boundaries for a softer timbre
 
 - __Random Amplitude__: Randomizes the partial levels for a noisier, evolving sound  - __Low Pass / High Pass__: I categorize these two into one section here because they’re similar; they adjust the brightness of the sound akin to a high pass and a low pass filter.  - __Phase Disperse__: Shifts the phases of the partials, almost as if it’s applying a swirly characteristic to the wavetable as it shifts along.  - __Shepard Tone__: Loops a pitch thats continuously rising and falling at the same time, creating an auditory illusion by overlapping two octaves together and phasing in-between them. An example of Shepherd Tone in practice is shown below:
 
