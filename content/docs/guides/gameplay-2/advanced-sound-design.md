@@ -77,7 +77,8 @@ A good usage of implementing Envelopes to sound is creating __plucks__. Many aud
 {{< img src="https://lh3.googleusercontent.com/d/1WiS4xFkrMHaiOEAAEJJcOXEyRj5praf_" >}}
 
 # 3: Low-Frequency Oscillator (LFO) 
-LFOs, or Low-Frequency Oscillators, are essentially waveforms that produce sound at around 20hz in frequency. You may ask, “Wouldn’t this be too low for the human ear?”, and you’d be right. This oscillator isn't really for making sound–it’s for modulating pre-existing sound. There are many practical cases for utilizing LFOs in modular synthesis, but first we need to understand how it works:
+
+__LFOs__, or __Low-Frequency Oscillators__, are essentially waveforms that produce sound at around 20hz in frequency. You may ask, “Wouldn’t this be too low for the human ear?”, and you’d be right. This oscillator isn't really for making sound–it’s for modulating pre-existing sound. There are many practical cases for utilizing LFOs in modular synthesis, but first we need to understand how it works:
  On your LFO tab in the OSC menu, you can see that you have multiple LFO’s to play with. What you are seeing by default should be a triangle wave, and much like the envelope, it goes from Point A -> Point B -> … -> Point N (let N be however many points you have; by default it's 2), with curve points in between two points. You can double-click anywhere on the graph to create a new point. 
 
 To start modulating the LFO, you may click and drag “LFO 1” to a knob or any parameter you want to adjust. Now, whenever you start pressing a note, you may notice that knobs are automatically turning by itself.
