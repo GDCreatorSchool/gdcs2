@@ -15,6 +15,9 @@ seo:
   canonical: ""
   noindex: false
 ---
+{{< callout context="caution" title="This guide needs proofreading, as well as a TLDR callout." icon="outline/info-circle" >}}
+{{< /callout >}}
+
 In the previous lesson, we’ve discussed various post processing effects that can be utilized to sharpen, or mudden sounds; make sounds louder, or softer. 
 
   Modern-day electronic artists and audio engineers like Mike Dean and Markiss usually use sounds that shape and alter the initial sound altogether. However, the means to accomplish that are… complicated to say the least at a glance. Don't worry, however! By the end of this course, you should be able to approach most, if not all synthesizers, both analog or digital, to create the perfect sounds for your levels. We will underscore, however, that there are a vast amount of techniques that are both niche or common, that we will not be discussing here for the sake of the length of this lesson - only the remaining aspects of synthesis that were too complicated to discuss in previous lessons.   So, without further ado, lets start out with… 
