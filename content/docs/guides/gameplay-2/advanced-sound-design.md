@@ -19,7 +19,7 @@ seo:
   canonical: ""
   noindex: false
 ---
-{{< callout context="caution" title="This guide needs proofreading, as well as a TLDR callout." icon="outline/info-circle" >}}
+{{< callout context="caution" title="This guide needs a TLDR section." icon="outline/info-circle" >}}
 {{< /callout >}}
 
 In the previous lesson, we’ve discussed various post processing effects that can be utilized to sharpen or mudden sounds, essentially making sounds louder or softer.
