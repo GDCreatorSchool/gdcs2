@@ -127,7 +127,7 @@ Clicking on “---” brings you to a dropdown menu that allows you to play with
 
 Now that you are familiar with the traditional warping modes, lets look at Vital’s spectral warp modes. The knob next to the one on the far-right should give you another drop-down menu with its own set of modes to play around with. Let's look at each one: 
 
-image
+{{< img src="https://lh3.googleusercontent.com/d/19O_5G7i_s01WV9uJWpFJg6B04BxzNZuD" >}}
 
 - __Vocode__: adds a vocoder-like warp to the wavetable by adding formant textures to make it sound “vowel”-y  
 
@@ -161,15 +161,15 @@ We want to briefly cover some of the extra sound design techniques and effects t
 
 - __Macros__: This term should sound familiar to you outside of music production. Perhaps you have used a macro for a Geometry Dash hack. This works the same way. Essentially, it is a function thats binded to something else. In this case, we have four knobs to set a macro to, visibly seen on the left side of the OSC tab.  
 
-image
+{{< img src="https://lh3.googleusercontent.com/d/19O_5G7i_s01WV9uJWpFJg6B04BxzNZuD" >}}
 
 To set a knob to one of the macros, simply hold click where the macro text is, and drag it to a destination that you want to control. This is especially useful because in the Matrix, you can set macros to multiple destinations at once simply by dragging them to another destination, creating dynamic and versatile sounds at your disposal in one knob instead of multiple automations.   
 
-image
+{{< img src="https://lh3.googleusercontent.com/d/19O_5G7i_s01WV9uJWpFJg6B04BxzNZuD" >}}
 
 This creates a macro wheel, where you can adjust how much control the macro should have onto the knob.  If you want to remove a destination, simply right click the macro wheel and click “Remove”. You may also click “Bypass” if you want to remove its destination temporarily.  
 
-image
+{{< img src="https://lh3.googleusercontent.com/d/19O_5G7i_s01WV9uJWpFJg6B04BxzNZuD" >}}
 
 - __Portamento / Vibrato__: creates a smooth pitch slide from one note to another when multiple notes are played at once. This is done by having only one voice, Activating “Always Glide” and “Legato” and setting the Glide time using the Glide knob. This creates a “vibrato” effect in notes.  
 
