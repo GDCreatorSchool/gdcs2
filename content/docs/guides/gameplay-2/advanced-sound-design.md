@@ -19,24 +19,33 @@ seo:
   canonical: ""
   noindex: false
 ---
-{{< callout context="caution" title="This guide needs a TLDR section." icon="outline/info-circle" >}}
+{{< callout context="note" title="TLDR - What this guide covers
+
+- Oscillator filters can filter out certain inputs before they signal into the effects.
+- Envelopes can shape a sound’s volume automatically over time, with different knobs to assist you in altering it.
+- Low-Frequency Oscillators, or LFOs, allow you to modulate pre-existing sounds. You can directly change the shape of a sound wave, and different modes assist you in doing so.
+- Warping, whether wave morph or spectral, allows you to deform a wave cycle before effects are added.
+- More niche features like Macros and Voices are also useful." icon="outline/info-circle" >}}
 {{< /callout >}}
 
 In the previous lesson, we’ve discussed various post processing effects that can be utilized to sharpen or mudden sounds, essentially making sounds louder or softer.
 
- Modern-day electronic artists and audio engineers like Mike Dean and Markiss usually use sounds that shape and alter the initial sound altogether. However, the means to accomplish that are… complicated at a glance, to say the least. Don't worry, however! By the end of this course, you should be able to approach most, if not all synthesizers, both analog or digital, to create the perfect sounds for your levels. It’s worth mentioning, however, that there are a vast amount of techniques that range from common to niche, and we will not be discussing all of them here for the sake of this lesson’s length; we’ll only be discussing the remaining aspects of synthesis that were too complicated to discuss in previous lessons.   So, without further ado, lets start out with…
+ Modern-day electronic artists and audio engineers like Mike Dean and Markiss usually use sounds that shape and alter the initial sound altogether. However, the means to accomplish that are… complicated at a glance, to say the least. Don't worry, however! By the end of this course, you should be able to approach most, if not all synthesizers, both analog or digital, to create the perfect sounds for your levels. It’s worth mentioning, however, that there are a vast amount of techniques that range from common to niche, and we will not be discussing all of them here for the sake of this lesson’s length; we’ll only be discussing the remaining aspects of synthesis that were too complicated to discuss in previous lessons.
+
+  So, without further ado, lets start out with…
 
 # 1: Filters in Oscillators
 
 Now, I will go very briefly because this seems self explanatory. 
 
-You might be asking, "Didn't we talk about Filters in the previous lesson?”, and you’d be right! This is essentially another variation of a filter post-processing, with some exceptions. Instead of the sound itself signaling directly into the effect, you can *filter* whichever input goes through the filter before going into the effects.   In Vital, you can do this by selecting OSC1, OSC2, OSC3, SMP, and FIL2.
-  - __OSC1-3__ are all of the 3 oscillators.
- - __SMP__ would be the Sampler in the synthesis, most commonly used for creating white noise.
+You might be asking, "Didn't we talk about Filters in the previous lesson?”, and you’d be right! This is essentially another variation of a filter post-processing, with some exceptions. Instead of the sound itself signaling directly into the effect, you can *filter* whichever input goes through the filter before going into the effects.   In Vital, you can do this by selecting __OSC1__, __OSC2__, __OSC3__, __SMP__, and __FIL2__.
+
+- __OSC1-3__ are all of the 3 oscillators.
+- __SMP__ would be the Sampler in the synthesis, most commonly used for creating white noise.
 
 {{< img src="https://lh3.googleusercontent.com/d/19O_5G7i_s01WV9uJWpFJg6B04BxzNZuD" >}}
 
-Finally, __FIL2__ is used to direct it into a *secondary* Filter. Thats right! There are 2 Filters for you to play around with!
+Finally, __FIL2__ is used to direct it into a *secondary* Filter. That’s right! There are two Filters for you to play around with!
 
 If you look closely, you may notice that in Filter 2, FIL2 is now replaced with FIL1, implying that you can instead input the secondary filter into the first filter instead of the other way around. 
 
@@ -141,15 +150,18 @@ We’ll knock out wave morph warping first since its more common to find on wave
 
 - __Quantize__: Creates steps for the wave shape, ultimately lowering the resolution of the sound and creating its own bitcrush distortion.
 
-  - __Bend__: Warps the shape symmetrically or asymmetrically, creating distortions in the process.  
+- __Bend__: Warps the shape symmetrically or asymmetrically, creating distortions in the process.  
 
 - __Squeeze__: Compresses or otherwise expands the waveform for timbre shifts.
 
 - __Pulse__: Creates a single square in between the cycle to make a pulse sound.
 
-  - __FM <- Destination__: Frequency Modulation to another oscillator. The output frequency of one oscillator alters the destination’s frequency, creating more metallic harmonics.
+- __FM <- Destination__: Frequency Modulation to another oscillator. The output frequency of one oscillator alters the destination’s frequency, creating more metallic harmonics.
 
-- __RM <- Destination__: Ring Modulation to another oscillator. The output sound of one oscillator multiplies the signal to its destination, creating more metallic harmonics or inverted sidebands.  Here’s a video demonstration of applying each wave morph in an oscillator: 
+- __RM <- Destination__: Ring Modulation to another oscillator. The output sound of one oscillator multiplies the signal to its destination, creating more metallic harmonics or inverted sidebands.  
+
+Here’s a video demonstration of applying each wave morph in an oscillator: 
+
 {{< youtube sAQ7lRcRoc0 >}}
 
 Now that you’re familiar with the traditional warping modes, lets look at Vital’s spectral warp modes. The knob next to the one on the far-right should give you another drop-down menu with its own set of modes to play around with. 
@@ -164,17 +176,17 @@ Let's look at each one:
 
 - __Harmonic Stretch__: Stretches or compresses the harmonic spacing of the wavetable
 
-  - __Inharmonic Stretch__: Distorts the harmonic spacing of the wavetable, creating more metallic textures.
+- __Inharmonic Stretch__: Distorts the harmonic spacing of the wavetable, creating more metallic textures.
 
-  - __Smear__: Blurs the partial boundaries for a softer timbre
+- __Smear__: Blurs the partial boundaries for a softer timbre
 
 - __Random Amplitude__: Randomizes the partial levels for a noisier, evolving sound
 
-  - __Low Pass / High Pass__: I categorize these two into one section here because they’re similar; they adjust the brightness of the sound akin to a high pass and a low pass filter.
+- __Low Pass / High Pass__: I categorize these two into one section here because they’re similar; they adjust the brightness of the sound akin to a high pass and a low pass filter.
 
-  - __Phase Disperse__: Shifts the phases of the partials, almost as if it’s applying a swirly characteristic to the wavetable as it shifts along.
+- __Phase Disperse__: Shifts the phases of the partials, almost as if it’s applying a swirly characteristic to the wavetable as it shifts along.
 
-  - __Shepard Tone__: Loops a pitch thats continuously rising and falling at the same time, creating an auditory illusion by overlapping two octaves together and phasing in-between them. An example of Shepherd Tone in practice is shown below:
+- __Shepard Tone__: Loops a pitch thats continuously rising and falling at the same time, creating an auditory illusion by overlapping two octaves together and phasing in-between them. An example of Shepherd Tone in practice is shown below:
 
 {{< youtube BzNzgsAE4F0 >}}
 
