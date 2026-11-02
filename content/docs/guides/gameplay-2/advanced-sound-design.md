@@ -30,7 +30,9 @@ seo:
 
 In the previous lesson, we’ve discussed various post processing effects that can be utilized to sharpen or mudden sounds, essentially making sounds louder or softer.
 
- Modern-day electronic artists and audio engineers like Mike Dean and Markiss usually use sounds that shape and alter the initial sound altogether. However, the means to accomplish that are… complicated at a glance, to say the least. Don't worry, however! By the end of this course, you should be able to approach most, if not all synthesizers, both analog or digital, to create the perfect sounds for your levels. It’s worth mentioning, however, that there are a vast amount of techniques that range from common to niche, and we will not be discussing all of them here for the sake of this lesson’s length; we’ll only be discussing the remaining aspects of synthesis that were too complicated to discuss in previous lessons.   So, without further ado, lets start out with…
+ Modern-day electronic artists and audio engineers like Mike Dean and Markiss usually use sounds that shape and alter the initial sound altogether. However, the means to accomplish that are… complicated at a glance, to say the least. Don't worry, however! By the end of this course, you should be able to approach most, if not all synthesizers, both analog or digital, to create the perfect sounds for your levels. It’s worth mentioning, however, that there are a vast amount of techniques that range from common to niche, and we will not be discussing all of them here for the sake of this lesson’s length; we’ll only be discussing the remaining aspects of synthesis that were too complicated to discuss in previous lessons.
+
+  So, without further ado, lets start out with…
 
 # 1: Filters in Oscillators
 
@@ -159,6 +161,7 @@ We’ll knock out wave morph warping first since its more common to find on wave
 - __RM <- Destination__: Ring Modulation to another oscillator. The output sound of one oscillator multiplies the signal to its destination, creating more metallic harmonics or inverted sidebands.  
 
 Here’s a video demonstration of applying each wave morph in an oscillator: 
+
 {{< youtube sAQ7lRcRoc0 >}}
 
 Now that you’re familiar with the traditional warping modes, lets look at Vital’s spectral warp modes. The knob next to the one on the far-right should give you another drop-down menu with its own set of modes to play around with. 
@@ -173,17 +176,17 @@ Let's look at each one:
 
 - __Harmonic Stretch__: Stretches or compresses the harmonic spacing of the wavetable
 
-  - __Inharmonic Stretch__: Distorts the harmonic spacing of the wavetable, creating more metallic textures.
+- __Inharmonic Stretch__: Distorts the harmonic spacing of the wavetable, creating more metallic textures.
 
-  - __Smear__: Blurs the partial boundaries for a softer timbre
+- __Smear__: Blurs the partial boundaries for a softer timbre
 
 - __Random Amplitude__: Randomizes the partial levels for a noisier, evolving sound
 
-  - __Low Pass / High Pass__: I categorize these two into one section here because they’re similar; they adjust the brightness of the sound akin to a high pass and a low pass filter.
+- __Low Pass / High Pass__: I categorize these two into one section here because they’re similar; they adjust the brightness of the sound akin to a high pass and a low pass filter.
 
-  - __Phase Disperse__: Shifts the phases of the partials, almost as if it’s applying a swirly characteristic to the wavetable as it shifts along.
+- __Phase Disperse__: Shifts the phases of the partials, almost as if it’s applying a swirly characteristic to the wavetable as it shifts along.
 
-  - __Shepard Tone__: Loops a pitch thats continuously rising and falling at the same time, creating an auditory illusion by overlapping two octaves together and phasing in-between them. An example of Shepherd Tone in practice is shown below:
+- __Shepard Tone__: Loops a pitch thats continuously rising and falling at the same time, creating an auditory illusion by overlapping two octaves together and phasing in-between them. An example of Shepherd Tone in practice is shown below:
 
 {{< youtube BzNzgsAE4F0 >}}
 
