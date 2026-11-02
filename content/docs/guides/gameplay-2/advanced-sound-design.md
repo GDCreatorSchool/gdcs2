@@ -194,10 +194,12 @@ We’ll briefly cover some of the extra sound design techniques and effects that
 
 {{< img src="https://lh3.googleusercontent.com/d/1zX4phh5XyJudc9DG-CX-WWhkUqo3cfyk" >}}
 
-To set a knob to one of the macros, simply hold click where the macro text is, and drag it to a destination that you want to control. Doing so creates a macro wheel, where you can adjust how much control the macro should have onto the knob. This is especially useful because in the Matrix, you can set macros to multiple destinations at once simply by dragging them to another destination, creating dynamic and versatile sounds at your disposal in one knob instead of multiple automations.  If you want to remove a destination, simply right click the macro wheel and click “Remove”. You may also click “Bypass” if you want to remove its destination temporarily. 
+To set a knob to one of the macros, simply hold click where the macro text is, and drag it to a destination that you want to control. Doing so creates a macro wheel, where you can adjust how much control the macro should have onto the knob. This is especially useful because in the Matrix, you can set macros to multiple destinations at once simply by dragging them to another destination, creating dynamic and versatile sounds at your disposal in one knob instead of multiple automations.  
+
+If you want to remove a destination, simply right click the macro wheel and click “Remove”. You may also click “Bypass” if you want to remove its destination temporarily. 
 
 {{< img src="https://lh3.googleusercontent.com/d/1s7TasLuyRyk4k46EWTOkun59RqnyX0X3" >}}
 
-- __Portamento/Vibrato__: creates a smooth pitch slide from one note to another when multiple notes are played at once. This is done by having only one voice, Activating “Always Glide” and “Legato” and setting the Glide time using the Glide knob. This creates a “vibrato” effect in notes.  {{< img src="https://lh3.googleusercontent.com/d/1sRXLOJpPpie2ahvrL5_AS9Qwj-OPx7eo" >}}
+- __Portamento/Vibrato__: Creates a smooth pitch slide from one note to another when multiple notes are played at once. This is done by having only one voice, Activating “Always Glide” and “Legato” and setting the Glide time using the Glide knob. This creates a “vibrato” effect in notes.  {{< img src="https://lh3.googleusercontent.com/d/1sRXLOJpPpie2ahvrL5_AS9Qwj-OPx7eo" >}}
 
 - __Voices__: As shown in the screenshot above, it creates a stacked, wider, layered sound on top of the same sound. Note that this ends up creating more CPU load onto your DAW.
