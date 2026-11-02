@@ -67,11 +67,11 @@ The video below shows an example of dragging LFO to Osc 1’s level knob to cont
 
 The LFO also applies to the effects, but you can't simply just click and drag it into the effects tab. You would have to do this manually by going over to the Matrix tab at the top of the UI and change its Destination.  
 
-{{< img src="https://lh3.googleusercontent.com/d/19O_5G7i_s01WV9uJWpFJg6B04BxzNZuD" >}}
+{{< img src="https://lh3.googleusercontent.com/d/12XMY53mv3q96v8jDs4go7M52sI8ad9Zl" >}}
 
 There are different modes for how you may utilize an LFO: 
 
-{{< img src="https://lh3.googleusercontent.com/d/19O_5G7i_s01WV9uJWpFJg6B04BxzNZuD" >}}
+{{< img src="https://lh3.googleusercontent.com/d/1a1LN-sSL8moeCmw7ubE-46Yslxe9XgEj" >}}
 
 - __Trigger__: The most basic mode; starts from first point to the last point, and then loops back to the first point and repeats until the note is released.  Sync - The LFO cycle is constant and never re-triggers its cycle, regardless of whether the user presses or releases the note; syncs with the DAW and not the note.  
 
@@ -81,7 +81,7 @@ There are different modes for how you may utilize an LFO: 
 
 - __Loop Point__: Starts from the first point, then loops a segment of the waveform between this slider position. 
 
-{{< img src="https://lh3.googleusercontent.com/d/19O_5G7i_s01WV9uJWpFJg6B04BxzNZuD" >}}
+{{< img src="https://lh3.googleusercontent.com/d/1ja6NxmqZNaWXxiZ7I5ED-FUU1OMaWeO1" >}}
 
 - __Loop Hold__: Loops from the first point to the slider position shown above, and then goes all the way to the end point and holds there depending on the Envelope’s Release.   
 
@@ -89,7 +89,7 @@ There are different modes for how you may utilize an LFO: 
 
 The last thing LFO offers is its tempo. You can essentially adjust the speed of the LFO by the tempo of the DAW.  
 
-image
+{{< img src="https://lh3.googleusercontent.com/d/1Dz9Wj70KIYIkhmXEBgFEQhEdPHhidsD7" >}}
 
 You can slide up and down on the fraction to speed up or slow down the tempo of the LFO however you see fit. If you click on the note, there are other options to play around with including Triplets, Dotted, and even time-orientated tempos (in seconds).   
 
@@ -105,7 +105,7 @@ Warping in a wavetable synthesis is the process of mathematically deforming a si
 
 Clicking on “---” brings you to a dropdown menu that allows you to play with different modes. We’ll knock out wave morph warping first since its more common to find on wavetable synths: 
 
-{{< img src="https://lh3.googleusercontent.com/d/19O_5G7i_s01WV9uJWpFJg6B04BxzNZuD" >}}
+{{< img src="https://lh3.googleusercontent.com/d/1SUXzLNJqMcsD9wBnl3PSPglwe0m8VCuU" >}}
 
 - __Sync__: Multiplies the speed of the waveform cycle, leading to higher frequencies and sometimes aggressive sounds.
 
