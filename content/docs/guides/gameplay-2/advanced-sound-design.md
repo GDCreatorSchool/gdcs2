@@ -43,7 +43,7 @@ You might be asking, "Didn't we talk about Filters in the previous lesson?”, a
 
 {{< img src="https://lh3.googleusercontent.com/d/19O_5G7i_s01WV9uJWpFJg6B04BxzNZuD" >}}
 
-Finally, __FIL2__ is used to direct it into a *secondary* Filter. Thats right! There are 2 Filters for you to play around with!
+Finally, __FIL2__ is used to direct it into a *secondary* Filter. That’s right! There are two Filters for you to play around with!
 
 If you look closely, you may notice that in Filter 2, FIL2 is now replaced with FIL1, implying that you can instead input the secondary filter into the first filter instead of the other way around. 
 
