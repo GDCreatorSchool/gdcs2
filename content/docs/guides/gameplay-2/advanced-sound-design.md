@@ -172,19 +172,25 @@ Let's look at each one:
 
   - __Low Pass / High Pass__: I categorize these two into one section here because they’re similar; they adjust the brightness of the sound akin to a high pass and a low pass filter.
 
-  - __Phase Disperse__: Shifts the phases of the partials, almost as if it’s applying a swirly characteristic to the wavetable as it shifts along.  - __Shepard Tone__: Loops a pitch thats continuously rising and falling at the same time, creating an auditory illusion by overlapping two octaves together and phasing in-between them. An example of Shepherd Tone in practice is shown below:
+  - __Phase Disperse__: Shifts the phases of the partials, almost as if it’s applying a swirly characteristic to the wavetable as it shifts along.
+
+  - __Shepard Tone__: Loops a pitch thats continuously rising and falling at the same time, creating an auditory illusion by overlapping two octaves together and phasing in-between them. An example of Shepherd Tone in practice is shown below:
 
 {{< youtube BzNzgsAE4F0 >}}
 
 - __Spectral Time Skew/Time Skew__: Skews the partial of the wavetable in terms of time, creating phase-like effects.
 
-- __Data Compress__: Compresses the data of the sound down to its harmonic peaks  - __Spectral Filter/Phaser/Flanger__: I group the three of these into one section simply because they are all self-explanatory; they simply apply a filter, or phaser, or flanger into a tunable knob and applied directly to the oscillator.   Here’s a video applying each spectral morph into an oscillator for demonstration:
+- __Data Compress__: Compresses the data of the sound down to its harmonic peaks  
+
+- __Spectral Filter/Phaser/Flanger__: I group the three of these into one section simply because they are all self-explanatory; they simply apply a filter, or phaser, or flanger into a tunable knob and applied directly to the oscillator.   Here’s a video applying each spectral morph into an oscillator for demonstration:
+
  {{< youtube lj--wqf2gJc >}}
 
 # 5: Miscellaneous Features 
+
 We’ll briefly cover some of the extra sound design techniques and effects that are less common, but far more interesting. Unfortunately, we would be here all day if we were to talk about them all. Still, let’s go over some of the more advanced techniques that professional producers and sound designers use to make their sounds. I don't think these are things to be glossed over, so let’s go over them:
 
-- __Macros__: This term should sound familiar to you outside of music production. Perhaps you have used a macro for a Geometry Dash hack. This works the same way. Essentially, it is a function thats binded to something else. In this case, we have four knobs to set a macro to, visibly seen on the left side of the OSC tab.
+- __Macros__: This term should sound familiar to you outside of music production. Perhaps you have used a macro hack in Geometry Dash. This works the same way. Essentially, it is a function that is bound to something else. In this case, we have four knobs to set a macro to, visibly seen on the left side of the OSC tab.
 
 {{< img src="https://lh3.googleusercontent.com/d/1zX4phh5XyJudc9DG-CX-WWhkUqo3cfyk" >}}
 
