@@ -64,7 +64,7 @@ LFOs, or Low-Frequency Oscillators, are essentially waveforms that produce sound
 
  On your LFO tab in the OSC menu, you can see that you have multiple LFO’s to play with. What you are seeing by default should be a triangle wave, and much like the envelope, it goes from Point A -> Point B -> … -> Point N (let N be however many points you have; by default it's 2), with curve points in between two points. You can double-click anywhere on the graph to create a new point. To start modulating the LFO, you may click and drag “LFO 1” to a knob or any parameter you want to adjust. Now, whenever you start pressing a note, you may notice that knobs are automatically turning by itself.  
 
-https://cdn.discordapp.com/attachments/396504131088547842/1558295989679423521/2026-10-09_21-48-23.mp4?ex=6acaebbb&is=6ac99a3b&hm=6475e96f2812f3d31c54f87723f02a6541ce53e9bcc6f30d77b8cacac645f016&  
+{{< youtube EPUPWT9eiJg >}}
 
 The video below shows an example of dragging LFO to Osc 1’s level knob to control it whilst also adjusting the modulation amount. As you can see in the video, you can also be able to adjust the wavetable itself. If you don't like a particular wavetable, you can switch a preset of wavetables in the Triangle dropdown menu.  
 
