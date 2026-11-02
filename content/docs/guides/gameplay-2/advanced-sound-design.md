@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: Sound Design 4 (Advanced Sounds)
 weight: 7235
 date: 2026-05-20T00:00:00.000Z
