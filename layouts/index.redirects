@@ -1,6 +1,6 @@
 
 {{- range .Site.Data.contributors -}}
   {{- if and .usePreferred .preferredName }}
-    /contributors/{{ .preferredName }}  /contributors/{{ .username }}  301
+    /contributors/{{ replace .preferredName " " "%20" }}/  /contributors/{{ replace .username " " "%20" }}/  301
   {{- end -}}
 {{- end -}}
