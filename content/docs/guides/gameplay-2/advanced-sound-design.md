@@ -145,9 +145,9 @@ Now that you are familiar with the traditional warping modes, lets look at Vital
 
 - __Phase Disperse__: Shifts the phases of the partials, almost as if its applying a swirly characteristic to the wavetable as it shifts along.  
 
-- __Shepard Tone__: Loops a pitch thats continuously rising and falling at the same time, creating an auditory illusion by overlapping 2 octaves together and phasing in-between them.  
+- __Shepard Tone__: Loops a pitch thats continuously rising and falling at the same time, creating an auditory illusion by overlapping 2 octaves together and phasing in-between them. An example of Shepherd Tone in practice is shown below:
 
-Example: Shepard Tone (link here)
+{{< youtube BzNzgsAE4F0 >}}
 
 -   __Spectral Time Skew / Time Skew__: skews the partial of the wavetable in terms of time, creating phase-like effects.  
 
