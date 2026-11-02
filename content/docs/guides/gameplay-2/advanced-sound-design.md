@@ -139,9 +139,15 @@ We’ll knock out wave morph warping first since its more common to find on wave
 
 - __Formant__: Shifts the partial positions forward while it still preserves its pitch center.
 
-- __Quantize__: Creates steps for the wave shape, ultimately lowering the resolution of the sound and creating its own bitcrush distortion.  - __Bend__: Warps the shape symmetrically or asymmetrically, creating distortions in the process.  - __Squeeze__: Compresses or otherwise expands the waveform for timbre shifts.
+- __Quantize__: Creates steps for the wave shape, ultimately lowering the resolution of the sound and creating its own bitcrush distortion.
 
-- __Pulse__: Creates a single square in between the cycle to make a pulse sound.  - __FM <- Destination__: Frequency Modulation to another oscillator. The output frequency of one oscillator alters the destination’s frequency, creating more metallic harmonics.
+  - __Bend__: Warps the shape symmetrically or asymmetrically, creating distortions in the process.  
+
+- __Squeeze__: Compresses or otherwise expands the waveform for timbre shifts.
+
+- __Pulse__: Creates a single square in between the cycle to make a pulse sound.
+
+  - __FM <- Destination__: Frequency Modulation to another oscillator. The output frequency of one oscillator alters the destination’s frequency, creating more metallic harmonics.
 
 - __RM <- Destination__: Ring Modulation to another oscillator. The output sound of one oscillator multiplies the signal to its destination, creating more metallic harmonics or inverted sidebands.  Here’s a video demonstration of applying each wave morph in an oscillator: 
 {{< youtube sAQ7lRcRoc0 >}}
