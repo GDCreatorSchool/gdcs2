@@ -19,7 +19,12 @@ seo:
   canonical: ""
   noindex: false
 ---
-{{< callout context="caution" title="This guide needs a TLDR section." icon="outline/info-circle" >}}
+{{< callout context="note" title="TLDR - What this guide covers
+- Oscillator filters can filter out certain inputs before they signal into the effects.
+- Envelopes can shape a sound’s volume automatically over time, with different knobs to assist you in altering it.
+- Low-Frequency Oscillators, or LFOs, allow you to modulate pre-existing sounds. You can directly change the shape of a sound wave, and different modes assist you in doing so.
+- Warping, whether wave morph or spectral, allows you to deform a wave cycle before effects are added.
+- More niche features like Macros and Voices are also useful." icon="outline/info-circle" >}}
 {{< /callout >}}
 
 In the previous lesson, we’ve discussed various post processing effects that can be utilized to sharpen or mudden sounds, essentially making sounds louder or softer.
