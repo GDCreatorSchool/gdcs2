@@ -43,8 +43,13 @@ The mix knob is how much should this effect be applied to your sound.  There
 {{< img src="https://lh3.googleusercontent.com/d/1hQ8vKVYVCYocw-n1bIsvW4DaFcUod9W-" >}}
 
 Vital has 3 unique envelopes to play around with, and its represented by a graph here. The longer the shape, the more time has passed whilst holding down the note.   The knobs at the bottom represent the 4 (sometimes 5) main fundamentals of Envelopes, to which we create the acronym: ADSR (or AHDSR)  - Attack is how much time it needs to fade into its first point in the envelope, usually its loudest.
-- __Hold__ is optionally a second transitional point between the Attack and the Decay. Speaking of which: - Decay is the time it takes for the Attack (or Hold when its applicable) to transition over to the Sustain.
+
+- __Hold__ is optionally a second transitional point between the Attack and the Decay. Speaking of which: 
+
+- __Decay__ is the time it takes for the Attack (or Hold when its applicable) to transition over to the Sustain.
+
 - __Sustain__ is the second (or third, once again if Hold is being applied) point where the sound softens down once the note is held past the Decay. At this point, if the note is held any longer, the envelope stays at the sustain until the note is released from the key.
+
 - __Release__ is the time it needs for it to fade out once the key is released.  The Delay knob is grouped up with the rest of the knobs, but I can assure you that it is not a part of AHDSR. The delay knob in this case delays the entire envelope if the note is held.   A good usage of implementing Envelopes to sound is creating plucks. Many audio engineers and sound designers like to create plucks using this envelope by getting rid of all knobs minus the decay.  
 
 {{< img src="https://lh3.googleusercontent.com/d/1WiS4xFkrMHaiOEAAEJJcOXEyRj5praf_" >}}
