@@ -50,11 +50,17 @@ There are sliders for a __low pass__ and a __high pass__ above and next to the v
 
 # 2: Envelopes
 
-  So you created a nice bright or dark sound, but maybe you want something extra. Maybe you don't wanna just hold the note down. Maybe you want to let it fade in and fade out, or perhaps eventually lean into a softer sound over time.   __Envelopes__ shape out the sound’s volume automatically without controlling a knob, all done over time. You may even use Envelopes to change pitch and filters, but that will come up later.
+  So you created a nice bright or dark sound, but maybe you want something extra. Maybe you don't wanna just hold the note down. Maybe you want to let it fade in and fade out, or perhaps eventually lean into a softer sound over time.   
+
+__Envelopes__ shape out the sound’s volume automatically without controlling a knob, all done over time. You may even use Envelopes to change pitch and filters, but that will come up later.
 
 {{< img src="https://lh3.googleusercontent.com/d/1hQ8vKVYVCYocw-n1bIsvW4DaFcUod9W-" >}}
 
-Vital has 3 unique envelopes to play around with, and its represented by a graph here. The longer the shape, the more time has passed whilst holding down the note.   The knobs at the bottom represent the 4 (sometimes 5) main fundamentals of Envelopes, to which we create the acronym: ADSR (or AHDSR)  - __Attack__ is how much time it needs to fade into its first point in the envelope, usually its loudest.
+Vital has 3 unique envelopes to play around with, and its represented by a graph here. The longer the shape, the more time has passed whilst holding down the note.
+
+The knobs at the bottom represent the 4 (sometimes 5) main fundamentals of Envelopes, to which we create the acronym: ADSR (or AHDSR)
+
+- __Attack__ is how much time it needs to fade into its first point in the envelope, usually its loudest.
 
 - __Hold__ is optionally a second transitional point between the Attack and the Decay. Speaking of which: 
 
@@ -62,7 +68,11 @@ Vital has 3 unique envelopes to play around with, and its represented by a graph
 
 - __Sustain__ is the second (or third, once again if Hold is being applied) point where the sound softens down once the note is held past the Decay. At this point, if the note is held any longer, the envelope stays at the sustain until the note is released from the key.
 
-- __Release__ is the time it needs for it to fade out once the key is released.   The __Delay__ knob is grouped up with the rest of the knobs, but I can assure you that it is *not* a part of AHDSR. The delay knob in this case delays the entire envelope if the note is held.   A good usage of implementing Envelopes to sound is creating __plucks__. Many audio engineers and sound designers like to create plucks using this envelope by getting rid of all knobs minus the decay. This ensures that when the note is pressed, you have a sharp stab synth, before quickly fading out, giving you that “pluck” that producers tend to use.
+- __Release__ is the time it needs for it to fade out once the key is released.   
+
+The __Delay__ knob is grouped up with the rest of the knobs, but I can assure you that it is *not* a part of AHDSR. The delay knob in this case delays the entire envelope if the note is held.   
+
+A good usage of implementing Envelopes to sound is creating __plucks__. Many audio engineers and sound designers like to create plucks using this envelope by getting rid of all knobs minus the decay. This ensures that when the note is pressed, you have a sharp stab synth, before quickly fading out, giving you that “pluck” that producers tend to use.
 
 {{< img src="https://lh3.googleusercontent.com/d/1WiS4xFkrMHaiOEAAEJJcOXEyRj5praf_" >}}
 
