@@ -36,9 +36,10 @@ In the previous lesson, we’ve discussed various post processing effects that c
 
 Now, I will go very briefly because this seems self explanatory. 
 
-You might be asking, "Didn't we talk about Filters in the previous lesson?”, and you’d be right! This is essentially another variation of a filter post-processing, with some exceptions. Instead of the sound itself signaling directly into the effect, you can *filter* whichever input goes through the filter before going into the effects.   In Vital, you can do this by selecting OSC1, OSC2, OSC3, SMP, and FIL2.
-  - __OSC1-3__ are all of the 3 oscillators.
- - __SMP__ would be the Sampler in the synthesis, most commonly used for creating white noise.
+You might be asking, "Didn't we talk about Filters in the previous lesson?”, and you’d be right! This is essentially another variation of a filter post-processing, with some exceptions. Instead of the sound itself signaling directly into the effect, you can *filter* whichever input goes through the filter before going into the effects.   In Vital, you can do this by selecting __OSC1__, __OSC2__, __OSC3__, __SMP__, and __FIL2__.
+
+- __OSC1-3__ are all of the 3 oscillators.
+- __SMP__ would be the Sampler in the synthesis, most commonly used for creating white noise.
 
 {{< img src="https://lh3.googleusercontent.com/d/19O_5G7i_s01WV9uJWpFJg6B04BxzNZuD" >}}
 
