@@ -79,6 +79,7 @@ A good usage of implementing Envelopes to sound is creating __plucks__. Many aud
 # 3: Low-Frequency Oscillator (LFO) 
 
 __LFOs__, or __Low-Frequency Oscillators__, are essentially waveforms that produce sound at around 20hz in frequency. You may ask, “Wouldn’t this be too low for the human ear?”, and you’d be right. This oscillator isn't really for making sound–it’s for modulating pre-existing sound. There are many practical cases for utilizing LFOs in modular synthesis, but first we need to understand how it works:
+
  On your LFO tab in the OSC menu, you can see that you have multiple LFO’s to play with. What you are seeing by default should be a triangle wave, and much like the envelope, it goes from Point A -> Point B -> … -> Point N (let N be however many points you have; by default it's 2), with curve points in between two points. You can double-click anywhere on the graph to create a new point. 
 
 To start modulating the LFO, you may click and drag “LFO 1” to a knob or any parameter you want to adjust. Now, whenever you start pressing a note, you may notice that knobs are automatically turning by itself.
@@ -88,6 +89,7 @@ To start modulating the LFO, you may click and drag “LFO 1” to a knob or any
 The video below shows an example of dragging LFO to OSC1’s level knob to control it whilst also adjusting the modulation amount. As you can see in the video, you can also be able to adjust the wavetable itself.
 
 {{< youtube EPUPWT9eiJg >}} 
+
 If you don't like a particular wavetable, you can switch a preset of wavetables in the Triangle dropdown menu.
 
 {{< img src="https://lh3.googleusercontent.com/d/10-Y6e5og61QdGI9EyCjaDTdWNAyOPLsV" >}}
@@ -97,9 +99,11 @@ The LFO also applies to the effects, but you can't simply just click and drag it
 {{< img src="https://lh3.googleusercontent.com/d/12XMY53mv3q96v8jDs4go7M52sI8ad9Zl" >}}
 
 There are different modes for how you may utilize an LFO: 
+
 {{< img src="https://lh3.googleusercontent.com/d/1a1LN-sSL8moeCmw7ubE-46Yslxe9XgEj" >}}
 
 - __Trigger__: The most basic mode; starts from first point to the last point, and then loops back to the first point and repeats until the note is released.  - __Sync__: The LFO cycle is constant and never re-triggers its cycle, regardless of whether the user presses or releases the note; syncs with the DAW and not the note. 
+
 - __Envelope__: Acts like a traditional envelope, starts from first point to the last point, but stays at the last point until the user releases the note. It re-triggers the cycle once the user presses the note again.
 
 - __Sustain Envelope__: Similar to the envelope, it starts from first point to the last point, but ONLY when the sustain part of the Envelope is triggered. You can adjust this with the Envelope’s release knob.
@@ -111,15 +115,20 @@ There are different modes for how you may utilize an LFO: 
 - __Loop Hold__: Loops from the first point to the slider position shown above, and then goes all the way to the end point and holds there depending on the Envelope’s Release. 
 
 - __Point Cycle__: For every press a user hits a note on, it traverses to the next point on the LFO and holds it there. 
-The last thing LFO offers is its __tempo__. You can essentially adjust the speed of the LFO by the tempo of the DAW. You can slide up and down on the fraction to speed up or slow down the tempo of the LFO however you see fit. If you click on the note, there are other options to play around with including Triplets, Dotted, and even time-orientated tempos (in seconds).  
+
+The last thing LFO offers is its __tempo__. You can essentially adjust the speed of the LFO by the tempo of the DAW. You can slide up and down on the fraction to speed up or slow down the tempo of the LFO however you see fit. If you click on the note, there are other options to play around with including Triplets, Dotted, and even time-orientated tempos (in seconds).
+
 {{< img src="https://lh3.googleusercontent.com/d/1Dz9Wj70KIYIkhmXEBgFEQhEdPHhidsD7" >}}
 
 Already you can see how much potential this LFO brings to the table in terms of producing sound. Just to name a couple of examples, we can use this to create vibratos (Modulating Pitches with LFO), tremolo (Modulating OSC with LFO), and many more.
 
-# 4: Warping Waveforms  You do not have to confine yourself to basic shapes in a waveform. You can warp a basic shape into more complex shapes that create unique, distinct sounds.
+# 4: Warping Waveforms  
+
+You do not have to confine yourself to basic shapes in a waveform. You can warp a basic shape into more complex shapes that create unique, distinct sounds.
 
 __Warping__ in a wavetable synthesis is the process of mathematically deforming a single wave cycle before applying other effects. This alters, boosts, or otherwise creates new harmonics that we otherwise don't really get to hear in timbre from other shapes.
- Vital is fortunate to give us two types of warping: __wave morph__ warping and __spectral__ warping. Let’s look into each warp mode and see how we can manipulate pre-existing shapes.
+
+ Vital gives us two types of warping: __wave morph__ warping and __spectral__ warping. Let’s look into each warp mode and see how we can manipulate pre-existing shapes.
 
 On the right side of the shape of the oscillator, there is an unlabelled knob. Clicking on “---” brings you to a dropdown menu that allows you to play with different modes.
 
