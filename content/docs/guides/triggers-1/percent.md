@@ -56,9 +56,7 @@ This percentage only changes if the player dies when their Attempt % is higher t
 
 # 2: Features
 
-{{< img src="https://lh3.googleusercontent.com/d/1jXI3ixsaqMm5GP8iNx-q3fPjI5AcF0-G"
-
-{{< img src="https://lh3.googleusercontent.com/d/18sVBpe0P59j-2YSBRO8OGAwkkffRJIvO"
+{{< img src="https://lh3.googleusercontent.com/d/1jXI3ixsaqMm5GP8iNx-q3fPjI5AcF0-G" >}}
 
 ### Percent
 Use the slider or type a number in the textbox to set the Attempt % to the desired value. Only integers between 0 and 99 are allowed.
@@ -71,6 +69,8 @@ Check this box to change the Percent textbox into an ItemID textbox. When the tr
 if the itemID’s value is negative, the Percent trigger will default it to 0, and if it is 100 or higher, it will be changed to 99.
 
 The Percent trigger does not accept ItemIDs that are timers.
+
+{{< img src="https://lh3.googleusercontent.com/d/18sVBpe0P59j-2YSBRO8OGAwkkffRJIvO" >}}
 
 ### Add
 If checked, this trigger’s Percent value will be added to the current Attempt % instead of overriding it.
