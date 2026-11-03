@@ -7,6 +7,7 @@ weight: 7235
 date: 2026-11-02T00:00:00.000Z
 contributors:
   - electrifyxd
+  - sethlai
 description: This guide explains advanced and complicated techniques to bring
   your sound creation to the next level.
 tags:
