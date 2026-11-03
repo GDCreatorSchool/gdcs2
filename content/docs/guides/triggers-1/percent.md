@@ -59,9 +59,9 @@ This percentage only changes if the player dies when their Attempt % is higher t
 {{< img src="https://lh3.googleusercontent.com/d/1jXI3ixsaqMm5GP8iNx-q3fPjI5AcF0-G" >}}
 
 ### Percent
-Use the slider or type a number in the textbox to set the Attempt % to the desired value. Only integers between 0 and 99 are allowed.
+Use the slider or type a number in the textbox to set the __Attempt %__ to the desired value. Only integers between 0 and 99 are allowed.
 
-Attempt % will only change if the value in the Percent Trigger is higher than it.
+Attempt % will only change if the value in the Percent Trigger is __higher__ than it.
 
 ### Input
 Check this box to change the Percent textbox into an __ItemID textbox__. When the trigger is activated, the Attempt % will be equal to the value of the specified ItemID.
