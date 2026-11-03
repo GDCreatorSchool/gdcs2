@@ -315,7 +315,7 @@ As stated earlier, a computer generally deals with 32 or 64 bits, meaning they h
 
 $$ 387420489_{10} = 00010111000101111001000101001001_2 $$
 
-The maximum that a 32 bit number can hold is the number $1$, doubled 32 times, which amounts to $4,294,967,296$ (a huge number!), but since computers also needs to store the number $0$, so the actual cap is $4,294,967,295$.
+The maximum that a 32 bit number can hold is the number $1$, doubled 32 times, which amounts to $4,294,967,296$ (a huge number!), but since computers also needs to store the number $0$, the actual cap is bumped down to $4,294,967,295$.
 
 Additionally, they might also need to store negative numbers in equal capacity, so the leading bit is typically reserved for a different yes-no question:
 
@@ -583,7 +583,6 @@ Look at how far your object should move.
 Keep numbers small and easy.
 
 > 1   2    4    8    16    32    64    128    256    512    1024    2048
->
 
 Then, in this doubling sequence, find the number that’s “just smaller” than the maximum.
 
@@ -740,6 +739,12 @@ There are two main methods to describe position, both implemented by GD triggers
 
 1. **Cartesian:** Move a distance across (X), and another up and down (Y). This is how Niko moves in [OneShot](https://store.steampowered.com/app/420530/OneShot/).
 2. **Polar:** Look at somewhere (θ), then move in that direction (r). This is common with 3D first-person games such as [Left 4 Dead 2](https://store.steampowered.com/app/550/Left_4_Dead_2/).
+
+{{< callout context="note" icon="outline/photo" >}}
+
+Illustration for Cartesian + Polar
+
+{{< /callout >}}
 
 All levels have an internal coordinate system, and it is shared by all triggers. For example, the Move trigger moves an object relative to this coordinate system, and the Rotate trigger also takes this system into account for rotations of multiple objects.
 
@@ -1608,9 +1613,19 @@ Periodicizing an off-center function
 
 {{< /callout >}}
 
-We've looked at a way we can split up a number into a quotient and remainder. Periodic functions are special in that the quotient can be thrown away and forgotten about.
+Before moving on, let's take one final look of making a periodic function:
 
-However, even if a function is not periodic, some can also be broken down in this way or similar, the only catch is that now the quotient would also be involved. This means that their inputs can also be reduced to a short strip and grafted anywhere akin to periodic functions, albeit somehow warped by the quotient.
+1. Take a function, determine what part you want to repeat.
+2. Split the input into a quotient and a remainder
+3. Throw away the quotient, run the original function through the remainder
+
+Periodic functions are special in that this quotient can be thrown away and forgotten about. This is the simplest kind of what's known as a **range reduction**.
+
+Their ranges can be reduced due to a pure translational symmetry, $\sin(x) = \sin(x + 360\degree)$, this allows us to only focus on values $0\degree \le x < 360\degree$. There is no scaling applied here, so our quotient can effectively be ignored.
+
+Certain functions also possess this property of repeating themselves, but the twist is that every subsequent copy is transformed by some factors. This still allows us to perform range reduction, but this time the quotient would also be taken into account.
+
+This is evident when we look at how factors of $2$ show up in the exponention, and how better approximations can be done with this method.
 
 ### A second look at the exponential
 
@@ -1632,7 +1647,7 @@ You can use the fraction $\frac {1453635} {2097152}$, which is GD's best approxi
 
 From this, we can say that by adding $0.693$ to the input, we double the output. Likewise, if we subtract $0.693$, the number is halved.
 
-The idea is that we can continue subtracting $0.693$ until the input is within a small range, then compensate for all the halving by equivalent doubling. The same goes from the negative side, add $0.693$ until the input is within range, then compensate with halving.
+The idea is that we can continue subtracting $0.693$ until the input is within a small range, then compensate for all the halving by equivalent doubling. The same goes from the negative side, add $0.693$ until the input is within range, then compensate witdh halving.
 
 This allows us to bring our input down to a remainder between $-0.347$ and $0.347$, and a quotient pointing to a multiplier along the doubling sequence (e.g. $512, 1024$).
 
@@ -1664,20 +1679,20 @@ This entails two steps:
 1. Calculate $e^{0.182}$ using a known method (e.g. Taylor expansion)
 2. Multiply its output by $2^{12} = 4096$, the 12th doubling number.
 
-I will assume that you have already implemented the first step in some way, it is explained earlier in this guide. To divide by a doubling number $2^n$ based on a position, we can use the following ID conversion setup:
+I will assume that you have already implemen>ted the first step in some way, it is explained earlier in this guide. To multiply with a doubling number $2^n$ based on a position, we can use the following ID conversion setup:
 
 {{< callout context="success" icon="outline/movie" >}}
 T:2=1.20 (Output) C:7=12 (Quotient)
 
-`I7 >= 16.000` → `I7 = I7 - 16.000` `T2 = T2 / 65536.000`
+`I7 >= 16.000` → `I7 = I7 - 16.000` `T2 = T2 * 65536.000`
 
-`I7 >= 8.000` → `I7 = I7 - 8.000` `T2 = T2 / 256.000`
+`I7 >= 8.000` → `I7 = I7 - 8.000` `T2 = T2 * 256.000`
 
-`I7 >= 4.000` → `I7 = I7 - 4.000` `T2 = T2 / 16.000`
+`I7 >= 4.000` → `I7 = I7 - 4.000` `T2 = T2 * 16.000`
 
-`I7 >= 2.000` → `I7 = I7 - 2.000` `T2 = T2 / 4.000`
+`I7 >= 2.000` → `I7 = I7 - 2.000` `T2 = T2 * 4.000`
 
-`I7 >= 1.000` → `I7 = I7 - 1.000` `T2 = T2 / 2.000`
+`I7 >= 1.000` → `I7 = I7 - 1.000` `T2 = T2 * 2.000`
 
 ▶️
 
@@ -1685,10 +1700,189 @@ T:2=4914.77 C:7=0
 
 {{< /callout >}}
 
+If the quotient `I7` turns out to be negative, the doubling numbers also continue on the negative side, generating numbers that halve every time ($0.5, 0.25, 0.125, 0.0625, etc.$)
+
+A similar ID conversion setup can be used to handle negative values of `I7`, forcing the number back to $0$ regardless of what it currently holds:
+
+{{< callout context="success" icon="outline/movie" >}}
+T:2=1.20 (Output) C:7=-5 (Quotient)
+
+`I7 <= -16.000` → `I7 = I7 + 16.000` `T2 = T2 / 65536.000`
+
+`I7 <= -8.000` → `I7 = I7 + 8.000` `T2 = T2 / 256.000`
+
+`I7 <= -4.000` → `I7 = I7 + 4.000` `T2 = T2 / 16.000`
+
+`I7 <= -2.000` → `I7 = I7 + 2.000` `T2 = T2 / 4.000`
+
+`I7 <= -1.000` → `I7 = I7 + 1.000` `T2 = T2 / 2.000`
+
+▶️
+
+T:2=0.04 C:7=0
+
+{{< /callout >}}
+
+This allows you to truncate the input range of exponentiation on both sides.
+
 ### The Natural Logarithm - $\ln(x)$
+
+If exponents turn additions into multiplications, then logarithms do the reverse, turning multiplications back into addtions. The inverse operation of exponentiation ($e^x$) is the **natural logartihm** ($\ln(x)$).
+
+The series expansion for $\ln(x)$ we're using is:
+
+$$\ln(m) = 2 \cdot \left(z + \frac{z^3}{3} + \frac{z^5}{5} + \frac{z^7}{7} + \cdots \right)$$
+
+where $z = \frac {(m - 1)} {(m + 1)}$.
+
+This is easy enough to implement.
+
+
+
+{{< callout context="success" icon="outline/movie" >}}
+T:1 = 12 (Input) T:2 (Output) T:3 ($m-1$) T:4 ($z$) T:5 (${2z^k}$) C:6 ($2k + 1$)
+
+The first step is initialization
+
+`T4 = T1 + 1` $m - 1$
+
+`T3 = T1 - 1` $m + 1$
+
+`T4 = T4 - T3` $z = \frac {m-1} {m+1}$
+
+`T5 = T4 · 2.000` (First term is $2z$)
+
+`T2 = T5` (Add first term to the series)
+
+`I6 = 1.000` (Denominator is currently 1)
+
+Now, we start the loop.
+
+`T5 = T5 * T4 * T4` ($z \to z^{k + 2}$)
+
+`I6 = I6 + 2.000`
+
+`T2 = T2 + T5 / C6` ($z/k \to z^{k + 2}/k+2$)
+
+Repeat five more times.
+
+Five loops are sufficient for inputs between $1$ and $2$.
+
+{{< /callout >}}
+
+Unlike with a standard Taylor series, this series converges regardless of the input. However, it only guarantees a small error between $1$ and $2$. For bigger inputs, we would either need more terms, or find a way to limit inputs to that range.
+
+Evidently for us, range reduction can also be applied in this scenario. as stated earlier, this function produces minimal error between $1$ and $2$, so we'd like to shift our inputs into that range.
+
+Exponents and logarithms are considered polar opposites; whereas exponentiation scales the output by a factor of 2, taking logarithms would involve scaling the input instead! What now?
+
+{{< callout context="note" icon="outline/photo" >}}
+
+(Illustration of exp(x) scaling kelly up, and ln(x) laying kelly sideways)
+
+{{< /callout >}}
+
+The scaling factors also get flipped on their head, take a look:
+
+$$ \ln(x \times 2) = \ln(x) + \ln(2) = \ln(x) + 0.693 $$
+
+Our old friend $0.693$ is back, say hello to it (or not).
+
+Since the inputs are related by multiplication rather than addition, we do not split the input into the usual quotient + remainder, but rather through a technique I'll illustrate with an example:
+
+For a number ($563$), we can keep dividing it until it goes below $2$:
+
+$$ 563.0 \to 281.5 \to 140.75 \to 70.375 \to 35.1875 \to 17.59375 $$
+
+$$ \to 8.796875 \to 4.3984375 \to 2.19921875 \to 1.099609375 $$
+
+We have divided the number by a total of 9 times.
+
+This effectively turns our input into:
+
+$$ 563 = 1.099609375 \times 2^9 $$
+
+We have two numbers at play here, the $9$ corner number is called the "exponent", and $1.099609375$ we will refer to as the mantissa (or the significand).
+
+Let's look at the equation where we can use range reduction:
+
+$$ \ln(563) = \ln(1.099609375 \times 2^9) = \ln(1.099609375) + \ln(2^9) = \ln(1.099609375) + 9 \times 0.693 $$
+
+Finding the exponent and significand involves the usage of an ID conversion setup:
+
+{{< callout context="success" icon="outline/movie" >}}
+T:1=563.00 (Input) C:7=0 (Exponent)
+
+`T1 >= 65536.000` → `I7 = I7 + 16.000` `T1 = T1 / 65536.000`
+
+`T1 >= 256.000` → `I7 = I7 + 8.000` `T1 = T1 / 256.000`
+
+`T1 >= 16.000` → `I7 = I7 + 4.000` `T1 = T1 / 16.000`
+
+`T1 >= 4.000` → `I7 = I7 + 2.000` `T1 = T1 / 4.000`
+
+`T1 >= 2.000` → `I7 = I7 + 1.000` `T1 = T1 / 2.000`
+
+▶️
+
+T:1=1.10 C:7=9
+
+{{< /callout >}}
+
+Likewise, we can do this for inputs between $0$ and $1$, however small they might get:
+
+{{< callout context="success" icon="outline/movie" >}}
+T:1=0.0005369 (Input) C:7=0 (Exponent)
+
+`T1 · 65536.000 <= 1.000` → `I7 = I7 - 16.000` `T1 = T1 * 65536.000`
+
+`T1 · 256.000 <= 1.000` → `I7 = I7 - 8.000` `T1 = T1 * 256.000`
+
+`T1 · 16.000 <= 1.000` → `I7 = I7 - 4.000` `T1 = T1 * 16.000`
+
+`T1 · 4.000 <= 1.000` → `I7 = I7 - 2.000` `T1 = T1 * 4.000`
+
+`T1 · 2.000 <= 1.000` → `I7 = I7 - 1.000` `T1 = T1 * 2.000`
+
+▶️
+
+T:1=1.10 C:7=-11
+{{< /callout >}}
+
+This should extend our range of logarithms to work with any TimerID.
+
+The final step is to add back the logarithm of the exponent. This is a linear term, so a bare multiplication is all that's needed.
+
+{{< callout context="success" icon="outline/movie" >}}
+T:2=0.095 (Output) C:7=9 (Exponent) T:8=0.693 ($\ln(2)$)
+
+`T2 = T2 + I7 · T8`
+
+▶️
+
+T:2=6.33
+{{< /callout >}}
+
+And we are finally done! I hope so... correct?
+
+{{< callout context="success" icon="outline/movie" >}}
+
+NOOOOOO (Kelly reduced into a cubic pellet)
+
+{{< /callout >}}
+
+## The Cool Kids' Approximators
 
 {{< callout context="tip" title="TODO" icon="outline/edit" >}}
 
-Geometric input scaling & additive transformation
+"Faster than taylor but requires additional software" wdym????
+
+{{< /callout >}}
+
+### The Inverse Tangent - $\tan^{-1}(x)$
+
+{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+
+Arctan example.
 
 {{< /callout >}}
