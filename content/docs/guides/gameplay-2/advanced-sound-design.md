@@ -61,7 +61,7 @@ __Envelopes__ shape out the sound’s volume automatically without controlling a
 
 Vital has 3 unique envelopes to play around with, and its represented by a graph here. The longer the shape, the more time has passed whilst holding down the note.
 
-The knobs at the bottom represent the 4 (sometimes 5) main fundamentals of Envelopes, to which we create the acronym: ADSR (or AHDSR)
+The knobs at the bottom represent the 4 (sometimes 5) main fundamentals of Envelopes, to which we create the acronym: __ADSR__ (or __AHDSR__)
 
 - __Attack__ is how much time it needs to fade into its first point in the envelope, usually its loudest.
 
