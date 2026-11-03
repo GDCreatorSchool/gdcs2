@@ -7,6 +7,7 @@ weight: 3271
 date: 2026-10-26T00:00:00.000Z
 contributors:
   - theibra
+  - sethlai
 description: The Percent trigger allows you to modify how the percent bar is
   displayed on platformer levels. This guide will explain how to use it.
 tags:
