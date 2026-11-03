@@ -144,15 +144,18 @@ We’ll knock out wave morph warping first since its more common to find on wave
 
 - __Quantize__: Creates steps for the wave shape, ultimately lowering the resolution of the sound and creating its own bitcrush distortion.
 
-  - __Bend__: Warps the shape symmetrically or asymmetrically, creating distortions in the process.  
+- __Bend__: Warps the shape symmetrically or asymmetrically, creating distortions in the process.  
 
 - __Squeeze__: Compresses or otherwise expands the waveform for timbre shifts.
 
 - __Pulse__: Creates a single square in between the cycle to make a pulse sound.
 
-  - __FM <- Destination__: Frequency Modulation to another oscillator. The output frequency of one oscillator alters the destination’s frequency, creating more metallic harmonics.
+- __FM <- Destination__: Frequency Modulation to another oscillator. The output frequency of one oscillator alters the destination’s frequency, creating more metallic harmonics.
 
-- __RM <- Destination__: Ring Modulation to another oscillator. The output sound of one oscillator multiplies the signal to its destination, creating more metallic harmonics or inverted sidebands.  Here’s a video demonstration of applying each wave morph in an oscillator: 
+- __RM <- Destination__: Ring Modulation to another oscillator. The output sound of one oscillator multiplies the signal to its destination, creating more metallic harmonics or inverted sidebands.  
+
+Here’s a video demonstration of applying each wave morph in an oscillator: 
+
 {{< youtube sAQ7lRcRoc0 >}}
 
 Now that you’re familiar with the traditional warping modes, lets look at Vital’s spectral warp modes. The knob next to the one on the far-right should give you another drop-down menu with its own set of modes to play around with. 
