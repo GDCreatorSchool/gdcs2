@@ -64,7 +64,7 @@ Use the slider or type a number in the textbox to set the Attempt % to the desir
 Attempt % will only change if the value in the Percent Trigger is higher than it.
 
 ### Input
-Check this box to change the Percent textbox into an ItemID textbox. When the trigger is activated, the Attempt % will be equal to the value of the specified itemID.
+Check this box to change the Percent textbox into an ItemID textbox. When the trigger is activated, the Attempt % will be equal to the value of the specified ItemID.
 
 if the ItemID’s value is negative, the Percent trigger will default it to 0, and if it is 100 or higher, it will be changed to 99.
 
