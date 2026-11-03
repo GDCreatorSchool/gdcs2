@@ -34,7 +34,7 @@ Similarly to Classic mode, the player’s progress will be __updated__ when they
 
 This section will explain the difference between the two types of progress bars and how they’re used in Classic and Platformer modes. You can skip this section if you want to.
 
-Attempt Progress Bar
+### Attempt Progress Bar
 
 In Classic mode, an __attempt progress bar__ is located at the top of the screen, which shows the player’s progress in this current attempt (Attempt %), and is reset on the next one. It gradually increases and cannot be modified.
 
@@ -44,7 +44,7 @@ This means that if the player is slowed down (by teleporting it or using speed p
 
 This attempt progress bar is also visible in the pause menu for both modes. In Platformer, it displays 0% unless changed with the Percent trigger.
 
-## Level Progress Bar
+### Level Progress Bar
 
 The __level progress bars__ are visible in the level page and in the pause menu while playing the level. For Classic mode, the green bar is for Normal mode and the cyan for Practice.
 
@@ -65,22 +65,22 @@ This percentage only changes if the player dies when their Attempt % is higher t
 
 {{< img src="https://lh3.googleusercontent.com/d/18sVBpe0P59j-2YSBRO8OGAwkkffRJIvO"
 
-## Percent
+### Percent
 Use the slider or type a number in the textbox to set the Attempt % to the desired value. Only integers between 0 and 99 are allowed.
 
 Attempt % will only change if the value in the Percent Trigger is higher than it.
 
-## Input
+### Input
 Check this box to change the Percent textbox into an ItemID textbox. When the trigger is activated, the Attempt % will be equal to the value of the specified itemID.
 
 if the itemID’s value is negative, the Percent trigger will default it to 0, and if it is 100 or higher, it will be changed to 99.
 
 The Percent trigger does not accept ItemIDs that are timers.
 
-## Add
+### Add
 If checked, this trigger’s Percent value will be added to the current Attempt % instead of overriding it.
 
-## Target ItemID
+### Target ItemID
 When activated, the trigger copies the value of the Attempt % to the target ItemID.
 
 This is most useful for displaying progress, as the attempt progress bar is not visible in Platformer mode like it is in Classic.
