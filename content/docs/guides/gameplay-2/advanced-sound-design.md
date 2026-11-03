@@ -24,19 +24,22 @@ seo:
 
 In the previous lesson, we’ve discussed various post processing effects that can be utilized to sharpen or mudden sounds, essentially making sounds louder or softer.
 
- Modern-day electronic artists and audio engineers like Mike Dean and Markiss usually use sounds that shape and alter the initial sound altogether. However, the means to accomplish that are… complicated at a glance, to say the least. Don't worry, however! By the end of this course, you should be able to approach most, if not all synthesizers, both analog or digital, to create the perfect sounds for your levels. It’s worth mentioning, however, that there are a vast amount of techniques that range from common to niche, and we will not be discussing all of them here for the sake of this lesson’s length; we’ll only be discussing the remaining aspects of synthesis that were too complicated to discuss in previous lessons.   So, without further ado, lets start out with…
+ Modern-day electronic artists and audio engineers like Mike Dean and Markiss usually use sounds that shape and alter the initial sound altogether. However, the means to accomplish that are… complicated at a glance, to say the least. Don't worry, however! By the end of this course, you should be able to approach most, if not all synthesizers, both analog or digital, to create the perfect sounds for your levels. It’s worth mentioning, however, that there are a vast amount of techniques that range from common to niche, and we will not be discussing all of them here for the sake of this lesson’s length; we’ll only be discussing the remaining aspects of synthesis that were too complicated to discuss in previous lessons.  
+
+So, without further ado, lets start out with…
 
 # 1: Filters in Oscillators
 
 Now, I will go very briefly because this seems self explanatory. 
 
-You might be asking, "Didn't we talk about Filters in the previous lesson?”, and you’d be right! This is essentially another variation of a filter post-processing, with some exceptions. Instead of the sound itself signaling directly into the effect, you can *filter* whichever input goes through the filter before going into the effects.   In Vital, you can do this by selecting OSC1, OSC2, OSC3, SMP, and FIL2.
-  - __OSC1-3__ are all of the 3 oscillators.
- - __SMP__ would be the Sampler in the synthesis, most commonly used for creating white noise.
+You might be asking, "Didn't we talk about Filters in the previous lesson?”, and you’d be right! This is essentially another variation of a filter post-processing, with some exceptions. Instead of the sound itself signaling directly into the effect, you can *filter* whichever input goes through the filter before going into the effects.   In Vital, you can do this by selecting __OSC1__, __OSC2__, __OSC3__, __SMP__, and __FIL2__.
+
+- __OSC1-3__ are all of the 3 oscillators.
+- __SMP__ would be the Sampler in the synthesis, most commonly used for creating white noise.
 
 {{< img src="https://lh3.googleusercontent.com/d/19O_5G7i_s01WV9uJWpFJg6B04BxzNZuD" >}}
 
-Finally, __FIL2__ is used to direct it into a *secondary* Filter. Thats right! There are 2 Filters for you to play around with!
+Finally, __FIL2__ is used to direct it into a *secondary* Filter. Thats right! There are *two* Filters for you to play around with!
 
 If you look closely, you may notice that in Filter 2, FIL2 is now replaced with FIL1, implying that you can instead input the secondary filter into the first filter instead of the other way around. 
 
