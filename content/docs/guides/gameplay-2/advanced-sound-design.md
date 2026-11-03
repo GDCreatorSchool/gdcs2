@@ -170,17 +170,17 @@ Let's look at each one:
 
 - __Harmonic Stretch__: Stretches or compresses the harmonic spacing of the wavetable
 
-  - __Inharmonic Stretch__: Distorts the harmonic spacing of the wavetable, creating more metallic textures.
+- __Inharmonic Stretch__: Distorts the harmonic spacing of the wavetable, creating more metallic textures.
 
-  - __Smear__: Blurs the partial boundaries for a softer timbre
+- __Smear__: Blurs the partial boundaries for a softer timbre
 
 - __Random Amplitude__: Randomizes the partial levels for a noisier, evolving sound
 
-  - __Low Pass / High Pass__: I categorize these two into one section here because they’re similar; they adjust the brightness of the sound akin to a high pass and a low pass filter.
+- __Low Pass / High Pass__: I categorize these two into one section here because they’re similar; they adjust the brightness of the sound akin to a high pass and a low pass filter.
 
-  - __Phase Disperse__: Shifts the phases of the partials, almost as if it’s applying a swirly characteristic to the wavetable as it shifts along.
+- __Phase Disperse__: Shifts the phases of the partials, almost as if it’s applying a swirly characteristic to the wavetable as it shifts along.
 
-  - __Shepard Tone__: Loops a pitch thats continuously rising and falling at the same time, creating an auditory illusion by overlapping two octaves together and phasing in-between them. An example of Shepherd Tone in practice is shown below:
+- __Shepard Tone__: Loops a pitch thats continuously rising and falling at the same time, creating an auditory illusion by overlapping two octaves together and phasing in-between them. An example of Shepherd Tone in practice is shown below:
 
 {{< youtube BzNzgsAE4F0 >}}
 
