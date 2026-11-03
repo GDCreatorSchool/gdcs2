@@ -56,12 +56,7 @@ This percentage only changes if the player dies when their Attempt % is higher t
 
 # 2: Features
 
-{{< image-details src="https://lh3.googleusercontent.com/d/1jXI3ixsaqMm5GP8iNx-q3fPjI5AcF0-G" tlbr="24 22.7 10 7.5">}}
-
-{{< detail name="input" src="https://lh3.googleusercontent.com/d/18sVBpe0P59j-2YSBRO8OGAwkkffRJIvO" tlbr="24 22.7 10 7.5" >}}
-
-
-{{< /image-details >}}
+{{< img src="https://lh3.googleusercontent.com/d/1jXI3ixsaqMm5GP8iNx-q3fPjI5AcF0-G"
 
 {{< img src="https://lh3.googleusercontent.com/d/18sVBpe0P59j-2YSBRO8OGAwkkffRJIvO"
 
