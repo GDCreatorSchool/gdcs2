@@ -64,7 +64,7 @@ Use the slider or type a number in the textbox to set the Attempt % to the desir
 Attempt % will only change if the value in the Percent Trigger is higher than it.
 
 ### Input
-Check this box to change the Percent textbox into an ItemID textbox. When the trigger is activated, the Attempt % will be equal to the value of the specified ItemID.
+Check this box to change the Percent textbox into an __ItemID textbox__. When the trigger is activated, the Attempt % will be equal to the value of the specified ItemID.
 
 if the ItemID’s value is negative, the Percent trigger will default it to 0, and if it is 100 or higher, it will be changed to 99.
 
@@ -73,9 +73,9 @@ The Percent trigger does not accept ItemIDs that are timers.
 {{< img src="https://lh3.googleusercontent.com/d/18sVBpe0P59j-2YSBRO8OGAwkkffRJIvO" >}}
 
 ### Add
-If checked, this trigger’s Percent value will be added to the current Attempt % instead of overriding it.
+If checked, this trigger’s Percent value will be __added__ to the current Attempt % instead of overriding it.
 
 ### Target ItemID
-When activated, the trigger copies the value of the Attempt % to the target ItemID.
+When activated, the trigger __copies__ the value of the Attempt % to the target ItemID.
 
 This is most useful for displaying progress, as the attempt progress bar is not visible in Platformer mode like it is in Classic.
