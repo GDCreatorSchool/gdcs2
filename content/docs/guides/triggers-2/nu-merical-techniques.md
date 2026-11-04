@@ -1621,7 +1621,7 @@ Before moving on, let's take one final look of making a periodic function:
 
 Periodic functions are special in that this quotient can be thrown away and forgotten about. This is the simplest kind of what's known as a **range reduction**.
 
-Their ranges can be reduced due to a pure translational symmetry, $\sin(x) = \sin(x + 360\degree)$, this allows us to only focus on values $0\degree \le x < 360\degree$. There is no scaling applied here, so our quotient can effectively be ignored.
+Their ranges can be reduced due to a pure translational symmetry, $\sin(x) = \sin(x + 360°)$, this allows us to only focus on values $0° \le x < 360°$. There is no scaling applied here, so our quotient can effectively be ignored.
 
 Certain functions also possess this property of repeating themselves, but the twist is that every subsequent copy is transformed by some factors. This still allows us to perform range reduction, but this time the quotient would also be taken into account.
 
@@ -1873,16 +1873,183 @@ NOOOOOO (Kelly reduced into a cubic pellet)
 
 ## The Cool Kids' Approximators
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+You would think that using Taylor approximation gives you infinite aura... lol, lmao even, they converge slower than hell, and sometimes they swing off value and refuse to cooperate.
 
-"Faster than taylor but requires additional software" wdym????
+{{< callout context="note" icon="outline/photo" >}}
+
+kelly bleh
 
 {{< /callout >}}
 
+This is the point where I have to introduce you to another class of polynomials, and let me tell you it's so amazing that all the cool kids are onto it: Chebyshev Polynomials!
+
 ### The Inverse Tangent - $\tan^{-1}(x)$
+
+To illustrate how powerful Chebyshev can be, let's look at how it is used in the inverse tangent function $\tan^{-1}(x)$.
+
+From the interval between $0$ and $1$, there exists a polynomial that perfectly plops itself into the function:
+
+$$ \tan^{-1}(x) \approx \frac{62280}{440219} x^4 - \frac{184798}{538311} x^3 - \frac{6233}{384314} x^2 + \frac{371310}{369893} x - \frac{32}{204263}, ~~~~0 \le x \le 1 $$
+
+This is easy to replicate. Here's how you do exactly that!
+
+{{< callout context="success" icon="outline/movie" >}}
+
+T:2=0.00 (Output) T:3 (Fractional Mod) T:4=1.00 ($x^n$ accumulator) T:5=0.50 (Input)
+
+`T3 = -32.000` `T3 = T3 / 204263.000` ($-\frac{32}{204263}$)
+
+`T2 = T2 + T3 · T4` (First term)
+
+`T4 = T4 · T5` ($x^0 \to x^1$)
+
+`T3 = 371310.000` `T3 = T3 / 369893.000` ($\frac{371310}{369893}$)
+
+`T2 = T2 + T3 · T4` (Second term)
+
+`T4 = T4 · T5` ($x^1 \to x^2$)
+
+`T3 = -6233.000` `T3 = T3 / 384314.000` ($-\frac{6233}{384314}$)
+
+`T2 = T2 + T3 · T4` (Third term)
+
+`T4 = T4 · T5` ($x^2 \to x^3$)
+
+`T3 = -184798.000` `T3 = T3 / 538311.000` ($-\frac{184798}{538311}$)
+
+`T2 = T2 + T3 · T4` (Fourth term)
+
+`T4 = T4 · T5` ($x^3 \to x^4$)
+
+`T3 = 62280.000` `T3 = T3 / 440219.000` ($\frac{62280}{440219}$)
+
+`T2 = T2 + T3 · T4` (Fifth term)
+
+▶️
+
+T:5=0.46
+
+{{< /callout >}}
+
+Do note again that this is only guaranteed to work for inputs between $0$ and $1$. To extend it to any number, you can use the following identities:
+
+$$ \tan^{-1}(x) = -\tan^{-1}\left(-x\right) $$
+
+$$ \tan^{-1}(x) = \frac {\pi} 2 - \tan^{-1}\left(\frac 1 x\right) $$
+
+Because of the reciprocal, for values above $1$, this pushes the input between $0$ and $1$; and for values below $-1$, this pushes the input between $-1$ and $0$.
+
+We can plug it into our function this way:
+
+{{< callout context="success" icon="outline/movie" >}}
+T:1=2.00 (Input) T:2=0.00 (Output) T:4=1.00 ($x^n$ accumulator) T:5=1.00 (Inner polynomial input) T:157=1.57 ($\frac {\pi} 2$)
+
+`ABS(T1) > 1.000` → `T2 = T157` `T5 = T5 / T1` `T4 = -1.000` Polynomial is negated via $-x^n$
+
+↳ `T5 = T1` Evaluate the polynomial as normal
+
+`T1 < 0.000` → `T2 = T2 · -1.000` `T4 = T4 · -1.000` `T5 = ABS(T5)` If the input is negative, calculate the polynomial negated.
+
+{{< /callout >}}
+
+This should provide an approximation of $\tan^{-1}(x)$ that is dangerously close to the real value, possibly as close as TimerIDs can get.
+
+### Chebyshev Polynomials
+
+These best-fit fractions appear completely random at first glance, they lack a recognizable pattern and explaining where they really come from will involve some knowledge about what's known as "Chebyshev polynomials."
+
+For come-and-go usages like the inverse tangent $\tan^{-1}(x)$, you really only need to memorize the first five mods of the approximating polynomial and move on. However an in-depth look into the process can reveal some interesting things about these mod values.
+
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+This is an overview as to what Chebyshev approximations really do.
+
+The details can get rather complicated, feel free to skip this part if you want. It is not required for most use cases.
+
+{{< /callout >}}
+
+Euclid told you that there is always a line between Dublin and Lublin. Here it is:
+
+{{< callout context="note" icon="outline/photo" >}}
+
+(A map of Europe, with a black line going through Dublin and Lublin)
+
+{{< /callout >}}
+
+Better yet, you might have found through online sources that there exists a parabola that goes through New York, Dallas and Seattle:
+
+{{< callout context="note" icon="outline/photo" >}}
+
+My planet is flat, yours isn't! (Parabola going through all three cities)
+
+{{< /callout >}}
+
+This is the general idea behind Lagrange interpolations: Given enough data points, you can always construct a polynomial function that satisfies all of them!
+
+You may also recognize this when solving systems of linear equations, solving two variables get a system of two equations, solving three variables get a system of three, so on and so forth.
+
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+Each data point will resolve the $x$ in polynomials, turning them into a problem of hunting down mod values via linear equations!
+
+{{< /callout >}}
+
+{{< callout context="note" icon="outline/photo" >}}
+
+Diagram showing how $x, x^2, x^3$ gets evaluated for $x=3$
+
+{{< /callout >}}
+
+Given this, we can try and sample some points of our target function between $0$ and $1$, and see where they land by hand. This should give us a good idea on how the function behaves, and how good we can approximate it with only polynomials:
+
+{{< callout context="note" icon="outline/photo" >}}
+
+Kelly picking up points of equal distance and working out their heights
+
+{{< /callout >}}
+
+We might potentially be churning out dozens of linear equations, and they might not even be solvable!
+
+That is totally okay because our goal isn't to satisfy every of them (and in fact we might satisfy none at all!), we are more concerned with how much it differs from $0$, squared, $\Delta^2$. The main aim of fitting is to minimize that error as much as possible.
+
+{{< callout context="note" icon="outline/photo" >}}
+
+(Diagram showing how 2.12 closely solves x^2 - 3x + 2 = 0, LHS = 0.1344)
+
+{{< /callout >}}
+
+You might be inclined to immediately take 1001 evenly-spaced points along the $0\to1$ range to cover the target function as much as possible, and it might initially seem like you would get a close result. However, there is a downside to this: your polynomial starts to wobble uncontrollably!
+
+{{< callout context="note" icon="outline/photo" >}}
+
+A wobbly polynomial that happens to intersect the first five points of the factorial, compared with $\Gamma(x+1)$.
+
+{{< /callout >}}
+
+A more clever way to work with this is via special "Chebyshev" points: solutions to a collection of polynomials known as **Chebyshev polynomials**. These data points are strategically placed such that you eliminate the nasty wobble and get really accurate results.
+
+{{< callout context="tip" title="Further Reading" icon="outline/book" >}}
+
+For a more detailed explanation of how Lagrange interpolators work, you can check out [University of Oslo's Approximation Theory Lecture Notes](https://www.uio.no/studier/emner/matnat/math/MAT3110/h26/undervisningsmateriale/lecture7.pdf).
+
+You can also check out [lecture slides provided by San Diego State University](https://jmahaffy.sdsu.edu/courses/s10/math541/lectures/pdf/week12/lecture.pdf) for a guide on least-squares data fitting.
+
+If you have knowledge in scripting, you can use NumPy to fit Chebyshev polynomials into any function of your choice. An implementation can be found on [GeeksForGeeks](https://www.geeksforgeeks.org/python/get-the-least-squares-fit-of-chebyshev-series-to-data-in-python-numpy/).
+
+{{< /callout >}}
+
+## Newton-Raphson's Method
 
 {{< callout context="tip" title="TODO" icon="outline/edit" >}}
 
-Arctan example.
+Newton's Method
+
+{{< /callout >}}
+
+### The Square Root - $\sqrt{x}$
+
+{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+
+Square Root example
 
 {{< /callout >}}
