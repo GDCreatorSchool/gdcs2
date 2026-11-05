@@ -1625,7 +1625,7 @@ Their ranges can be reduced due to a pure translational symmetry, $\sin(x) = \si
 
 Certain functions also possess this property of repeating themselves, but the twist is that every subsequent copy is transformed by some factors. This still allows us to perform range reduction, but this time the quotient would also be taken into account.
 
-This is evident when we look at how factors of $2$ show up in the exponention, and how better approximations can be done with this method.
+This is evident when we look at how factors of $2$ show up in the exponentiation, and how better approximations can be done with this method.
 
 ### A second look at the exponential
 
@@ -1679,7 +1679,7 @@ This entails two steps:
 1. Calculate $e^{0.182}$ using a known method (e.g. Taylor expansion)
 2. Multiply its output by $2^{12} = 4096$, the 12th doubling number.
 
-I will assume that you have already implemen>ted the first step in some way, it is explained earlier in this guide. To multiply with a doubling number $2^n$ based on a position, we can use the following ID conversion setup:
+I will assume that you have already implemented the first step in some way, it is explained earlier in this guide. To multiply with a doubling number $2^n$ based on a position, we can use the following ID conversion setup:
 
 {{< callout context="success" icon="outline/movie" >}}
 T:2=1.20 (Output) C:7=12 (Quotient)
@@ -2040,16 +2040,172 @@ If you have knowledge in scripting, you can use NumPy to fit Chebyshev polynomia
 
 ## Newton-Raphson's Method
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+{{< callout context="note" icon="outline/photo" >}}
 
-Newton's Method
+Newton gave me an F for not iterating functions correctly
+
+{{< /callout >}}
+
+Suppose you're finding solutions to $x^2 - 3x + 2 = 0$, but you forgot the quadratic formula!
+
+There is a technique that gets you closer and closer to either of the solutions, it goes like this:
+
+1. Take a random input
+2. Draw a line across it that just touches the function (the tangent line)
+3. Find where it intersects the horizontal axis
+4. Repeat 2 and 3
+
+{{< callout context="note" icon="outline/photo" >}}
+
+Graph of $x^3 - 2$, along with tangent slopes that tend towards the intersection.
+
+{{< /callout >}}
+
+It's not perfect since some functions can give off rather offensive slopes, but it produces extremely good results for certain functions.
+
+Taking a tangent line at a certain point makes use of what's known as a **derivative**. In simple terms, the derivative is a function transformation that returns the slope of its tangent, at a given point. It is typically notated as $f'(x)$ or $\frac {df} {dx}$.
+
+The Newton's method is applied as follows:
+
+$$ x_{1}=x_{0}-{\frac {f(x_{0})}{f'(x_{0})}} $$
+
+This is a mathematical description of the same steps listed above: the random input ($x_0$) gets fed into a tangent line, the line gets lifted to a point, and then its intersection at 0 is taken to be a better guess $x_1$.
+
+This process can be repeated indefinitely, but generally you will approach a really good approximation only after a few iterations.
+
+{{< callout context="note" icon="outline/photo" >}}
+
+Same graph, with the inputs now labeled $x_1 \to x_5$
 
 {{< /callout >}}
 
 ### The Square Root - $\sqrt{x}$
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+The square root is defined as the root of a square, that is, for a square input $a$, we want to find a value $x$ such that $x^2 - a = 0$.
 
-Square Root example
+The derivative of $f(x) = x^2 - a$ is $f'(x) = 2x$.
+
+Let's plug that into our Newton's Method:
+
+$$ x_{1}=x_{0}-{\frac {f(x_{0})}{f'(x_{0})}} = x_0 - \frac {x_0^2 - a} {2x_0} = \frac 1 2 \left(x_0 + \frac a {x_0}\right) $$
+
+For this example, we will use six iterations:
+
+{{< callout context="success" icon="outline/movie" >}}
+
+T:2 (Output) T:3=2.00 (Current iteration) T:4 ($a/x_0$) T:5 (Input)
+
+`T4 = T5 / T3`
+
+`T2 = 0.500 · (T3 + T4)`
+
+`T3 = T2` (Next iteration: set to current iteration)
+
+`T4 = T5 / T3`
+
+`T2 = 0.500 · (T3 + T4)`
+
+`T3 = T2`
+
+`T4 = T5 / T3`
+
+`T2 = 0.500 · (T3 + T4)`
+
+`T3 = T2`
+
+`T4 = T5 / T3`
+
+`T2 = 0.500 · (T3 + T4)`
+
+`T3 = T2`
+
+`T4 = T5 / T3`
+
+`T2 = 0.500 · (T3 + T4)`
+
+`T3 = T2`
+
+`T4 = T5 / T3`
+
+`T2 = 0.500 · (T3 + T4)`
 
 {{< /callout >}}
+
+This should give off a decent approximation of $\sqrt{x}$, for inputs up to $10000$.
+
+{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+
+Range reduction for Newton
+
+{{< /callout >}}
+
+## Function Composition
+
+Did you know that you can combine multiple smaller functions into one big function? Yes? Not surprising at all? Oh well...
+
+{{< callout context="note" icon="outline/photo" >}}
+
+Kelly thinking
+
+{{< /callout >}}
+
+### The (Normal) Tangent - $\tan(x)$
+
+The tangent is just defined as:
+
+$$ \tan(x) = \frac {\sin(x)}{\cos(x)} $$
+
+Super easy, right?
+
+{{< callout context="success" icon="outline/movie" >}}
+G:10 (Sine) G:11 (Cosine) T:1 (Sine/Cosine Input), T:2 (Sine/Cosine Output) T:12=1.4 (Input) T:13 (Output)
+
+`T1 = T12`
+
+*Spawn G10*
+
+`T13 = T2`
+
+*Spawn G11*
+
+`T13 = T13 / T2`
+
+{{< /callout >}}
+
+### Cheating the square root - $x^{0.5}$
+
+The square root has an alternative notation! $\sqrt{x} = x^{0.5} ~~ (x \ge 0)$
+
+Because this is just exponentiation, you can equally resolve it as follows:
+
+$$ x^{0.5} = e^{0.5 \ln(x)} $$
+
+You are essentially taking the logarithm of the input, halving it, and then exponentiating it back up. A peculiar dog's trick. Here's how it's implemented in-game:
+
+{{< callout context="success" icon="outline/movie" >}}
+
+G:10 (Exp) G:11 (Log) T:1 (Exp/Log Input), T:2 (Exp/Log Output) T:12=1.4 (Input) T:13 (Output)
+
+`T1 = T12`
+
+*Spawn G10* (Logarithm)
+
+`T1 = T2 / 2.000` (Divide logarithm by 2 before exponentiating)
+
+*Spawn G11* (Exponential)
+
+`T13 = T2` (Wrap output)
+
+{{< /callout >}}
+
+While it may perform slightly better than naive Newton's Method, it generally does not perform as well once range reduction comes into play, and the computational overhead for this kind of exchange is quite expensive. This example only exists here for demonstration purposes.
+
+## Compounding Expansions of Other Functions
+
+{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+
+Composition using expansions of other functions... ????????
+
+{{< /callout >}}
+
+## Appendix: Powers of 8 reduction
