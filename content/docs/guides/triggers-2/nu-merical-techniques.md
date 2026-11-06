@@ -2228,9 +2228,9 @@ If you know a thing or two about C++, the `std::vector<bool>` data type operates
 
 ## Setup
 
-There are two subroutines at hand here: left shifting and remainder.
+There are two subroutines at hand here: right shifting and remainder.
 
-Left shifting involves taking the leading digits of a number. It is the whole quotient of a division by a round number. Likewise, the remainder takes over the trailing digits of said number.
+Right shifting involves taking the leading digits of a number. It is the whole quotient of a division by a round number. Likewise, the remainder takes over the trailing digits of said number.
 
 {{< callout context="note" icon="outline/photo" >}}
 
@@ -2238,7 +2238,7 @@ round kelly
 
 {{< /callout >}}
 
-The number $280,038,212$ can be divided by $1,000,000$ (a round number) to obtain $280$, with $38,212$ as the remainder. The left shifting derives the former number, while the remainder churns out the latter.
+The number $280,038,212$ can be divided by $1,000,000$ (a round number) to obtain $280$, with $38,212$ as the remainder. The right shifting derives the former number, while the remainder churns out the latter.
 
 It can be further divided by $1,000$ (another round number) to obtain $38$ with $212$ as a remainder.
 
@@ -2251,7 +2251,7 @@ There is a minor caveat: the remainder subroutine is not built directly into the
 {{< callout context="success" icon="outline/movie" >}}
 C:1=280038212 (Input) C:2=0 (Temp remainder) C:3 (Output Entry 1) C:4 (Output Entry 2) C:5 (Output Entry 3)
 
-`I3 = FLR(I1 / 1000000.000)` (Left shift)
+`I3 = FLR(I1 / 1000000.000)` (Right shift)
 
 C:3=280
 
@@ -2259,7 +2259,7 @@ C:3=280
 
 C:2=38212
 
-`I4 = FLR(I2 / 1000.000)` (Left shift)
+`I4 = FLR(I2 / 1000.000)` (Right shift)
 
 C:4=38
 
@@ -2296,7 +2296,7 @@ C:1=280038212
 
 Some of you may prefer dividing the same value into thousands, lakhs and crores instead: $28,00,38,212$
 
-This difference often boils down to the **round numbers** chosen in the left shifting process. They serve as digital knives, splitting up a number chunk into two segments.
+This difference often boils down to the **round numbers** chosen in the right shifting process. They serve as digital knives, splitting up a number chunk into two segments.
 
 {{< callout context="note" icon="outline/photo" >}}
 
@@ -2309,7 +2309,7 @@ By choosing different cutting spots, we get different round numbers. To divide u
 {{< callout context="success" icon="outline/movie" >}}
 C:1=280038212 (Input) C:2=0 (Lakh remainder) C:3=0 (Thousand remainder) C:4 (Crores) C:5 (Lakhs) C:6 (Thousands) C:7 (Units)
 
-`I4 = FLR(I1 / 10000000.000)` (Left shift)
+`I4 = FLR(I1 / 10000000.000)` (Right shift)
 
 C:4=28
 
@@ -2317,7 +2317,7 @@ C:4=28
 
 C:2=38212
 
-`I5 = FLR(I2 / 100000.000)` (Left shift)
+`I5 = FLR(I2 / 100000.000)` (Right shift)
 
 C:5=0
 
@@ -2325,7 +2325,7 @@ C:5=0
 
 C:3=38212
 
-`I6 = FLR(I2 / 1000.000)` (Left shift)
+`I6 = FLR(I2 / 1000.000)` (Right shift)
 
 C:6=38
 
