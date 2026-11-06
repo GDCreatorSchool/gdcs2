@@ -17,3 +17,10 @@ document.querySelectorAll(".new-badge").forEach(badge => {
     badge.remove();
   }
 });
+
+
+document.addEventListener("click", event => {
+  const image = event.target.closest("img[data-full]");
+  if (!image) return;
+  console.log(image.dataset.full)
+})
