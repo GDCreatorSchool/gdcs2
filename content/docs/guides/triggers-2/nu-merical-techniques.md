@@ -2198,14 +2198,347 @@ G:10 (Exp) G:11 (Log) T:1 (Exp/Log Input), T:2 (Exp/Log Output) T:12=1.4 (Input)
 
 {{< /callout >}}
 
-While it may perform slightly better than naive Newton's Method, it generally does not perform as well once range reduction comes into play, and the computational overhead for this kind of exchange is quite expensive. This example only exists here for demonstration purposes.
-
-## Compounding Expansions of Other Functions
+While it may give more accurate results than naive Newton's Method, it generally does not perform as well once range reduction comes into play, and the computational overhead for this kind of exchange is quite expensive. This example only exists here for demonstration purposes.
 
 {{< callout context="tip" title="TODO" icon="outline/edit" >}}
 
-Composition using expansions of other functions... ????????
+Mingle computations to avoid trigger limits
 
 {{< /callout >}}
 
 ## Appendix: Powers of 8 reduction
+
+{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+
+Powers of 8 reduction
+
+{{< /callout >}}
+
+# 4. Multiple entries per ID
+
+We've looked at how ItemIDs can go up to 2 billion, it is quite big by all means, but such a size is not always necessary. Sometimes we might prefer to store three, even four smaller numbers within a bigger number.
+
+Take an example, one ItemID can store three numbers between 0 and 1000. The number 280,038,212 can be decomposed into three numbers: 280, 38, and 212, each of them potentially serving a wholly different purpose.
+
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+If you know a thing or two about C++, the `std::vector<bool>` data type operates the exact same way, using 8 bits of a byte individually instead of storing each true-false value on all 8.
+
+{{< /callout >}}
+
+## Setup
+
+There are two subroutines at hand here: left shifting and remainder.
+
+Left shifting involves taking the leading digits of a number. It is the whole quotient of a division by a round number. Likewise, the remainder takes over the trailing digits of said number.
+
+{{< callout context="note" icon="outline/photo" >}}
+
+round kelly
+
+{{< /callout >}}
+
+The number $280,038,212$ can be divided by $1,000,000$ (a round number) to obtain $280$, with $38,212$ as the remainder. The left shifting derives the former number, while the remainder churns out the latter.
+
+It can be further divided by $1,000$ (another round number) to obtain $38$ with $212$ as a remainder.
+
+We have decomposed a single number into three smaller numbers. Let's see how they recombine:
+
+$$ 280 \cdot 1,000,000 + 38 \cdot 1,000 + 212 = 280,038,212 $$
+
+There is a minor caveat: the remainder subroutine is not built directly into the triggers. However, you may have noticed that you can extract it by multiplying the round number back into the quotient, and then taking its difference with the original input. Here's how it's done in Geometry Dash:
+
+{{< callout context="success" icon="outline/movie" >}}
+C:1=280038212 (Input) C:2=0 (Temp remainder) C:3 (Output Entry 1) C:4 (Output Entry 2) C:5 (Output Entry 3)
+
+`I3 = FLR(I1 / 1000000.000)` (Left shift)
+
+C:3=280
+
+`I2 = I1` `I2 = I2 - I3 · 1000000.000` (Remainder)
+
+C:2=38212
+
+`I4 = FLR(I2 / 1000.000)` (Left shift)
+
+C:4=38
+
+`I5 = I5 - I4 · 1000.000` (Remainder)
+
+C:5=212
+
+{{< /callout >}}
+
+As usual (and I love to say it again!), it's quite easy. Once you have the digits extracted, you can do whatever you want with them. Add, subtract, even multiplication and division are permitted, These dereferenced numbers act just like regular numbers... for the most part.
+
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+When working with these split-up numbers, **do be cautious of their limits.** These numbers may hold any value an ItemID can, but issues **will** arise if you're not careful with out-of-bounds numbers.
+
+{{< /callout >}}
+
+Once you're done working with them, put them back in the correct place. This is where you recombine the small numbers back onto a big one. This is just as simple as splitting them up:
+
+{{< callout context="success" icon="outline/movie" >}}
+C:1 (Output) C:3=280 (Entry 1) C:4=38 (Entry 2) C:5=212 (Entry 3)
+
+`I1 = I3 · 1000000.000`
+
+`I1 = I1 + I4 · 1000.000`
+
+`I1 = I1 + I5`
+
+C:1=280038212
+
+{{< /callout >}}
+
+## The Number Salami: Uneven Segments
+
+Some of you may prefer dividing the same value into thousands, lakhs and crores instead: $28,00,38,212$
+
+This difference often boils down to the **round numbers** chosen in the left shifting process. They serve as digital knives, splitting up a number chunk into two segments.
+
+{{< callout context="note" icon="outline/photo" >}}
+
+Everything at the $1$ and left, goes on one side, everything to the right of $1$, goes on the other! (Kelly cutting up a number salami)
+
+{{< /callout >}}
+
+By choosing different cutting spots, we get different round numbers. To divide up a number into thousands, lakhs and crores, we use three round numbers to do the slicing: $1,00,00,000$ (crore), $1,00,000$ (lakh) and $1,000$ (thousand).
+
+{{< callout context="success" icon="outline/movie" >}}
+C:1=280038212 (Input) C:2=0 (Lakh remainder) C:3=0 (Thousand remainder) C:4 (Crores) C:5 (Lakhs) C:6 (Thousands) C:7 (Units)
+
+`I4 = FLR(I1 / 10000000.000)` (Left shift)
+
+C:4=28
+
+`I2 = I1` `I2 = I2 - I4 · 10000000.000` (Remainder)
+
+C:2=38212
+
+`I5 = FLR(I2 / 100000.000)` (Left shift)
+
+C:5=0
+
+`I3 = I2` `I3 = I3 - I5 · 100000.000` (Remainder)
+
+C:3=38212
+
+`I6 = FLR(I2 / 1000.000)` (Left shift)
+
+C:6=38
+
+`I7 = I3` `I7 = I7 - I6 · 1000.000` (Remainder)
+
+C:7=212
+
+{{< /callout >}}
+
+Recombining uneven segments uses the same princple:
+
+{{< callout context="success" icon="outline/movie" >}}
+C:1 (Output) C:4=28 (Crores) C:5=0 (Lakhs) C:6=38 (Thousands) C:7=212 (Units)
+
+`I1 = I3 · 10000000.000`
+
+`I1 = I1 + I5 · 100000.000`
+
+`I1 = I1 + I6 · 1000.000`
+
+`I1 = I1 + I7`
+
+C:1=280038212
+
+{{< /callout >}}
+
+## Numerical Spot Surgery
+
+<!-- (Multiple IDs - Order Consideration) -->
+
+Say a number salami tracks player movement and attack at the same time. Attacks take a while, but movements are instant. You charge your attack, then you start moving, once the attack is complete, the movement is also reset, causing you to grind into a halt. Whoops!
+
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+In computer science, this is known as a **race condition**. When both threads read off the same data, the thread that writes first gets overwritten by the one that writes later.
+
+{{< /callout >}}
+
+There are two approaches to this: one is to make a new "lock" ItemID that checks if the data is occupied, and forbid any reading operation until the data is freed. This is known as a mutual expression, or **mutex**.
+
+{{< callout context="tip" title="Further Reading" icon="outline/book" >}}
+
+You can read more about concurrency in the [Synchronous & Asynchronous Functions](/docs/guides/triggers-2/making-functions/#synchronous--asynchronous-functions) section of the Making Functions guide.
+
+{{< /callout >}}
+
+The second, more elegant solution is to only target one slice of the number salami. Instead of recombining the slices into a new one, just swap one of them out for the other.
+
+Returning to our uneven slices, we see that we have no spare lakhs! You don't need to decompose all of your money and then add the lakhs, just put them directly into the number.
+
+{{< callout context="success" icon="outline/movie" >}}
+C:1=280038212 (Input) C:5=36 (Lakhs to add)
+
+`I1 = I1 + I5 · 100000.00`
+
+C:1=283638212
+
+{{< /callout >}}
+
+We have effectively added $36$ lakhs to our wallet, bringing the number to $28,36,38,212$.
+
+Let's say we spend some lakhs such that $24$ remain. You know what the solution is: subtract all lakhs, then add $24$.
+
+{{< callout context="success" icon="outline/movie" >}}
+C:1=283638212 (Input) C:5=36 (Old lakhs) C:8=24 (New lakhs)
+
+`I1 = I1 - I5 · 100000.00`
+
+`I1 = I1 + I8 · 100000.00`
+
+C:1=282438212
+
+{{< /callout >}}
+
+This "spot-surgery" approach allows us to have finer control over the value, preventing some forms of data overwriting.
+
+<!-- (Multiple IDs - Segment Consideration) -->
+
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+Be careful about where you place your surgical data knives - incisions into the wrong spots can be disastrous!
+
+{{< /callout >}}
+
+<!-- (Multiple IDs - Multiple Substrings Consideration - can ignore) -->
+
+## The Manageable Enemy Horde
+
+So far we've explained the concept and implementation of multiple entries per ID. It can be used for technical applications (as we will see for the [Linked Lists data structure](/docs/guides/triggers-2/making-data-structures)), but also for more practical ones.
+
+Let's say you want to make a battle system where the player and enemies have health and attack stats. You could use different IDs that store separately the health and attack stats of the enemies, but if you intend to create a lot of enemies that could get difficult to manage and you'd have less IDs for everything else. This problem would be further exacerbated if the enemies also have defense, evasion, speed or other stats. For this reason, we can store all that information in one or few IDs and use different functions for stat manipulation.
+
+{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+
+Enemy Example
+
+{{< /callout >}}
+
+## Binary-maxxing, Sign-maxxing
+
+You may have realized that we're not making use of the last digit, or even the leftovers of very large or very small quantities. We have also left out all of the potentially useful negative numbers like $-2,067,420,666$. This is partly due to how ItemIDs are stored: binary, not decimal.
+
+To recap, here is how a number is really stored in game:
+
+$$ -2067420666_{10} = 1~~0000100110001011010101000000110_2 $$
+
+The leading bit acts as the sign. It is $1$, meaning that the number is negative.
+
+Suppose we want four numbers that range from $-128$ to $127$. There are 256 values in total, which fit into 8 bits (256 is the 8th doubling number).
+
+Our number salami will look as follows:
+
+$$ 1\space\space00001001\space\space\space\space1\space\space1000101\space\space\space\space1\space\space0101010\space\space\space\space0\space\space0000110 $$
+
+In decimal, this corresponds to $-124,-59,-42,6$. Note that the second number $-59$ would be $197$, but due to the negative sign bit it gets subtracted by $256$
+
+Processing this chain would proceed rather normally for the latter 3 numbers, using a binary knife, chopping them all into raw values, and making them negative when they are above certain threshold (in this case $127$).
+
+The first part demands a more special treatment. The sign bit affects the whole number, meaning that you must get rid of the sign first before continuing.
+
+All of these steps can be done in GD as follows:
+
+{{< callout context="success" icon="outline/movie" >}}
+C:1=-2067420666 (Input) C:2 (Temporary second) C:3 (Temporary third)
+C:4 (First part) C:5 (Second part) C:6 (Third part) C:8 (Fourth part) C:24=16777216 ($2^{24}$)
+
+Process the sign.
+
+If it's negative, add $2^{32} = 4,294,967,296$.
+
+`I1 < 0` → `I4 = -128.000` `I3 = I1 + I24 · 256.000` ($2^{32}=2^{24}\times2^8$)
+
+↳ `I4 = 0.000` `I3 = I1`
+
+C:3=80062982
+
+`I4 = FLR(I4 + I3 / I24)`
+
+C:4=-124
+
+`I2 = I3` `I2 = I2 - I4 · I24`
+
+C:2=12954118
+
+`I5 = FLR(I2 / 65536.000)`
+
+`I3 = I2` `I3 = I3 - I5 · 65536.000`
+
+C:3=43526 C:5=197
+
+`I6 = FLR(I3 / 256.000)`
+
+`I7 = I3` `I7 = I7 - I6 · 256.000`
+
+C:6=170 C:7=6
+
+Now, for the other three numbers, check for the sign bit.
+
+`I5 > 127.000` → `I5 = I5 - 128.000`
+
+`I6 > 127.000` → `I6 = I6 - 128.000`
+
+`I7 > 127.000` → `I7 = I7 - 128.000`
+
+C:5=-59 C:6=-42 C:7=6
+
+{{< /callout >}}
+
+As for the recombination, the flow is the same for the other three parts, the first part will be treated differently.
+
+{{< callout context="success" icon="outline/movie" >}}
+C:1 (Output) C:4=-124 (First part) C:5=-59 (Second part) C:6=-42 (Third part) C:7=6 (Fourth part) C:8=0 (Sign tracker)
+
+For the last three parts, check for sign as normal.
+
+`I5 < 0.000` → `I5 = I5 + 256.000`
+
+`I6 < 0.000` → `I6 = I6 + 256.000`
+
+`I7 < 0.000` → `I7 = I7 + 256.000`
+
+For the first part, do not add the sign bit in, and keep a tracker somewhere.
+
+`I4 < 0.000` → `I4 = I4 + 128.000` `I8 = 1.000`
+
+C:4=4 C:5=94 C:6=170 C:7=6
+
+Recombine as normal.
+
+`I1 = I4 · I24`
+
+`I1 = I1 + I5 · 65536.000`
+
+`I1 = I1 + I6 · 256.000`
+
+`I1 = I1 + I7`
+
+If the sign tracker is on, subtract $2^{32}=4,294,967,296$.
+
+`I8 == 1.000` →  `I1 = I1 - I24 · 256.000`
+
+{{< /callout >}}
+
+In binary, our knives are placed apart every 8 bits, so the round numbers are: $256, 65536, 16777216$. Much like how $1000$ is a large round number for decimal, $65536$ is a large round number for binary.
+
+This setup seems a bit ad-hoc at first due to the presence of the sign bit, but this idea can be easily extended into other number ranges. By analyzing a number's binary representation and identifying the sign bit where needed, you can easily extend this concept into other bit divisions, such as 16\~8\~8, 4\~24\~4 or even 17\~3\~4\~8.
+
+{{< callout context="caution" title="Handling the sign bit" icon="outline/info-circle" >}}
+
+When removing the sign (by adding $4,294,967,296$), if the first part has $n$ bits, subtract $2^{n-1}$ if working with signed numbers, otherwise add $2^{n-1}$.
+
+**Example:** If your number has 17 bits and you're working with unsigned numbers, add $2^{16}=65536$ to the first part.
+
+When recombining the sign, if the first part is negative (signed) or is at least $2^{n-1}$ (unsigned), add or subtract $2^{n-1}$ such that it is positive and in range, then subtract the combined number by $4,294,967,296$.
+
+{{< /callout >}}
