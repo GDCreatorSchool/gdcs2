@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: Numerical Techniques
 weight: 6170
 date: 2026-10-25T00:00:00.000Z
@@ -234,12 +234,12 @@ The item edit trigger has quite a lot of buttons, and I mean it! This is because
 
 I have sorted the main properties of each kind of ID on a table, as well as some triggers that interact with them.
 
-|              | ItemID                                 | TimerID                       |
-|--------------|----------------------------------------|-------------------------------|
-| **Values**   | Whole numbers (e.g. $342$)             | Decimals (e.g. $3.42$)        |
-| **Lowest**   | $-2147483648$                          | $-9,999,999.00$               |
-| **Highest**  | $2147483647$                           | $9,999,999.00$                |
-| **Triggers** | Pickup, Count, Item Edit, Item Compare | Time, Item Edit, Item Compare |
+|              | ItemID                                     | TimerID                       |
+|--------------|--------------------------------------------|-------------------------------|
+| **Values**   | Whole numbers (e.g. $342$)                 | Decimals (e.g. $3.42$)        |
+| **Lowest**   | $-2,147,483,648$                           | $-9,999,999.00$               |
+| **Highest**  | $2,147,483,647$ (Displayed as `999999999`) | $9,999,999.00$                |
+| **Triggers** | Pickup, Count, Item Edit, Item Compare     | Time, Item Edit, Item Compare |
 
 {{< callout context="caution" title="Note" icon="outline/info-circle" >}}
 
@@ -401,7 +401,7 @@ $$ 16114752_{10} = 111101011110010001000000_2 $$
 3. We can omit the leading `1`, our mantissa becomes `11101011110010001000000`.
 4. The denominator must be equivalently multiplied by 32, $262144 \times 32 = 8388608$.
 5. This number is also the result of doubling $1$, 23 times!
-6. The decimal point always evens out at $127$, since we're halving the mantissa 23 times, the expressed exponent is $127_{10} - 23_{10} = 104_{10}$.
+6. The decimal point always evens out at $127$, since we're halving the mantissa 23 times, the exclssed exponent is $127_{10} - 23_{10} = 104_{10}$.
 7. $104_{10} = 1101000_{2}$. Our exponent is `01101000`.
 8. The sign bit is `0` since the number is positive.
 9. Combining it all into a single representation
@@ -679,7 +679,7 @@ Suppose you want to move an object 3 grid blocks to the right. Since 1 block is 
 
 If you look closely at the Rotate trigger, you might have noticed that the "rotate" trigger accepts decimal inputs. This is a problem since most of the values you've worked with only accept whole numbers. Oh no!
 
-Luckily, there's a way to fix this. Instead of making 1 correspond to $1°$, we can make it so that it only moves $0.1°$. We would now need to input 10 for it to rotate the same $1°$ as before. This is the second method, moving (or rotating) less for every input.
+Luckily, there's a way to fix this. Instead of making 1 correspond to $1^{\circ}$, we can make it so that it only moves $0.1^{\circ}$. We would now need to input 10 for it to rotate the same $1^{\circ}$ as before. This is the second method, moving (or rotating) less for every input.
 
 Combined with the first method, this gives us a way to input decimal values and get decimal-value rotations.
 
@@ -715,7 +715,7 @@ These are our doubling values...
 
 `T1 = T1 · 10.000`
 
-Our input moves 355 units, or 35.5 degrees.
+Our input rotates 355 units, or 35.5 degrees.
 
 ▶️
 
@@ -723,9 +723,55 @@ Double-check the provided rotation.
 
 {{< /callout >}}
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+One other potential use case for more granular control over movement involves using the "Small Step" option in the move trigger
 
-Provide more info about Small step in move triggers
+{{< callout context="tip" title="Small Step" icon="outline/edit" >}}
+
+Quoting from the [Move & Rotate](/docs/guides/triggers-1/move-rotate/#1-move-trigger) guide:
+
+Enabling **Small Step** will make your input values three times smaller, so inputting “+30” into the X input will move your object 1 block to the right instead of 3.
+
+{{< /callout >}}
+
+This allows us to increase our movement precision by a factor of 3. Here is how it works:
+
+{{< callout context="success" icon="outline/movie" >}}
+
+T:1=4.68
+
+Move X: `1`
+
+Move X: `2`
+
+Move X: `4`
+
+Move X: `8`
+
+Move X: `16`
+
+Move X: `32`
+
+Move X: `64`
+
+Move X: `128`
+
+Move X: `256`
+
+Move X: `512`
+
+Move X: `1024`
+
+Move X: `2048`
+
+These are our doubling values...
+
+`T1 = T1 · 30.000`
+
+Our input moves 139 small units, or 46.33 large units.
+
+▶️
+
+Double-check the provided movement.
 
 {{< /callout >}}
 
@@ -760,7 +806,7 @@ Nevertheless this is not the end of the world when it comes to implementing coor
 
 ### Tracking the player
 
-The idea is that every time the player moves, you update its position to where it currently is. If the player moves 15 untis up, you add 15 to its Y-position counter.
+The idea is that every time the player moves, you update its position to where it currently is. If the player moves 15 units up, you add 15 to its Y-position counter.
 
 This is acheived through four collision sensors on four sides, as well as a player collider. Each time the player collides with one of the sensors, the sensors move one unit to readjust to the player.
 
@@ -826,9 +872,72 @@ Then, move up (+Y), down (-Y), left (-X) and right(+X).
 
 ## Using IDs as Spawn Delays
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+{{< callout context="tip" title="Further Reading: TPS Loops" icon="outline/edit" >}}
 
-Spawn Delays
+The main idea behind spawn delays involves creating a [TPS Loop](making-loops/#5-tps-loop), provided in the Making Loops guide.
+
+{{< /callout >}}
+
+The game runs triggers at a constant rate of 240 times within a second, or 240 tps, so a TPS loop will run exactly 240 times in a second.
+
+The method used to create and break the TPS loop will be slightly different in this guide, as we'll be using ItemIDs rather than collision boxes. The core idea should remain the same.
+
+I will make use of an example that pulses the background yelllow after 3.5 seconds, it's my favorite color after all!
+
+{{< callout context="success" icon="outline/movie" >}}
+T:1=3.5 (Input in seconds) C:2 (Ticks)
+
+Our input will be provided in seconds.
+
+The number of ticks is multiplied by 240.
+
+`I2 = RND(T1 · 240.000)`
+
+Place a spawn trigger.
+
+Set its delay to a very small number, `0.0001`.
+
+*Spawn + Multi + Group 2*
+
+GID 2 executes when there is still delay.
+
+In that case, decrease the tick by 1. `I2 = I2 - 1.000`
+
+Place a pulse trigger. Pulse it yellow.
+
+*Spawn + Group 3*
+
+To the left of it, place an item compare trigger
+
+It functions as the initial comparison.
+
+`I2 == 0.000`
+
+If there are remaining ticks, call the spawn trigger. → GID 2
+
+If there are none, call the pulse trigger. ↳ GID 3
+
+{{< /callout >}}
+
+Similar to the collision example, this example sets up a loop that self-activates every single tick, only now we have introduced a different break condition involving an ItemID. Think of it like an hourglass: You flip it to start the timer (adding ticks), and it ends once the sand runs out (there are no more ticks).
+
+{{< callout context="note" icon="outline/photo" >}}
+
+If each tick is a grain of sand, how long will they last? (Kelly watching an hourglass)
+
+{{< /callout >}}
+
+{{< callout context="tip" title="Second vs tick delays" icon="outline/book" >}}
+
+A 0.0001s spawn loop by itself fails after 2 iterations. This is because spawn triggers are **second-accurate**. More information can be found in the [Spawn](/docs/guides/triggers-1/spawn/) trigger guide.
+
+They work by having an internal cumulative delay that checks every tick if the specified time has passed. A spawn trigger calling itself would add its delay on top of the now-negative cumulative delay, syncing the loop back to real time.
+
+*(Diagram of game tick alignment with spawn delay)*
+
+Making the delay too small would make it insufficient for the cumulative delay to catch up with new tick window.
+
+Placing an item compare trigger helps reset the cumulative delay to 0, allowing the spawn trigger to keep pushing the delay positive and align itself onto game ticks.
 
 {{< /callout >}}
 
@@ -889,13 +998,13 @@ In reality, this extra number is known as a coefficient. However I will be consi
 
 By setting the mod to `3.000`, the operation now reads `T2 = T1 · T1 · 3.000`, meaning that the output multiplies the input by itself, and then multiplies it by 3.
 
-In mathematical notation, this is referred to as $p(x) = x \times x \times 3$. Since we multiply the input (`T1` or $x$) two times, we can simplify the expression to $p(x) = 3x^2$.
+In mathematical notation, this is referred to as $p(x) = x \times x \times 3$. Since we multiply the input (`T1` or $x$) two times, we can simplify the exclssion to $p(x) = 3x^2$.
 
 {{< callout context="caution" title="Note" icon="outline/info-circle" >}}
 
 For any whole number $x$, the function $p(x) = x^2$ produces a square number, therefore we refer to $x^2$ as “$x$ squared.”
 
-The expression $x^7$ would be called "$x$ to the power of $7$," and the corner number is known as the **power**. The power can be any number, like $8$, $15$ or $22$.
+The exclssion $x^7$ would be called "$x$ to the power of $7$," and the corner number is known as the **power**. The power can be any number, like $8$, $15$ or $22$.
 
 {{< /callout >}}
 
@@ -1218,7 +1327,7 @@ You'll notice that each repeat produces smaller and smaller differences to the o
 
 In reality, Timer IDs can only store numbers up to a certain number of decimal places. Eventually the denominator `I4` will get big enough that the whole fraction is effectively zero. You can safely cut this off after only a few repeats (8 would do) and get a fairly accurate answer.
 
-{{< callout context="note" title="TODO" icon="outline/photo" >}}
+{{< callout context="note" icon="outline/photo" >}}
 
 (Kelly blowing a balloon)
 
@@ -1250,9 +1359,9 @@ We will see that the more we run this, the closer `T3` approaches zero. Since fa
 
 ## Periodic Functions
 
-You might know a thing or two about rotations, the observation at hand here is that when a wheel rotates 360°, it makes a full turn. Turning a wheel 15° produces the same result as turning it 375°.
+You might know a thing or two about rotations, the observation at hand here is that when a wheel rotates 360^{\circ}, it makes a full turn. Turning a wheel 15^{\circ} produces the same result as turning it 375^{\circ}.
 
-{{< callout context="note" title="TODO" icon="outline/photo" >}}
+{{< callout context="note" icon="outline/photo" >}}
 
 (Kelly spinning a disc upright)
 
@@ -1298,19 +1407,19 @@ Just like a swing! (Swing moving up and down with dashed trails)
 
 You might have noticed another of the same wave that goes up, it traces out basically the same path! That's our sine's cousin function! We'll call it the co-sine, since it's a **co**usin of **sine** (get it?); or $\cos(x)$ for short. It's always ahead of the regular sine by a right angle, this is where we get the relation:
 
-$$\cos(x) = \sin(x + 90°)$$
+$$\cos(x) = \sin(x + 90^{\circ})$$
 
 These two functions are the bread and butter for all things periodic, we will use them a lot moving on!
 
 {{< callout context="caution" title="Degrees and Radians" icon="outline/info-circle" >}}
 
-Normally, you'll be taught the definition of sine and cosine involving angles in **degrees** (°). However, most computer programs, including Geometry Dash, will involve calculations with **radians**.
+Normally, you'll be taught the definition of sine and cosine involving angles in **degrees** (^{\circ}). However, most computer programs, including Geometry Dash, will involve calculations with **radians**.
 
 Radians are special in that they make angles act like arc lengths:
-- An arc length of $\frac {\pi} 2$ is a quarter of the circumference $2\pi$, covering an angle of $90°$.
-- An arc length of $\frac {\pi} 3$ is a sixth of the circumference $2\pi$, covering an angle of $60°$.
+- An arc length of $\frac {\pi} 2$ is a quarter of the circumference $2\pi$, covering an angle of $90^{\circ}$.
+- An arc length of $\frac {\pi} 3$ is a sixth of the circumference $2\pi$, covering an angle of $60^{\circ}$.
 
-For this guide, we will assume that **units are given in radians**. If you have inputs in degrees, apply this conversion recipe: $1 ° = \frac {180} {\pi}$
+For this guide, we will assume that **units are given in radians**. If you have inputs in degrees, apply this conversion recipe: $1 ^{\circ} = \frac {180} {\pi}$
 
 {{< /callout >}}
 
@@ -1593,13 +1702,14 @@ Because the input is wrapped around the negative, the input gets transformed int
 
 {{< callout context="caution" title="Note" icon="outline/info-circle" >}}
 
-If your base function is not centered at 0, remember to introduce offsets or re-center the function yourself!
+If your base function is not centered at 0, remember to introduce offsets on both sides!
 
-{{< /callout >}}
+Suppose your function is centered at $5$:
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+- Before dividing, subtract 5 from the input. `T14 = T14 - 5.000`
+- After dividing and before feeding into the base function, add 5 to shift the input back to the correct position: `T14 = T16 + 5.000`
 
-Periodicizing an off-center function
+This way, the range of inputs will be perfectly aligned onto the input range.
 
 {{< /callout >}}
 
@@ -1621,7 +1731,7 @@ Before moving on, let's take one final look of making a periodic function:
 
 Periodic functions are special in that this quotient can be thrown away and forgotten about. This is the simplest kind of what's known as a **range reduction**.
 
-Their ranges can be reduced due to a pure translational symmetry, $\sin(x) = \sin(x + 360°)$, this allows us to only focus on values $0° \le x < 360°$. There is no scaling applied here, so our quotient can effectively be ignored.
+Their ranges can be reduced due to a pure translational symmetry, $\sin(x) = \sin(x + 360^{\circ})$, this allows us to only focus on values $0^{\circ} \le x < 360^{\circ}$. There is no scaling applied here, so our quotient can effectively be ignored.
 
 Certain functions also possess this property of repeating themselves, but the twist is that every subsequent copy is transformed by some factors. This still allows us to perform range reduction, but this time the quotient would also be taken into account.
 
@@ -2364,7 +2474,7 @@ In computer science, this is known as a **race condition**. When both threads re
 
 {{< /callout >}}
 
-There are two approaches to this: one is to make a new "lock" ItemID that checks if the data is occupied, and forbid any reading operation until the data is freed. This is known as a mutual expression, or **mutex**.
+There are two approaches to this: one is to make a new "lock" ItemID that checks if the data is occupied, and forbid any reading operation until the data is freed. This is known as a mutual exclusion, or **mutex**.
 
 {{< callout context="tip" title="Further Reading" icon="outline/book" >}}
 
@@ -2450,13 +2560,13 @@ All of these steps can be done in GD as follows:
 
 {{< callout context="success" icon="outline/movie" >}}
 C:1=-2067420666 (Input) C:2 (Temporary second) C:3 (Temporary third)
-C:4 (First part) C:5 (Second part) C:6 (Third part) C:8 (Fourth part) C:24=16777216 ($2^{24}$)
+C:4 (First part) C:5 (Second part) C:6 (Third part) C:8 (Fourth part) C:24=16777216 ($2^{24}$) C:31=-2147483648 ($-2^{31}$)
 
 Process the sign.
 
-If it's negative, add $2^{32} = 4,294,967,296$.
+If it's negative, add $2^{31} = 2,147,483,648$.
 
-`I1 < 0` → `I4 = -128.000` `I3 = I1 + I24 · 256.000` ($2^{32}=2^{24}\times2^8$)
+`I1 < 0` → `I4 = -128.000` `I3 = I1 - I31` ($2^{31}$)
 
 ↳ `I4 = 0.000` `I3 = I1`
 
@@ -2523,9 +2633,9 @@ Recombine as normal.
 
 `I1 = I1 + I7`
 
-If the sign tracker is on, subtract $2^{32}=4,294,967,296$.
+If the sign tracker is on, subtract $2^{31}=2,147,483,648$.
 
-`I8 == 1.000` →  `I1 = I1 - I24 · 256.000`
+`I8 == 1.000` →  `I1 = I1 + I31`
 
 {{< /callout >}}
 
@@ -2535,10 +2645,10 @@ This setup seems a bit ad-hoc at first due to the presence of the sign bit, but 
 
 {{< callout context="caution" title="Handling the sign bit" icon="outline/info-circle" >}}
 
-When removing the sign (by adding $4,294,967,296$), if the first part has $n$ bits, subtract $2^{n-1}$ if working with signed numbers, otherwise add $2^{n-1}$.
+When removing the sign (by adding $2,147,483,648$), if the first part has $n$ bits, subtract $2^{n-1}$ if working with signed numbers, otherwise add $2^{n-1}$.
 
 **Example:** If your number has 17 bits and you're working with unsigned numbers, add $2^{16}=65536$ to the first part.
 
-When recombining the sign, if the first part is negative (signed) or is at least $2^{n-1}$ (unsigned), add or subtract $2^{n-1}$ such that it is positive and in range, then subtract the combined number by $4,294,967,296$.
+When recombining the sign, if the first part is negative (signed) or is at least $2^{n-1}$ (unsigned), add or subtract $2^{n-1}$ such that it is positive and in range, then subtract the combined number by $2,147,483,648$.
 
 {{< /callout >}}
