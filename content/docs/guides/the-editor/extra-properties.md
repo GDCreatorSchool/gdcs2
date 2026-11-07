@@ -109,43 +109,53 @@ This guide is missing the following:
 
 {{< img src="https://lh3.googleusercontent.com/d/1XK-4cyA_wFJ86juqLeyKEP0KQYsEV5FI" >}}
 
+
+
 {{< youtube yoJi1rqKi5Q >}}
 
 * **High Detail**: When enabling "Low Detail Mode" outside the editor and playing the level, objects with High Detail will disappear, making the level less laggy.
 
 ![](/images/highdetail.png)
 
-(video)
+
+
+{{< youtube DJyWOm3AH_g >}}
 
 * **Group Parent**: When rotating or scaling several objects, the objects will transform relative to the group parent; in other words, the group parent acts as the center point. This is not to be confused with Parent Group.
 
 ![](/images/groupparent.png)
 
-(video)
+{{< youtube ZaVu3diSP0g >}}
 
 * **Area Parent**: Functions as a group parent, but for [area triggers](/docs/guides/triggers-1/area-triggers/). Make sure you link a set of objects together before making one object the area parent.
 
 ![](/images/areaparent.png)
 
-(video)
+
+
+{{< youtube jUj0TQu0Dz8 >}}
 
 * **NoGlow**: Static objects have an inherent glow on their outlines only visible in normal mode; this option removes the glow.
 
 ![](/images/noglow.png)
 
-(video)
+
+
+{{< youtube gjRnJUea-7g >}}
 
 * **NoParticle**: Removes particles from objects like portals and pads.
 
 ![](/images/noparticle.png)
 
-(video)
+{{< youtube p6RTDsbBnW8 >}}
 
 * **NoAudioScale**: Disables the scaling/pulsing on objects that pulse relative to the song, like the big pulsing circles.
 
 ![](/images/noaudioscale.png)
 
-(video)
+
+
+{{< youtube NTYlzzAfPL0 >}}
 
 ## Specific Options
 
@@ -153,16 +163,14 @@ In addition to these properties, some objects can have more options, which inclu
 
 * **Reverse**: Reverses the gameplay direction as soon as you hit an orb or a pad. *Orbs and Pads Only*.
 
-(video)
+{{< youtube uB05eYNHmWc >}}
 
 * **Single P Touch**: If one player touches an arrow trigger {{< img src="images/GDEmotes/Triggers/Arrow.png" class="emote" >}} in Dual Mode, the trigger will only activate for the player that touches it. *However, this feature is currently bugged as of Update 2.205.*
 * **Center Effect**: [Touch Triggered](/docs/guides/triggers-1/spawn/) triggers will only activate once the player touches the center of the trigger.
 
-(video)
+{{< youtube 5LywXftONZM >}}
 
-* **Smooth Ease**: Moves the camera smoothly rather than instantly when using any kind of teleport.
 
-(video)
 
 # 2. Extra 2 Tab
 
