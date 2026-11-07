@@ -19,13 +19,6 @@ seo:
   canonical: ""
   noindex: false
 ---
-{{< callout context="caution" title="Incomplete guide" icon="outline/info-circle" >}}
-
-This guide is missing the following:
-- Examples
-
-{{< /callout >}}
-
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
 
 - The Percent Trigger allows you to add visible progress to your Platformer levels.
@@ -80,10 +73,16 @@ The Percent trigger does not accept ItemIDs that are timers.
 
 {{< img src="https://lh3.googleusercontent.com/d/18sVBpe0P59j-2YSBRO8OGAwkkffRJIvO" >}}
 
+{{< youtube 6HV67qbYf5g >}}
+
 ### Add
 If checked, this trigger’s Percent value will be __added__ to the current Attempt % instead of overriding it.
 
+{{< youtube P1Af4qq4u_U >}}
+
 ### Target ItemID
 When activated, the trigger __copies__ the value of the Attempt % to the target ItemID.
+
+{{< youtube QDkKBNJOZck >}}
 
 This is most useful for displaying progress, as the attempt progress bar is not visible in Platformer mode like it is in Classic.
