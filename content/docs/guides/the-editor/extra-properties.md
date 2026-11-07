@@ -109,43 +109,41 @@ This guide is missing the following:
 
 {{< img src="https://lh3.googleusercontent.com/d/1XK-4cyA_wFJ86juqLeyKEP0KQYsEV5FI" >}}
 
-
-
 {{< youtube yoJi1rqKi5Q >}}
 
 * **High Detail**: When enabling "Low Detail Mode" outside the editor and playing the level, objects with High Detail will disappear, making the level less laggy.
 
-(img)
+![](/images/highdetail.png)
 
-{{< youtube DJyWOm3AH_g >}}
+(video)
 
 * **Group Parent**: When rotating or scaling several objects, the objects will transform relative to the group parent; in other words, the group parent acts as the center point. This is not to be confused with Parent Group.
 
-(img)
+![](/images/groupparent.png)
 
 (video)
 
 * **Area Parent**: Functions as a group parent, but for [area triggers](/docs/guides/triggers-1/area-triggers/). Make sure you link a set of objects together before making one object the area parent.
 
-(img)
+![](/images/areaparent.png)
 
 (video)
 
 * **NoGlow**: Static objects have an inherent glow on their outlines only visible in normal mode; this option removes the glow.
 
-(img)
+![](/images/noglow.png)
 
 (video)
 
 * **NoParticle**: Removes particles from objects like portals and pads.
 
-(img)
+![](/images/noparticle.png)
 
 (video)
 
 * **NoAudioScale**: Disables the scaling/pulsing on objects that pulse relative to the song, like the big pulsing circles.
 
-(img)
+![](/images/noaudioscale.png)
 
 (video)
 
