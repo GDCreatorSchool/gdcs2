@@ -23,15 +23,6 @@ seo:
   canonical: ""
   noindex: false
 ---
-{{< callout context="caution" title="Incomplete guide" icon="outline/info-circle" >}}
-
-
-This guide is missing the following:
-- Image & video examples on some sections
-
-
-{{< /callout >}}
-
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
 
 - You can change a lot of miscellaneous object properties using the Extra & Extra 2 tabs.
