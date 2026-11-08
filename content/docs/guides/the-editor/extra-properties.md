@@ -10,6 +10,7 @@ contributors:
   - xplode09
   - illusion2
   - chuckolate
+  - silvow.
 description: Once you have a basic understanding of the editor, we can move on
   onto more advanced or niche features. This guide will cover how to use the
   Extra tabs & Anim tab available at the Edit Group menu.
