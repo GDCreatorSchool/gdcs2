@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 title: Numerical Techniques
 weight: 6170
 date: 2026-10-25T00:00:00.000Z
@@ -1454,7 +1454,7 @@ T:6=2.40 (Input) T:7 = ??? (Output) T:8 = ??? (Term) I:9 = 5
 
 `T8 = T8 · -1.000`
 
-`T8 = T8 · T6 * T6`
+`T8 = T8 · T6 · T6`
 
 `T8 = T8 / I9`
 
@@ -1690,7 +1690,7 @@ T:13=66.60 (Input) T:14 (Working) T:15 (Output) C:16 (Quotient)
 
 `T14 = T13 - I16` (Multiplication by 1 is ignored)
 
-`T15 = T14 * T14`
+`T15 = T14 · T14`
 
 ▶️
 
@@ -1794,15 +1794,15 @@ I will assume that you have already implemented the first step in some way, it i
 {{< callout context="success" icon="outline/movie" >}}
 T:2=1.20 (Output) C:7=12 (Quotient)
 
-`I7 >= 16.000` → `I7 = I7 - 16.000` `T2 = T2 * 65536.000`
+`I7 >= 16.000` → `I7 = I7 - 16.000` `T2 = T2 · 65536.000`
 
-`I7 >= 8.000` → `I7 = I7 - 8.000` `T2 = T2 * 256.000`
+`I7 >= 8.000` → `I7 = I7 - 8.000` `T2 = T2 · 256.000`
 
-`I7 >= 4.000` → `I7 = I7 - 4.000` `T2 = T2 * 16.000`
+`I7 >= 4.000` → `I7 = I7 - 4.000` `T2 = T2 · 16.000`
 
-`I7 >= 2.000` → `I7 = I7 - 2.000` `T2 = T2 * 4.000`
+`I7 >= 2.000` → `I7 = I7 - 2.000` `T2 = T2 · 4.000`
 
-`I7 >= 1.000` → `I7 = I7 - 1.000` `T2 = T2 * 2.000`
+`I7 >= 1.000` → `I7 = I7 - 1.000` `T2 = T2 · 2.000`
 
 ▶️
 
@@ -1868,7 +1868,7 @@ The first step is initialization
 
 Now, we start the loop.
 
-`T5 = T5 * T4 * T4` ($z \to z^{k + 2}$)
+`T5 = T5 · T4 · T4` ($z \to z^{k + 2}$)
 
 `I6 = I6 + 2.000`
 
@@ -1944,15 +1944,15 @@ Likewise, we can do this for inputs between $0$ and $1$, however small they migh
 {{< callout context="success" icon="outline/movie" >}}
 T:1=0.0005369 (Input) C:7=0 (Exponent)
 
-`T1 · 65536.000 <= 1.000` → `I7 = I7 - 16.000` `T1 = T1 * 65536.000`
+`T1 · 65536.000 <= 1.000` → `I7 = I7 - 16.000` `T1 = T1 · 65536.000`
 
-`T1 · 256.000 <= 1.000` → `I7 = I7 - 8.000` `T1 = T1 * 256.000`
+`T1 · 256.000 <= 1.000` → `I7 = I7 - 8.000` `T1 = T1 · 256.000`
 
-`T1 · 16.000 <= 1.000` → `I7 = I7 - 4.000` `T1 = T1 * 16.000`
+`T1 · 16.000 <= 1.000` → `I7 = I7 - 4.000` `T1 = T1 · 16.000`
 
-`T1 · 4.000 <= 1.000` → `I7 = I7 - 2.000` `T1 = T1 * 4.000`
+`T1 · 4.000 <= 1.000` → `I7 = I7 - 2.000` `T1 = T1 · 4.000`
 
-`T1 · 2.000 <= 1.000` → `I7 = I7 - 1.000` `T1 = T1 * 2.000`
+`T1 · 2.000 <= 1.000` → `I7 = I7 - 1.000` `T1 = T1 · 2.000`
 
 ▶️
 
@@ -2203,6 +2203,16 @@ For this example, we will use six iterations:
 
 {{< callout context="success" icon="outline/movie" >}}
 
+`T5 · 65536.000 <= 1.000` → `T6 = T6 / 256.000` `T5 = T5 · 65536.000`
+
+`T5 · 256.000 <= 1.000` → `T6 = T6 / 16.000` `T5 = T5 · 256.000`
+
+`T5 · 16.000 <= 1.000` → `T6 = T6 / 4.000` `T5 = T5 · 16.000`
+
+`T5 · 4.000 <= 1.000` → `T6 = T6 / 2.000` `T5 = T5 · 4.000`
+
+`T5 · 2.000 <= 1.000` → `T6 = T6 · T7 · 0.500` `T5 = T5 · 2.000`
+
 T:2 (Output) T:3=2.00 (Current iteration) T:4 ($a/x_0$) T:5 (Input)
 
 `T4 = T5 / T3`
@@ -2243,11 +2253,76 @@ T:2 (Output) T:3=2.00 (Current iteration) T:4 ($a/x_0$) T:5 (Input)
 
 This should give off a decent approximation of $\sqrt{x}$, for inputs up to $10000$.
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+### Range Reducing Roots
 
-Range reduction for Newton
+To improve on this method, we can apply range reduction such that the input lies between $1$ and $2$.
+
+We can decompose the square root into the following structure:
+
+$$ \sqrt{x} = \sqrt{2^n \times k} = \sqrt{2^n} \times \sqrt{k} $$
+
+Oh look, it's the exponent and mantissa structure again!
+
+{{< callout context="note" icon="outline/photo" >}}
+
+Split it like this! (Kelly separating exponent from mantissa with supernatural powers)
 
 {{< /callout >}}
+
+For values greater than $2$, a positive $m$ will bump $k$ down in range. For values smaller than $1$, a negative $m$ will bump $k$ up in range.
+
+Better yet, this can be further divided into two separate cases:
+
+- If $n$ is even, $\sqrt{2^n} = \sqrt{2^{2m}} = 2^m$
+- If $n$ is odd, $\sqrt{2^n} = \sqrt{2^{2m+1}} = 2^m \times \sqrt{2}$
+
+We will visualize the whole process with this example:
+
+{{< callout context="success" icon="outline/movie" >}}
+
+T:1=1234567.00 (Input) T:5 (Output $k$) T:6=1.00 (Multiplier $\sqrt{2^n}$) T:7=1.41 ($\sqrt{2} \approx \frac {11863283} {8388608}$)
+
+Copy input to output. We will operate on the output value directly.
+
+`T5 = T1`
+
+First, handle the case where $0 \le x < 1$.
+
+`T5 · 65536.000 <= 1.000` → `T6 = T6 / 256.000` `T5 = T5 · 65536.000`
+
+`T5 · 256.000 <= 1.000` → `T6 = T6 / 16.000` `T5 = T5 · 256.000`
+
+`T5 · 16.000 <= 1.000` → `T6 = T6 / 4.000` `T5 = T5 · 16.000`
+
+`T5 · 4.000 <= 1.000` → `T6 = T6 / 2.000` `T5 = T5 · 4.000`
+
+`T5 · 2.000 <= 1.000` → `T6 = T6 · T7 · 0.500` `T5 = T5 · 2.000`
+
+Next, handle the case where $x \ge 2$
+
+`T5 >= 65536.000` → `T6 = T6 · 256.000` `T5 = T5 / 65536.000`
+
+`T5 >= 256.000` → `T6 = T6 · 16.000` `T5 = T5 / 256.000`
+
+`T5 >= 16.000` → `T6 = T6 · 4.000` `T5 = T5 / 16.000`
+
+`T5 >= 4.000` → `T6 = T6 · 2.000` `T5 = T5 / 4.000`
+
+`T5 >= 2.000` → `T6 = T6 · T7` `T5 = T5 / 2.000`
+
+Run the square root function as normal.
+
+After that, multiply the exponent back to the output.
+
+`T2 = T2 · T6`
+
+▶️
+
+T:5=1.177 T:6=0.00 ($= \frac 1 {1024} = 0.0009765625$)
+
+{{< /callout >}}
+
+By reducing the input to a small number, you reap the benefits of very accurate results that can scale infinitely.
 
 ## Function Composition
 
@@ -2310,18 +2385,32 @@ G:10 (Exp) G:11 (Log) T:1 (Exp/Log Input), T:2 (Exp/Log Output) T:12=1.4 (Input)
 
 While it may give more accurate results than naive Newton's Method, it generally does not perform as well once range reduction comes into play, and the computational overhead for this kind of exchange is quite expensive. This example only exists here for demonstration purposes.
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+### Calling it twice - $\sin(\sin(x))$
 
-Mingle computations to avoid trigger limits
+One of the downsides to calling via spawn triggers is that you can only spawn them once, there is apparently a limit to triggers.
 
-{{< /callout >}}
+The workaround is notoriously simple - just make two of them!
 
-## Appendix: Powers of 8 reduction
+{{< callout context="success" icon="outline/movie" >}}
+T:6=1.000 (Input) T:7 (Output) T:10 (Inner $\sin(x)$ Output)
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+Our $\sin(x)$ function is GID 23.
 
-Powers of 8 reduction
+Copy + paste
 
+A duplicate $\sin(x)$ function is GID 24.
+
+Swap its input from `T6` to `T10`.
+
+Between the two, assign one sine's output to another's input.
+
+`T10 = T7`
+
+Now you have the function $\sin(\sin(x))$.
+
+▶️
+
+T:7=-0.75 T:10=0.84
 {{< /callout >}}
 
 # 4. Multiple entries per ID
@@ -2528,9 +2617,130 @@ So far we've explained the concept and implementation of multiple entries per ID
 
 Let's say you want to make a battle system where the player and enemies have health and attack stats. You could use different IDs that store separately the health and attack stats of the enemies, but if you intend to create a lot of enemies that could get difficult to manage and you'd have less IDs for everything else. This problem would be further exacerbated if the enemies also have defense, evasion, speed or other stats. For this reason, we can store all that information in one or few IDs and use different functions for stat manipulation.
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+Suppose we want to make an enemy with five stats: Health (0-100), Attack (0-50), Defense (0-20), Evasion (0-20) and Speed (0-5). The range of values our combined enemy stat can range would be:
 
-Enemy Example
+$$ 101 \times 51 \times 21 \times 21 \times 6 = 13,629,546 $$
+
+We've looked at an example with clean, round salami knives (à la $1,000,000$), but that need not always be the case. Numbers can be split into slices of **any** size, provided you stack the right multiples together.
+
+{{< callout context="success" icon="outline/movie" >}}
+
+C:1=8388608 (Input) C:2 (Health) C:3 (Attack) C:4 (Defense) C:5 (Evasion) C:6 (Speed)
+C:7 (Temp Remainder) C:8 (Temp Remultiply) C:9=13629546 (Knife)
+
+Our first knife splits off the unused excess part.
+
+`I8 = I1 / I9`
+
+`I8 = I8 · I9`
+
+`I7 = I1 - I8`
+
+Our salami should be ready for splitting.
+
+First, we cut off the health.
+
+`I9 = I9 / 101.000` (Prepare the knife)
+
+C:9=134946
+
+`I2 = I7 / I9`
+
+`I8 = I2 · I9`
+
+`I7 = I7 - I8`
+
+C:2=62 C:7=21956
+
+Second, cut off the attack.
+
+`I9 = I9 / 51.000`
+
+`I3 = I7 / I9`
+
+`I8 = I3 · I9`
+
+`I7 = I7 - I8`
+
+C:3=8 C:7=788 C:9=2646
+
+Now, the defense.
+
+`I9 = I9 / 21.000`
+
+`I4 = I7 / I9`
+
+`I8 = I4 · I9`
+
+`I7 = I7 - I8`
+
+C:4=6 C:7=32 C:9=126
+
+Finally, the evasion and speed.
+
+`I9 = I9 / 21.000`
+
+`I5 = I7 / I9`
+
+`I8 = I4 · I9`
+
+`I6 = I7 - I8`
+
+C:5=5 C:6=2 C:9=6
+
+{{< /callout >}}
+
+With this, we have effectively decomposed our value into the following stats:
+
+- **Health:** 62/100
+- **Attack:** 8/50
+- **Defense:** 6/20
+- **Evasion:** 5/20
+- **Speed:** 2/5
+
+You should also pay attention to the knives used to cut up numbers:
+
+- **Health:** $134,946$
+- **Attack:** $2,646$
+- **Defense:** $126$
+- **Evasion & Speed:** $6$
+
+We will use these values during recombination.
+
+{{< callout context="success" icon="outline/movie" >}}
+C:1 (Output) C:2=62 (Health) C:3=8 (Attack) C:4=6 (Defense) C:5=5 (Evasion) C:6=2 (Speed)
+
+`I1 = I2 · 134946.000` (Health)
+
+`I1 = I1 + I3 · 2646.000` (Attack)
+
+`I1 = I1 + I4 · 126.000` (Defense)
+
+`I1 = I1 + I5 · 6.000` (Evasion)
+
+`I1 = I1 + I6` (Speed)
+
+{{< /callout >}}
+
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+You can also perform spot surgery with these crooked knives!
+
+Just, be careful with them. Number decomposition can be hard to notice with these uneven divisions.
+
+{{< /callout >}}
+
+{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+
+They really aren't that useless after all (Kelly holding crooked knives)
+
+{{< /callout >}}
+
+Each enemy can have one ItemID to store all of its stats. You can use re-mapping to make it work for each enemy you spawn, reducing logical complexity.
+
+{{< callout context="note" icon="outline/photo" >}}
+
+Try these values out! (Diagram with an arrow pointing each small thorn to a value and five decomposed stats)
 
 {{< /callout >}}
 
