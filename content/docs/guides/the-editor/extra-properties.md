@@ -107,53 +107,43 @@ This guide is missing the following:
 * **No Effects**: Stops pads and portals from having effects as you interact with them, like the background flashes in size portals.
 * **Hide** **completely removes the visual appearance of an object**. You can press `F6` in the editor to show these hidden objects if needed.
 
-{{< img src="https://lh3.googleusercontent.com/d/1XK-4cyA_wFJ86juqLeyKEP0KQYsEV5FI" >}}
-
-
+{{< img src="https://lh3.googleusercontent.com/d/1XK-4cyA_wFJ86juqLeyKEP0KQYsEV5FI" >}} 1m2ulprvPD4SokFTX8NEABvKKbwEZ5jxb
 
 {{< youtube yoJi1rqKi5Q >}}
 
 * **High Detail**: When enabling "Low Detail Mode" outside the editor and playing the level, objects with High Detail will disappear, making the level less laggy.
 
-![](/images/highdetail.png)
-
-
+{{< img src="https://lh3.googleusercontent.com/d/1m2ulprvPD4SokFTX8NEABvKKbwEZ5jxb" >}}
 
 {{< youtube DJyWOm3AH_g >}}
 
 * **Group Parent**: When rotating or scaling several objects, the objects will transform relative to the group parent; in other words, the group parent acts as the center point. This is not to be confused with Parent Group.
 
-![](/images/groupparent.png)
+{{< img src="https://lh3.googleusercontent.com/d/1-0YPZ0s3T26OFWG12dosikDUc89ExVKP" >}}
 
 {{< youtube ZaVu3diSP0g >}}
 
 * **Area Parent**: Functions as a group parent, but for [area triggers](/docs/guides/triggers-1/area-triggers/). Make sure you link a set of objects together before making one object the area parent.
 
-![](/images/areaparent.png)
-
-
+{{< img src="https://lh3.googleusercontent.com/d/1FxtrxLTBRW7zz6la6_T-FSIHTOsaLx33" >}}
 
 {{< youtube jUj0TQu0Dz8 >}}
 
 * **NoGlow**: Static objects have an inherent glow on their outlines only visible in normal mode; this option removes the glow.
 
-![](/images/noglow.png)
-
-
+{{< img src="https://lh3.googleusercontent.com/d/1BNfuhY5OR31YtN5jiInuExu92a9umSKQ" >}}
 
 {{< youtube gjRnJUea-7g >}}
 
 * **NoParticle**: Removes particles from objects like portals and pads.
 
-![](/images/noparticle.png)
+{{< img src="https://lh3.googleusercontent.com/d/1LThfvxuQyrdWrw2LMpPeEK_xOFfY0b1e" >}}
 
 {{< youtube p6RTDsbBnW8 >}}
 
 * **NoAudioScale**: Disables the scaling/pulsing on objects that pulse relative to the song, like the big pulsing circles.
 
-![](/images/noaudioscale.png)
-
-
+{{< img src="https://lh3.googleusercontent.com/d/1oeoM1PeYghdGNcLcfXJMm5aN1G_x9Xy1" >}}
 
 {{< youtube NTYlzzAfPL0 >}}
 
@@ -163,14 +153,17 @@ In addition to these properties, some objects can have more options, which inclu
 
 * **Reverse**: Reverses the gameplay direction as soon as you hit an orb or a pad. *Orbs and Pads Only*.
 
+{{< img src="https://lh3.googleusercontent.com/d/1Bt-8nUvNeHImFjMtVXVtduyqYeJ2HQui" >}}
+
 {{< youtube uB05eYNHmWc >}}
 
 * **Single P Touch**: If one player touches an arrow trigger {{< img src="images/GDEmotes/Triggers/Arrow.png" class="emote" >}} in Dual Mode, the trigger will only activate for the player that touches it. *However, this feature is currently bugged as of Update 2.205.*
+
 * **Center Effect**: [Touch Triggered](/docs/guides/triggers-1/spawn/) triggers will only activate once the player touches the center of the trigger.
 
+{{< img src="https://lh3.googleusercontent.com/d/1nwXiNU3gzHLcZgVWw5y1pVMqG_desEwW" >}}
+
 {{< youtube 5LywXftONZM >}}
-
-
 
 # 2. Extra 2 Tab
 
