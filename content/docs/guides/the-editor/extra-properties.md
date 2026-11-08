@@ -5,7 +5,7 @@ authors:
   - illusion2
 title: Extra Properties
 weight: 1100
-date: 2026-11-06
+date: 2026-11-06T00:00:00.000Z
 contributors:
   - xplode09
   - illusion2
