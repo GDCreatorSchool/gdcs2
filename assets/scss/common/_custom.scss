@@ -185,11 +185,30 @@ table th {
 }
 
 .image-zoom-img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 60%;
+  max-height: 60%;
   object-fit: contain;
+  cursor: zoom-in;
+  transition: transform 0.45s linear(0, 0.076, 0.237, 0.415, 0.579, 0.713, 0.815, 0.888, 0.938, 0.969, 0.989, 0.999, 1.004, 1.006, 1.006, 1.005, 1.004, 1.003, 1.002, 1.001, 1);
 }
 
 .image-zoom-open {
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .image-zoom-img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.image-zoom-img.zoomed {
+  transform: scale(2);
+  cursor: zoom-out;
+}
+
+.zoomed {
+  transform: scale(2);
+  cursor: zoom-out;
 }

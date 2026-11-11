@@ -43,6 +43,19 @@ document.addEventListener("click", event => {
   imageFull.className = "image-zoom-img";
   imageFull.src = image.dataset.full;
 
+  imageFull.addEventListener("click", event => {
+    const rect = imageFull.getBoundingClientRect();
+
+    if (!imageFull.classList.contains("zoomed")) {
+      const percentX = (event.clientX - rect.left) / rect.width * 100;
+      const percentY = (event.clientY - rect.top) / rect.height * 100;
+
+      imageFull.style.transformOrigin = `${percentX}% ${percentY}%`;
+    }
+
+    imageFull.classList.toggle("zoomed");
+  });
+
   document.body.classList.add("image-zoom-open");
 
   imageOverlay.appendChild(imageFull);
