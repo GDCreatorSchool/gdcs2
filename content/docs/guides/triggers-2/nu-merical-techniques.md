@@ -122,9 +122,11 @@ The other number stays the same!
 
 You can, of course, call them by their ItemID. Variable 1, variable 2, variable 68, so on and so forth. But what if you want to describe what they actually do? This is where names come in.
 
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
+{{< callout context="tip" title="Further Reading" icon="outline/book" >}}
 
-Names
+The main ID names we'll be using throughout this guide are Group ID Names, Item ID Names and Timer ID Names. These will be indicated in the examples as needed.
+
+For more information, refer to the [Using IDs](/docs/guides/the-editor/using-ids/) guide. You are not required to name your variables the same as the guide, but try to name them something memorable.
 
 {{< /callout >}}
 
@@ -315,7 +317,7 @@ As stated earlier, a computer generally deals with 32 or 64 bits, meaning they h
 
 $$ 387420489_{10} = 00010111000101111001000101001001_2 $$
 
-The maximum that a 32 bit number can hold is the number $1$, doubled 32 times, which amounts to $4,294,967,296$ (a huge number!), but since computers also needs to store the number $0$, the actual cap is bumped down to $4,294,967,295$.
+The maximum that a 32 bit number can hold is the number $1$, doubled 32 times, which amounts to $4,294,967,296$ (a huge number!), but since computers also need to store the number $0$, the actual cap is bumped down to $4,294,967,295$.
 
 Additionally, they might also need to store negative numbers in equal capacity, so the leading bit is typically reserved for a different yes-no question:
 
@@ -385,7 +387,7 @@ There are 24 bits in the mantissa, which means we can expect about 6 to 7 signif
 
 {{< callout context="caution" title="Note: How GD stores decimals under the hood" icon="outline/info-circle" >}}
 
-The method Geometry Dash (as well as a lot of other programs) uses to store these numbers can get really complicated, you can refer to [Kahan's FPA Lecture Notes](https://people.eecs.berkeley.edu/~wkahan/ieee754status/IEEE754.PDF) for further information. That page is almost 30 years old at the time of writing!
+The method Geometry Dash (as well as a lot of other programs) uses to store these numbers can get really complicated, you can refer to [Kahan's FPA Lecture Notes](https://people.eecs.berkeley.edu/~wkahan/ieee754status/IEEE754.PDF) for further information. That page is over 25 years old!
 
 I will leave an example here for the curious of you.
 
@@ -416,7 +418,7 @@ This is how Geometry Dash internally stores the number as a TimerID.
 
 Numbers lose precision as they get bigger in magnitude, TimerIDs like all other floats can only theoretically store second-accurate time up to `16,777,216.00` before it starts "skipping" (or counting by twos).
 
-The Item Edit trigger sets a soft limit for what timer values it can output, between `-9,999,999.00` and `9,999,999.00`. You can look to range reduction as a workaround, it is discussed later in this guide.
+The Item Edit trigger sets a soft limit for what timer values it can output, between `-9,999,999.00` and `9,999,999.00`. You may want to consider storing the exponent on a separate ItemID variable to avoid reaching the cap.
 
 {{< /callout >}}
 
@@ -460,7 +462,7 @@ ChuckOlate did provide some info, this was a convo with Niten
 
 One problem you’ll see frequently with move triggers is that they only allow you to type in hard-coded values, no variables - how terrible!
 
-For simple uses this is not a problem, as you can always place more triggers as you need, but if we wanted to warp the distance dynamically over time, the manual way can get  clunky and messy and may not even cover all the cases we need.
+For simple uses this is not a problem, as you can always place more triggers as you need, but if we wanted to warp the distance dynamically over time, the manual way can get clunky and messy and may not even cover all the cases we need.
 
 This is possible, though you will need more than one of these triggers, as well as a dedicated setup to go with it.
 
@@ -729,7 +731,7 @@ One other potential use case for more granular control over movement involves us
 
 Quoting from the [Move & Rotate](/docs/guides/triggers-1/move-rotate/#1-move-trigger) guide:
 
-Enabling **Small Step** will make your input values three times smaller, so inputting “+30” into the X input will move your object 1 block to the right instead of 3.
+> Enabling **Small Step** will make your input values three times smaller, so inputting “+30” into the X input will move your object 1 block to the right instead of 3.
 
 {{< /callout >}}
 
@@ -860,15 +862,19 @@ Normally, the object will start moving from its current position. To position th
 
 {{< callout context="success" icon="outline/movie" >}}
 
-(A move trigger, then four ID conversion chains)
+(A move trigger, then two ID conversion chains)
 
 First, move an object to the origin.
 
-Then, move up (+Y), down (-Y), left (-X) and right(+X).
+Then, move up (+Y) and right(+X).
 
 ▶️
 
 {{< /callout >}}
+
+The example above makes use of one more trick to move in the opposite direction, and that is the sign check! Our movement currently uses 10 bits (10 yes-no questions), meaning we may reserve one of the bits for bidirectional movement, leaving the other 9 for the amount.
+
+Because we set the "512" to be negative, our movement range now covers values from $-512$ to $511$. The number is also added by 512 to remove the sign and process the remaining positive bits.
 
 ## Using IDs as Spawn Delays
 
@@ -1066,7 +1072,7 @@ $$
 x^2 \times x = x \times x \times x = x^3
 $$
 
-By multiplying the polynomial by $x$, we have effectively made its number corner one higher! You may have noticed that I’m working through the function from the lowest to the highest “corner number,” and you’ll be correct for that.
+By multiplying the polynomial by $x$, we have effectively made it one power higher! You may have noticed that I’m working through the function from the lowest to the highest power, and you’ll be correct for that.
 
 The idea behind this is you have an extra “accumulator” variable, it increases from $x^0, x^1, x^2, \ldots$ all the way to $x^8$. The output then appends this accumulator multiplied by a mod.
 
@@ -1413,7 +1419,7 @@ These two functions are the bread and butter for all things periodic, we will us
 
 {{< callout context="caution" title="Degrees and Radians" icon="outline/info-circle" >}}
 
-Normally, you'll be taught the definition of sine and cosine involving angles in **degrees** (^{\circ}). However, most computer programs, including Geometry Dash, will involve calculations with **radians**.
+Normally, you'll be taught the definition of sine and cosine involving angles in **degrees** (°). However, most computer programs, including Geometry Dash, will involve calculations with **radians**.
 
 Radians are special in that they make angles act like arc lengths:
 - An arc length of $\frac {\pi} 2$ is a quarter of the circumference $2\pi$, covering an angle of $90^{\circ}$.
@@ -1591,7 +1597,7 @@ T:6=4.515
 
 {{< /callout >}}
 
-This value is now practically the same as our calculator's! We're still not done with it, though we're not done yet. Flooring the quotient will yield a number from $0$ to $2\pi$. However, our Taylor expansions are centered at $0$, so we want to shift our range of remainders to between $-\pi$ and $\pi$.
+This value is now practically the same as our calculator's! We're still not done with it, not yet at least. Flooring the quotient will yield a number from $0$ to $2\pi$. However, our Taylor expansions are centered at $0$, so we want to shift our range of remainders to between $-\pi$ and $\pi$.
 
 This is as simple as changing the NA-operation to `RND`; when the fractional part surpasses $0.5$, the division rounds the quotient up, causing the remainder to be negative:
 
@@ -1607,7 +1613,7 @@ T:6=-1.769
 
 {{< /callout >}}
 
-We have effectively made sine and cosine reasonably accurate for all values. However, don't get too excited about that just yet, because there is one more ad-hoc optimization for our functions.
+We have effectively made sine and cosine reasonably accurate for all values. However, don't get too excited about that just yet, because there is one more, ad-hoc optimization for our functions.
 
 The sine function input can be further constrained between $-\frac \pi 2$ and $\frac \pi 2$ through the trigonometric property:
 
@@ -1975,7 +1981,7 @@ T:2=6.33
 
 And we are finally done! I hope so... correct?
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="note" icon="outline/photo" >}}
 
 NOOOOOO (Kelly reduced into a cubic pellet)
 
@@ -2202,16 +2208,6 @@ $$ x_{1}=x_{0}-{\frac {f(x_{0})}{f'(x_{0})}} = x_0 - \frac {x_0^2 - a} {2x_0} = 
 For this example, we will use six iterations:
 
 {{< callout context="success" icon="outline/movie" >}}
-
-`T5 · 65536.000 <= 1.000` → `T6 = T6 / 256.000` `T5 = T5 · 65536.000`
-
-`T5 · 256.000 <= 1.000` → `T6 = T6 / 16.000` `T5 = T5 · 256.000`
-
-`T5 · 16.000 <= 1.000` → `T6 = T6 / 4.000` `T5 = T5 · 16.000`
-
-`T5 · 4.000 <= 1.000` → `T6 = T6 / 2.000` `T5 = T5 · 4.000`
-
-`T5 · 2.000 <= 1.000` → `T6 = T6 · T7 · 0.500` `T5 = T5 · 2.000`
 
 T:2 (Output) T:3=2.00 (Current iteration) T:4 ($a/x_0$) T:5 (Input)
 
@@ -2730,7 +2726,7 @@ Just, be careful with them. Number decomposition can be hard to notice with thes
 
 {{< /callout >}}
 
-{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+{{< callout context="note" icon="outline/photo" >}}
 
 They really aren't that useless after all (Kelly holding crooked knives)
 
