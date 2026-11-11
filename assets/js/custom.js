@@ -18,9 +18,34 @@ document.querySelectorAll(".new-badge").forEach(badge => {
   }
 });
 
-
+// Adds a click listener that looks for images.
+// When a click is fired:
+//  Check if it is an image (does nothing if not)
+//  Build an overlay with that full image
+// Attach a listener to remove on another click (of the scrim)
 document.addEventListener("click", event => {
   const image = event.target.closest("img[data-full]");
   if (!image) return;
-  console.log(image.dataset.full)
-})
+
+  const imageOverlay = document.createElement("div");
+  imageOverlay.className = "image-zoom-scrim";
+
+  imageOverlay.addEventListener("click", event => {
+    const scrim = event.target.classList.contains("image-zoom-scrim");
+    if (!scrim) return;
+
+    document.body.classList.remove("image-zoom-open");
+    imageOverlay.remove()
+  });
+
+
+  const imageFull = document.createElement("img");
+  imageFull.className = "image-zoom-img";
+  imageFull.src = image.dataset.full;
+
+  document.body.classList.add("image-zoom-open");
+
+  imageOverlay.appendChild(imageFull);
+
+  document.body.appendChild(imageOverlay);
+});
