@@ -169,3 +169,52 @@ table td, table th {
 .function {
     color: #79c0ff;
 }
+
+//Green-colored callout
+
+.callout.callout-success {
+    border-color: var(--sl-color-green);
+    background-color: var(--sl-color-green-high);
+
+    .callout-icon,
+    .callout-title,
+    .callout-body a {
+        color: var(--sl-color-green-low);
+    }
+
+    .callout-body,
+    .callout-body a:hover,
+    .callout-body a:active {
+        color: var(--sl-color-white);
+    }
+
+    /*
+  code:not(:where(.not-content *)) {
+    background: tint-color($yellow, 80%);
+  }
+  */
+}
+
+@include color-mode(dark) {
+      .callout.callout-success {
+        border-color: var(--sl-color-green);
+        background-color: var(--sl-color-green-low);
+
+        .callout-icon,
+        .callout-title,
+        .callout-body a {
+            color: var(--sl-color-green-high);
+        }
+
+        .callout-body,
+        .callout-body a:hover,
+        .callout-body a:active {
+            color: var(--sl-color-white);
+        }
+
+        code:not(:where(.not-content *)) {
+            // background: shade-color($yellow, 75%);
+            color: var(--ec-codeFg);
+        }
+    }
+}
