@@ -17,3 +17,25 @@ document.querySelectorAll(".new-badge").forEach(badge => {
     badge.remove();
   }
 });
+
+
+
+// Service Worker registration for the backup netlify service
+// Registers only on the main site
+
+const GDCS_MAIN_HOSTS = [
+  "gdcreatorschool.com",
+  "www.gdcreatorschool.com"
+];
+
+if (
+  "serviceWorker" in navigator &&
+  GDCS_MAIN_HOSTS.includes(window.location.hostname)
+) {
+  navigator.serviceWorker.register("/sw-fallback.js", {
+    scope: "/",
+    updateViaCache: "none"
+  }).catch((error) => {
+    console.error("GDCS fallback registration failed: ", error);
+  });
+}
