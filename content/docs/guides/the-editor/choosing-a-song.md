@@ -13,13 +13,17 @@ contributors:
   - halfcookedramen
   - komatic5
   - poryii
-description: As a GD creator, you actually have a lot more options for songs than just the main level soundtracks. You can grab songs from Newgrounds, the music library, or even use a NONG (Not On NewGrounds). Here are a couple of ways to do that.
+description: As a GD creator, you actually have a lot more options for songs
+  than just the main level soundtracks. You can grab songs from Newgrounds, the
+  music library, or even use a NONG (Not On NewGrounds). Here are a couple of
+  ways to do that.
 tags:
   - Grade 0
   - Basic Editor
 seo:
   title: How to Choose a Song in Geometry Dash
-  description: A short guide to choosing a song for your Geometry Dash level, using Newgrounds, the Music Library, and NONG file replacement.
+  description: A short guide to choosing a song for your Geometry Dash level,
+    using Newgrounds, the Music Library, and NONG file replacement.
   canonical: ""
   noindex: false
 ---
@@ -163,7 +167,7 @@ A song’s **offset** is **where it starts playing in game**. For instance, Bloo
 * e.g. 142.2 will skip 2 minutes and 22.2 seconds ahead in the song.
 * To test if it is the exact offset you want, click the {{< img src="images/GDEmotes/Buttons/MusicPlaytest.png" class="emote">}} music play button (the start button with a music note next to it). If the song starts too far in, decrease `X`. If it doesn't start far enough in, increase `X`.
 
-{{< img src="https://lh3.googleusercontent.com/d/10IGXIh2nSKv7NYfAKQtWAZvWX0W5u0yG" >}}
+{{< img src="https://lh3.googleusercontent.com/d/1CCh5BfSI4XKhS2Ee4stjzXFe3DLpr6mS" >}}
 
 4. The "Fade In" and "Fade Out" buttons at the bottom allow for the song to fade in to the level, and fade out once the last block has been passed respectively.
 
