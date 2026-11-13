@@ -1176,7 +1176,7 @@ Watch.
 
 {{< callout context="success" icon="outline/movie" >}}
 
-$24 x^3 - 68 x^2 - 154 + 421$
+$24 x^3 - 68 x^2 - 154 x + 421$
 
 `T2 = T2 · T1`
 
@@ -1203,6 +1203,14 @@ Now for the second step,
 {{< /callout >}}
 
 The steps here are deceptively easy, just multiply by `T1` then add the mod. However, it is important that you know the underlying concept behind this method, it will be very useful once you start working with other breeds of functions.
+
+At the final step of the chain, you only add the mod. This constant will not be multiplied by $x$.
+
+{{< callout context="success" icon="outline/movie" >}}
+
+...
+
+{{< /callout >}}
 
 ## Taylor Series
 
