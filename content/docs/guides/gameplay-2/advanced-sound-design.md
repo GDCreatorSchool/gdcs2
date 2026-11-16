@@ -115,7 +115,7 @@ There are different modes for how you may utilize an LFO: 
 
 - __Trigger__: The most basic mode; starts from first point to the last point, and then loops back to the first point and repeats until the note is released.
 
-  - __Sync__: The LFO cycle is constant and never re-triggers its cycle, regardless of whether the user presses or releases the note; syncs with the DAW and not the note. 
+- __Sync__: The LFO cycle is constant and never re-triggers its cycle, regardless of whether the user presses or releases the note; syncs with the DAW and not the note. 
 
 - __Envelope__: Acts like a traditional envelope, starts from first point to the last point, but stays at the last point until the user releases the note. It re-triggers the cycle once the user presses the note again.
 
