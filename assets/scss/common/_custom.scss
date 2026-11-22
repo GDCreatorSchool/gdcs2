@@ -212,3 +212,7 @@ table th {
   transform: scale(2);
   cursor: zoom-out;
 }
+
+img[data-full] {
+  cursor: zoom-in;
+}
