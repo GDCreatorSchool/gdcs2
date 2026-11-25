@@ -213,6 +213,10 @@ table th {
   cursor: zoom-out;
 }
 
+img[data-full] {
+  cursor: zoom-in;
+}
+
 //Green-colored callout
 
 .callout.callout-success {
