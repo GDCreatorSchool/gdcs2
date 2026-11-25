@@ -22,7 +22,24 @@ seo:
 
 {{< callout context="note" title="TLDR - What this guide covers" icon="outline/info-circle" >}}
 
--
+- Numbers in Geometry Dash are finite, and the two provided types of numbers each have different ranges.
+- Positions of players (and other objects) can be represented with two numbers, and a trigger setup can be used to keep track of it.
+- A TPS loop can be utilized to create custom delays.
+- Plenty of calculator functions can be evaluated using polynomial sums of varying patterns.
+- The inputs of some functions can be shrunk to a small range near the center, allowing for accurate computations.
+- Chebyshev roots serve as useful, anti-wobble reference points for approximating certain functions.
+- One big number can be broken down into smaller, component values by alternating two simple operations.
+
+{{< /callout >}}
+
+{{< callout context="tip" title="Useful Stuff" icon="outline/book" >}}
+
+While there are no hard pre-requisites for reading this guide, the following guides may also be helpful when read in conjunction.
+- [Using IDs](/docs/guides/the-editor/using-ids) provides instructions on how assign names to your variables. A lot of numerical-based functions can be clunky to read through, and ItemID/TimerID names provide the needed context for understanding them.
+- [Making Functions](/docs/guides/triggers-2/making-functions) goes deep into how functions operate, as well as how they can be represented in the structure of a programming language. Pseudocode may be provided as an alternative for video tutorials if a more intuitive explanation of a procedure is needed.
+- [Stacking Properties](/docs/guides/triggers-2/stacking-properties) has a detailed explanation on binary stacking and ID conversion setups. This stacking technique will be frequently employed in this guide to handle repeated multiplications with doubling numbers.
+
+Additionally, there will be further reading materials sprinkled throughout this guide for in-depth explanations of certain procedures. These may include dedicated guides, tutorials or supplementary lecture notes on complex topics.
 
 {{< /callout >}}
 
@@ -42,7 +59,7 @@ Hello! I’m Kelly, your favorite soybean drone! I talk a lot, so don’t mind m
 
 # 0. A Gentle Introduction into Variables
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="1. Variable" title="1. Variable" icon="outline/movie" >}}
 
 Place down a counter…
 
@@ -62,7 +79,7 @@ Well… sort of. The keen in you might be yelling at me: “This is the 0️⃣ 
 
 You’re valid to say that, as we haven’t added anything to this number. Let’s put something in there.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="1. Variable" title="2. Changing Variable" icon="outline/movie" >}}
 
 Place down a pickup trigger where you can reach.
 
@@ -92,7 +109,7 @@ Our first variable is fun to play around, maybe you’ve already found out its b
 
 Eventually, it too got bored of itself, and oftentimes we can’t just use one number for everything. This is where you’ll want a second number. Two numbers, double the fun!
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="1. Variable" title="3. Two Variables" icon="outline/movie" >}}
 
 Place down a counter…
 
@@ -106,7 +123,7 @@ Now, when you press ▶️, the object will change to `0`.
 
 You might have noticed that the number doesn’t change when you hit the pickup trigger. You have just made your second variable!
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="1. Variable" title="4. Separate Variable Values" icon="outline/movie" >}}
 
 Copy and paste that pickup trigger to a separate location.
 
@@ -152,7 +169,7 @@ The answer is the humble Spawn Trigger. Recall from the previous guides, the spa
 
 I will take the quick example of doubling and then subtracting 1. This is broken down into two steps, multiplying by 2 and then adding -1. Example: 2 × 2 = 4, 4 - 1 = 3; quick math. Let’s see the triggers in action:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="1. Variable" title="5. Function" icon="outline/movie" >}}
 
 Place down two Pickup triggers side by side.
 
@@ -194,7 +211,7 @@ You can find more information about this trigger in [Item Edit, Comp, & Pers](/d
 
 Observe closely.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="1. Variable" title="6. Proper Function" icon="outline/movie" >}}
 
 Place down an item edit trigger.
 
@@ -414,41 +431,13 @@ This is how Geometry Dash internally stores the number as a TimerID.
 
 {{< /callout >}}
 
-{{< callout context="caution" title="Note: Item Edit Clamping" icon="outline/info-circle" >}}
-
 Numbers lose precision as they get bigger in magnitude, TimerIDs like all other floats can only theoretically store second-accurate time up to `16,777,216.00` before it starts "skipping" (or counting by twos).
 
 The Item Edit trigger sets a soft limit for what timer values it can output, between `-9,999,999.00` and `9,999,999.00`. You may want to consider storing the exponent on a separate ItemID variable to avoid reaching the cap.
 
-{{< /callout >}}
-
 {{< callout context="note" icon="outline/photo" >}}
 
 (Derp mechanic Kelly sitting in a maintenance room) If you can't handle big jumpy timers, might as well bump it down to some arbitrary maximum...
-
-{{< /callout >}}
-
-{{< callout context="caution" title="Note: Limits" icon="outline/info-circle" >}}
-
-The magnitude of TimerIDs can go as small as $1.1755\times 10^{-38}$ and as large as $3.403\times10^{38}$.
-
-{{< /callout >}}
-
-{{< callout context="caution" title="Note: Double-Precision format" icon="outline/info-circle" >}}
-
-As with any 64-bit value, these are values you have to implement by yourself. IEEE 754 designates 1 bit for the sign, 11 bits for the exponent and 53 bits for the mantissa.
-
-(Diagram of IEEE 754 double-precision float)
-
-These numbers cover a much greater range (up to $1.79\times10^{308}$) and achieve a precision level of 16-17 significant digits.
-
-{{< /callout >}}
-
-## Easing Math Functions thing
-
-{{< callout context="tip" title="TODO" icon="outline/edit" >}}
-
-ChuckOlate did provide some info, this was a convo with Niten
 
 {{< /callout >}}
 
@@ -470,7 +459,7 @@ This is possible, though you will need more than one of these triggers, as well 
 
 Here’s a problem: You are making a background such that it changes color based on the number of times you click during the transition.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="7. ID To Value Mechanic" icon="outline/movie" >}}
 
 (You clicked 5 times, blue)
 
@@ -482,7 +471,7 @@ Here’s a problem: You are making a background such that it changes color based
 
 The idea is that for every distinct value, you assign to it a particular color, 1 for red, 2 for orange, 5 for blue. To pull this off, you need a series of conditions: If 1, show red; If 2, show orange. This is achievable with the item compare trigger.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="8. ID To Value Impl Module 1" icon="outline/movie" >}}
 
 Place down an item compare trigger.
 
@@ -516,7 +505,7 @@ Now, if you click once, the background will change to red.
 
 We can use the same logic for the other colors. Let’s say you want the background to be orange if you click twice. The steps are almost the same as above. Just change up a few things.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="9. ID To Value Impl Module 2" icon="outline/movie" >}}
 
 Place down an item compare trigger next to your first one.
 
@@ -568,17 +557,17 @@ Let’s focus on the “Move X” for the Move trigger. Suppose, you want the ob
 
 Your first instinct could be to split these numbers into digits, and then move them said digits. However, making one condition for every tens from `10`, `20` all the way to `90`, takes up a lot of triggers and GroupIDs that could be better used for something else.
 
-Luckily, there's already a better method discussed previously, which is looking at it, how computers interpret it: binary!
+There's already a better method discussed previously, which is looking at it, how computers interpret it: binary!
 
-{{< callout context="caution" title="Note" icon="outline/info-circle" >}}
+{{< callout context="tip" title="Further Reading: Binary Stacking" icon="outline/book" >}}
 
-A detailed explanation about how this works can be found in [Binary Stacking](/docs/guides/triggers-2/stacking-properties/#4-binary-stacking) section of the guide. I will only go through a basic example to illustrate how it can be applied.
+A detailed explanation about how this works can be found in [Binary Stacking](/docs/guides/triggers-2/stacking-properties/#4-binary-stacking) section of the Stacking Properties guide. I will only go through a basic example to illustrate how it can be applied.
 
 {{< /callout >}}
 
 We're moving objects within 1000 units, so all that's needed is 10 bits. Let’s see how you can make use of this:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="10. Stackable ID Impl Module 1" icon="outline/movie" >}}
 
 Look at how far your object should move.
 
@@ -624,7 +613,7 @@ This is effectively your first yes-no question: “Is this number larger than or
 
 The other yes-no questions can be done in exactly the same way:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="11. Stackable ID Impl Module 2" icon="outline/movie" >}}
 
 Place a second Item Compare trigger…
 
@@ -685,7 +674,7 @@ Luckily, there's a way to fix this. Instead of making 1 correspond to $1^{\circ}
 
 Combined with the first method, this gives us a way to input decimal values and get decimal-value rotations.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="12. Precision Rotation" icon="outline/movie" >}}
 
 T:1=35.5
 
@@ -737,7 +726,7 @@ Quoting from the [Move & Rotate](/docs/guides/triggers-1/move-rotate/#1-move-tri
 
 This allows us to increase our movement precision by a factor of 3. Here is how it works:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="13. Precision Movement" icon="outline/movie" >}}
 
 T:1=4.68
 
@@ -812,7 +801,7 @@ The idea is that every time the player moves, you update its position to where i
 
 This is acheived through four collision sensors on four sides, as well as a player collider. Each time the player collides with one of the sensors, the sensors move one unit to readjust to the player.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="14. Player Coordinates" icon="outline/movie" >}}
 
 C:1=50 C:2=5
 
@@ -856,11 +845,11 @@ Kelly caging a random player.
 
 ### Repositioning objects
 
-We have taken a look at how ID conversion works when moving objects. One chain moves in one direction, so four of them will move in all four directions!
+We have taken a look at how ID conversion works when moving objects. One chain moves in one direction, so two of them will move in both directions!
 
 Normally, the object will start moving from its current position. To position the object relative to an origin, you can prefix the movement by relocating to the origin object.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="15. Repositioning Objects" icon="outline/movie" >}}
 
 (A move trigger, then two ID conversion chains)
 
@@ -872,13 +861,13 @@ Then, move up (+Y) and right(+X).
 
 {{< /callout >}}
 
-The example above makes use of one more trick to move in the opposite direction, and that is the sign check! Our movement currently uses 10 bits (10 yes-no questions), meaning we may reserve one of the bits for bidirectional movement, leaving the other 9 for the amount.
+The example above makes use of one more trick, and that is the sign check! Our movement currently uses 10 bits (10 yes-no questions), meaning we may reserve one of the bits for moving in the opposite direction, leaving the other 9 for the amount.
 
 Because we set the "512" to be negative, our movement range now covers values from $-512$ to $511$. The number is also added by 512 to remove the sign and process the remaining positive bits.
 
 ## Using IDs as Spawn Delays
 
-{{< callout context="tip" title="Further Reading: TPS Loops" icon="outline/edit" >}}
+{{< callout context="tip" title="Further Reading: TPS Loops" icon="outline/book" >}}
 
 The main idea behind spawn delays involves creating a [TPS Loop](making-loops/#5-tps-loop), provided in the Making Loops guide.
 
@@ -890,7 +879,7 @@ The method used to create and break the TPS loop will be slightly different in t
 
 I will make use of an example that pulses the background yelllow after 3.5 seconds, it's my favorite color after all!
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="16. ID As Spawn Delay" icon="outline/movie" >}}
 T:1=3.5 (Input in seconds) C:2 (Ticks)
 
 Our input will be provided in seconds.
@@ -937,13 +926,7 @@ If each tick is a grain of sand, how long will they last? (Kelly watching an hou
 
 A 0.0001s spawn loop by itself fails after 2 iterations. This is because spawn triggers are **second-accurate**. More information can be found in the [Spawn](/docs/guides/triggers-1/spawn/) trigger guide.
 
-They work by having an internal cumulative delay that checks every tick if the specified time has passed. A spawn trigger calling itself would add its delay on top of the now-negative cumulative delay, syncing the loop back to real time.
-
-*(Diagram of game tick alignment with spawn delay)*
-
-Making the delay too small would make it insufficient for the cumulative delay to catch up with new tick window.
-
-Placing an item compare trigger helps reset the cumulative delay to 0, allowing the spawn trigger to keep pushing the delay positive and align itself onto game ticks.
+Placing an item compare trigger allows the spawn trigger to adjust its second delay and align itself onto game ticks.
 
 {{< /callout >}}
 
@@ -1022,7 +1005,7 @@ A full quadratic function is a sum of three things:
 
 I’ll give an example by constructing $p(x) = 4x^2 + 12x + 9$, our output `I2` will be a sum of the three above variables:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="17. Polynomial 1" icon="outline/movie" >}}
 
 T:1=5.00 T:2 T:3 T:4 T:5
 
@@ -1086,7 +1069,7 @@ $x^1$ is **always** equal to $x$.
 
 Let’s take a look at the first step.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="18. Polynomial 2 Part 1" icon="outline/movie" >}}
 
 We will assume `T1` as our input.
 
@@ -1108,7 +1091,7 @@ This is our first term.
 
 In the first step, the term $-36$ (or $-36x^0$) is added to the total. Our timer variable 2 now has a value of -36.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="19. Polynomial 2 Part 2" icon="outline/movie" >}}
 
 `T3 = T3 · T1`
 
@@ -1120,7 +1103,7 @@ The `T3` variable now contains $x^1$.
 
 Our second step calculates $136x$ and adds it to the output total.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="20. Polynomial 2 Part 3" icon="outline/movie" >}}
 
 `T3 = T3 · T1`
 
@@ -1162,19 +1145,19 @@ Our third step calculates $101x^2$ and adds it to the output total.
 
 Here’s a video to demonstrate the function that we’ve made
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="21. Polynomial 2 Demo" icon="outline/movie" >}}
 
 T:2 =
 
 {{< /callout >}}
 
-You will see that with this iterative method you can easily tackle any amount of “corner number” within a reasonable amount of objects and time.
+You will see that with this iterative method you can easily tackle any power within a reasonable amount of objects and time.
 
 ### The alternative method
 
 Watch.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="22. Shifting" icon="outline/movie" >}}
 
 $24 x^3 - 68 x^2 - 154 x + 421$
 
@@ -1184,13 +1167,13 @@ $24 x^4 - 68 x^3 - 154 x^2 + 421 x$
 
 {{< /callout >}}
 
-The core idea behind this transformation is absurdly simple, you shift everything to a higher “corner number.”
+The core idea behind this transformation is absurdly simple, you shift everything to one power higher.
 
-An interesting result is that the number that comes first, will have the highest corner number. This means, rather than working backwards from $x^0$, we start from the highest ($x^8$) and work our way down.
+An interesting result is that the number that comes first, will have the highest power. This means, rather than working backwards from $x^0$, we start from the highest ($x^8$) and work our way down.
 
 Let’s look at the first two steps with this method:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="23. Polynomial 3 Shifting" icon="outline/movie" >}}
 
 `T2 = 24`
 
@@ -1206,7 +1189,7 @@ The steps here are deceptively easy, just multiply by `T1` then add the mod. How
 
 At the final step of the chain, you only add the mod. This constant will not be multiplied by $x$.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="24. Polynomial 3 Demo" icon="outline/movie" >}}
 
 ...
 
@@ -1289,7 +1272,7 @@ What you'll see is that our current term $\frac {x^5} {5!}$ is just our previous
 
 The intuition follows that you have a variable that keeps track of the multiplied inputs ($x^4$), maybe called `T3`, and another variable `I4` to keep track of the factorial ($5!$), probably one more `I5` to keep track of the next number to multiply for said factorial.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="25. Exponential Loop" icon="outline/movie" >}}
 
 `I5 = I5 + 1.000`
 
@@ -1317,7 +1300,7 @@ So far we're 80% of the way there, however we're still missing one important pie
 
 There, we will initialize the stuff required to run the loop correctly, namely the output and the extra variables.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="26. Exponential Setup" icon="outline/movie" >}}
 
 `T2 = 1.000`
 
@@ -1353,7 +1336,7 @@ The problem arises when the game tries to compute $13!$, because it evaluates to
 
 Factorials are known to grow in size absurdly quickly. That said, this is a rather simple fix. Instead of calculating $x^4$ and $4!$ separately, we can combine those into a single variable `T3` that tracks the whole fraction. Here's the reworked version of our repeat code:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="27. Exponential Loop Rework" icon="outline/movie" >}}
 
 `I5 = I5 + 1.000`
 
@@ -1373,7 +1356,7 @@ We will see that the more we run this, the closer `T3` approaches zero. Since fa
 
 ## Periodic Functions
 
-You might know a thing or two about rotations, the observation at hand here is that when a wheel rotates 360^{\circ}, it makes a full turn. Turning a wheel 15^{\circ} produces the same result as turning it 375^{\circ}.
+You might know a thing or two about rotations, the observation at hand here is that when a wheel rotates 360°, it makes a full turn. Turning a wheel 15° produces the same result as turning it 375°.
 
 {{< callout context="note" icon="outline/photo" >}}
 
@@ -1383,7 +1366,7 @@ You might know a thing or two about rotations, the observation at hand here is t
 
 If you've used the Rotate trigger before, you will know what the "x360" option does, leaving the resulting rotation intact while adding one or two additional twists in the process:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="28. Periodic Rotation" icon="outline/movie" >}}
 
 Degrees: `60`
 x360: `0`
@@ -1405,7 +1388,7 @@ This is the core idea behind periodic functions: those that cycle over one patte
 
 Try to focus on the up-down motion of that red dot: it goes up, smootly glides over the top, goes down, glides over the bottom, then back up. This motion generates a wavy pattern that is extremely satisfying to watch!
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="note" icon="outline/photo" >}}
 
 Illustration of a point on a circle tracing out the sine and cosine functions
 
@@ -1462,7 +1445,7 @@ Putting this into perspective, there are a total of five things to consider when
 
 Let's look at how we can implement it:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="29. Sine + Cosine Loop" icon="outline/movie" >}}
 
 T:6=2.40 (Input) T:7 = ??? (Output) T:8 = ??? (Term) I:9 = 5
 
@@ -1488,7 +1471,7 @@ As stated earlier, both functions share the same loop. This means that they diff
 
 Let's first look at one for $\cos(x)$:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="30. Cosine Setup" icon="outline/movie" >}}
 
 T:6=2.40 (Input) T:7 = ??? (Output) T:8 = ??? (Term) I:9 = 5
 
@@ -1510,7 +1493,7 @@ Can get you really close!
 
 Now, for $\sin(x)$:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="31. Sine Setup" icon="outline/movie" >}}
 
 T:6=2.40 (Input) T:7 = ??? (Output) T:8 = ??? (Term) I:9 = 5
 
@@ -1544,7 +1527,7 @@ If you still remember how division works, there exists a quotient, and a remaind
 
 Let's construct our division scenario:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="32. Range Error" icon="outline/movie" >}}
 
 T:6 (Remainder) C:10 (Quotient) T:11=24000 (Input)
 
@@ -1572,7 +1555,7 @@ Remember, small alignment errors can lead to massive differences over large dist
 
 Fortunately, TimerIDs can store up to 6 correct decimal places. Since $\pi \approx \frac {13176795}{4194304}$, we can save this fraction into a variable:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="33. Fixed Pi Range" icon="outline/movie" >}}
 C:12 = 13176195 C:13 = 4194304 T:314 ($\pi$) T:628 ($2\pi$)
 
 `T314 = I12 / I13`
@@ -1589,7 +1572,7 @@ T:157=1.57 T:314=3.14 T:315=6.28
 
 Now, we can try getting the remainder once again with a more accurate value of $\pi$:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="34. Corrected Range" icon="outline/movie" >}}
 
 T:6 (Remainder) C:10 (Quotient) T:11=24000 (Input) T:628 ($2\pi$)
 
@@ -1609,7 +1592,7 @@ This value is now practically the same as our calculator's! We're still not done
 
 This is as simple as changing the NA-operation to `RND`; when the fractional part surpasses $0.5$, the division rounds the quotient up, causing the remainder to be negative:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="35. Flooring & Rounding" icon="outline/movie" >}}
 
 T:6 (Remainder) C:10 (Quotient) T:11=24000 (Input) T:628 ($2\pi$)
 
@@ -1629,7 +1612,7 @@ $$ \sin(x) = \cos \left( x - \frac \pi 2 \right) = -\cos \left( x + \frac \pi 2 
 
 To implement it, we branch into two conditions: negative and positive.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="36. Sine Sign Branching" icon="outline/movie" >}}
 
 `T6 >= 0.000`
 
@@ -1655,7 +1638,7 @@ $$ \cos(x) = \sin \left( x + \frac \pi 2 \right) = -\sin \left( x - \frac \pi 2 
 
 Branch into two conditions: negative and positive.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="37. Cosine Sign Branching" icon="outline/movie" >}}
 
 `T6 >= 0.000`
 
@@ -1697,7 +1680,7 @@ There are three steps to this procedure:
 
 Let's see how we can implement this in action:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="38. Arbitrary Periodic" icon="outline/movie" >}}
 T:13=66.60 (Input) T:14 (Working) T:15 (Output) C:16 (Quotient)
 
 `I16 = RND(T13)` (Division by 1 is ignored)
@@ -1777,7 +1760,7 @@ This allows us to bring our input down to a remainder between $-0.347$ and $0.34
 
 Let's take a look at how we might implement this:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="39. Exponential Input Reduction" icon="outline/movie" >}}
 T:6=8.5 (Input) C:7 (Quotient) T:1 (Remainder) T:8=0.693
 
 `T1 = T6`
@@ -1805,7 +1788,7 @@ This entails two steps:
 
 I will assume that you have already implemented the first step in some way, it is explained earlier in this guide. To multiply with a doubling number $2^n$ based on a position, we can use the following ID conversion setup:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="40. Exponential Output Positive Scaling" icon="outline/movie" >}}
 T:2=1.20 (Output) C:7=12 (Quotient)
 
 `I7 >= 16.000` → `I7 = I7 - 16.000` `T2 = T2 · 65536.000`
@@ -1828,7 +1811,7 @@ If the quotient `I7` turns out to be negative, the doubling numbers also continu
 
 A similar ID conversion setup can be used to handle negative values of `I7`, forcing the number back to $0$ regardless of what it currently holds:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="41. Exponential Output Negative Scaling" icon="outline/movie" >}}
 T:2=1.20 (Output) C:7=-5 (Quotient)
 
 `I7 <= -16.000` → `I7 = I7 + 16.000` `T2 = T2 / 65536.000`
@@ -1863,7 +1846,7 @@ This is easy enough to implement.
 
 
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="42. Logarithm" icon="outline/movie" >}}
 T:1 = 12 (Input) T:2 (Output) T:3 ($m-1$) T:4 ($z$) T:5 (${2z^k}$) C:6 ($2k + 1$)
 
 The first step is initialization
@@ -1934,7 +1917,7 @@ $$ \ln(563) = \ln(1.099609375 \times 2^9) = \ln(1.099609375) + \ln(2^9) = \ln(1.
 
 Finding the exponent and significand involves the usage of an ID conversion setup:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="43. Logarithm Input Positive Reduction" icon="outline/movie" >}}
 T:1=563.00 (Input) C:7=0 (Exponent)
 
 `T1 >= 65536.000` → `I7 = I7 + 16.000` `T1 = T1 / 65536.000`
@@ -1955,18 +1938,18 @@ T:1=1.10 C:7=9
 
 Likewise, we can do this for inputs between $0$ and $1$, however small they might get:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="44. Logarithm Input Negative Reduction" icon="outline/movie" >}}
 T:1=0.0005369 (Input) C:7=0 (Exponent)
 
-`T1 · 65536.000 <= 1.000` → `I7 = I7 - 16.000` `T1 = T1 · 65536.000`
+`T1 · 65536.000 <= 2.000` → `I7 = I7 - 16.000` `T1 = T1 · 65536.000`
 
-`T1 · 256.000 <= 1.000` → `I7 = I7 - 8.000` `T1 = T1 · 256.000`
+`T1 · 256.000 <= 2.000` → `I7 = I7 - 8.000` `T1 = T1 · 256.000`
 
-`T1 · 16.000 <= 1.000` → `I7 = I7 - 4.000` `T1 = T1 · 16.000`
+`T1 · 16.000 <= 2.000` → `I7 = I7 - 4.000` `T1 = T1 · 16.000`
 
-`T1 · 4.000 <= 1.000` → `I7 = I7 - 2.000` `T1 = T1 · 4.000`
+`T1 · 4.000 <= 2.000` → `I7 = I7 - 2.000` `T1 = T1 · 4.000`
 
-`T1 · 2.000 <= 1.000` → `I7 = I7 - 1.000` `T1 = T1 · 2.000`
+`T1 · 2.000 <= 2.000` → `I7 = I7 - 1.000` `T1 = T1 · 2.000`
 
 ▶️
 
@@ -1977,7 +1960,7 @@ This should extend our range of logarithms to work with any TimerID.
 
 The final step is to add back the logarithm of the exponent. This is a linear term, so a bare multiplication is all that's needed.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="45. Logarithm Output Scaling" icon="outline/movie" >}}
 T:2=0.095 (Output) C:7=9 (Exponent) T:8=0.693 ($\ln(2)$)
 
 `T2 = T2 + I7 · T8`
@@ -2017,7 +2000,7 @@ $$ \tan^{-1}(x) \approx \frac{62280}{440219} x^4 - \frac{184798}{538311} x^3 - \
 
 This is easy to replicate. Here's how you do exactly that!
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="46. Inverse Tangent" icon="outline/movie" >}}
 
 T:2=0.00 (Output) T:3 (Fractional Mod) T:4=1.00 ($x^n$ accumulator) T:5=0.50 (Input)
 
@@ -2065,7 +2048,7 @@ Because of the reciprocal, for values above $1$, this pushes the input between $
 
 We can plug it into our function this way:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="47. Inverse Tangent Input Processing" icon="outline/movie" >}}
 T:1=2.00 (Input) T:2=0.00 (Output) T:4=1.00 ($x^n$ accumulator) T:5=1.00 (Inner polynomial input) T:157=1.57 ($\frac {\pi} 2$)
 
 `ABS(T1) > 1.000` → `T2 = T157` `T5 = T5 / T1` `T4 = -1.000` Polynomial is negated via $-x^n$
@@ -2150,13 +2133,41 @@ A wobbly polynomial that happens to intersect the first five points of the facto
 
 {{< /callout >}}
 
-A more clever way to work with this is via special "Chebyshev" points: solutions to a collection of polynomials known as **Chebyshev polynomials**. These data points are strategically placed such that you eliminate the nasty wobble and get really accurate results.
+A more clever way to work with this is via special **Chebyshev polynomials**, a brand-new collection of functions that make your approximations wobble-free!
+
+Consider the first few Chebyshev polynomials (of the first kind):
+
+$$ T_0(x) = 1 $$
+
+$$ T_1(x) = x $$
+
+$$ T_2(x) = 2x^2 - 1 $$
+
+$$ T_3(x) = 4x^3 - 3x $$
+
+$$ T_4(x) = 8x^4 - 8x^2 + 1 $$
+
+Any function with $x^4$ can be represented as a combination of these polynomials, with scaling of course.
+
+$$ g(x) = 40x^4 + 28x^3 - 34x^2 - 16x + 11 $$
+$$ g(x) = 5T_4(x) + 7T_3(x) + 3T_2(x) + 5T_1(x) + 9T_0(x) $$
+$$ g(50) = 5T_4(50) + 7T_3(50) + 3T_2(50) + 5T_1(50) + 9T_0(50) $$
+
+The numbers $5, 7, 3, 5$ and $9$ scale these polynomials. Our objective is to find numbers like these for our $\tan^{-1}(x)$.
+
+Now, plug in a value, like $50$. Aim it to the "actual result" of $\tan^{-1}(50)$. We get a linear system of equations after 5 tries. Do it 1000 times over and we will approach the *perfect* combination of these.
+
+{{< callout context="note" icon="outline/photo" >}}
+
+Finding the closest solution for 1000 linear equations can be daunting! (Kelly in front of a paper stack of equations)
+
+{{< /callout >}}
+
+Note that this step is usually done with external software. It is not feasible to implement such a thing in Geometry Dash for the scope of this guide.
 
 {{< callout context="tip" title="Further Reading" icon="outline/book" >}}
 
-For a more detailed explanation of how Lagrange interpolators work, you can check out [University of Oslo's Approximation Theory Lecture Notes](https://www.uio.no/studier/emner/matnat/math/MAT3110/h26/undervisningsmateriale/lecture7.pdf).
-
-You can also check out [lecture slides provided by San Diego State University](https://jmahaffy.sdsu.edu/courses/s10/math541/lectures/pdf/week12/lecture.pdf) for a guide on least-squares data fitting.
+You can check out [lecture slides provided by San Diego State University](https://jmahaffy.sdsu.edu/courses/s10/math541/lectures/pdf/week12/lecture.pdf) for a guide on least-squares data fitting.
 
 If you have knowledge in scripting, you can use NumPy to fit Chebyshev polynomials into any function of your choice. An implementation can be found on [GeeksForGeeks](https://www.geeksforgeeks.org/python/get-the-least-squares-fit-of-chebyshev-series-to-data-in-python-numpy/).
 
@@ -2215,7 +2226,7 @@ $$ x_{1}=x_{0}-{\frac {f(x_{0})}{f'(x_{0})}} = x_0 - \frac {x_0^2 - a} {2x_0} = 
 
 For this example, we will use six iterations:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="48. Newton Square Root" icon="outline/movie" >}}
 
 T:2 (Output) T:3=2.00 (Current iteration) T:4 ($a/x_0$) T:5 (Input)
 
@@ -2282,7 +2293,7 @@ Better yet, this can be further divided into two separate cases:
 
 We will visualize the whole process with this example:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="49. Newton Square Root Reduction" icon="outline/movie" >}}
 
 T:1=1234567.00 (Input) T:5 (Output $k$) T:6=1.00 (Multiplier $\sqrt{2^n}$) T:7=1.41 ($\sqrt{2} \approx \frac {11863283} {8388608}$)
 
@@ -2292,15 +2303,15 @@ Copy input to output. We will operate on the output value directly.
 
 First, handle the case where $0 \le x < 1$.
 
-`T5 · 65536.000 <= 1.000` → `T6 = T6 / 256.000` `T5 = T5 · 65536.000`
+`T5 · 65536.000 <= 2.000` → `T6 = T6 / 256.000` `T5 = T5 · 65536.000`
 
-`T5 · 256.000 <= 1.000` → `T6 = T6 / 16.000` `T5 = T5 · 256.000`
+`T5 · 256.000 <= 2.000` → `T6 = T6 / 16.000` `T5 = T5 · 256.000`
 
-`T5 · 16.000 <= 1.000` → `T6 = T6 / 4.000` `T5 = T5 · 16.000`
+`T5 · 16.000 <= 2.000` → `T6 = T6 / 4.000` `T5 = T5 · 16.000`
 
-`T5 · 4.000 <= 1.000` → `T6 = T6 / 2.000` `T5 = T5 · 4.000`
+`T5 · 4.000 <= 2.000` → `T6 = T6 / 2.000` `T5 = T5 · 4.000`
 
-`T5 · 2.000 <= 1.000` → `T6 = T6 · T7 · 0.500` `T5 = T5 · 2.000`
+`T5 · 2.000 <= 2.000` → `T6 = T6 · T7 · 0.500` `T5 = T5 · 2.000`
 
 Next, handle the case where $x \ge 2$
 
@@ -2346,7 +2357,7 @@ $$ \tan(x) = \frac {\sin(x)}{\cos(x)} $$
 
 Super easy, right?
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="50. Tangent" icon="outline/movie" >}}
 G:10 (Sine) G:11 (Cosine) T:1 (Sine/Cosine Input), T:2 (Sine/Cosine Output) T:12=1.4 (Input) T:13 (Output)
 
 `T1 = T12`
@@ -2371,7 +2382,7 @@ $$ x^{0.5} = e^{0.5 \ln(x)} $$
 
 You are essentially taking the logarithm of the input, halving it, and then exponentiating it back up. A peculiar dog's trick. Here's how it's implemented in-game:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="51. Composed Square Root" icon="outline/movie" >}}
 
 G:10 (Exp) G:11 (Log) T:1 (Exp/Log Input), T:2 (Exp/Log Output) T:12=1.4 (Input) T:13 (Output)
 
@@ -2395,7 +2406,7 @@ One of the downsides to calling via spawn triggers is that you can only spawn th
 
 The workaround is notoriously simple - just make two of them!
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="52. Composed Sine" icon="outline/movie" >}}
 T:6=1.000 (Input) T:7 (Output) T:10 (Inner $\sin(x)$ Output)
 
 Our $\sin(x)$ function is GID 23.
@@ -2451,7 +2462,7 @@ $$ 280 \cdot 1,000,000 + 38 \cdot 1,000 + 212 = 280,038,212 $$
 
 There is a minor caveat: the remainder subroutine is not built directly into the triggers. However, you may have noticed that you can extract it by multiplying the round number back into the quotient, and then taking its difference with the original input. Here's how it's done in Geometry Dash:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="53. Number Decomposition (Thousand + Million)" icon="outline/movie" >}}
 C:1=280038212 (Input) C:2=0 (Temp remainder) C:3 (Output Entry 1) C:4 (Output Entry 2) C:5 (Output Entry 3)
 
 `I3 = FLR(I1 / 1000000.000)` (Right shift)
@@ -2482,7 +2493,7 @@ When working with these split-up numbers, **do be cautious of their limits.** Th
 
 Once you're done working with them, put them back in the correct place. This is where you recombine the small numbers back onto a big one. This is just as simple as splitting them up:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="54. Number Recombination (Thousand + Million)" icon="outline/movie" >}}
 C:1 (Output) C:3=280 (Entry 1) C:4=38 (Entry 2) C:5=212 (Entry 3)
 
 `I1 = I3 · 1000000.000`
@@ -2509,7 +2520,7 @@ Everything at the $1$ and left, goes on one side, everything to the right of $1$
 
 By choosing different cutting spots, we get different round numbers. To divide up a number into thousands, lakhs and crores, we use three round numbers to do the slicing: $1,00,00,000$ (crore), $1,00,000$ (lakh) and $1,000$ (thousand).
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="55. Number Decomposition (Lakh + Crore)" icon="outline/movie" >}}
 C:1=280038212 (Input) C:2=0 (Lakh remainder) C:3=0 (Thousand remainder) C:4 (Crores) C:5 (Lakhs) C:6 (Thousands) C:7 (Units)
 
 `I4 = FLR(I1 / 10000000.000)` (Right shift)
@@ -2540,7 +2551,7 @@ C:7=212
 
 Recombining uneven segments uses the same princple:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="56. Number Recombination (Lakh + Crore)" icon="outline/movie" >}}
 C:1 (Output) C:4=28 (Crores) C:5=0 (Lakhs) C:6=38 (Thousands) C:7=212 (Units)
 
 `I1 = I3 · 10000000.000`
@@ -2579,7 +2590,7 @@ The second, more elegant solution is to only target one slice of the number sala
 
 Returning to our uneven slices, we see that we have no spare lakhs! You don't need to decompose all of your money and then add the lakhs, just put them directly into the number.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="57. Number Spot Addition" icon="outline/movie" >}}
 C:1=280038212 (Input) C:5=36 (Lakhs to add)
 
 `I1 = I1 + I5 · 100000.00`
@@ -2592,7 +2603,7 @@ We have effectively added $36$ lakhs to our wallet, bringing the number to $28,3
 
 Let's say we spend some lakhs such that $24$ remain. You know what the solution is: subtract all lakhs, then add $24$.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="58. Number Spot Replacement" icon="outline/movie" >}}
 C:1=283638212 (Input) C:5=36 (Old lakhs) C:8=24 (New lakhs)
 
 `I1 = I1 - I5 · 100000.00`
@@ -2627,7 +2638,7 @@ $$ 101 \times 51 \times 21 \times 21 \times 6 = 13,629,546 $$
 
 We've looked at an example with clean, round salami knives (à la $1,000,000$), but that need not always be the case. Numbers can be split into slices of **any** size, provided you stack the right multiples together.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="59. Enemy Stat Decomposition" icon="outline/movie" >}}
 
 C:1=8388608 (Input) C:2 (Health) C:3 (Attack) C:4 (Defense) C:5 (Evasion) C:6 (Speed)
 C:7 (Temp Remainder) C:8 (Temp Remultiply) C:9=13629546 (Knife)
@@ -2711,7 +2722,7 @@ You should also pay attention to the knives used to cut up numbers:
 
 We will use these values during recombination.
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="60. Enemy Stat Recombination" icon="outline/movie" >}}
 C:1 (Output) C:2=62 (Health) C:3=8 (Attack) C:4=6 (Defense) C:5=5 (Evasion) C:6=2 (Speed)
 
 `I1 = I2 · 134946.000` (Health)
@@ -2764,15 +2775,15 @@ Our number salami will look as follows:
 
 $$ 1\space\space00001001\space\space\space\space1\space\space1000101\space\space\space\space1\space\space0101010\space\space\space\space0\space\space0000110 $$
 
-In decimal, this corresponds to $-124,-59,-42,6$. Note that the second number $-59$ would be $197$, but due to the negative sign bit it gets subtracted by $256$
+In decimal, this corresponds to $-124,-59,-86,6$. Note that the second number $-59$ would be $197$, but due to the negative sign bit it gets subtracted by $256$
 
 Processing this chain would proceed rather normally for the latter 3 numbers, using a binary knife, chopping them all into raw values, and making them negative when they are above certain threshold (in this case $127$).
 
-The first part demands a more special treatment. The sign bit affects the whole number, meaning that you must get rid of the sign first before continuing.
+The first part demands a more special treatment. The sign bit is shared with the first number, so a simple floored division-remainder will suffice.
 
 All of these steps can be done in GD as follows:
 
-{{< callout context="success" icon="outline/movie" >}}
+{{< callout context="success" title="61. Binary Decomposition" icon="outline/movie" >}}
 C:1=-2067420666 (Input) C:2 (Temporary second) C:3 (Temporary third)
 C:4 (First part) C:5 (Second part) C:6 (Third part) C:8 (Fourth part) C:24=16777216 ($2^{24}$) C:31=-2147483648 ($-2^{31}$)
 
@@ -2814,14 +2825,14 @@ Now, for the other three numbers, check for the sign bit.
 
 `I7 > 127.000` → `I7 = I7 - 128.000`
 
-C:5=-59 C:6=-42 C:7=6
+C:5=-59 C:6=-86 C:7=6
 
 {{< /callout >}}
 
-As for the recombination, the flow is the same for the other three parts, the first part will be treated differently.
+As for the recombination, the flow is the same for the other three parts with the signs readjusted, while the first part carries the sign.
 
-{{< callout context="success" icon="outline/movie" >}}
-C:1 (Output) C:4=-124 (First part) C:5=-59 (Second part) C:6=-42 (Third part) C:7=6 (Fourth part) C:8=0 (Sign tracker)
+{{< callout context="success" title="62. Binary Recombination" icon="outline/movie" >}}
+C:1 (Output) C:4=-124 (First part) C:5=-59 (Second part) C:6=-86 (Third part) C:7=6 (Fourth part) C:8=0 (Sign tracker)
 
 For the last three parts, check for sign as normal.
 
