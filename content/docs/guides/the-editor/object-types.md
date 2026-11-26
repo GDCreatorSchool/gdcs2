@@ -9,13 +9,15 @@ contributors:
   - sparktwee
   - illusion2
   - poryii
-description: There are lots of object types in Geometry Dash, and this guide will go over them.
+description: There are lots of object types in Geometry Dash, and this guide
+  will go over them.
 tags:
   - Grade 0
   - Basic Editor
 seo:
   title: Every Type of Object in Geometry Dash
-  description: Do you struggle to find objects in the Geometry Dash editor? This guide explains how to find them faster.
+  description: Do you struggle to find objects in the Geometry Dash editor? This
+    guide explains how to find them faster.
   canonical: ""
   noindex: false
 ---
@@ -88,13 +90,14 @@ The third tab consists of slope-related objects; it’s basically the first tab 
 
 **3D objects** are **pre-made objects meant to help your structures become 3D**. Most of the 3D objects come in tilesets that differ from the usual block tilesets. As detail objects, they don’t have a hitbox, so they can be used for art as well. Keep in mind that all the vanishing points of these objects are infinitely far away, which can break down some immersion. Perspective will be covered more in-depth in [Grade 2 guides](/docs/guides/deco-2/).
 
-{{< img src="https://lh3.googleusercontent.com/d/1yTjX0DY5U2R2RnTG6tqtUeFDeRWTumiO" >}}
+
+{{< img src="https://lh3.googleusercontent.com/d/1fwHzsXw9wraRV1pHgerikqm5BoIGfKdi" >}}
 
 # 7: Orbs, Pads, and Portals
 
 This tab features orbs, pads, portals, and some other miscellaneous gameplay objects. There are also some other miscellaneous objects like text objects here as well. Most of the objects here aren’t immediately self-explanatory, but they’re useful for making gameplay. For more info, check the [Gameplay Objects](/docs/guides/gameplay-1/gameplay-objects/) guide.
 
-{{< img src="https://lh3.googleusercontent.com/d/1fwHzsXw9wraRV1pHgerikqm5BoIGfKdi" >}}
+{{< img src="https://lh3.googleusercontent.com/d/1fPt43RAwMlEYD6mAfV-qrRWPeRLN8bTt" >}}
 
 # 8: Animated Objects
 
